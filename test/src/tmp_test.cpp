@@ -1,4 +1,4 @@
-#include "project/tmp.hpp"
+#include "NMBUFlowTorch/tmp.hpp"
 
 #include <gtest/gtest.h>
 

@@ -9,6 +9,7 @@ project(
   LANGUAGES CXX
 )
 
+
 verbose_message("Adding tests under ${CMAKE_PROJECT_NAME}Tests...")
 
 foreach(file ${test_sources})

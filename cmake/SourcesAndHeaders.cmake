@@ -8,7 +8,7 @@ set(exe_sources
 )
 
 set(headers
-    include/NMBUFlowTorch/tmp.hpp
+    include/nmbuflowtorch/tmp.hpp
 )
 
 set(test_sources

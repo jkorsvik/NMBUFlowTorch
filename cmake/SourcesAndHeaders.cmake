@@ -8,7 +8,7 @@ set(exe_sources
 )
 
 set(headers
-    include/project/tmp.hpp
+    include/NMBUFlowTorch/tmp.hpp
 )
 
 set(test_sources

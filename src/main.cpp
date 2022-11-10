@@ -1,5 +1,6 @@
 #include "nmbuflowtorch/tmp.hpp"
-#include <stdio.h>
+#include <iostream>
+#include <ostream>
 using namespace std;
 using namespace tmp;
 

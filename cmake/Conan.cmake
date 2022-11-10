@@ -3,7 +3,7 @@ if(${PROJECT_NAME}_ENABLE_CONAN)
   # Setup Conan requires and options here:
   #
 
-  set(${PROJECT_NAME}_CONAN_REQUIRES gtest/1.12.1) #eigen/3.4.0)
+  set(${PROJECT_NAME}_CONAN_REQUIRES gtest/1.12.1 eigen/3.4.0)
   set(${PROJECT_NAME}_CONAN_OPTIONS "")
 
   #
@@ -15,7 +15,7 @@ if(${PROJECT_NAME}_ENABLE_CONAN)
       "Downloading conan.cmake from https://github.com/conan-io/cmake-conan..."
     )
     file(
-      DOWNLOAD "https://github.com/conan-io/cmake-conan/raw/v0.15/conan.cmake"
+      DOWNLOAD "https://github.com/conan-io/cmake-conan/raw/v0.16/conan.cmake"
       "${CMAKE_BINARY_DIR}/conan.cmake"
     )
     message(STATUS "Cmake-Conan downloaded succesfully.")
@@ -24,9 +24,9 @@ if(${PROJECT_NAME}_ENABLE_CONAN)
   include(${CMAKE_BINARY_DIR}/conan.cmake)
 
   conan_add_remote(
-    NAME bincrafters
+    NAME conancenter
     URL
-    https://api.bintray.com/conan/bincrafters/public-conan
+    https://center.conan.io
   )
 
   conan_cmake_run(

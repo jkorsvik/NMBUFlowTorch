@@ -4,7 +4,7 @@
 [![codecov](https://codecov.io/gh/jkorsvik/NMBUFlowTorch/branch/master/graph/badge.svg)](https://codecov.io/gh/jkorsvik/NMBUFlowTorch)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/jkorsvik/NMBUFlowTorch)](https://github.com/jkorsvik/NMBUFlowTorch/releases)
 
-# Modern C++ Template
+# NMBUFlowTorch
 
 A quick C++ template for modern CMake projects, aimed to be an easy to use
 starting point.
@@ -71,18 +71,17 @@ template *as-is*, meaning using the versions recommended here, then you will nee
 > ***Note:*** *You also need to be able to provide ***CMake*** a supported
 [generator](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html).*
 
+
 ### Installing
 
 It is fairly easy to install the project, all you need to do is clone if from
-[GitHub](https://github.com/filipdutescu/modern-cpp-template) or
-[generate a new repository from it](https://github.com/filipdutescu/modern-cpp-template/generate)
-(also on **GitHub**).
+**GitHub**.
 
-If you wish to clone the repository, rather than generate from it, you simply need
+If you wish to clone the repository, you simply need
 to run:
 
 ```bash
-git clone https://github.com/filipdutescu/modern-cpp-template/
+git clone https://github.com/jkorsvik/NMBUFlowTorch/
 ```
 
 After finishing getting a copy of the project, with any of the methods above, create
@@ -100,20 +99,16 @@ Finally, change `"Project"` from `CMakeLists.txt`, from
 
 ```cmake
 project(
-  "Project"
+  "nmbuflowtorch"
   VERSION 0.1.0
   LANGUAGES CXX
 )
 ```
 
-to the ***exact name of your project***, i.e. using the previous name it will become:
+***Install requirements (cmake, conan, etc***
 
-```cmake
-project(
-  MyNewProject
-  VERSION 0.1.0
-  LANGUAGES CXX
-)
+```bash
+source install_reqs.sh
 ```
 
 To install an already built project, you need to run the `install` target with CMake.

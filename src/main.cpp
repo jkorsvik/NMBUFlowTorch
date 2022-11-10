@@ -1,7 +1,8 @@
 #include "nmbuflowtorch/tmp.hpp"
-#include "eigen-3.4.0/Eigen/Dense"
+#include "Eigen/Dense"
 #include <iostream>
 #include <ostream>
+
 using namespace std;
 using namespace tmp;
 using Eigen::MatrixXd;

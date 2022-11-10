@@ -60,6 +60,7 @@ include(cmake/Vcpkg.cmake)
 
 # Find all headers and implementation files
 include(cmake/SourcesAndHeaders.cmake)
+include_directories (${PROJECT_NAME} ${directories})
 
 if(${PROJECT_NAME}_BUILD_EXECUTABLE)
   add_executable(${PROJECT_NAME} ${exe_sources})

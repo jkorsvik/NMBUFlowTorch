@@ -11,6 +11,10 @@ set(headers
     include/nmbuflowtorch/tmp.hpp
 )
 
+set(directories
+  include/eigen3
+)
+
 set(test_sources
   src/tmp_test.cpp
 )

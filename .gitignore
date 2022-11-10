@@ -5,7 +5,7 @@ CMakeFiles/*
 [Tt]esting/*
 
 # OWN definitons
-eigen-3.4.0/
+eigen3/
 
 ### VisualStudioCode ###
 .vscode/*

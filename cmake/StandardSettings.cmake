@@ -2,7 +2,7 @@
 # Project settings
 #
 
-option(${PROJECT_NAME}_BUILD_EXECUTABLE "Build the project as an executable, rather than a library." OFF)
+option(${PROJECT_NAME}_BUILD_EXECUTABLE "Build the project as an executable, rather than a library." ON)
 option(${PROJECT_NAME}_BUILD_HEADERS_ONLY "Build the project as a header-only library." OFF)
 option(${PROJECT_NAME}_USE_ALT_NAMES "Use alternative names for the project, such as naming the include directory all lowercase." ON)
 
@@ -17,7 +17,7 @@ option(${PROJECT_NAME}_WARNINGS_AS_ERRORS "Treat compiler warnings as errors." O
 #
 # Currently supporting: Conan, Vcpkg.
 
-option(${PROJECT_NAME}_ENABLE_CONAN "Enable the Conan package manager for this project." OFF)
+option(${PROJECT_NAME}_ENABLE_CONAN "Enable the Conan package manager for this project." ON)
 option(${PROJECT_NAME}_ENABLE_VCPKG "Enable the Vcpkg package manager for this project." OFF)
 
 #

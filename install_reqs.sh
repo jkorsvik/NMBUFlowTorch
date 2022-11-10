@@ -1,10 +1,14 @@
 # bin/sh
 CWD=$(pwd)
 # Required files
+# Update gcc and cmake
+sudo apt update
+sudo apt install build-essential
+# unzip
+sudo apt install unzip
 # Cmake for ubuntu
 sudo wget -qO /etc/apt/trusted.gpg.d/kitware-key.asc https://apt.kitware.com/keys/kitware-archive-latest.asc
 echo "deb https://apt.kitware.com/ubuntu/ focal main" | sudo tee /etc/apt/sources.list.d/kitware.list
-sudo apt update
 sudo apt install -y cmake
 cmake --version
 # python3 required

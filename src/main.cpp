@@ -164,6 +164,10 @@ class Dense : public Layer
             weights = w;
         }
 
+        void set_bias(MatrixXd b) {
+            bias = b;
+        };
+
         MatrixXd forward(MatrixXd X) {
             layer_input = X; // Holder på input til backward passet
             return  X * weights; // TODO: Plusse på bias

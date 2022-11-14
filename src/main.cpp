@@ -142,8 +142,8 @@ class Dense : public Layer
         MatrixXd weights;
         MatrixXd bias;
 
-        Optimizer weight_optimzer;
-        Optimizer bias_optimzer;
+        Optimizer weight_optimizer;
+        Optimizer bias_optimizer;
 
         MatrixXd layer_input;
 
@@ -151,11 +151,11 @@ class Dense : public Layer
             units = n_units;
             input_shape = inp_shape;
 
-            weights = MatrixXd::Random(input_shape, units); // TODO: annen initialisering? Tror det er 0 til 1 her
+            weights = MatrixXd::Random(input_shape, units); // TODO: annen initialisering? Tror det er -1 til 1 her
             bias = MatrixXd::Zero(1, units);
 
-            weight_optimzer = Optimizer();
-            bias_optimzer = Optimizer();
+            weight_optimizer = Optimizer();
+            bias_optimizer = Optimizer();
 
         };
 
@@ -177,8 +177,8 @@ class Dense : public Layer
             MatrixXd grad_bias = accumulated_gradients.colwise().sum();
 
             // Oppdaterer vektene
-            weights = weight_optimzer.update(weights, grad_weights);
-            bias = bias_optimzer.update(bias, grad_bias);
+            weights = weight_optimizer.update(weights, grad_weights);
+            bias = bias_optimizer.update(bias, grad_bias);
 
             accumulated_gradients = accumulated_gradients * prev_weights.transpose();
 

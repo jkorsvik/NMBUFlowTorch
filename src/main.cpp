@@ -15,6 +15,10 @@ using Eigen::VectorXf;
 
 #include <vector>
 
+// TODO: 
+// Treningsloop i Network, regne ut accuracy, Legge til bias i forward pass i dense layer (X*W + b)
+
+
 
 class Network
 {
@@ -24,7 +28,12 @@ class Network
 
         };
 
+        void fit(){};
 
+        void train_batch(){}
+
+
+        // Privat?
         MatrixXd forward(MatrixXd X) {
             
 
@@ -50,7 +59,7 @@ class CrossEntropy
             
         };
 
-        
+        // https://stats.stackexchange.com/questions/370723/how-to-calculate-the-derivative-of-crossentropy-error-function
         MatrixXd gradient(MatrixXd y, MatrixXd p) {
             MatrixXd ls = - (y.array() / p.array());
             MatrixXd rs = (1-y.array()) / (1 - p.array());
@@ -61,18 +70,16 @@ class CrossEntropy
 };
 
 
-class GradientDescent
-
+class Optimizer
+// Stochastic Gradient Descent, learning rate satt til 0.001. Burde kanskje flyttes inn i
 
 {
-    float learning_rate = 0.01;
     MatrixXd weight_update;
     bool weight_init = false;
 
-
     public:
 
-        GradientDescent(){
+        Optimizer(){
 
         };
         
@@ -83,8 +90,7 @@ class GradientDescent
                 weight_init = true;
             }
             
-            return weights - learning_rate * grads_wrt_w;
-            return weights;
+            return weights - 0.001 * grads_wrt_w;
         };
         
         
@@ -103,18 +109,25 @@ class Layer
 class Sigmoid : public Layer
 {
     public:
+
+        Sigmoid(){
+
+        };
+
         MatrixXd forward(MatrixXd X) {
             return 1 / (1 + (-1 * X).array().exp());
         };
 
         MatrixXd backward(MatrixXd X) {
+            // Sigmoid(x) * (1 - sigmoid(x))
+
+            //left side og right side
             auto ls = forward(X);
             
             auto rs = (1 - ls.array()).matrix();
 
-            auto res = ls.cwiseProduct(rs);
-
-            return res;
+            // cwiseProduct for elementvis operasjon (ikke vanlig matrisemultiplikasjon)
+            return ls.cwiseProduct(rs);;
         };
 };
 
@@ -129,61 +142,47 @@ class Dense : public Layer
         MatrixXd weights;
         MatrixXd bias;
 
-        GradientDescent weight_opt;
-        GradientDescent bias_opt;
+        Optimizer weight_optimzer;
+        Optimizer bias_optimzer;
 
         MatrixXd layer_input;
-
-
 
         Dense(int n_units, int inp_shape) {
             units = n_units;
             input_shape = inp_shape;
 
-            initialize();
+            weights = MatrixXd::Random(input_shape, units); // TODO: annen initialisering? Tror det er 0 til 1 her
+            bias = MatrixXd::Zero(1, units);
+
+            weight_optimzer = Optimizer();
+            bias_optimzer = Optimizer();
+
         };
 
         void set_weights(MatrixXd w) {
+            // Metode for å overskrive vektene
             weights = w;
         }
 
-        // Kan være privat
-        void initialize() {
-            
-            weights = MatrixXd::Random(input_shape, units); 
-            bias = MatrixXd::Zero(1, units);
-
-            weight_opt = GradientDescent();
-            bias_opt = GradientDescent();
-
-        };
-
         MatrixXd forward(MatrixXd X) {
-            //cout << X.rows() << X.cols() << endl;
-            //cout << weights.rows() << weights.cols() << endl;
             layer_input = X; // Holder på input til backward passet
-            MatrixXd res = X * weights; // TODO: Plusse på bias
-
-            return res;
-
-            
+            return  X * weights; // TODO: Plusse på bias
         };
 
-        MatrixXd backward(MatrixXd accumulated_grad) {
+        MatrixXd backward(MatrixXd accumulated_gradients) {
 
             MatrixXd prev_weights = weights;
 
-            MatrixXd grad_weights = layer_input.transpose() * accumulated_grad;
+            MatrixXd grad_weights = layer_input.transpose() * accumulated_gradients;
+            MatrixXd grad_bias = accumulated_gradients.colwise().sum();
 
-            MatrixXd grad_bias = accumulated_grad.colwise().sum();
+            // Oppdaterer vektene
+            weights = weight_optimzer.update(weights, grad_weights);
+            bias = bias_optimzer.update(bias, grad_bias);
 
-            // Oppdaterer weights
-            weights = weight_opt.update(weights, grad_weights);
-            bias = bias_opt.update(bias, grad_bias);
+            accumulated_gradients = accumulated_gradients * prev_weights.transpose();
 
-            accumulated_grad = accumulated_grad * prev_weights.transpose();
-
-            return accumulated_grad;
+            return accumulated_gradients;
         };
 
         
@@ -191,7 +190,7 @@ class Dense : public Layer
 
 };
 
-//toStrings, burde være mulig å flytte inn i klassene
+//toStrings som overskriver << i en stream, burde være mulig å flytte inn i klassene skulle man tro
 
 ostream& operator<< (ostream& stream, Layer& obj) {
             return cout << "Basis Layer";
@@ -211,7 +210,6 @@ int main(int argc, char **argv) {
     // Sammenligner med utregninger fra https://theneuralblog.com/forward-pass-backpropagation-example/
     
     Dense d(2, 2);
-    d.initialize();
 
     MatrixXd W = MatrixXd(2, 2);
     W << 0.1, 0.2, 0.3, 0.4;
@@ -220,8 +218,6 @@ int main(int argc, char **argv) {
     CrossEntropy loss_function = CrossEntropy();
 
     Sigmoid s = Sigmoid();
-
-
 
     MatrixXd y = MatrixXd(2, 2);
     y << 0.05, 0.95, 0.05, 0.95;

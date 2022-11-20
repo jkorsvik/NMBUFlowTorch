@@ -8,7 +8,7 @@ set(exe_sources
 )
 
 set(headers
-    include/nmbuflowtorch/tmp.hpp
+    include/nmbuflowtorch/
 )
 
 set(directories

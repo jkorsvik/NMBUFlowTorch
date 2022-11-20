@@ -4,6 +4,8 @@ CWD=$(pwd)
 # Update gcc and cmake
 sudo apt update
 sudo apt install build-essential
+# GDB for debugging
+sudo apt-get install gdb
 # unzip
 sudo apt install unzip
 # Cmake for ubuntu
@@ -24,6 +26,9 @@ sudo conan profile update env.CXX=clang++ default
 curl -O "https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.zip" && unzip -d include/ eigen-3.4.0.zip && rm eigen-3.4.0.zip
 mv $CWD/include/eigen-3.4.0 $CWD/include/eigen3
 #sudo conan install eigen_recipe.py -g=cmake_find_package 
+
+# CLANG for linting
+sudo apt install clang-14 --install-suggests
 
 
 # For automatic documentation generation

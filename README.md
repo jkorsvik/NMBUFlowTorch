@@ -72,6 +72,12 @@ template *as-is*, meaning using the versions recommended here, then you will nee
 [generator](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html).*
 
 
+### If using VSCode
+
+ There are few select extensions which are recommended
+
+ - 
+
 ### Installing
 
 It is fairly easy to install the project, all you need to do is clone if from
@@ -82,6 +88,10 @@ to run:
 
 ```bash
 git clone https://github.com/jkorsvik/NMBUFlowTorch/
+```
+or 
+```bash
+git clone git@github.com:jkorsvik/NMBUFlowTorch.git
 ```
 
 After finishing getting a copy of the project, with any of the methods above, create
@@ -105,11 +115,18 @@ project(
 )
 ```
 
-***Install requirements (cmake, conan, etc***
+***Install requirements (cmake, conan, etc..)***
 
 ```bash
 source install_reqs.sh
 ```
+
+***Build and install project as an executable***
+```bash
+source automatic_rebuild_and_install.sh
+```
+
+The executables of the project will then be in the 
 
 To install an already built project, you need to run the `install` target with CMake.
 For example:
@@ -120,6 +137,8 @@ cmake --build build --target install --config Release
 # a more general syntax for that command is:
 cmake --build <build_directory> --target install --config <desired_config>
 ```
+
+If y
 
 ## Building the project
 

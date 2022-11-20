@@ -222,16 +222,17 @@ int main(int argc, char** argv)
   cout << output << endl;
 
   auto output_sig = s.forward(output);
-  // cout << output_sig << endl;
+  cout << output_sig << endl;
 
   auto back_sig = s.backward(output);
-  // cout << back_sig << endl;
+  cout << back_sig << endl;
 
   auto loss = loss_function.loss(y, output);
-  // cout << loss << endl;
+  cout << loss << endl;
 
   auto loss_grad = loss_function.gradient(y, output);
-  // cout << loss_grad << endl;
+  cout << loss_grad << endl;
 
-  d.backward(loss_grad);
+  auto back_sig_grad =d.backward(loss_grad);
+  cout << back_sig_grad << endl;
 }

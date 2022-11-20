@@ -6,6 +6,8 @@ CMakeFiles/*
 
 # OWN definitons
 eigen3/
+install/
+build/
 
 ### VisualStudioCode ###
 .vscode/*

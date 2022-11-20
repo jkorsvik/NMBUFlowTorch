@@ -27,6 +27,9 @@ curl -O "https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.zip" && u
 mv $CWD/include/eigen-3.4.0 $CWD/include/eigen3
 #sudo conan install eigen_recipe.py -g=cmake_find_package 
 
+# CLANG for linting
+sudo apt install clang-14 --install-suggests
+
 
 # For automatic documentation generation
 # sudo apt-get install doxygen

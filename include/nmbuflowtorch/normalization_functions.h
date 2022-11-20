@@ -25,8 +25,8 @@ inline VectorXd softmax(VectorXd &y)
 inline VectorXd minmax(VectorXd &y)
 {
 	VectorXd y_norm = y.array();
-	double y_min = y_exp.min();
-    double y_max = y_exp.max();
+	double y_min = y_norm.minCoeff();
+    double y_max = y_norm.maxCoeff();
    
 	return (y_norm.array()-y_min)/(y_max-y_min);
 }

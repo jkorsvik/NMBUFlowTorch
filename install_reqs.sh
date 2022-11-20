@@ -4,6 +4,8 @@ CWD=$(pwd)
 # Update gcc and cmake
 sudo apt update
 sudo apt install build-essential
+# GDB for debugging
+sudo apt-get install gdb
 # unzip
 sudo apt install unzip
 # Cmake for ubuntu

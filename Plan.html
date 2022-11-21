@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Plan.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="neural-network-planning-document">Neural Network planning document</h1>
+<h3 id="tensor-operations">Tensor operations</h3>
+<p>We will be using <a href="https://eigen.tuxfamily.org/index.php?title=Main_Page">Eigen</a> for all operations in tensors such as multiplication, reshape and more.</p>
+<h2 id="project-structure">Project structure</h2>
+<h3 id="layer-class">Layer class</h3>
+<p>Superclass containing all methods and attributes for a neural network layer.</p>
+<p>Methods:</p>
+<ul>
+<li>updateWeights</li>
+<li>forward</li>
+<li>backward</li>
+</ul>
+<p>Inheriting layers:</p>
+<h4 id="input">Input</h4>
+<p>Layer containing all logic for the first layer of a model</p>
+<h4 id="denselayer">DenseLayer</h4>
+<p>Operations done in a dense neural network layer</p>
+<h4 id="sigmoid">Sigmoid</h4>
+<p>Sigmoid activation funcions</p>
+<h4 id="linear">Linear</h4>
+<p>Linear activation function</p>
+<h3 id="model-class">Model class</h3>
+<p>Methods:</p>
+<ul>
+<li>forward</li>
+<li>backward</li>
+<li>add_layer</li>
+<li>predict</li>
+<li>train (might be moved out to a separate trainer class later)</li>
+</ul>
+<h1 id="data-structure">Data structure</h1>
+<h2 id="the-code-and-efficiency">The code and efficiency</h2>
+<p>Object-oriented, with the use of the eigen3 library for matrix-math operations. Eigen3 is a template library consisting purely of headers. Performance-wise eigen3 claim to be quite fast <a href="http://eigen.tuxfamily.org/index.php?title=Benchmark">eigen3 own benchmarks against other c++ matrix libraries</a>.</p>
+<p>Other libraries:</p>
+<ul>
+<li>
+<p><strong>OpenMP</strong>: seems included both in GNU and Clang <a href="https://www.openmp.org/resources/openmp-compilers-tools/">OpenMP</a>.</p>
+</li>
+<li>
+<p><strong>OpenMPI</strong>: Might have to download OpenMPI depending if we find performance gains <a href="https://www.open-mpi.org/doc/current/">OpenMPI</a></p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong>: * Not likely since it seems both pyTorch and Tensorflow have gone for OpenMP for distributing work on the CPU)*</p>
+</blockquote>
+<h2 id="memory-will-be-handled-safely-as-we-will-reuse-the-parameters-underways-for-training">Memory will be handled safely as we will reuse the parameters underways for training.</h2>
+<ul>
+<li>Initialization should be sufficient</li>
+<li>Rewrite auxiliary structure and weights underways</li>
+</ul>
+<h2 id="inefficient-memory">Inefficient memory</h2>
+<ul>
+<li>training data will be loaded and constant right before training</li>
+<li>otherwise, it will be referenced</li>
+</ul>
+<h2 id="data-structures">Data structures</h2>
+<p>We are just gonna use our own defined classes <strong>(mentioned above)</strong>, matrices, and arrays.
+They fit our use case.</p>
+<h1 id="api-example">API example</h1>
+<p>The API is inspired by the functional API found in Keras. We also considered mimicking the API found in PyTorch, but we believe the Keras API is easier to implement and we are more familiar with it.</p>
+<pre class="hljs"><code><div>DenseNeuralNetwork model = Neural Network();
+model.add_layer(Input(<span class="hljs-number">256</span>));
+model.add_layer(DenseLayer(<span class="hljs-number">128</span>));
+model.add_layer(Sigmoid());
+model.add_layer(DenseLayer(<span class="hljs-number">64</span>));
+model.add_layer(Sigmoid());
+
+model.train(...);
+
+predictions = model.predict(...);
+</div></code></pre>
+<h1 id="concurrency">Concurrency</h1>
+<p>We plan to implement concurrency by splitting the forward and backward passes in the train loop across processes. For example, with a batch size of 4 and 4 processes, the network will process 4*4=16 datapoints at the same time. After the forward pass, the different processes will sync up and reduce to a loss shared by all processes. The loss will then be backpropagated with the same 4*4 data points simultaneously.</p>
+<p>We are not sure how this will affect the runtime of our software due to the overhead from the concurrency operations, but implementing it will still be a good learning experience. There are also other ways of parallelizing neural network training, but we believe this is the most realistic way to implement it due to time and complexity constraints.</p>
+<p>Some other methods include:</p>
+<ul>
+<li>Splitting batches into tasks by sample and distributing them evenly among the workers, sync at the end of a forward pass, and the same for the backward pass.</li>
+<li>A hybrid between the first method and the method above.</li>
+</ul>
+<p>There is also a possibility to make eigen3 operations multi-threaded https://eigen.tuxfamily.org/dox/TopicMultiThreading.html</p>
+<h1 id="time-complexities">Time complexities</h1>
+<p>Time complexities are hard to determine as they will depend on the sizes of input, number of hidden layers, hidden layer sizes, and number of outputs.</p>
+<p>In simple case scenario, should be around <code>O(N*M*L)</code></p>
+<p>N = number of nodes in a layer</p>
+<p>M = Sigmoid/relu/.. complexity of activation function</p>
+<p>L = number of layers</p>
+<p>Complications arise as we change/add a variety of activation functions, layer sizes, shape transformations, filter functions, neuron dropping, etc.</p>
+<p>However, we can estimate a worst-case scenario where the forward pass has a worst-case O(n^3) where n = max(sizes of input, number of hidden layers, hidden layer sizes, and number of outputs). This is due to the time complexity of the standard matrix multiplication algorithm being O(n^3) (There might be a slightly more efficient algorithm being used in eigen3, not sure about this)</p>
+
+</body>
+</html>

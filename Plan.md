@@ -55,7 +55,7 @@ predictions = model.predict(...);
 
 # Concurrency
 
-We plan to implement concurrency by splitting the forward and backward passes in the train loop across processes. For example, with a batch size of 4 and 4 processes, the network will process 4*4=6 datapoints at the same time. After the forward pass, the different processess will sync up and reduce to a loss shared by all processes. The loss will hten be backpropagated with the same 4*4 datapoints simultaneously.
+We plan to implement concurrency by splitting the forward and backward passes in the train loop across processes. For example, with a batch size of 4 and 4 processes, the network will process 4*4=16 datapoints at the same time. After the forward pass, the different processess will sync up and reduce to a loss shared by all processes. The loss will they be backpropagated with the same 4*4 datapoints simultaneously.
 
 We are not sure how this will effect the runtime of our software due to the overhead from the concurrency-operations, but implementing it will still be a good learning experience. 
 

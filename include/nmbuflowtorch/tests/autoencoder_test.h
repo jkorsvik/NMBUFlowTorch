@@ -1,7 +1,7 @@
 #ifndef SRC_TESTS_AUTOENCODER_TEST_H_
 #define SRC_TESTS_AUTOENCODER_TEST_H_
 
-#include "nmbuflowtorch/Models/Autoencoder.h"
+#include "../Models/Autoencoder.h"
 
 int ae_test()
 {

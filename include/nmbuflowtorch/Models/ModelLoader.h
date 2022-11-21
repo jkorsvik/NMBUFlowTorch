@@ -8,8 +8,8 @@
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/json_parser.hpp>
 
-#include "nmbuflowtorch/Layer.h"
-#include "nmbuflowtorch/activation_functions.h"
+#include "../Layer.h"
+#include "../activation_functions.h"
 
 using namespace boost::property_tree;
 

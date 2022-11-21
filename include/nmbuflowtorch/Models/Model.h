@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 
-#include "nmbuflowtorch/propagation.h"
+#include "../propagation.h"
 #include "ModelLoader.h"
 
 #define DEFAULT_OPTIMIZER_OUTPUT_SET -1

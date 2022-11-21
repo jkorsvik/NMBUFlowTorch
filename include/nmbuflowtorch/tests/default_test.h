@@ -1,15 +1,15 @@
 #pragma once
 
-#include "nmbuflowtorch/Models/Model.h"
-#include "nmbuflowtorch/Models/ModelLoader.h"
-#include "nmbuflowtorch/Models/Autoencoder.h"
+#include "../Models/Model.h"
+#include "../Models/ModelLoader.h"
+#include "../Models/Autoencoder.h"
 
 #define EXAMPLE_JSON_MODEL "example_model.json"
 
-using namespace SANN;
+//using namespace SANN;
 
 
-int default_test()
+int _default_test()
 {
 	MatrixXd data_mat(4,8); data_mat << 1,2,3,2,3,2,1,0,
 										1,2,3,2,3,2,1,0,
@@ -45,8 +45,8 @@ int default_test()
 	std::cout<<"data with noise: \n"<<data_with_noise<<std::endl;
 	std::cout<<"results: \n"<<results<<std::endl;
 
-	std::shared_ptr<Autoencoder> loaded_model;
-	Autoencoder::load_model_from_file(EXAMPLE_JSON_MODEL,loaded_model);
+	std::shared_ptr<SANN::Autoencoder> loaded_model;
+	SANN::Autoencoder::load_model_from_file(EXAMPLE_JSON_MODEL,loaded_model);
 
 	std::cout<<"Loaded model: "<<loaded_model->get_list_of_layers().front()->get_layer_size()<<std::endl;
 

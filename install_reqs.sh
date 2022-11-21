@@ -1,4 +1,4 @@
-# bin/sh
+# bin/bash
 CWD=$(pwd)
 # Required files
 # Update gcc and cmake
@@ -6,6 +6,16 @@ sudo apt update
 sudo apt install build-essential
 # GDB for debugging
 sudo apt-get install gdb
+
+# install gdb extensions as well for eigen
+TEMP="$CWD/_gdb_extension"
+cat _gdb_extension/gdbinit.txt > _gdb_extension/gdbinit.txt.temp
+pattern="s%<REPLACEMEWITHPATH>%${TEMP}%g"
+sed -i $pattern _gdb_extension/gdbinit.txt.temp  
+cat _gdb_extension/gdbinit.txt.temp > ~/.gdbinit
+
+# It aint stupid if it works
+
 # unzip
 sudo apt install unzip
 # Cmake for ubuntu

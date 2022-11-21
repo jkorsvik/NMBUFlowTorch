@@ -4,7 +4,7 @@
 [![codecov](https://codecov.io/gh/jkorsvik/NMBUFlowTorch/branch/master/graph/badge.svg)](https://codecov.io/gh/jkorsvik/NMBUFlowTorch)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/jkorsvik/NMBUFlowTorch)](https://github.com/jkorsvik/NMBUFlowTorch/releases)
 
-# NMBUFlowTorch
+# NMBUFlowTorch 
 
 A simple C++ implementation of Neural Nets, inspired by the functionality of Tensorflow and pyTorch.
 

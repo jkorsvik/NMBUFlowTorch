@@ -1,5 +1,5 @@
-#ifndef SRC_LOSS_MSE_LOSS_H_
-#define SRC_LOSS_MSE_LOSS_H_
+#ifndef NMBUFLOWTORCH_LOSS_MSE_LOSS_H_
+#define NMBUFLOWTORCH_LOSS_MSE_LOSS_H_
 
 #include "../loss.h"
 
@@ -8,4 +8,4 @@ class MSE: public Loss {
   void evaluate(const Matrix& pred, const Matrix& target);
 };
 
-#endif  // SRC_LOSS_MSE_LOSS_H_
+#endif  // NMBUFLOWTORCH_LOSS_MSE_LOSS_H_

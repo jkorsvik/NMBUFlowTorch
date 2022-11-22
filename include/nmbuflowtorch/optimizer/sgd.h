@@ -1,5 +1,5 @@
-#ifndef SRC_OPTIMIZER_SGD_H_
-#define SRC_OPTIMIZER_SGD_H_
+#ifndef NMBUFLOWTORCH_OPTIMIZER_SGD_H_
+#define NMBUFLOWTORCH_OPTIMIZER_SGD_H_
 
 #include <unordered_map>
 #include "../optimizer.h"
@@ -18,4 +18,4 @@ class SGD : public Optimizer {
   void update(Vector::AlignedMapType& w, Vector::ConstAlignedMapType& dw);
 };
 
-#endif  // SRC_OPTIMIZER_SGD_H_
+#endif  // NMBUFLOWTORCH_OPTIMIZER_SGD_H_

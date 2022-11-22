@@ -1,4 +1,3 @@
-#include "n/cross_entropy_loss.h"
 #include "nmbuflowtorch/loss/cross_entropy_loss.h"
 
 void CrossEntropy::evaluate(const Matrix& pred, const Matrix& target) {

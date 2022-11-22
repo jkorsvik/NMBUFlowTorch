@@ -72,6 +72,8 @@ template *as-is*, meaning using the versions recommended here, then you will nee
 > ***Note:*** *You also need to be able to provide ***CMake*** a supported
 [generator](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html).*
 
+* **Different data** - [MNIST](https://github.com/wichtounet/mnist) AND https://home.bawue.de/~horsch/teaching/inf205/src/image-benchmark.zip *MSVC*,
+*GCC*, *Clang*
 
 ### If using VSCode
 

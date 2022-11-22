@@ -71,5 +71,6 @@
     },
     "C_Cpp.errorSquiggles": "Disabled",
     
-    "files.eol": "\n"
+    "files.eol": "\n",
+    "cmake.configureOnOpen": true
 }

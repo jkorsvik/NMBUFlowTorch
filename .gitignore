@@ -372,3 +372,4 @@ healthchecksdb
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 MigrationBackup/
 /out/build/x64-Debug
+_gdb_extension/gdbinit.txt.temp

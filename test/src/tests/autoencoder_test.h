@@ -1,7 +1,7 @@
 #ifndef SRC_TESTS_AUTOENCODER_TEST_H_
 #define SRC_TESTS_AUTOENCODER_TEST_H_
 
-#include "../Models/Autoencoder.h"
+#include "nmbuflowtorch/Models/Autoencoder.h"
 
 using namespace SANN;
 

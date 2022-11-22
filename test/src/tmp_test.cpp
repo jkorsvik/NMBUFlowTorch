@@ -1,8 +1,8 @@
 #include "nmbuflowtorch/tmp.hpp"
 
 #include <gtest/gtest.h>
-#include "nmbuflowtorch/tests/default_test.h"
-#include "nmbuflowtorch/tests/autoencoder_test.h"
+#include "tests/default_test.h"
+#include "tests/autoencoder_test.h"
 #include <cerrno>
 
 std::vector<std::string> test_type = {"Default","Autoencoder"};

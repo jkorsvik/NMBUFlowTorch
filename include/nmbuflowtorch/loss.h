@@ -1,5 +1,5 @@
-#ifndef LOSS_H_
-#define LOSS_H_
+#ifndef NMBUFLOWTORCH_LOSS_H_
+#define NMBUFLOWTORCH_LOSS_H_
 
 #include "./utils.h"
 
@@ -16,4 +16,4 @@ class Loss {
   virtual const Matrix& back_gradient() { return grad_bottom; }
 };
 
-#endif  // LOSS_H_
+#endif  // NMBUFLOWTORCH_LOSS_H_

@@ -1,5 +1,5 @@
-#ifndef MNIST_H_
-#define MNIST_H_
+#ifndef NMBUFLOWTORCH_MNIST_H_
+#define NMBUFLOWTORCH_MNIST_H_
 
 #include <fstream>
 #include <iostream>
@@ -23,4 +23,4 @@ class MNIST {
   void read();
 };
 
-#endif  // MNIST_H_
+#endif  // NMBUFLOWTORCH_MNIST_H_

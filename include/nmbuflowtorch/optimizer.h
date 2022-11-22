@@ -1,5 +1,5 @@
-#ifndef OPTIMIZER_H_
-#define OPTIMIZER_H_
+#ifndef NMBUFLOWTORCH_OPTIMIZER_H_
+#define NMBUFLOWTORCH_OPTIMIZER_H_
 
 #include "./utils.h"
 
@@ -17,4 +17,4 @@ class Optimizer {
                       Vector::ConstAlignedMapType& dw) = 0;
 };
 
-#endif  // OPTIMIZER_H_
+#endif  // NMBUFLOWTORCH_OPTIMIZER_H_

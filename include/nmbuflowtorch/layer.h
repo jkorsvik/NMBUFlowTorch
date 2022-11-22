@@ -1,5 +1,5 @@
-#ifndef LAYER_H_
-#define LAYER_H_
+#ifndef NMBUFLOWTORCH_LAYER_H_
+#define NMBUFLOWTORCH_LAYER_H_
 
 #include <Eigen/Core>
 #include <vector>

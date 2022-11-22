@@ -1,5 +1,5 @@
-#ifndef UTILS_H_
-#define UTILS_H_
+#ifndef NMBUFLOWTORCH_UTILS_H_
+#define NMBUFLOWTORCH_UTILS_H_
 
 #include <Eigen/Core>
 #include <algorithm>

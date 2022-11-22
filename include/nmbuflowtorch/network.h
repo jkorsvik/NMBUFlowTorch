@@ -1,5 +1,5 @@
-#ifndef NETWORK_H_
-#define NETWORK_H_
+#ifndef NMBUFLOWTORCH_NETWORK_H_
+#define NMBUFLOWTORCH_NETWORK_H_
 
 #include <stdlib.h>
 #include <vector>
@@ -44,4 +44,4 @@ class Network {
                       int seed = -1);
 };
 
-#endif  // NETWORK_H_
+#endif  // NMBUFLOWTORCH_NETWORK_H_

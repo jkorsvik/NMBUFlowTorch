@@ -28,7 +28,8 @@
 
 int main(int argc, char** argv)
 {
-  nmbuflowtorch::MNIST dataset("../data/mnist/");
+  // Load MNIST data - path to folder with data files
+  nmbuflowtorch::MNIST dataset(argv[1]);
   dataset.read();
   int n_train = dataset.train_data.cols();
   int dim_in = dataset.train_data.rows();

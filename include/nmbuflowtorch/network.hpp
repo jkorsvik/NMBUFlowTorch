@@ -5,9 +5,9 @@
 
 #include <vector>
 
-#include "./layer.h"
-#include "./loss.h"
-#include "./optimizer.h"
+#include "./layer.hpp"
+#include "./loss.hpp"
+#include "./optimizer.hpp"
 #include "./utils.h"
 
 namespace nmbuflowtorch

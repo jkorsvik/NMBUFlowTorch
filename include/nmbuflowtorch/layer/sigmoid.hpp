@@ -1,7 +1,7 @@
 #ifndef NMBUFLOWTORCH_LAYER_SIGMOID_H_
 #define NMBUFLOWTORCH_LAYER_SIGMOID_H_
 
-#include "../Layer.hpp"
+#include "../layer.hpp"
 #include "Eigen/Dense"
 namespace nmbuflowtorch::layer
 {

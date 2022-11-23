@@ -1,7 +1,7 @@
 #ifndef NMBUFLOWTORCH_LOSS_CROSS_ENTROPY_LOSS_H_
 #define NMBUFLOWTORCH_LOSS_CROSS_ENTROPY_LOSS_H_
 
-#include "../Loss.hpp"
+#include "../loss.hpp"
 #include "Eigen/Dense"
 
 namespace nmbuflowtorch::loss

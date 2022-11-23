@@ -3,8 +3,8 @@
 
 #include <vector>
 
-#include "../Layer.hpp"
-#include "../Optimizer.hpp"
+#include "../layer.hpp"
+#include "../optimizer.hpp"
 #include "Eigen/Dense"
 
 namespace nmbuflowtorch::layer
@@ -20,9 +20,6 @@ namespace nmbuflowtorch::layer
     Eigen::MatrixXd grad_weights;
     Eigen::MatrixXd grad_bias;
 
-    Optimizer weight_optimizer;
-    Optimizer bias_optimizer;
-
     void set_weight_optimizer(Optimizer& opt)
     {
       weight_optimizer = opt;
@@ -35,7 +32,13 @@ namespace nmbuflowtorch::layer
     void init();
 
    public:
-    Dense(const int input_shape, const int units) : input_shape(input_shape), units(units)
+    Dense(const int input_shape, const int units)
+        : input_shape(input_shape),
+          units(units),
+          weights(weights),
+          bias(bias),
+          grad_weights(grad_weights),
+          grad_bias(grad_bias)
     {
       init();
     }
@@ -46,11 +49,13 @@ namespace nmbuflowtorch::layer
       set_bias_optimizer(opt);
     }
 
-    Eigen::MatrixXd forward(const Eigen::MatrixXd& X);
+    void forward(const Eigen::MatrixXd& X);
     // TODO : Add backward function with const reference argument
-    Eigen::MatrixXd backward(Eigen::MatrixXd& accumulated_gradients);
-    // void update(Optimizer& opt);
-    int output_dim()
+    void backward(const Eigen::MatrixXd& X, const Eigen::MatrixXd& accumulated_gradients);
+
+    void update(Optimizer& opt);
+
+    int output_dim() final
     {
       return units;
     }

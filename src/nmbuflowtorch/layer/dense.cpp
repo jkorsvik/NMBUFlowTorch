@@ -1,9 +1,5 @@
 #include "nmbuflowtorch/layer/dense.hpp"
 
-#include "nmbuflowtorch/Optimizer.hpp"
-
-#
-
 namespace nmbuflowtorch::layer
 {
 
@@ -11,6 +7,8 @@ namespace nmbuflowtorch::layer
   {
     weights = Eigen::MatrixXd::Random(input_shape, units);  // TODO: annen initialisering? Tror det er -1 til 1 her
     bias = Eigen::MatrixXd::Zero(1, units);
+    grad_weights = Eigen::MatrixXd::Zero(input_shape, units);
+    grad_bias = Eigen::MatrixXd::Zero(1, units);
   }
 
   Eigen::MatrixXd Dense::forward(const Eigen::MatrixXd& X)

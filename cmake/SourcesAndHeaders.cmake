@@ -28,10 +28,10 @@ set(optimizer_sources
 
 set(headers
   include/nmbuflowtorch/tmp.hpp # REMOVE ME
-  include/nmbuflowtorch/Layer.hpp
-  include/nmbuflowtorch/Loss.hpp
-  include/nmbuflowtorch/Optimizer.hpp
-  #include/nmbuflowtorch/Network.hpp
+  include/nmbuflowtorch/layer.hpp
+  include/nmbuflowtorch/loss.hpp
+  include/nmbuflowtorch/optimizer.hpp
+  include/nmbuflowtorch/network.hpp
   #include/nmbuflowtorch/mnist.h
   #include/nmbuflowtorch/utils.h
   ${loss_headers}
@@ -42,7 +42,6 @@ set(headers
 
 set(sources
   src/tmp.cpp # REMOVE ME
-  src/main.cpp
   #src/nmbuflowtorch/network.cc
   #src/nmbuflowtorch/mnist.cc
   ${layer_sources}

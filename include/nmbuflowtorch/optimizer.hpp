@@ -9,15 +9,8 @@ namespace nmbuflowtorch
    protected:             // Private but accesible to derived classes
     float learning_rate;  // learning rate
 
-   private:
-    Eigen::MatrixXd weight_update;
-    bool weight_init = false;  // float decay;  // weight decay factor (default: 0)
-
    public:
-    explicit Optimizer(float learning_rate = 0.01)
-        : learning_rate(learning_rate),
-          weight_update(weight_update),
-          weight_init(weight_init)
+    explicit Optimizer(float learning_rate = 0.01) : learning_rate(learning_rate)
     {
     }
     virtual ~Optimizer()

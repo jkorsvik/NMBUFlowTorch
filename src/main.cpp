@@ -3,7 +3,7 @@
 #include <ostream>
 
 #include "Eigen/Dense"
-#include "nmbuflowtorch/Layer.hpp"
+#include "nmbuflowtorch/layer.hpp"
 #include "nmbuflowtorch/layer/dense.hpp"
 #include "nmbuflowtorch/layer/sigmoid.hpp"
 #include "nmbuflowtorch/tmp.hpp"
@@ -16,7 +16,7 @@ int main(int argc, char** argv)
 {
   // Sammenligner med utregninger fra https://theneuralblog.com/forward-pass-backpropagation-example/
 
-  nmbuflowtorch::layer::Dense d(2, 2);
+  nmbuflowtorch::Layer* dense1 = new nmbuflowtorch::layer::Dense(2, 2);
 
   // Eigen::MatrixXd W = Eigen::MatrixXd(2, 2);
   // W << 0.1, 0.2, 0.3, 0.4;

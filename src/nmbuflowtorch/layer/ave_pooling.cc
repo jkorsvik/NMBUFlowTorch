@@ -2,6 +2,9 @@
 #include <math.h>
 #include <iostream>
 
+
+namespace nmbuflowtorch::layer {
+
 void AvePooling::init() {
   channel_out = channel_in;
   height_out = (1 + std::ceil((height_in - height_pool) * 1.0 / stride));
@@ -67,3 +70,4 @@ void AvePooling::backward(const Matrix& bottom, const Matrix& grad_top) {
     }
   }
 }
+} // namespace nmbuflowtorch::layer

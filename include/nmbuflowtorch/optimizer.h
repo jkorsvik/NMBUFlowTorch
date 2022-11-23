@@ -2,7 +2,7 @@
 #define NMBUFLOWTORCH_OPTIMIZER_H_
 
 #include "./utils.h"
-
+namespace nmbuflowtorch {
 class Optimizer {
  protected:
   float lr;  // learning rate
@@ -16,5 +16,5 @@ class Optimizer {
   virtual void update(Vector::AlignedMapType& w,
                       Vector::ConstAlignedMapType& dw) = 0;
 };
-
+}  // namespace nmbuflowtorch
 #endif  // NMBUFLOWTORCH_OPTIMIZER_H_

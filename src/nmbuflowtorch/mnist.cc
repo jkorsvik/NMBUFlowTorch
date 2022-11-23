@@ -1,5 +1,7 @@
 #include "nmbuflowtorch/mnist.h"
 
+namespace nmbuflowtorch {
+
 int ReverseInt(int i) {
   unsigned char ch1, ch2, ch3, ch4;
   ch1 = i & 255;
@@ -64,3 +66,4 @@ void MNIST::read() {
   read_mnist_label(data_dir + "train-labels-idx1-ubyte", train_labels);
   read_mnist_label(data_dir + "t10k-labels-idx1-ubyte", test_labels);
 }
+}  // namespace nmbuflowtorch

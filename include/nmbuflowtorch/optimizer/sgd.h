@@ -3,7 +3,7 @@
 
 #include <unordered_map>
 #include "../optimizer.h"
-
+namespace nmbuflowtorch::optimizer {
 class SGD : public Optimizer {
  private:
   float momentum;  // momentum factor (default: 0)
@@ -17,5 +17,5 @@ class SGD : public Optimizer {
 
   void update(Vector::AlignedMapType& w, Vector::ConstAlignedMapType& dw);
 };
-
+} // namespace nmbuflowtorch::optimizer
 #endif  // NMBUFLOWTORCH_OPTIMIZER_SGD_H_

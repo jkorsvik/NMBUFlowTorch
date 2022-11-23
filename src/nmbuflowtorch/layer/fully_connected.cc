@@ -1,5 +1,8 @@
 #include "nmbuflowtorch/layer/fully_connected.h"
 
+
+namespace nmbuflowtorch::layer {
+
 void FullyConnected::init() {
   weight.resize(dim_in, dim_out);
   bias.resize(dim_out);
@@ -64,3 +67,5 @@ std::vector<float> FullyConnected::get_derivatives() const {
             res.begin() + grad_weight.size());
   return res;
 }
+
+} // namespace nmbuflowtorch::layer

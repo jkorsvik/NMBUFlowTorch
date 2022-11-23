@@ -1,5 +1,7 @@
 #include "nmbuflowtorch/layer/sigmoid.h"
 
+namespace nmbuflowtorch::layer {
+
 void Sigmoid::forward(const Matrix& bottom) {
   // a = 1 / (1 + exp(-z))
   top.array() = 1.0 / (1.0 + (-bottom).array().exp());
@@ -11,3 +13,5 @@ void Sigmoid::backward(const Matrix& bottom, const Matrix& grad_top) {
   Matrix da_dz = top.array().cwiseProduct(1.0 - top.array());
   grad_bottom = grad_top.cwiseProduct(da_dz);
 }
+  
+  } // namespace nmbuflowtorch::layer

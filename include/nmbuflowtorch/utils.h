@@ -12,6 +12,8 @@ typedef Eigen::Array<float, 1, Eigen::Dynamic> RowVector;
 
 static std::default_random_engine generator;
 
+namespace nmbuflowtorch {
+
 // Normal distribution: N(mu, sigma^2)
 inline void set_normal_random(float* arr, int n, float mu, float sigma) {
   std::normal_distribution<float> distribution(mu, sigma);
@@ -51,5 +53,8 @@ inline float compute_accuracy(const Matrix& preditions, const Matrix& labels) {
   }
   return acc / n;
 }
+
+
+}  // namespace nmbuflowtorch
 
 #endif  // UTILS_H_

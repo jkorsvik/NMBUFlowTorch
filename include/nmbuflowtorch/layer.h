@@ -6,6 +6,8 @@
 #include "./utils.h"
 #include "./optimizer.h"
 
+namespace nmbuflowtorch {
+
 class Layer {
  protected:
   Matrix top;  // layer output
@@ -26,5 +28,6 @@ class Layer {
           { return std::vector<float>(); }
   virtual void set_parameters(const std::vector<float>& param) {}
 };
-
+        
+        }  // namespace nmbuflowtorch
 #endif  // LAYER_H_

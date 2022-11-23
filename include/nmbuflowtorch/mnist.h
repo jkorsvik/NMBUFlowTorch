@@ -6,6 +6,7 @@
 #include <string>
 #include "./utils.h"
 
+namespace nmbuflowtorch {
 class MNIST {
  private:
   std::string data_dir;
@@ -22,5 +23,5 @@ class MNIST {
   explicit MNIST(std::string data_dir) : data_dir(data_dir) {}
   void read();
 };
-
+}  // namespace nmbuflowtorch
 #endif  // NMBUFLOWTORCH_MNIST_H_

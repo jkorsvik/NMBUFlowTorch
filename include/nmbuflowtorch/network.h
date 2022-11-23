@@ -8,6 +8,8 @@
 #include "./optimizer.h"
 #include "./utils.h"
 
+namespace nmbuflowtorch {
+
 class Network {
  private:
   std::vector<Layer*> layers;  // layer pointers
@@ -43,5 +45,5 @@ class Network {
   void check_gradient(const Matrix& input, const Matrix& target, int n_points,
                       int seed = -1);
 };
-
+}  // namespace nmbuflowtorch
 #endif  // NMBUFLOWTORCH_NETWORK_H_

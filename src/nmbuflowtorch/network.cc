@@ -1,5 +1,7 @@
 #include "nmbuflowtorch/network.h"
 
+namespace nmbuflowtorch {
+
 void Network::forward(const Matrix& input) {
   if (layers.empty())
     return;
@@ -110,3 +112,4 @@ void Network::check_gradient(const Matrix& input, const Matrix& target,
   // Restore original parameters
   this->set_parameters(param);
 }
+}  // namespace nmbuflowtorch

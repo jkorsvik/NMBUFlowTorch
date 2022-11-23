@@ -2,6 +2,9 @@
 #include <math.h>
 #include <iostream>
 
+
+namespace nmbuflowtorch::layer {
+
 void Conv::init() {
   height_out = (1 + (height_in - height_kernel + 2 * pad_h) / stride);
   width_out =   (1 + (width_in - width_kernel + 2 * pad_w) / stride);
@@ -154,3 +157,4 @@ std::vector<float> Conv::get_derivatives() const {
             res.begin() + grad_weight.size());
   return res;
 }
+} // namespace nmbuflowtorch::layer 

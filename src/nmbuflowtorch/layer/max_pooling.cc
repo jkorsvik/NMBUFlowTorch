@@ -3,6 +3,9 @@
 #include <limits>
 #include <iostream>
 
+
+namespace nmbuflowtorch::layer {
+
 void MaxPooling::init() {
   channel_out = channel_in;
   height_out = (1 + std::ceil((height_in - height_pool) * 1.0 / stride));
@@ -52,3 +55,4 @@ void MaxPooling::backward(const Matrix& bottom, const Matrix& grad_top) {
     }
   }
 }
+} // namespace nmbuflowtorch::layer

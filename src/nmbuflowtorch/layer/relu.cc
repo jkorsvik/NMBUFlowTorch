@@ -1,5 +1,7 @@
 #include "nmbuflowtorch/layer/relu.h"
 
+namespace nmbuflowtorch::layer {
+
 void ReLU::forward(const Matrix& bottom) {
   // a = z*(z>0)
   top = bottom.cwiseMax(0.0);
@@ -11,3 +13,4 @@ void ReLU::backward(const Matrix& bottom, const Matrix& grad_top) {
   Matrix positive = (bottom.array() > 0.0).cast<float>();
   grad_bottom = grad_top.cwiseProduct(positive);
 }
+}  // namespace nmbuflowtorch::layer

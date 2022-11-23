@@ -1,5 +1,6 @@
 #include "nmbuflowtorch/layer/softmax.h"
 
+namespace nmbuflowtorch::layer {
 void Softmax::forward(const Matrix& bottom) {
   // a = exp(z) / \sum{ exp(z) }
   top.array() = (bottom.rowwise() - bottom.colwise().maxCoeff()).array().exp();
@@ -15,3 +16,4 @@ void Softmax::backward(const Matrix& bottom, const Matrix& grad_top) {
   grad_bottom.array() = top.array().cwiseProduct(grad_top.array().rowwise()
                                                  - temp_sum);
 }
+} // namespace nmbuflowtorch::layer

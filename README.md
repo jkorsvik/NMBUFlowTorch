@@ -108,7 +108,10 @@ source install_reqs.sh
 ```bash
 source automatic_rebuild_and_install.sh
 ```
-
+***If you just want to rebuild fast and you are happy with the install location, run:***
+```bash
+source cached_build_and_install.sh
+```
 The executables of the project will then be in the 
 
 To install an already built project, you need to run the `install` target with CMake.

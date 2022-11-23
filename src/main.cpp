@@ -29,13 +29,16 @@
 // using namespace nmbuflowtorch::optimizer;
 // using namespace nmbuflowtorch;
 
-constexpr THREAD_NUM 4;
+// constexpr THREAD_NUM 4;
 
 int main(int argc, char** argv)
 {
   // Load MNIST data - path to folder with data files
-  // nmbuflowtorch::MNIST dataset(argv[1]);
-  nmbuflowtorch::MNIST dataset("data/mnist/");
+  nmbuflowtorch::MNIST dataset(argv[1]);
+  // nmbuflowtorch::MNIST dataset("data/mnist/");
+  std::cout << "ISAK er mr. kjempekuk" << std::endl;
+  std::cout << "OG Jens er sjæææfskuk" << std::endl;
+  
   dataset.read();
   int n_train = dataset.train_data.cols();
   int dim_in = dataset.train_data.rows();
@@ -71,15 +74,15 @@ int main(int argc, char** argv)
   // SGD opt(0.001);
   const int n_epoch = 5;
   const int batch_size = 128;
-  omp_set_thread_num(THREAD_NUM);  // set number of threads in "parallel" blocks
+  //omp_set_thread_num(THREAD_NUM);  // set number of threads in "parallel" blocks
 
   for (int epoch = 0; epoch < n_epoch; epoch++)
   {
     nmbuflowtorch::shuffle_data(dataset.train_data, dataset.train_labels);
 
-    std::cout << "Number of available threads: " << omp_get_num_thread() << std::endl;
+    // std::cout << "Number of available threads: " << omp_get_num_thread() << std::endl;
 
-#pragma omp parallel for {
+// #pragma omp parallel for {
     for (int start_idx = 0; start_idx < n_train; start_idx += batch_size)
     {
       int ith_batch = start_idx / batch_size;
@@ -99,13 +102,13 @@ int main(int argc, char** argv)
         std::cout << ith_batch << "-th batch, loss: " << dnn.get_loss() << std::endl;
       }
 // optimize
-#pragma omp critical
-      {
-        opt.optimize(dnn);
-      }
+//#pragma omp critical
+//      {
+//        opt.optimize(dnn);
+//      }
       dnn.update(opt);
     }
-  }
+ // }
   // test
   dnn.forward(dataset.test_data);
   float acc = nmbuflowtorch::compute_accuracy(dnn.output(), dataset.test_labels);

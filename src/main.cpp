@@ -28,7 +28,8 @@
 // using namespace nmbuflowtoch::loss;
 // using namespace nmbuflowtorch::optimizer;
 // using namespace nmbuflowtorch;
-#define THREAD_NUM 4
+
+constexpr THREAD_NUM 4;
 
 int main(int argc, char** argv)
 {

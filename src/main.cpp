@@ -1,3 +1,6 @@
+#include <omp.h>
+#include <unistd.h>
+
 #include <Eigen/Dense>
 #include <algorithm>
 #include <cmath>
@@ -25,6 +28,7 @@
 // using namespace nmbuflowtoch::loss;
 // using namespace nmbuflowtorch::optimizer;
 // using namespace nmbuflowtorch;
+#define THREAD_NUM 4
 
 int main(int argc, char** argv)
 {
@@ -66,9 +70,15 @@ int main(int argc, char** argv)
   // SGD opt(0.001);
   const int n_epoch = 5;
   const int batch_size = 128;
+  omp_set_thread_num(THREAD_NUM);  // set number of threads in "parallel" blocks
+
   for (int epoch = 0; epoch < n_epoch; epoch++)
   {
     nmbuflowtorch::shuffle_data(dataset.train_data, dataset.train_labels);
+
+    std::cout << "Number of available threads: " << omp_get_num_thread() << std::endl;
+
+#pragma omp parallel for {
     for (int start_idx = 0; start_idx < n_train; start_idx += batch_size)
     {
       int ith_batch = start_idx / batch_size;
@@ -87,15 +97,20 @@ int main(int argc, char** argv)
       {
         std::cout << ith_batch << "-th batch, loss: " << dnn.get_loss() << std::endl;
       }
-      // optimize
+// optimize
+#pragma omp critical
+      {
+        opt.optimize(dnn);
+      }
       dnn.update(opt);
     }
-    // test
-    dnn.forward(dataset.test_data);
-    float acc = nmbuflowtorch::compute_accuracy(dnn.output(), dataset.test_labels);
-    std::cout << std::endl;
-    std::cout << epoch + 1 << "-th epoch, test acc: " << acc << std::endl;
-    std::cout << std::endl;
   }
-  return 0;
+  // test
+  dnn.forward(dataset.test_data);
+  float acc = nmbuflowtorch::compute_accuracy(dnn.output(), dataset.test_labels);
+  std::cout << std::endl;
+  std::cout << epoch + 1 << "-th epoch, test acc: " << acc << std::endl;
+  std::cout << std::endl;
+}
+return 0;
 }

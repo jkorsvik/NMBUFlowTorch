@@ -16,6 +16,12 @@ cat _gdb_extension/gdbinit.txt.temp > ~/.gdbinit
 
 # It aint stupid if it works
 
+# clang-tidy for linting
+sudo apt-get install clang-tidy 
+
+# cpp check for static analysis
+sudo apt-get install cppcheck
+
 # unzip
 sudo apt install unzip
 # Cmake for ubuntu

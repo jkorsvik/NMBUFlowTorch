@@ -1,120 +1,52 @@
-#include <omp.h>
-#include <unistd.h>
-
-#include <Eigen/Dense>
-#include <algorithm>
 #include <cmath>
 #include <iostream>
-#include <vector>
+#include <ostream>
 
-#include "nmbuflowtorch/layer.h"
-#include "nmbuflowtorch/layer/ave_pooling.h"
-#include "nmbuflowtorch/layer/conv.h"
-#include "nmbuflowtorch/layer/fully_connected.h"
-#include "nmbuflowtorch/layer/max_pooling.h"
-#include "nmbuflowtorch/layer/relu.h"
-#include "nmbuflowtorch/layer/sigmoid.h"
-#include "nmbuflowtorch/layer/softmax.h"
-#include "nmbuflowtorch/loss.h"
-#include "nmbuflowtorch/loss/cross_entropy_loss.h"
-#include "nmbuflowtorch/loss/mse_loss.h"
-#include "nmbuflowtorch/mnist.h"
-#include "nmbuflowtorch/network.h"
-#include "nmbuflowtorch/optimizer.h"
-#include "nmbuflowtorch/optimizer/sgd.h"
+#include "Eigen/Dense"
+#include "nmbuflowtorch/Layer.hpp"
+#include "nmbuflowtorch/layer/dense.hpp"
+#include "nmbuflowtorch/layer/sigmoid.hpp"
 #include "nmbuflowtorch/tmp.hpp"
 
-// using namespace nmbuflowtorch::layer;
-// using namespace nmbuflowtoch::loss;
-// using namespace nmbuflowtorch::optimizer;
-// using namespace nmbuflowtorch;
+using namespace std;
 
-// constexpr THREAD_NUM 4;
+#include <vector>
 
 int main(int argc, char** argv)
 {
-  // Load MNIST data - path to folder with data files
-  nmbuflowtorch::MNIST dataset(argv[1]);
-  // nmbuflowtorch::MNIST dataset("data/mnist/");
-  std::cout << "ISAK er mr. kjempekuk" << std::endl;
-  std::cout << "OG Jens er sjæææfskuk" << std::endl;
-  
-  dataset.read();
-  int n_train = dataset.train_data.cols();
-  int dim_in = dataset.train_data.rows();
-  std::cout << "mnist train number: " << n_train << std::endl;
-  std::cout << "mnist test number: " << dataset.test_labels.cols() << std::endl;
-  // dnn
-  nmbuflowtorch::Network dnn;
-  nmbuflowtorch::Layer* conv1 = new nmbuflowtorch::layer::Conv(1, 28, 28, 4, 5, 5, 2, 2, 2);
-  nmbuflowtorch::Layer* pool1 = new nmbuflowtorch::layer::MaxPooling(4, 14, 14, 2, 2, 2);
-  nmbuflowtorch::Layer* conv2 = new nmbuflowtorch::layer::Conv(4, 7, 7, 16, 5, 5, 1, 2, 2);
-  nmbuflowtorch::Layer* pool2 = new nmbuflowtorch::layer::MaxPooling(16, 7, 7, 2, 2, 2);
-  nmbuflowtorch::Layer* fc3 = new nmbuflowtorch::layer::FullyConnected(pool2->output_dim(), 32);
-  nmbuflowtorch::Layer* fc4 = new nmbuflowtorch::layer::FullyConnected(32, 10);
-  nmbuflowtorch::Layer* relu1 = new nmbuflowtorch::layer::ReLU;
-  nmbuflowtorch::Layer* relu2 = new nmbuflowtorch::layer::ReLU;
-  nmbuflowtorch::Layer* relu3 = new nmbuflowtorch::layer::ReLU;
-  nmbuflowtorch::Layer* softmax = new nmbuflowtorch::layer::Softmax;
-  dnn.add_layer(conv1);
-  dnn.add_layer(relu1);
-  dnn.add_layer(pool1);
-  dnn.add_layer(conv2);
-  dnn.add_layer(relu2);
-  dnn.add_layer(pool2);
-  dnn.add_layer(fc3);
-  dnn.add_layer(relu3);
-  dnn.add_layer(fc4);
-  dnn.add_layer(softmax);
-  // loss
-  nmbuflowtorch::Loss* loss = new nmbuflowtorch::loss::CrossEntropy;
-  dnn.add_loss(loss);
-  // train & test
-  nmbuflowtorch::optimizer::SGD opt(0.001, 5e-4, 0.9, true);
-  // SGD opt(0.001);
-  const int n_epoch = 5;
-  const int batch_size = 128;
-  //omp_set_thread_num(THREAD_NUM);  // set number of threads in "parallel" blocks
+  // Sammenligner med utregninger fra https://theneuralblog.com/forward-pass-backpropagation-example/
 
-  for (int epoch = 0; epoch < n_epoch; epoch++)
-  {
-    nmbuflowtorch::shuffle_data(dataset.train_data, dataset.train_labels);
+  nmbuflowtorch::layer::Dense d(2, 2);
 
-    // std::cout << "Number of available threads: " << omp_get_num_thread() << std::endl;
+  // Eigen::MatrixXd W = Eigen::MatrixXd(2, 2);
+  // W << 0.1, 0.2, 0.3, 0.4;
+  // d.set_weights(W);
 
-// #pragma omp parallel for {
-    for (int start_idx = 0; start_idx < n_train; start_idx += batch_size)
-    {
-      int ith_batch = start_idx / batch_size;
-      Matrix x_batch = dataset.train_data.block(0, start_idx, dim_in, std::min(batch_size, n_train - start_idx));
-      Matrix label_batch = dataset.train_labels.block(0, start_idx, 1, std::min(batch_size, n_train - start_idx));
-      Matrix target_batch = nmbuflowtorch::one_hot_encode(label_batch, 10);
-      if (false && ith_batch % 10 == 1)
-      {
-        std::cout << ith_batch << "-th grad: " << std::endl;
-        dnn.check_gradient(x_batch, target_batch, 10);
-      }
-      dnn.forward(x_batch);
-      dnn.backward(x_batch, target_batch);
-      // display
-      if (ith_batch % 50 == 0)
-      {
-        std::cout << ith_batch << "-th batch, loss: " << dnn.get_loss() << std::endl;
-      }
-// optimize
-//#pragma omp critical
-//      {
-//        opt.optimize(dnn);
-//      }
-      dnn.update(opt);
-    }
- // }
-  // test
-  dnn.forward(dataset.test_data);
-  float acc = nmbuflowtorch::compute_accuracy(dnn.output(), dataset.test_labels);
-  std::cout << std::endl;
-  std::cout << epoch + 1 << "-th epoch, test acc: " << acc << std::endl;
-  std::cout << std::endl;
-}
-return 0;
+  // CrossEntropy loss_function = CrossEntropy();
+
+  // Sigmoid s = Sigmoid();
+
+  // Eigen::MatrixXd y = Eigen::MatrixXd(2, 2);
+  // y << 0.05, 0.95, 0.05, 0.95;
+
+  // Eigen::MatrixXd X = Eigen::MatrixXd(2, 2);
+  // X << 0.1, 0.5, 0.1, 0.5;
+
+  // auto output = d.forward(X);
+  // cout << output << endl;
+
+  // auto output_sig = s.forward(output);
+  // cout << output_sig << endl;
+
+  // auto back_sig = s.backward(output);
+  // cout << back_sig << endl;
+
+  // auto loss = loss_function.loss(y, output);
+  // cout << loss << endl;
+
+  // auto loss_grad = loss_function.gradient(y, output);
+  // cout << loss_grad << endl;
+
+  // auto back_sig_grad =.backward(loss_grad);
+  // cout << back_sig_grad << endl;
 }

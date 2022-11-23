@@ -5,6 +5,7 @@ set(layer_headers
   include/nmbuflowtorch/layer/relu.h
   include/nmbuflowtorch/layer/sigmoid.h
   include/nmbuflowtorch/layer/softmax.h
+  include/nmbuflowtorch/layer/max_pooling.h
 )
 
 set(layer_sources
@@ -14,6 +15,7 @@ set(layer_sources
   src/nmbuflowtorch/layer/relu.cc
   src/nmbuflowtorch/layer/sigmoid.cc
   src/nmbuflowtorch/layer/softmax.cc
+  src/nmbuflowtorch/layer/max_pooling.cc
 )
 
 set(loss_headers

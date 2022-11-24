@@ -5,10 +5,10 @@
 
 #include <vector>
 
+#include "./definitions.hpp"
 #include "./layer.hpp"
 #include "./loss.hpp"
 #include "./optimizer.hpp"
-#include "./utils.h"
 
 namespace nmbuflowtorch
 {
@@ -19,18 +19,20 @@ namespace nmbuflowtorch
     std::vector<Layer*> layers;  // layer pointers
     Loss* loss;                  // loss pointer
 
-    void train_batch(){};
+    // make public?
 
    public:
-    Network(Loss loss = NULL){};
+    Network() : loss(NULL){};
     ~Network()
     {
       for (int i = 0; i < layers.size(); i++)
       {
+        // delete value and pointers
         delete layers[i];
       }
       if (loss)
       {
+        // delete value and pointer
         delete loss;
       }
     }
@@ -38,15 +40,35 @@ namespace nmbuflowtorch
     {
       layers.push_back(layer);
     }
+    void add_loss(Loss* loss_in)
+    {
+      loss = loss_in;
+    }
 
-    // Private?
-    Eigen::MatrixXd forward(Eigen::MatrixXd X){};
+    // Wrapper functions for forward, backward and update
+    // TODO: add fit or train function to handle epochs and batches
 
-    void backward(Eigen::MatrixXd X, Eigen::MatrixXd y){};
+    void forward(const Matrix& X);
 
-    void update(Optimizer& opt){};
+    /// @brief Using X input and y target, back propagates the loss gradient
+    /// @param X
+    /// @param y
+    void backward(const Matrix& X, const Matrix& y);
 
+    /// @brief
+    /// @param opt : Optimizer object reference
+    void update(Optimizer& opt);
+
+    void train_batch(){};
     void fit(){};
+    void predict(){};
+
+    /// @brief Returns the value from the last layer
+    /// @return Matrix&
+    const Matrix& output()
+    {
+      return layers.back()->output();
+    }
   };
 }  // namespace nmbuflowtorch
 #endif  // NMBUFLOWTORCH_NETWORK_H_

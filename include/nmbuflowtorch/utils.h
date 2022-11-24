@@ -1,7 +1,7 @@
 #ifndef NMBUFLOWTORCH_UTILS_H_
 #define NMBUFLOWTORCH_UTILS_H_
 
-#include <Eigen/Dense>
+#include <Eigen/Core>
 #include <algorithm>
 #include <iostream>
 #include <random>

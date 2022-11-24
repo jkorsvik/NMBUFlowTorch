@@ -2,10 +2,10 @@
 
 namespace nmbuflowtorch::optimizer
 {
-  Eigen::MatrixXd SGD::get_new_weights(const Eigen::MatrixXd& weights, const Eigen::MatrixXd& grads_wrt_w)
+  void SGD::update(Vector::AlignedMapType& w, Vector::ConstAlignedMapType& dw)
   {
-    return weights - learning_rate * grads_wrt_w;
-
-    return weights - 0.001 * grads_wrt_w;
+    Vector& v = v_map[dw.data()];
+    v = dw;
+    w -= learning_rate * v;
   }
 }  // namespace nmbuflowtorch::optimizer

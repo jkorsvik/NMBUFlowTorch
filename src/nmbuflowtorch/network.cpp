@@ -1,5 +1,10 @@
-#include "nmbuflowtorch/network.h"
-const int UNROLLDEPTH = 4;
+#include "nmbuflowtorch/network.hpp"
+
+#include "nmbuflowtorch/definitions.hpp"
+
+// Used for pragma unroll which unroll loops when compiling
+// performance improvement
+const int UNROLLDEPTH = 10;
 namespace nmbuflowtorch
 {
 
@@ -24,15 +29,18 @@ namespace nmbuflowtorch
     {
       return;
     }
-    // 1 layer
-    loss->evaluate(layers[n_layer - 1]->output(), target);
+    // Evaluates the loss at -1 layer
+    loss->eval(layers[n_layer - 1]->output(), target);
+    // If only one layer, then the loss is the gradient
     if (n_layer == 1)
     {
       layers[0]->backward(input, loss->back_gradient());
+      // Stops backpropagation here
       return;
     }
     // >1 layers
     layers[n_layer - 1]->backward(layers[n_layer - 2]->output(), loss->back_gradient());
+
 #pragma unroll(UNROLLDEPTH)
     for (int i = n_layer - 2; i > 0; i--)
     {
@@ -43,6 +51,7 @@ namespace nmbuflowtorch
 
   void Network::update(Optimizer& opt)
   {
+#pragma unroll(UNROLLDEPTH)
     for (int i = 0; i < layers.size(); i++)
     {
       layers[i]->update(opt);
@@ -54,7 +63,6 @@ namespace nmbuflowtorch
     const int n_layer = layers.size();
     std::vector<std::vector<float>> res;
     res.reserve(n_layer);
-#pragma unroll(UNROLLDEPTH)
     for (int i = 0; i < n_layer; i++)
     {
       res.push_back(layers[i]->get_parameters());

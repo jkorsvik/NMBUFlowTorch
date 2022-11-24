@@ -1,39 +1,54 @@
 #include <cmath>
 #include <iostream>
 #include <ostream>
+#include <vector>
 
-#include "Eigen/Dense"
+#include "nmbuflowtorch/definitions.hpp"  // imports and renames important files
 #include "nmbuflowtorch/layer.hpp"
 #include "nmbuflowtorch/layer/dense.hpp"
 #include "nmbuflowtorch/layer/sigmoid.hpp"
-#include "nmbuflowtorch/tmp.hpp"
+#include "nmbuflowtorch/loss.hpp"
+#include "nmbuflowtorch/loss/cross_entropy_loss.hpp"
+#include "nmbuflowtorch/network.hpp"
+#include "nmbuflowtorch/optimizer.hpp"
+#include "nmbuflowtorch/optimizer/sgd.hpp"
 
+// -> is for pointer objects, while . is for value objects
 using namespace std;
-
-#include <vector>
 
 int main(int argc, char** argv)
 {
   // Sammenligner med utregninger fra https://theneuralblog.com/forward-pass-backpropagation-example/
+  int input_size = 2;
+  int output_size = 1;
 
-  nmbuflowtorch::Layer* dense1 = new nmbuflowtorch::layer::Dense(2, 2);
+  // Create network
+  nmbuflowtorch::Network net;
+  // define loss
+  nmbuflowtorch::Loss* loss = new nmbuflowtorch::loss::CrossEntropy();
+  net.add_loss(loss);
 
-  // Eigen::MatrixXd W = Eigen::MatrixXd(2, 2);
-  // W << 0.1, 0.2, 0.3, 0.4;
-  // d.set_weights(W);
+  // Create layers
+  nmbuflowtorch::layer::Dense* dense1 = new nmbuflowtorch::layer::Dense(input_size, 2);
+  nmbuflowtorch::Layer* sigmoid1 = new nmbuflowtorch::layer::Sigmoid();
+  nmbuflowtorch::layer::Dense* dense2 = new nmbuflowtorch::layer::Dense(dense2->output_dim(), output_size);
+  nmbuflowtorch::Layer* sigmoid2 = new nmbuflowtorch::layer::Sigmoid();
 
-  // CrossEntropy loss_function = CrossEntropy();
+  Matrix W = Matrix(2, 2);
+  W << 0.1, 0.2, 0.3, 0.4;
 
-  // Sigmoid s = Sigmoid();
+  dense1->set_weights(W);
+  net.add_layer(dense1);
 
-  // Eigen::MatrixXd y = Eigen::MatrixXd(2, 2);
-  // y << 0.05, 0.95, 0.05, 0.95;
+  Matrix y = Matrix(2, 2);
+  y << 0.05, 0.95, 0.05, 0.95;
 
-  // Eigen::MatrixXd X = Eigen::MatrixXd(2, 2);
-  // X << 0.1, 0.5, 0.1, 0.5;
+  Matrix X = Matrix(2, 2);
+  X << 0.1, 0.5, 0.1, 0.5;
 
-  // auto output = d.forward(X);
-  // cout << output << endl;
+  net.forward(X);
+  auto output = net.output();
+  cout << output << endl;
 
   // auto output_sig = s.forward(output);
   // cout << output_sig << endl;

@@ -1,11 +1,10 @@
 #ifndef NMBUFLOWTORCH_LAYER_H_
 #define NMBUFLOWTORCH_LAYER_H_
 
-#include <Eigen/Dense>
 #include <vector>
 
-// #include "./Optimizer.hpp"
-// #include "./utils.h"
+#include "./definitions.hpp"
+#include "./optimizer.hpp"
 
 namespace nmbuflowtorch
 {
@@ -13,25 +12,28 @@ namespace nmbuflowtorch
   class Layer
   {
    protected:
-    Eigen::MatrixXd layer_input;
-    Eigen::MatrixXd layer_output;
+    Matrix layer_input;
+    Matrix layer_output;
+    Matrix gradient_back;
 
    public:
     virtual ~Layer()
     {
     }
 
-    Eigen::MatrixXd forward(const Eigen::MatrixXd& X);
-    Eigen::MatrixXd backward(const Eigen::MatrixXd& accumulated_gradients);
+    virtual void forward(const Matrix& X) = 0;
+    virtual void backward(const Matrix& X, const Matrix& accumulated_gradients) = 0;
     // TODO: Add update function to layer class and get it out of backward
-    // virtual void update(Optimizer& opt)
+    virtual void update(Optimizer& opt)
+    {
+    }
 
-    virtual const Eigen::MatrixXd& get_last_input()
+    virtual const Matrix& last_input()
     {
       return layer_input;
     }
 
-    virtual const Eigen::MatrixXd& get_output()
+    virtual const Matrix& output()
     {
       return layer_output;
     }
@@ -47,6 +49,11 @@ namespace nmbuflowtorch
     }
     virtual void set_parameters(const std::vector<float>& param)
     {
+    }
+
+    virtual std::vector<float> get_derivatives() const
+    {
+      return std::vector<float>();
     }
   };
 

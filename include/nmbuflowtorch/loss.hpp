@@ -1,19 +1,33 @@
 #ifndef NMBUFLOWTORCH_LOSS_H_
 #define NMBUFLOWTORCH_LOSS_H_
 
-//#include "./utils.h"
+#include "./definitions.hpp"
 
-#include "Eigen/Dense"
 namespace nmbuflowtorch
 {
   class Loss
   {
+   protected:
+    float loss;
+    // const float epsilon = 1e-8;
+    Matrix gradient_back;
+
    public:
-    virtual ~Loss() = default;
+    virtual ~Loss()
+    {
+    }
 
-    Eigen::MatrixXd loss(const Eigen::MatrixXd& pred, const Eigen::MatrixXd& target);
+    virtual void eval(const Matrix& pred, const Matrix& target) = 0;
 
-    const Eigen::MatrixXd& back_gradient(const Eigen::MatrixXd& pred, const Eigen::MatrixXd& target);
+    virtual const Matrix& back_gradient()
+    {
+      return gradient_back;
+    }
+
+    virtual float output()
+    {
+      return loss;
+    }
   };
 }  // namespace nmbuflowtorch
 #endif  // NMBUFLOWTORCH_LOSS_H_

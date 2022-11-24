@@ -4,8 +4,6 @@
 #include <vector>
 
 #include "../layer.hpp"
-#include "../optimizer.hpp"
-#include "Eigen/Dense"
 
 namespace nmbuflowtorch::layer
 {
@@ -13,74 +11,46 @@ namespace nmbuflowtorch::layer
   {
    private:
     const int input_shape;
-    const int units;
+    const int units;  // Number of neurons in the layer ae output shape
 
-    Eigen::MatrixXd weights;
-    Eigen::MatrixXd bias;
-    Eigen::MatrixXd grad_weights;
-    Eigen::MatrixXd grad_bias;
-
-    void set_weight_optimizer(Optimizer& opt)
-    {
-      weight_optimizer = opt;
-    }
-    void set_bias_optimizer(Optimizer& opt)
-    {
-      bias_optimizer = opt;
-    }
+    Matrix weights;
+    Vector bias;
+    Matrix grad_weights;  // gradient --> weights
+    Vector grad_bias;     // gradient --> bias
 
     void init();
 
    public:
-    Dense(const int input_shape, const int units)
-        : input_shape(input_shape),
-          units(units),
-          weights(weights),
-          bias(bias),
-          grad_weights(grad_weights),
-          grad_bias(grad_bias)
+    Dense(const int input_shape, const int units) : input_shape(input_shape), units(units)
     {
       init();
     }
 
-    void set_optimizer(Optimizer& opt)
-    {
-      set_weight_optimizer(opt);
-      set_bias_optimizer(opt);
-    }
-
-    void forward(const Eigen::MatrixXd& X);
+    void forward(const Matrix& X);
     // TODO : Add backward function with const reference argument
-    void backward(const Eigen::MatrixXd& X, const Eigen::MatrixXd& accumulated_gradients);
+    void backward(const Matrix& X, const Matrix& accumulated_gradients);
 
-    void update(Optimizer& opt);
+    void update(Optimizer& opt) override;
 
     int output_dim() final
     {
       return units;
     }
 
-    void set_weights(Eigen::MatrixXd new_weights)
+    void set_weights(Matrix new_weights)
     {
       // Metode for å overskrive vektene
       weights = new_weights;
     }
 
-    void set_bias(Eigen::MatrixXd new_bias)
+    void set_bias(Matrix new_bias)
     {
       bias = new_bias;
     };
-    Eigen::MatrixXd get_weigths()
-    {
-      return weights;
-    }
-    Eigen::MatrixXd get_bias()
-    {
-      return bias;
-    }
-    // std::vector<float> get_parameters() const;
-    // std::vector<float> get_derivatives() const;
-    // void set_parameters(const std::vector<float>& param);
+
+    std::vector<float> get_parameters() const;
+    std::vector<float> get_derivatives() const;
+    void set_parameters(const std::vector<float>& param);
   };
 }  // namespace nmbuflowtorch::layer
 #endif  // NMBUFLOWTORCH_LAYER_FULLY_CONNECTED_H_

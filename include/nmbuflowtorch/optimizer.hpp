@@ -1,7 +1,10 @@
 #ifndef NMBUFLOWTORCH_OPTIMIZER_H_
 #define NMBUFLOWTORCH_OPTIMIZER_H_
 
-#include "Eigen/Dense"
+#include <unordered_map>
+
+#include "./definitions.hpp"
+
 namespace nmbuflowtorch
 {
   class Optimizer
@@ -16,8 +19,7 @@ namespace nmbuflowtorch
     virtual ~Optimizer()
     {
     }
-
-    Eigen::MatrixXd get_new_weights(const Eigen::MatrixXd& weights, const Eigen::MatrixXd& grads_wrt_w);
+    virtual void update(Vector::AlignedMapType& w, Vector::ConstAlignedMapType& dw) = 0;
   };
-}  // namespace nmbuflowtorch
+};      // namespace nmbuflowtorch
 #endif  // NMBUFLOWTORCH_OPTIMIZER_H_

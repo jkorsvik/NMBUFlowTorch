@@ -34,12 +34,12 @@ int main(int argc, char** argv)
   nmbuflowtorch::layer::Dense* dense2 = new nmbuflowtorch::layer::Dense(dense1->output_dim(), output_size);
   nmbuflowtorch::Layer* sigmoid2 = new nmbuflowtorch::layer::Sigmoid();
 
-  Matrix W = Matrix(2, 2);
-  W << 0.1, 0.2, 0.3, 0.4;
-  Vector b = Vector(2);
-  b << 0.25, 0.25;
-  dense1->set_bias(b);
-  dense1->set_weights(W);
+  Matrix Wh12 = Matrix(2, 2);
+  Wh12 << 0.1, 0.2, 0.3, 0.4;
+  Vector b1 = Vector(2);
+  b1 << 0.25, 0.25;
+  dense1->set_bias(b1);
+  dense1->set_weights(Wh12);
   net.add_layer(dense1);
 
   Matrix y = Matrix(2, 2);
@@ -59,6 +59,12 @@ int main(int argc, char** argv)
   cout << output << endl;
 
   // add dense2 layer
+  Matrix Wh34 = Matrix(2, 2);
+  Wh34 << 0.5, 0.6, 0.7, 0.8;
+  Vector b2 = Vector(2);
+  b2 << 0.25, 0.25;
+  dense2->set_bias(b2);
+  dense2->set_weights(Wh34);
   net.add_layer(dense2);
   net.forward(X);
   output = net.output();

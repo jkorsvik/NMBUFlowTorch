@@ -2,6 +2,7 @@
 #define NMBUFLOWTORCH_LOSS_MSE_H_
 
 #include "../loss.hpp"
+
 namespace nmbuflowtorch::loss
 {
   class MSE : public Loss

@@ -9,6 +9,7 @@
 #include "nmbuflowtorch/layer/sigmoid.hpp"
 #include "nmbuflowtorch/loss.hpp"
 #include "nmbuflowtorch/loss/cross_entropy.hpp"
+#include "nmbuflowtorch/loss/mse.hpp"
 #include "nmbuflowtorch/network.hpp"
 #include "nmbuflowtorch/optimizer.hpp"
 #include "nmbuflowtorch/optimizer/sgd.hpp"
@@ -25,7 +26,10 @@ int main(int argc, char** argv)
   // Create network
   nmbuflowtorch::Network net;
   // define loss
-  nmbuflowtorch::Loss* loss = new nmbuflowtorch::loss::CrossEntropy();
+  // nmbuflowtorch::Loss* loss = new nmbuflowtorch::loss::CrossEntropy();
+
+  nmbuflowtorch::Loss* loss = new nmbuflowtorch::loss::MSE();
+
   net.add_loss(loss);
 
   // Create layers
@@ -43,10 +47,10 @@ int main(int argc, char** argv)
   net.add_layer(dense1);
 
   Matrix y = Matrix(2, 2);
-  y << 0.05, 0.95, 0.05, 0.95;
+  y << 0.05, 0.95, 0.05, 0.95;  //, 0.05, 0.95;
 
   Matrix X = Matrix(2, 2);
-  X << 0.1, 0.5, 0.1, 0.5;
+  X << 0.1, 0.5, 0.1, 0.5;  // 0.1, 0.5;
 
   net.forward(X);
   auto output = net.output();
@@ -62,7 +66,7 @@ int main(int argc, char** argv)
   Matrix Wh34 = Matrix(2, 2);
   Wh34 << 0.5, 0.6, 0.7, 0.8;
   Vector b2 = Vector(2);
-  b2 << 0.25, 0.25;
+  b2 << 0.35, 0.35;
   dense2->set_bias(b2);
   dense2->set_weights(Wh34);
   net.add_layer(dense2);
@@ -75,6 +79,8 @@ int main(int argc, char** argv)
   net.forward(X);
   output = net.output();
   cout << output << endl;
+
+  net.backward(X, y);
 
   // auto loss = loss_function.loss(y, output);
   // cout << loss << endl;

@@ -14,12 +14,13 @@ inline Vector MVdot(const Matrix& W, const Vector& x)
 
 inline Matrix MMdot(const Matrix& W, const Matrix& X)
 {
-  if (W.cols() != X.rows())
+  if (X.cols() != W.rows())
   {
     throw std::runtime_error("[ExtMath] Error with given x and W dimensions for dot product");
     // MVdot(W, Vector::cast(X))
   }
-  return (W.cwiseProduct(X)).rowwise().sum();
+  // return (W.cwiseProduct(X));
+  return X * W;
 }
 
 #endif  // NMBUFLOWTORCH_MATH_M_H_

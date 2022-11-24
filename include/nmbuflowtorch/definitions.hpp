@@ -2,6 +2,7 @@
 #define NMBUFLOWTORCH_DEFINITIONS_H_
 
 #include <Eigen/Dense>
+#include <iostream>
 
 typedef Eigen::Matrix<float, Eigen::Dynamic, Eigen::Dynamic> Matrix;
 typedef Eigen::Matrix<float, Eigen::Dynamic, 1> Vector;

@@ -6,21 +6,21 @@ namespace nmbuflowtorch::layer
   void Dense::init()
   {
     weights.resize(input_shape, units);  // TODO: annen initialisering? Tror det er -1 til 1 her
-    bias.resize(units, 1);
+    bias.resize(units);
     weights.setRandom();
     bias.setRandom();
 
     grad_weights.resize(input_shape, units);
-    grad_bias.resize(units, 1);
+    grad_bias.resize(units);
     grad_weights.setZero();
     grad_bias.setZero();
   }
 
   void Dense::forward(const Matrix& X)
   {
-    layer_input = X;                       // Holder på input til backward passet
-    layer_output = layer_input * weights;  // TODO: Plusse på bias WX + B
-    layer_output += bias;                  // Eigen::Matrix3Xf::Ones(1,)
+    layer_input = X;                            // Holder på input til backward passet
+    layer_output = dot(layer_input * weights);  // TODO: Plusse på bias WX + B
+    layer_output.colwise() += bias;             // Eigen::Matrix3Xf::Ones(1,)
     // mtx += Eigen::Matrix3Xf::Ones(3,4);
   }
 

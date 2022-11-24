@@ -28,6 +28,7 @@ set(optimizer_sources
 
 set(headers
   include/nmbuflowtorch/definitions.hpp 
+  include/nmbuflowtorch/math_m.hpp
   include/nmbuflowtorch/layer.hpp
   include/nmbuflowtorch/loss.hpp
   include/nmbuflowtorch/optimizer.hpp

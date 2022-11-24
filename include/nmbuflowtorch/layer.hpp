@@ -23,11 +23,14 @@ namespace nmbuflowtorch
 
     virtual void forward(const Matrix& X) = 0;
     virtual void backward(const Matrix& X, const Matrix& accumulated_gradients) = 0;
-    // TODO: Add update function to layer class and get it out of backward
     virtual void update(Optimizer& opt)
     {
     }
 
+    virtual const Matrix& back_gradient()
+    {
+      return gradient_back;
+    }
     virtual const Matrix& last_input()
     {
       return layer_input;

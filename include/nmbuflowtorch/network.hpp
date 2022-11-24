@@ -69,6 +69,18 @@ namespace nmbuflowtorch
     {
       return layers.back()->output();
     }
+    float get_loss()
+    {
+      return loss->output();
+    }
+    /// Get the serialized layer parameters
+    std::vector<std::vector<float>> get_parameters() const;
+    /// Set the layer parameters
+    void set_parameters(const std::vector<std::vector<float>>& param);
+    /// Get the serialized derivatives of layer parameters
+    std::vector<std::vector<float>> get_derivatives() const;
+    /// Debugging tool to check parameter gradients
+    void check_gradient(const Matrix& input, const Matrix& target, int n_points, int seed = -1);
   };
 }  // namespace nmbuflowtorch
 #endif  // NMBUFLOWTORCH_NETWORK_H_

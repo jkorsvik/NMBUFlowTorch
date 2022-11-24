@@ -31,12 +31,14 @@ int main(int argc, char** argv)
   // Create layers
   nmbuflowtorch::layer::Dense* dense1 = new nmbuflowtorch::layer::Dense(input_size, 2);
   nmbuflowtorch::Layer* sigmoid1 = new nmbuflowtorch::layer::Sigmoid();
-  nmbuflowtorch::layer::Dense* dense2 = new nmbuflowtorch::layer::Dense(dense2->output_dim(), output_size);
+  nmbuflowtorch::layer::Dense* dense2 = new nmbuflowtorch::layer::Dense(dense1->output_dim(), output_size);
   nmbuflowtorch::Layer* sigmoid2 = new nmbuflowtorch::layer::Sigmoid();
 
   Matrix W = Matrix(2, 2);
   W << 0.1, 0.2, 0.3, 0.4;
-
+  Vector b = Vector(2);
+  b << 0.25, 0.35;
+  dense1->set_bias(b);
   dense1->set_weights(W);
   net.add_layer(dense1);
 

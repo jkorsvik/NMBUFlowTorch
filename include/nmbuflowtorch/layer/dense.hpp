@@ -4,6 +4,7 @@
 #include <vector>
 
 #include "../layer.hpp"
+#include "../math_m.hpp"
 
 namespace nmbuflowtorch::layer
 {
@@ -32,7 +33,7 @@ namespace nmbuflowtorch::layer
 
     void update(Optimizer& opt) override;
 
-    int output_dim() final
+    int output_dim()
     {
       return units;
     }

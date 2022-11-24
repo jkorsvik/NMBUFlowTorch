@@ -1,9 +1,9 @@
 #ifndef NMBUFLOWTORCH_MATH_M_H_
 #define NMBUFLOWTORCH_MATH_M_H_
 
-#include <"./definitions.hpp">
+#include "./definitions.hpp"
 
-inline Eigen::VectorXd dot(Eigen::MatrixXd &W, Eigen::VectorXd &x)
+inline Eigen::MatrixXd dot(Eigen::MatrixXd &W, Eigen::MatrixXd &x)
 {
   if (W.cols() != x.rows())
   {

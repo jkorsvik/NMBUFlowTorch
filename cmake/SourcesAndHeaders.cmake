@@ -11,11 +11,13 @@ set(layer_sources
 )
 
 set(loss_headers
-  include/nmbuflowtorch/loss/cross_entropy_loss.hpp
+  include/nmbuflowtorch/loss/cross_entropy.hpp
+  include/nmbuflowtorch/loss/mse.hpp
 )
 
 set(loss_sources
-  src/nmbuflowtorch/loss/cross_entropy_loss.cpp
+  src/nmbuflowtorch/loss/cross_entropy.cpp
+  src/nmbuflowtorch/loss/mse.cpp
 )
 
 set(optimizer_headers

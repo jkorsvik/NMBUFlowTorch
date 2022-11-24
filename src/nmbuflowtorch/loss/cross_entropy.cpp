@@ -1,4 +1,4 @@
-#include "nmbuflowtorch/loss/cross_entropy_loss.hpp"
+#include "nmbuflowtorch/loss/cross_entropy.hpp"
 
 namespace nmbuflowtorch::loss
 {

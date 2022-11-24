@@ -1,5 +1,5 @@
-#ifndef NMBUFLOWTORCH_LOSS_CROSS_ENTROPY_LOSS_H_
-#define NMBUFLOWTORCH_LOSS_CROSS_ENTROPY_LOSS_H_
+#ifndef NMBUFLOWTORCH_LOSS_CROSS_ENTROPY_H_
+#define NMBUFLOWTORCH_LOSS_CROSS_ENTROPY_H_
 
 #include "../loss.hpp"
 
@@ -13,4 +13,4 @@ namespace nmbuflowtorch::loss
   };
 }  // namespace nmbuflowtorch::loss
 
-#endif  // NMBUFLOWTORCH_LOSS_CROSS_ENTROPY_LOSS_H_
+#endif  // NMBUFLOWTORCH_LOSS_CROSS_ENTROPY_H_

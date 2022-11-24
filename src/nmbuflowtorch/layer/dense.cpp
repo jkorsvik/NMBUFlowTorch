@@ -18,9 +18,9 @@ namespace nmbuflowtorch::layer
 
   void Dense::forward(const Matrix& X)
   {
-    layer_input = X;                            // Holder på input til backward passet
-    layer_output = dot(layer_input * weights);  // TODO: Plusse på bias WX + B
-    layer_output.colwise() += bias;             // Eigen::Matrix3Xf::Ones(1,)
+    layer_input = X;                   // Holder på input til backward passet
+    layer_output = MMdot(weights, X);  // TODO: Plusse på bias WX + B
+    layer_output.colwise() += bias;    // Eigen::Matrix3Xf::Ones(1,)
     // mtx += Eigen::Matrix3Xf::Ones(3,4);
   }
 

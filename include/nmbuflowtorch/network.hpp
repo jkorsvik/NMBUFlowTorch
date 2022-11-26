@@ -45,6 +45,13 @@ namespace nmbuflowtorch
       loss = loss_in;
     }
 
+    //Printer oppsumering av nettverket
+    void summary(){
+      for (int i = 0; i < layers.size(); i ++ ){
+        std::cout<< layers[i]->get_layer_type() << " " << "Output shape: " << layers[i]->output_dim() << std::endl; 
+      }
+    };
+
     // Wrapper functions for forward, backward and update
     // TODO: add fit or train function to handle epochs and batches
 
@@ -81,6 +88,8 @@ namespace nmbuflowtorch
     std::vector<std::vector<float>> get_derivatives() const;
     /// Debugging tool to check parameter gradients
     void check_gradient(const Matrix& input, const Matrix& target, int n_points, int seed = -1);
+
+    
   };
 }  // namespace nmbuflowtorch
 #endif  // NMBUFLOWTORCH_NETWORK_H_

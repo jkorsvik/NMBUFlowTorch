@@ -23,13 +23,13 @@ namespace nmbuflowtorch
 
   void Network::backward(const Matrix& input, const Matrix& target)
   {
-    int n_layer = layers.size();
+    int n_layer = layers.size();// TODO: burde kanskje være en atributt
     // 0 layer
     if (n_layer <= 0)
     {
       return;
     }
-    // Evaluates the loss at -1 layer
+    // Evaluates the loss at the output layer
     loss->eval(layers[n_layer - 1]->output(), target);
     // If only one layer, then the loss is the gradient
     if (n_layer == 1)
@@ -39,6 +39,7 @@ namespace nmbuflowtorch
       return;
     }
     // >1 layers
+    
     layers[n_layer - 1]->backward(layers[n_layer - 2]->output(), loss->back_gradient());
 
 #pragma unroll(UNROLLDEPTH)

@@ -2,6 +2,8 @@
 #define NMBUFLOWTORCH_LAYER_FULLY_CONNECTED_H_
 
 #include <vector>
+#include <string>
+
 
 #include "../layer.hpp"
 #include "../math_m.hpp"
@@ -18,6 +20,8 @@ namespace nmbuflowtorch::layer
     Vector bias;
     Matrix grad_weights;  // gradient --> weights
     Vector grad_bias;     // gradient --> bias
+
+    std::string layer_type = "Dense";
 
     void init();
 
@@ -47,6 +51,10 @@ namespace nmbuflowtorch::layer
     void set_bias(Matrix new_bias)
     {
       bias = new_bias;
+    };
+
+    std::string get_layer_type() {
+      return layer_type;
     };
 
     std::vector<float> get_parameters() const;

@@ -16,6 +16,8 @@ namespace nmbuflowtorch
     Matrix layer_output;
     Matrix gradient_back;
 
+    std::string layer_type = "Virtual Layer";
+
    public:
     virtual ~Layer()
     {
@@ -58,6 +60,11 @@ namespace nmbuflowtorch
     {
       return std::vector<float>();
     }
+
+    virtual std::string get_layer_type() const
+    {
+      return layer_type;
+    };
   };
 
 }  // namespace nmbuflowtorch

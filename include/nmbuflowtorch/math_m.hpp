@@ -23,4 +23,28 @@ inline Matrix MMdot(const Matrix& W, const Matrix& X)
   return X * W;
 }
 
+Vector colwise_max_index(Matrix& m)
+{
+  Vector indices(m.cols());
+
+  for (size_t i = 0; i < m.cols(); i++)
+  {
+    float current_max_val;
+    int index;
+
+    for (size_t j = 0; j < m.rows(); j++)
+    {
+      if (j == 0 || m(j, i) > current_max_val)
+      {
+        index = j;
+        current_max_val = m(j, i);
+      }
+
+      indices(i) = index;
+    }
+  }
+
+  return indices;
+}
+
 #endif  // NMBUFLOWTORCH_MATH_M_H_

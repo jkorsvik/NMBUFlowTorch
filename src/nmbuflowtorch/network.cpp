@@ -56,7 +56,9 @@ namespace nmbuflowtorch
 #pragma unroll(UNROLLDEPTH)
     for (int i = n_layer - 2; i > 0; i--)
     {
-      layers[i]->backward(layers[i - 1]->output(), layers[i + 1]->back_gradient());
+      auto last_output = layers[i - 1]->output();
+      auto gradient_before = layers[i + 1]->back_gradient();
+      layers[i]->backward(last_output, gradient_before);
     }
     layers[0]->backward(input, layers[1]->back_gradient());
   }

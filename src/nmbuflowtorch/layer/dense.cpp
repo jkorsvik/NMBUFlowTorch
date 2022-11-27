@@ -34,7 +34,9 @@ namespace nmbuflowtorch::layer
     // accumulated_gradients = accumulated_gradients * weights.transpose();
 
     gradient_back.resize(input_shape, layer_input.cols());
-    gradient_back = weights * accumulated_gradients;
+    gradient_back = accumulated_gradients * weights.transpose();
+
+    //gradient_back = weights * accumulated_gradients.transpose();
   }
 
   void Dense::update(Optimizer& opt)

@@ -20,6 +20,7 @@ namespace nmbuflowtorch::layer
     // d(a_i)/d(z_i) = a_i * (1-a_i)
 
     Matrix da_dz = layer_output.array().cwiseProduct(1.0 - layer_output.array());
+    da_dz.resize(accumulated_gradients.rows(), accumulated_gradients.cols()); // Mulig unødvendig
     gradient_back = accumulated_gradients.cwiseProduct(da_dz);
   }
 

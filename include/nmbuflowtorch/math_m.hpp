@@ -47,4 +47,9 @@ inline Vector colwise_max_index(Matrix& m)
   return indices;
 }
 
+// Returns 0 if value is < 0.5, else 1
+inline int binary_cutoff(float inp) {
+  return inp >= 0.5;
+}
+
 #endif  // NMBUFLOWTORCH_MATH_M_H_

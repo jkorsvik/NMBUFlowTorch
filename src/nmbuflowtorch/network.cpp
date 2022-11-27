@@ -23,8 +23,6 @@ namespace nmbuflowtorch
   std::vector<int> Network::predict(const Matrix& X) {
     this->forward(X);
     auto net_output = this->layers.back()->output();
-    net_output << 0.2, 0.4, 0.6, 0.7;
-
 
     auto cutoff = net_output.unaryExpr(&binary_cutoff);
 

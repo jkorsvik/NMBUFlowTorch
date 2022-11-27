@@ -23,7 +23,7 @@ inline Matrix MMdot(const Matrix& W, const Matrix& X)
   return X * W;
 }
 
-Vector colwise_max_index(Matrix& m)
+inline Vector colwise_max_index(Matrix& m)
 {
   Vector indices(m.cols());
 

@@ -18,6 +18,7 @@ namespace nmbuflowtorch
    private:
     std::vector<Layer*> layers;  // layer pointers
     Loss* loss;                  // loss pointer
+    Optimizer* opt;
 
     // make public?
 
@@ -44,6 +45,10 @@ namespace nmbuflowtorch
     {
       loss = loss_in;
     }
+    void add_optimizer(Optimizer* opt_in)
+    {
+      opt = opt_in;
+    }
 
     //Printer oppsumering av nettverket
     void summary(){
@@ -55,7 +60,7 @@ namespace nmbuflowtorch
     // Wrapper functions for forward, backward and update
     // TODO: add fit or train function to handle epochs and batches
 
-    void forward(const Matrix& X);
+    void forward(const Matrix& input);
 
     /// @brief Using X input and y target, back propagates the loss gradient
     /// @param X
@@ -66,7 +71,7 @@ namespace nmbuflowtorch
     /// @param opt : Optimizer object reference
     void update(Optimizer& opt);
 
-    void train_batch(){};
+    float train_batch(const Matrix& X, const Matrix& y);
     void fit(){};
     void predict(){};
 
@@ -89,6 +94,9 @@ namespace nmbuflowtorch
     /// Debugging tool to check parameter gradients
     void check_gradient(const Matrix& input, const Matrix& target, int n_points, int seed = -1);
 
+    Matrix get_layer_output(int i);
+
+    Matrix get_layer_weight(int i);
     
   };
 }  // namespace nmbuflowtorch

@@ -8,6 +8,18 @@ const int UNROLLDEPTH = 10;
 namespace nmbuflowtorch
 {
 
+  // TODO: Burde denne returnere en float med loss?. Det er dette train_on_batch i Keras gjør
+  float Network::train_batch(const Matrix& X, const Matrix& y){
+
+    this->forward(X);
+
+    this->backward(this->output(), y);
+    this->update(*opt);
+
+    return this->loss->output();
+  };
+
+
   void Network::forward(const Matrix& input)
   {
     if (layers.empty())
@@ -66,6 +78,7 @@ namespace nmbuflowtorch
     res.reserve(n_layer);
     for (int i = 0; i < n_layer; i++)
     {
+      
       res.push_back(layers[i]->get_parameters());
     }
     return res;
@@ -144,4 +157,9 @@ namespace nmbuflowtorch
     // Restore original parameters
     this->set_parameters(param);
   }
+
+
+  Matrix Network::get_layer_output(int i) {
+    return layers[i]->output();
+  };
 }  // namespace nmbuflowtorch

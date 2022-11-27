@@ -41,7 +41,7 @@ namespace nmbuflowtorch
       return;
     }
     // Evaluates the loss at the output layer
-    loss->eval(layers[n_layer - 1]->output(), target);
+    loss->eval(input, target);
     // If only one layer, then the loss is the gradient
     if (n_layer == 1)
     {

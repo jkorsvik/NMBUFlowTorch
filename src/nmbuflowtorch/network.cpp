@@ -2,6 +2,8 @@
 
 #include "nmbuflowtorch/definitions.hpp"
 
+#include "nmbuflowtorch/math_m.hpp"
+
 // Used for pragma unroll which unroll loops when compiling
 // performance improvement
 const int UNROLLDEPTH = 10;
@@ -17,6 +19,26 @@ namespace nmbuflowtorch
 
     return this->loss->output();
   };
+
+  std::vector<int> Network::predict(const Matrix& X) {
+    this->forward(X);
+    auto net_output = this->layers.back()->output();
+    net_output << 0.2, 0.4, 0.6, 0.7;
+
+
+    auto cutoff = net_output.unaryExpr(&binary_cutoff);
+
+    std::vector<int> return_vector;
+
+    for (auto x : cutoff.reshaped()) {
+      return_vector.push_back(x);
+    }
+    return return_vector;
+
+    //std::vector<int> vec(net_output.data())
+    //return .cast<int>();
+    // Kan også være test.unaryExpr([](float net_output) {return net_output > 0.5; })
+  }
 
 
   void Network::forward(const Matrix& input)

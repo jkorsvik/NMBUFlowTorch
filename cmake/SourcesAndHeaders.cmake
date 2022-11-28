@@ -1,12 +1,14 @@
 set(layer_headers
   include/nmbuflowtorch/layer/dense.hpp
   include/nmbuflowtorch/layer/sigmoid.hpp
+  include/nmbuflowtorch/layer/relu.hpp
   
 )
 
 set(layer_sources
   src/nmbuflowtorch/layer/dense.cpp
   src/nmbuflowtorch/layer/sigmoid.cpp
+  src/nmbuflowtorch/layer/relu.cpp
   
 )
 

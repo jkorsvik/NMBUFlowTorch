@@ -50,10 +50,13 @@ namespace nmbuflowtorch
       opt = opt_in;
     }
 
-    //Printer oppsumering av nettverket
-    void summary(){
-      for (int i = 0; i < layers.size(); i ++ ){
-        std::cout<< layers[i]->get_layer_type() << " " << "Output shape: " << layers[i]->output_dim() << std::endl; 
+    // Printer oppsumering av nettverket
+    void summary()
+    {
+      for (int i = 0; i < layers.size(); i++)
+      {
+        std::cout << layers[i]->get_layer_type() << " "
+                  << "Output shape: " << layers[i]->output_dim() << std::endl;
       }
     };
 
@@ -91,13 +94,10 @@ namespace nmbuflowtorch
     void set_parameters(const std::vector<std::vector<float>>& param);
     /// Get the serialized derivatives of layer parameters
     std::vector<std::vector<float>> get_derivatives() const;
-    /// Debugging tool to check parameter gradients
-    void check_gradient(const Matrix& input, const Matrix& target, int n_points, int seed = -1);
 
     Matrix get_layer_output(int i);
 
     Matrix get_layer_weight(int i);
-    
   };
 }  // namespace nmbuflowtorch
 #endif  // NMBUFLOWTORCH_NETWORK_H_

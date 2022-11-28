@@ -1,238 +1,71 @@
 #include <cmath>
+#include <iomanip>
 #include <iostream>
 #include <ostream>
-
-#include "Eigen/Dense"
-#include "nmbuflowtorch/tmp.hpp"
-
-using namespace std;
-using namespace tmp;
-using Eigen::MatrixXd;
-using Eigen::VectorXf;
-
-#include <Eigen/Core>
-#include <Eigen/Dense>
 #include <vector>
 
-// TODO:
-// Treningsloop i Network, regne ut accuracy, Legge til bias i forward pass i dense layer (X*W + b)
+#include "nmbuflowtorch/definitions.hpp"  // imports and renames important files
+#include "nmbuflowtorch/layer.hpp"
+#include "nmbuflowtorch/layer/dense.hpp"
+#include "nmbuflowtorch/layer/sigmoid.hpp"
+#include "nmbuflowtorch/loss.hpp"
+#include "nmbuflowtorch/loss/cross_entropy.hpp"
+#include "nmbuflowtorch/loss/mse.hpp"
+#include "nmbuflowtorch/network.hpp"
+#include "nmbuflowtorch/optimizer.hpp"
+#include "nmbuflowtorch/optimizer/sgd.hpp"
+#include "nmbuflowtorch/math_m.hpp"
 
-class Network
-{
- public:
-  Network(){
 
-  };
-
-  void fit(){};
-
-  void train_batch()
-  {
-  }
-
-  // Privat?
-  MatrixXd forward(MatrixXd X){
-
-  };
-};
-
-class CrossEntropy
-{
- public:
-  CrossEntropy(){
-
-  };
-
-  MatrixXd loss(MatrixXd y, MatrixXd p)
-  {
-    MatrixXd ls = -(y.cwiseProduct(p.array().log().matrix()));
-
-    MatrixXd rs = (1 - y.array()).matrix().cwiseProduct((1 - p.array()).log().matrix());
-
-    return ls - rs;
-  };
-
-  // https://stats.stackexchange.com/questions/370723/how-to-calculate-the-derivative-of-crossentropy-error-function
-  MatrixXd gradient(MatrixXd y, MatrixXd p)
-  {
-    MatrixXd ls = -(y.array() / p.array());
-    MatrixXd rs = (1 - y.array()) / (1 - p.array());
-
-    return ls + rs;
-  };
-};
-
-class Optimizer
-// Stochastic Gradient Descent, learning rate satt til 0.001. Burde kanskje flyttes inn i
-
-{
-  MatrixXd weight_update;
-  bool weight_init = false;
-
- public:
-  Optimizer(){
-
-  };
-
-  MatrixXd update(MatrixXd weights, MatrixXd grads_wrt_w)
-  {
-    if (weight_init == false)
-    {
-      weight_update = MatrixXd::Zero(weights.rows(), weights.cols());
-      weight_init = true;
-    }
-
-    return weights - 0.001 * grads_wrt_w;
-  };
-};
-
-class Layer
-{
- public:
-  MatrixXd forward(MatrixXd X){};
-
-  MatrixXd backward(MatrixXd X){};
-};
-
-class Sigmoid : public Layer
-{
- public:
-  Sigmoid(){
-
-  };
-
-  MatrixXd forward(MatrixXd X)
-  {
-    return 1 / (1 + (-1 * X).array().exp());
-  };
-
-  MatrixXd backward(MatrixXd X)
-  {
-    // Sigmoid(x) * (1 - sigmoid(x))
-
-    // left side og right side
-    auto ls = forward(X);
-
-    auto rs = (1 - ls.array()).matrix();
-
-    // cwiseProduct for elementvis operasjon (ikke vanlig matrisemultiplikasjon)
-    return ls.cwiseProduct(rs);
-    ;
-  };
-};
-
-class Dense : public Layer
-{
- public:
-  int units;
-  int input_shape;
-
-  MatrixXd weights;
-  MatrixXd bias;
-
-  Optimizer weight_optimizer;
-  Optimizer bias_optimizer;
-
-  MatrixXd layer_input;
-
-  Dense(int n_units, int inp_shape)
-  {
-    units = n_units;
-    input_shape = inp_shape;
-
-    weights = MatrixXd::Random(input_shape, units);  // TODO: annen initialisering? Tror det er -1 til 1 her
-    bias = MatrixXd::Zero(1, units);
-
-    weight_optimizer = Optimizer();
-    bias_optimizer = Optimizer();
-  };
-
-  void set_weights(MatrixXd w)
-  {
-    // Metode for å overskrive vektene
-    weights = w;
-  }
-
-  void set_bias(MatrixXd b)
-  {
-    bias = b;
-  };
-
-  MatrixXd forward(MatrixXd X)
-  {
-    layer_input = X;     // Holder på input til backward passet
-    return X * weights;  // TODO: Plusse på bias
-  };
-
-  MatrixXd backward(MatrixXd accumulated_gradients)
-  {
-    MatrixXd prev_weights = weights;
-
-    MatrixXd grad_weights = layer_input.transpose() * accumulated_gradients;
-    MatrixXd grad_bias = accumulated_gradients.colwise().sum();
-
-    // Oppdaterer vektene
-    weights = weight_optimizer.update(weights, grad_weights);
-    bias = bias_optimizer.update(bias, grad_bias);
-
-    accumulated_gradients = accumulated_gradients * prev_weights.transpose();
-
-    return accumulated_gradients;
-  };
-};
-
-// toStrings som overskriver << i en stream, burde være mulig å flytte inn i klassene skulle man tro
-
-ostream& operator<<(ostream& stream, Layer& obj)
-{
-  return cout << "Basis Layer";
-};
-
-ostream& operator<<(ostream& stream, Dense& obj)
-{
-  return cout << "Dense Layer";
-};
-
-ostream& operator<<(ostream& stream, Sigmoid& obj)
-{
-  return cout << "Sigmoid layer";
-};
+// -> is for pointer objects, while . is for value objects
+using namespace std;
 
 int main(int argc, char** argv)
 {
   // Sammenligner med utregninger fra https://theneuralblog.com/forward-pass-backpropagation-example/
+  int input_size = 2;
+  int n_classes = 1;
 
-  Dense d(2, 2);
+  // Create network
+  nmbuflowtorch::Network net;
+  // define loss
+  // nmbuflowtorch::Loss* loss = new nmbuflowtorch::loss::CrossEntropy();
 
-  MatrixXd W = MatrixXd(2, 2);
-  W << 0.1, 0.2, 0.3, 0.4;
-  d.set_weights(W);
+  nmbuflowtorch::optimizer::SGD* opt = new nmbuflowtorch::optimizer::SGD(0.1);
 
-  CrossEntropy loss_function = CrossEntropy();
+  nmbuflowtorch::Loss* loss = new nmbuflowtorch::loss::MSE();
 
-  Sigmoid s = Sigmoid();
+  net.add_loss(loss);
+  net.add_optimizer(opt);
 
-  MatrixXd y = MatrixXd(2, 2);
-  y << 0.05, 0.95, 0.05, 0.95;
+  // XOR eksempler
+  Matrix X = Matrix(4, 2);
+  X << 0, 0, 0, 1, 1, 0, 1, 1;
 
-  MatrixXd X = MatrixXd(2, 2);
-  X << 0.1, 0.5, 0.1, 0.5;
+  Matrix y = Matrix(4, 1);
+  y << 0, 1, 1, 0;
 
-  auto output = d.forward(X);
-  cout << output << endl;
+  // Create layers
+  nmbuflowtorch::layer::Dense* dense1 = new nmbuflowtorch::layer::Dense(input_size, 8);
+  nmbuflowtorch::layer::Sigmoid* sigmoid1 = new nmbuflowtorch::layer::Sigmoid();
+  nmbuflowtorch::layer::Dense* dense2 = new nmbuflowtorch::layer::Dense(dense1->output_dim(), 1);
+  nmbuflowtorch::layer::Sigmoid* sigmoid2 = new nmbuflowtorch::layer::Sigmoid();
 
-  auto output_sig = s.forward(output);
-  cout << output_sig << endl;
+  net.add_layer(dense1);
+  net.add_layer(sigmoid1);
+  net.add_layer(dense2);
+  net.add_layer(sigmoid2);
 
-  auto back_sig = s.backward(output);
-  cout << back_sig << endl;
+  for (int i = 0; i < 1000000; i ++) {
+    net.train_batch(X, y);
+    if (i % 10000 == 0) {
+      cout << "XOR data  - Epoch:" << i << " MSE Loss: " <<  net.train_batch(X, y) << endl;
 
-  auto loss = loss_function.loss(y, output);
-  cout << loss << endl;
+    }
+  }
 
-  auto loss_grad = loss_function.gradient(y, output);
-  cout << loss_grad << endl;
+  //cout << net.train_batch(X, y) << endl;
+  //net.predict(X);
 
-  auto back_sig_grad =d.backward(loss_grad);
-  cout << back_sig_grad << endl;
+
 }

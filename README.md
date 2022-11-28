@@ -72,6 +72,8 @@ template *as-is*, meaning using the versions recommended here, then you will nee
 > ***Note:*** *You also need to be able to provide ***CMake*** a supported
 [generator](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html).*
 
+* **Different data** - [MNIST](https://github.com/wichtounet/mnist) AND https://home.bawue.de/~horsch/teaching/inf205/src/image-benchmark.zip *MSVC*,
+*GCC*, *Clang*
 
 ### If using VSCode
 
@@ -106,7 +108,10 @@ source install_reqs.sh
 ```bash
 source automatic_rebuild_and_install.sh
 ```
-
+***If you just want to rebuild fast and you are happy with the install location, run:***
+```bash
+source cached_build_and_install.sh
+```
 The executables of the project will then be in the 
 
 To install an already built project, you need to run the `install` target with CMake.

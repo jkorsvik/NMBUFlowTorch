@@ -16,6 +16,12 @@ cat _gdb_extension/gdbinit.txt.temp > ~/.gdbinit
 
 # It aint stupid if it works
 
+# clang-tidy for linting
+sudo apt-get install clang-tidy 
+
+# cpp check for static analysis
+sudo apt-get install cppcheck
+
 # unzip
 sudo apt install unzip
 # Cmake for ubuntu
@@ -37,8 +43,11 @@ curl -O "https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.zip" && u
 mv $CWD/include/eigen-3.4.0 $CWD/include/eigen3
 #sudo conan install eigen_recipe.py -g=cmake_find_package 
 
+# boost lib for
+sudo apt-get install libboost-all-dev
+
 # CLANG for linting
-sudo apt install clang-14 --install-suggests
+sudo apt install clang-12 --install-suggests
 
 
 # For automatic documentation generation

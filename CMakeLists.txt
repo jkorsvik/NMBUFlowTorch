@@ -158,6 +158,29 @@ verbose_message("Applied compiler warnings. Using standard ${CMAKE_CXX_STANDARD}
 # Model project dependencies
 #
 
+
+# Identify and link with the specific "packages" the project uses
+
+find_package(Threads REQUIRED)
+find_package(OpenMP REQUIRED)
+
+target_link_libraries(
+  ${PROJECT_NAME}
+  PUBLIC
+    ${OPENMP}OpenMP::OpenMP_CXX
+    ${CMAKE_THREAD_LIBS_INIT}
+    
+)
+if(${PROJECT_NAME}_BUILD_EXECUTABLE AND ${PROJECT_NAME}_ENABLE_UNIT_TESTING)
+  target_link_libraries(
+    ${PROJECT_NAME}_LIB
+    PUBLIC
+      ${OPENMP}OpenMP::OpenMP_CXX
+      ${CMAKE_THREAD_LIBS_INIT}
+  )
+endif()
+
+
 # Identify and link with the specific "packages" the project uses
 #find_package(package_name package_version REQUIRED package_type [other_options])
 #target_link_libraries(

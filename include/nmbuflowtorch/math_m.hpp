@@ -66,7 +66,7 @@ inline float accuracy_score(std::vector<int> y_true, std::vector<int> y_pred)
     }
   }
   
-  return float(correct) / y_true.size();
+  return float(correct) / y_true.size(); // Cast to float to avoid integer division
 }
 
 

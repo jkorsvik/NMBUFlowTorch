@@ -56,9 +56,18 @@ int main(int argc, char** argv)
   net.add_layer(dense2);
   net.add_layer(sigmoid2);
 
-  net.fit(X, y, 10, 8, 1);
-  net.fit(X, y, 10, 3, 1);
+  net.fit(X, y, 1000, 8, 1);
 
   // cout << net.train_batch(X, y) << endl;
-  // net.predict(X);
+
+  auto y_pred = net.predict(X);
+  //for (auto x : y_pred) {
+  //  cout << x << endl;
+  //}
+
+  vector<int> y_true_vector(y.data(), y.data() + y.rows() * y.cols());
+  cout << endl;
+
+  cout << accuracy_score(y_true_vector, y_pred) << endl;
+ 
 }

@@ -29,7 +29,7 @@ namespace nmbuflowtorch
   {
     int n_datapoints = X.rows();
     int n_features = X.cols();
-    int n_batches = (int)(ceil(n_datapoints / batch_size));
+    int n_batches = (int)(ceil(float(n_datapoints) / float(batch_size)));
 
     float loss = 0.;
 
@@ -68,7 +68,8 @@ namespace nmbuflowtorch
     float loss = 0.;
     if (verbose > 0)
     {
-      std::cout << "Fitting model for " << epochs << " Epochs and with Batches of size " << batch_size << " ..."
+      std::cout << std::endl
+                << "Fitting model for " << epochs << " Epochs and with Batches of size " << batch_size << " ..."
                 << std::endl;
     }
     for (int epoch = 0; epoch < epochs; epoch++)

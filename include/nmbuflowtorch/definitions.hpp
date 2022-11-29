@@ -15,7 +15,7 @@ typedef Eigen::Array<float, 1, Eigen::Dynamic> RowVector;
 
 #define PBWIDTH              5
 #define PERCENTAGEMULTIPLIER 100
-#define PBSTR                '\xFE'  // "█"
+#define PBSTR                '#'  //  '\xFE'  // "█"
 
 namespace nmbuflowtorch
 {
@@ -26,7 +26,7 @@ namespace nmbuflowtorch
     // int rpad = PBWIDTH - lpad;
     // printf("\r%3d%% [%.*s%*s]", val, lpad, PBSTR, rpad, "");
 
-    float percent = (PERCENTAGEMULTIPLIER * (current)) / total;
+    float percent = (PERCENTAGEMULTIPLIER * (current + 1)) / total;
     percent = percent > PERCENTAGEMULTIPLIER ? PERCENTAGEMULTIPLIER : percent;  // Prevents percentage from going over 100%
     size_t lpad = (size_t)(percent / PBWIDTH);
     size_t rpad = (size_t)(PERCENTAGEMULTIPLIER / PBWIDTH - lpad);
@@ -34,7 +34,7 @@ namespace nmbuflowtorch
     std::wcout << "\r"
                << "[" << std::wstring(lpad, PBSTR) << std::wstring(rpad, ' ') << "]";
     std::cout << percent << "%"
-              << " [Batch " << current << " of " << total << "]";
+              << " [Batch " << current + 1 << " of " << total << "]";
     std::cout.flush();
   }
 };  // namespace nmbuflowtorch

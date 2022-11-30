@@ -47,11 +47,14 @@ int main(int argc, char** argv)
   }
   else
   {
+    int single_thread = 1;
 #ifdef EIGEN_DONT_PARALLELIZE
     cout << "something";
 #endif
     cout << "Running single threaded program" << endl;
     // Run main program
+    omp_set_num_threads(single_thread);
+    Eigen::setNbThreads(single_thread);
   }
 
   // Sammenligner med utregninger fra https://theneuralblog.com/forward-pass-backpropagation-example/

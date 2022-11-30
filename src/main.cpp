@@ -1,3 +1,5 @@
+#include <omp.h>
+
 #include <cmath>
 #include <iomanip>
 #include <iostream>
@@ -21,6 +23,28 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
+  if (argc > 1 && strcmp(argv[1], "parallel") == 0)
+  {
+#define EIGEN_USE_BLAS 1  // use BLAS for matrix multiplication
+    Eigen::initParallel();
+    int n_threads = 12;
+    omp_set_num_threads(n_threads);
+
+    cout << "Running parallel" << omp_get_max_threads() << endl;
+    n_threads = Eigen::nbThreads();
+    cout << "Running parallel" << n_threads << endl;
+    // OMP_NUM_THREADS = n./ my_program omp_set_num_threads(n);
+    Eigen::setNbThreads(n_threads);
+  }
+  else
+  {
+#ifdef EIGEN_DONT_PARALLELIZE
+    cout << "something";
+#endif
+    cout << "Running single threaded program" << endl;
+    // Run main program
+  }
+
   // Sammenligner med utregninger fra https://theneuralblog.com/forward-pass-backpropagation-example/
   int input_size = 2;
   int n_classes = 1;
@@ -38,15 +62,21 @@ int main(int argc, char** argv)
   net.add_optimizer(opt);
 
   // XOR eksempler
-  Matrix X = Matrix(20, 2);
+  Matrix X = Matrix(100, 2);
   X << 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1,
+      1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1,
+      1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1,
+      1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1,
+      1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1,
       1;
 
-  Matrix y = Matrix(20, 1);
-  y << 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0;
+  Matrix y = Matrix(100, 1);
+  y << 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1,
+      0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1,
+      0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0;
 
   // Create layers
-  nmbuflowtorch::layer::Dense* dense1 = new nmbuflowtorch::layer::Dense(input_size, 8);
+  nmbuflowtorch::layer::Dense* dense1 = new nmbuflowtorch::layer::Dense(input_size, 1000);
   nmbuflowtorch::layer::Sigmoid* sigmoid1 = new nmbuflowtorch::layer::Sigmoid();
   nmbuflowtorch::layer::Dense* dense2 = new nmbuflowtorch::layer::Dense(dense1->output_dim(), 1);
   nmbuflowtorch::layer::Sigmoid* sigmoid2 = new nmbuflowtorch::layer::Sigmoid();
@@ -56,18 +86,28 @@ int main(int argc, char** argv)
   net.add_layer(dense2);
   net.add_layer(sigmoid2);
 
-  net.fit(X, y, 1000, 8, 1);
+  net.fit(X, y, 1000, 50, 0);
 
   // cout << net.train_batch(X, y) << endl;
 
   auto y_pred = net.predict(X);
-  //for (auto x : y_pred) {
-  //  cout << x << endl;
-  //}
+  // for (auto x : y_pred) {
+  //   cout << x << endl;
+  // }
 
   vector<int> y_true_vector(y.data(), y.data() + y.rows() * y.cols());
   cout << endl;
 
-  cout << accuracy_score(y_true_vector, y_pred) << endl;
- 
+  cout << "ACC : " << accuracy_score(y_true_vector, y_pred) << endl;
+
+  // Cleaning up
+  // delete dense1;
+  // delete sigmoid1;
+  // delete dense2;
+  // delete sigmoid2;
+  // delete loss;
+  // delete opt;
+  // Could  also use smart pointers instead of manual memory management (RAII)
+  // shared pointers could also be used
+  // std::unique_ptr<layer::dense> dense1 = std::make_unique<layer::dense>(arguments...);
 }

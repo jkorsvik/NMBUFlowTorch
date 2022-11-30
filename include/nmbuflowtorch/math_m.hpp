@@ -1,9 +1,9 @@
 #ifndef NMBUFLOWTORCH_MATH_M_H_
 #define NMBUFLOWTORCH_MATH_M_H_
 
-#include "./definitions.hpp"
 #include <vector>
 
+#include "./definitions.hpp"
 
 inline Vector MVdot(const Matrix& W, const Vector& x)
 {
@@ -22,6 +22,8 @@ inline Matrix MMdot(const Matrix& W, const Matrix& X)
     // MVdot(W, Vector::cast(X))
   }
   // return (W.cwiseProduct(X));
+  // If parallelization is needed, use Eigen::internal::parallel_for
+  //
   return X * W;
 }
 
@@ -50,24 +52,27 @@ inline Vector colwise_max_index(Matrix& m)
 }
 
 // Returns 0 if value is < 0.5, else 1
-inline int binary_cutoff(float inp) {
+inline int binary_cutoff(float inp)
+{
   return inp >= 0.5;
 }
 
 inline float accuracy_score(std::vector<int> y_true, std::vector<int> y_pred)
 {
-  if (y_true.size() != y_pred.size()) {
+  if (y_true.size() != y_pred.size())
+  {
     throw std::runtime_error("Y_true and y_pred are not the same size");
   }
   int correct = 0;
-  for (int i = 0; i < y_true.size(); i ++ ) {
-    if ((int)y_true[i] == (int)y_pred[i]) {
-      correct ++;
+  for (int i = 0; i < y_true.size(); i++)
+  {
+    if ((int)y_true[i] == (int)y_pred[i])
+    {
+      correct++;
     }
   }
-  
-  return float(correct) / y_true.size(); // Cast to float to avoid integer division
-}
 
+  return float(correct) / y_true.size();  // Cast to float to avoid integer division
+}
 
 #endif  // NMBUFLOWTORCH_MATH_M_H_

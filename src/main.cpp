@@ -88,9 +88,9 @@ int main(int argc, char** argv)
       0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0;
 
   // Create layers
-  nmbuflowtorch::layer::Dense* dense1 = new nmbuflowtorch::layer::Dense(input_size, 1000);
+  nmbuflowtorch::layer::Dense* dense1 = new nmbuflowtorch::layer::Dense(input_size, 2'000);
   nmbuflowtorch::layer::Sigmoid* sigmoid1 = new nmbuflowtorch::layer::Sigmoid();
-  nmbuflowtorch::layer::Dense* dense2 = new nmbuflowtorch::layer::Dense(dense1->output_dim(), 1000);
+  nmbuflowtorch::layer::Dense* dense2 = new nmbuflowtorch::layer::Dense(dense1->output_dim(), 1'000);
   nmbuflowtorch::layer::Sigmoid* sigmoid2 = new nmbuflowtorch::layer::Sigmoid();
   nmbuflowtorch::layer::Dense* dense3 = new nmbuflowtorch::layer::Dense(dense2->output_dim(), 1);
   nmbuflowtorch::layer::Sigmoid* sigmoid3 = new nmbuflowtorch::layer::Sigmoid();
@@ -102,7 +102,7 @@ int main(int argc, char** argv)
   net.add_layer(dense3);
   net.add_layer(sigmoid3);
 
-  net.fit(X, y, 1000, 32, 0);
+  net.fit(X, y, 100, 32, 1);
 
   // cout << net.train_batch(X, y) << endl;
 

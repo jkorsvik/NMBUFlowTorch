@@ -25,14 +25,23 @@ int main(int argc, char** argv)
 {
   if (argc > 1 && strcmp(argv[1], "parallel") == 0)
   {
-#define EIGEN_USE_BLAS 1  // use BLAS for matrix multiplication
+#define EIGEN_USE_BLAS  // use BLAS for matrix multiplication
+// includes to make Eigen use BLAS+LAPACK
+#include <complex>
+
+#define EIGEN_SUPERLU_SUPPORT
+#define EIGEN_USE_BLAS
+#define EIGEN_USE_LAPACKE
+
+#define LAPACK_COMPLEX_CUSTOM
+#define lapack_complex_float  std::complex<float>
+#define lapack_complex_double std::complex<double>
     Eigen::initParallel();
-    int n_threads = 12;
+    int n_threads = omp_get_max_threads();
     omp_set_num_threads(n_threads);
 
-    cout << "Running parallel" << omp_get_max_threads() << endl;
+    cout << "Running parallely with max cores: " << omp_get_max_threads() << endl;
     n_threads = Eigen::nbThreads();
-    cout << "Running parallel" << n_threads << endl;
     // OMP_NUM_THREADS = n./ my_program omp_set_num_threads(n);
     Eigen::setNbThreads(n_threads);
   }
@@ -54,7 +63,7 @@ int main(int argc, char** argv)
   // define loss
   // nmbuflowtorch::Loss* loss = new nmbuflowtorch::loss::CrossEntropy();
 
-  nmbuflowtorch::optimizer::SGD* opt = new nmbuflowtorch::optimizer::SGD(0.1);
+  nmbuflowtorch::optimizer::SGD* opt = new nmbuflowtorch::optimizer::SGD(0.01);
 
   nmbuflowtorch::Loss* loss = new nmbuflowtorch::loss::MSE();
 
@@ -78,15 +87,19 @@ int main(int argc, char** argv)
   // Create layers
   nmbuflowtorch::layer::Dense* dense1 = new nmbuflowtorch::layer::Dense(input_size, 1000);
   nmbuflowtorch::layer::Sigmoid* sigmoid1 = new nmbuflowtorch::layer::Sigmoid();
-  nmbuflowtorch::layer::Dense* dense2 = new nmbuflowtorch::layer::Dense(dense1->output_dim(), 1);
+  nmbuflowtorch::layer::Dense* dense2 = new nmbuflowtorch::layer::Dense(dense1->output_dim(), 1000);
   nmbuflowtorch::layer::Sigmoid* sigmoid2 = new nmbuflowtorch::layer::Sigmoid();
+  nmbuflowtorch::layer::Dense* dense3 = new nmbuflowtorch::layer::Dense(dense2->output_dim(), 1);
+  nmbuflowtorch::layer::Sigmoid* sigmoid3 = new nmbuflowtorch::layer::Sigmoid();
 
   net.add_layer(dense1);
   net.add_layer(sigmoid1);
   net.add_layer(dense2);
   net.add_layer(sigmoid2);
+  net.add_layer(dense3);
+  net.add_layer(sigmoid3);
 
-  net.fit(X, y, 1000, 50, 0);
+  net.fit(X, y, 1000, 32, 0);
 
   // cout << net.train_batch(X, y) << endl;
 

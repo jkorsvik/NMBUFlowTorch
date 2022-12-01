@@ -75,6 +75,19 @@ inline float accuracy_score(std::vector<int> y_true, std::vector<int> y_pred)
   return float(correct) / y_true.size();  // Cast to float to avoid integer division
 }
 
+/// @brief Creates a permutation matrix from a given vector of indices and shuffles both X and y accordingly
+/// @param X Matrix of shape (n_samples, n_features)
+/// @param y Matrix of shape (n_samples, n_outputs) normally a vector
+inline void shuffle_data(Matrix& X, Matrix& y)
+{
+  Eigen::PermutationMatrix<Eigen::Dynamic, Eigen::Dynamic> perm(X.rows());
+
+  perm.setIdentity();
+  std::random_shuffle(perm.indices().data(), perm.indices().data() + perm.indices().size());
+  X = perm * X;
+  y = perm * y;
+}
+
 // https://www.intel.com/content/www/us/en/develop/documentation/onemkl-developer-reference-c/top/blas-and-sparse-blas-routines/blas-routines/blas-level-3-routines/cblas-gemm.html
 // https://github.com/higucheese/cblas_sgemm
 // c = a * b

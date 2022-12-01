@@ -56,16 +56,11 @@ namespace nmbuflowtorch
     return loss;
   };
 
-  /// @brief Fit model to data provided
-  /// @param X : Input data
-  /// @param y : input target
-  /// @param epochs : number of epochs
-  /// @param batch_size : size of batches
-  /// @param verbose : Level of verbosity
-  /// @return
-  void Network::fit(const Matrix& X, const Matrix& y, const int epochs, const int batch_size, const int verbose)
+   void Network::fit(Matrix& X, Matrix& y, const int epochs, const int batch_size, const int verbose, const bool shuffle)
   {
     float loss = 0.;
+    // TODO: figure out if to copy x and y or not for shuffling, to keep X and y as const
+
     if (verbose > 0)
     {
       std::cout << std::endl
@@ -74,6 +69,10 @@ namespace nmbuflowtorch
     }
     for (int epoch = 0; epoch < epochs; epoch++)
     {
+      if (shuffle)
+      {
+        shuffle_data(X, y);
+      }
       if (verbose > 0)
       {
         std::cout << std::endl << "Epoch: " << epoch << " Loss: " << loss << std::endl;

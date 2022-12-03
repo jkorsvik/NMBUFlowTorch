@@ -18,13 +18,16 @@
 #include "nmbuflowtorch/optimizer.hpp"
 #include "nmbuflowtorch/optimizer/sgd.hpp"
 
+// -> is for pointer objects, while . is for value objects
+using namespace std;
+
 TEST(DenseTest, InitializeDenseLayer)
 {
   nmbuflowtorch::Layer* dense1 = new nmbuflowtorch::layer::Dense(2, 2);
   EXPECT_EQ(dense1->get_parameters().size(), 6);
 }
 
-Test(LearnsXOR, XOR)
+TEST(LearnsXOR, XOR)
 {
   // Sammenligner med utregninger fra https://theneuralblog.com/forward-pass-backpropagation-example/
   int input_size = 2;

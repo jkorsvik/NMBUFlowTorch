@@ -19,6 +19,69 @@ namespace nmbuflowtorch
     return this->loss->output();
   };
 
+  /// @brief  Forward pass of the network using input X
+  /// @param X
+  /// @param y
+  /// @param batch_size
+  /// @param verbose Level of verbosity
+  /// @return
+  float Network::train_one_epoch(const Matrix& X, const Matrix& y, const int batch_size, const int verbose = 1)
+  {
+    int n_datapoints = X.rows();
+    int n_features = X.cols();
+    int n_batches = (int)(ceil(float(n_datapoints) / float(batch_size)));
+
+    float loss = 0.;
+
+    if (verbose > 0)
+    {
+      std::cout << "Processing " << n_batches << " Batches of size " << batch_size << " ..." << std::endl;
+      printProgress(0.0, n_batches, verbose);
+    }
+    // sleep(0.01);
+    for (int start_idx = 0; start_idx < n_datapoints; start_idx += batch_size)
+    {
+      int batch_id = start_idx / batch_size;
+      Matrix batch_X = X.block(start_idx, 0, std::min(batch_size, n_datapoints - start_idx), n_features);
+      Matrix batch_y = y.block(start_idx, 0, std::min(batch_size, n_datapoints - start_idx), 1);
+      loss = this->train_batch(batch_X, batch_y);
+
+      if (verbose > 0)
+      {
+        printProgress(batch_id, n_batches, verbose);
+        std::cout << " Loss " << loss;
+      }
+      // sleep(0.01);
+    }
+    return loss;
+  };
+
+  /// @brief Fit model to data provided
+  /// @param X : Input data
+  /// @param y : input target
+  /// @param epochs : number of epochs
+  /// @param batch_size : size of batches
+  /// @param verbose : Level of verbosity
+  /// @return
+  void Network::fit(const Matrix& X, const Matrix& y, const int epochs, const int batch_size, const int verbose)
+  {
+    float loss = 0.;
+    if (verbose > 0)
+    {
+      std::cout << std::endl
+                << "Fitting model for " << epochs << " Epochs and with Batches of size " << batch_size << " ..."
+                << std::endl;
+    }
+    for (int epoch = 0; epoch < epochs; epoch++)
+    {
+      if (verbose > 0)
+      {
+        std::cout << std::endl << "Epoch: " << epoch << " Loss: " << loss << std::endl;
+      }
+      loss = this->train_one_epoch(X, y, batch_size, verbose);
+    }
+  };
+
   std::vector<int> Network::predict(const Matrix& X)
   {
     this->forward(X);

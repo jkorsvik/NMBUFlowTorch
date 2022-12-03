@@ -75,7 +75,10 @@ namespace nmbuflowtorch
     void update(Optimizer& opt);
 
     float train_batch(const Matrix& X, const Matrix& y);
-    void fit(){};
+    float train_one_epoch(const Matrix& X, const Matrix& y, const int batch_size, const int verbose);
+
+    void fit(const Matrix& X, const Matrix& y, const int epochs, const int batch_size, const int verbose);
+
     std::vector<int> predict(const Matrix& X);
 
     /// @brief Returns the value from the last layer

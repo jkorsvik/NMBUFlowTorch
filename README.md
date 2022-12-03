@@ -225,6 +225,16 @@ existing versions can be found in the
 * **Jon-Mikkel Ryen Korsvik** - [@jkorsvik](https://github.com/jkorsvik)
 * **Jørgen Navjord** - [@navjordj](https://github.com/navjordj)
 
+
+## Inspiration Repos
+* https://github.com/filipdutescu/modern-cpp-template Used for bootstrapping a c++ project and for managing building, installing, structure, as well as testing.
+* https://github.com/krocki/MLP-CXX 
+* https://github.com/TheFirstGuy/ann
+* https://github.com/leondavi/cppSANN
+* https://github.com/Black-Phoenix/CUDA-MLP
+
+
+
 ## License
 
 This project is licensed under the [Unlicense](https://unlicense.org/) - see the

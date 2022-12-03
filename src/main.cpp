@@ -11,11 +11,10 @@
 #include "nmbuflowtorch/loss.hpp"
 #include "nmbuflowtorch/loss/cross_entropy.hpp"
 #include "nmbuflowtorch/loss/mse.hpp"
+#include "nmbuflowtorch/math_m.hpp"
 #include "nmbuflowtorch/network.hpp"
 #include "nmbuflowtorch/optimizer.hpp"
 #include "nmbuflowtorch/optimizer/sgd.hpp"
-#include "nmbuflowtorch/math_m.hpp"
-
 
 // -> is for pointer objects, while . is for value objects
 using namespace std;
@@ -39,11 +38,12 @@ int main(int argc, char** argv)
   net.add_optimizer(opt);
 
   // XOR eksempler
-  Matrix X = Matrix(4, 2);
-  X << 0, 0, 0, 1, 1, 0, 1, 1;
+  Matrix X = Matrix(20, 2);
+  X << 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1,
+      1;
 
-  Matrix y = Matrix(4, 1);
-  y << 0, 1, 1, 0;
+  Matrix y = Matrix(20, 1);
+  y << 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0;
 
   // Create layers
   nmbuflowtorch::layer::Dense* dense1 = new nmbuflowtorch::layer::Dense(input_size, 8);
@@ -56,16 +56,18 @@ int main(int argc, char** argv)
   net.add_layer(dense2);
   net.add_layer(sigmoid2);
 
-  for (int i = 0; i < 1000000; i ++) {
-    net.train_batch(X, y);
-    if (i % 10000 == 0) {
-      cout << "XOR data  - Epoch:" << i << " MSE Loss: " <<  net.train_batch(X, y) << endl;
+  net.fit(X, y, 1000, 8, 1);
 
-    }
-  }
+  // cout << net.train_batch(X, y) << endl;
 
-  //cout << net.train_batch(X, y) << endl;
-  //net.predict(X);
+  auto y_pred = net.predict(X);
+  //for (auto x : y_pred) {
+  //  cout << x << endl;
+  //}
 
+  vector<int> y_true_vector(y.data(), y.data() + y.rows() * y.cols());
+  cout << endl;
 
+  cout << accuracy_score(y_true_vector, y_pred) << endl;
+ 
 }

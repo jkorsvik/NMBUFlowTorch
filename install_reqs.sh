@@ -16,6 +16,12 @@ cat _gdb_extension/gdbinit.txt.temp > ~/.gdbinit
 
 # It aint stupid if it works
 
+# BLAS & LAPACK for blazing fast dense matrix operations, supported by Eigen
+apt search openblas
+sudo apt-get install libblas-dev liblapack-dev
+sudo apt-get install libopenblas-dev 
+sudo update-alternatives --config libblas.so.3
+
 # clang-tidy for linting
 sudo apt-get install clang-tidy 
 

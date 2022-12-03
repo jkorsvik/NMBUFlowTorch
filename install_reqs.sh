@@ -59,3 +59,4 @@ sudo apt install clang-12 --install-suggests
 
 # For automatic documentation generation
 sudo apt-get install doxygen
+sudo apt-get install graphviz

@@ -58,7 +58,9 @@ set(sources
 )
 
 set(exe_sources
-		src/main.cpp
+    #src/main_multithread.cpp
+    #src/main_single_thread.cpp
+    src/main.cpp
 		${sources}
 )
 

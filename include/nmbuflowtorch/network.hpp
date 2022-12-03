@@ -75,7 +75,24 @@ namespace nmbuflowtorch
     void update(Optimizer& opt);
 
     float train_batch(const Matrix& X, const Matrix& y);
-    void fit(){};
+    float train_one_epoch(const Matrix& X, const Matrix& y, const int batch_size, const int verbose);
+
+    /// @brief Fit model to data provided
+    /// @param X : Input data
+    /// @param y : input target
+    /// @param epochs : number of epochs
+    /// @param batch_size : size of batches
+    /// @param verbose : Level of verbosity
+    /// @param shuffle : bool to shuffle data in each epoch
+    /// @return
+    void fit(
+        Matrix& X,  // if const, then cannot shuffle
+        Matrix& y,
+        const int epochs,
+        const int batch_size,
+        const int verbose,
+        const bool shuffle = true);
+
     std::vector<int> predict(const Matrix& X);
 
     /// @brief Returns the value from the last layer

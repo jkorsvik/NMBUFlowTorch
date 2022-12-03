@@ -16,8 +16,6 @@
 #include "nmbuflowtorch/math_m.hpp"
 #include "nmbuflowtorch/network.hpp"
 #include "nmbuflowtorch/optimizer.hpp"
-//#include "nmbuflowtorch/optimizer/adam.hpp"
-#include "nmbuflowtorch/optimizer/nadam.hpp"
 #include "nmbuflowtorch/optimizer/sgd.hpp"
 
 // -> is for pointer objects, while . is for value objects
@@ -68,7 +66,7 @@ int main(int argc, char** argv)
   // define loss
   // nmbuflowtorch::Loss* loss = new nmbuflowtorch::loss::CrossEntropy();
 
-  nmbuflowtorch::optimizer::Nadam* opt = new nmbuflowtorch::optimizer::Nadam(0.1);
+  nmbuflowtorch::optimizer::SGD* opt = new nmbuflowtorch::optimizer::SGD(0.01);
 
   nmbuflowtorch::Loss* loss = new nmbuflowtorch::loss::MSE();
 

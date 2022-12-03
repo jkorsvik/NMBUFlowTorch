@@ -1,6 +1,8 @@
 #ifndef NMBUFLOWTORCH_MATH_M_H_
 #define NMBUFLOWTORCH_MATH_M_H_
 
+#include <cblas.h>
+
 #include "./definitions.hpp"
 
 inline Vector MVdot(const Matrix& W, const Vector& x)
@@ -20,6 +22,8 @@ inline Matrix MMdot(const Matrix& W, const Matrix& X)
     // MVdot(W, Vector::cast(X))
   }
   // return (W.cwiseProduct(X));
+  // If parallelization is needed, use Eigen::internal::parallel_for
+  //
   return X * W;
 }
 
@@ -48,8 +52,76 @@ inline Vector colwise_max_index(Matrix& m)
 }
 
 // Returns 0 if value is < 0.5, else 1
-inline int binary_cutoff(float inp) {
+inline int binary_cutoff(float inp)
+{
   return inp >= 0.5;
+}
+
+inline float accuracy_score(std::vector<int> y_true, std::vector<int> y_pred)
+{
+  if (y_true.size() != y_pred.size())
+  {
+    throw std::runtime_error("Y_true and y_pred are not the same size");
+  }
+  int correct = 0;
+  for (int i = 0; i < y_true.size(); i++)
+  {
+    if ((int)y_true[i] == (int)y_pred[i])
+    {
+      correct++;
+    }
+  }
+
+  return float(correct) / y_true.size();  // Cast to float to avoid integer division
+}
+
+/// @brief Creates a permutation matrix from a given vector of indices and shuffles both X and y accordingly
+/// @param X Matrix of shape (n_samples, n_features)
+/// @param y Matrix of shape (n_samples, n_outputs) normally a vector
+inline void shuffle_data(Matrix& X, Matrix& y)
+{
+  Eigen::PermutationMatrix<Eigen::Dynamic, Eigen::Dynamic> perm(X.rows());
+
+  perm.setIdentity();
+  std::random_shuffle(perm.indices().data(), perm.indices().data() + perm.indices().size());
+  X = perm * X;
+  y = perm * y;
+}
+
+// https://www.intel.com/content/www/us/en/develop/documentation/onemkl-developer-reference-c/top/blas-and-sparse-blas-routines/blas-routines/blas-level-3-routines/cblas-gemm.html
+// https://github.com/higucheese/cblas_sgemm
+// c = a * b
+inline void BLAS_mmul_sgeem(
+    Matrix& __restrict c,  // IS NOT CONST SINCE IT COUNTAINS BIAS ALREADY AND WILL BE THE RESULTING MATRIX
+    const Matrix& __restrict a,
+    const Matrix& __restrict b,
+    // Tranpose flags
+    bool aT = false,
+    bool bT = false,
+    bool rowmajor = true)
+{
+  enum CBLAS_TRANSPOSE transA = aT ? CblasTrans : CblasNoTrans;
+  enum CBLAS_TRANSPOSE transB = bT ? CblasTrans : CblasNoTrans;
+  enum CBLAS_ORDER rowmajorfl = bT ? CblasRowMajor : CblasColMajor;
+
+  size_t M = c.rows();
+  size_t N = c.cols();
+  size_t K = aT ? a.rows() : a.cols();
+
+  float alpha = 1.0f;
+  float beta = 1.0f;
+
+  //  C ← αAB+βC or C ← αABT+βC
+  //  C ← αATB+βC or	C ← αATBT+βC
+
+  size_t lda = aT ? K : M;
+  size_t ldb = bT ? N : K;
+  size_t ldc = M;
+
+  // https://www.ibm.com/docs/en/essl/6.2?topic=reference-basic-linear-algebra-subprograms-blas-blas-cblas
+  // double general matrix-matrix multiplication C = alpha*op(A)*op(B) + beta*C
+  // Could also be SGEMM
+  cblas_sgemm(rowmajorfl, transA, transB, M, N, K, alpha, a.data(), lda, b.data(), ldb, beta, c.data(), ldc);
 }
 
 #endif  // NMBUFLOWTORCH_MATH_M_H_

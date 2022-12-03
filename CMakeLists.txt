@@ -160,15 +160,19 @@ verbose_message("Applied compiler warnings. Using standard ${CMAKE_CXX_STANDARD}
 
 
 # Identify and link with the specific "packages" the project uses
+set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 
+# Find the required packages
 find_package(Threads REQUIRED)
 find_package(OpenMP REQUIRED)
+find_package(OpenBLAS REQUIRED)
 
 target_link_libraries(
   ${PROJECT_NAME}
   PUBLIC
     ${OPENMP}OpenMP::OpenMP_CXX
     ${CMAKE_THREAD_LIBS_INIT}
+    ${OpenBLAS_LIB}
     
 )
 if(${PROJECT_NAME}_BUILD_EXECUTABLE AND ${PROJECT_NAME}_ENABLE_UNIT_TESTING)
@@ -177,6 +181,7 @@ if(${PROJECT_NAME}_BUILD_EXECUTABLE AND ${PROJECT_NAME}_ENABLE_UNIT_TESTING)
     PUBLIC
       ${OPENMP}OpenMP::OpenMP_CXX
       ${CMAKE_THREAD_LIBS_INIT}
+      ${OpenBLAS_LIB}
   )
 endif()
 

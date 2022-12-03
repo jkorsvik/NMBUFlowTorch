@@ -11,11 +11,12 @@
 #include "nmbuflowtorch/loss.hpp"
 #include "nmbuflowtorch/loss/cross_entropy.hpp"
 #include "nmbuflowtorch/loss/mse.hpp"
+#include "nmbuflowtorch/math_m.hpp"
 #include "nmbuflowtorch/network.hpp"
 #include "nmbuflowtorch/optimizer.hpp"
+#include "nmbuflowtorch/optimizer/adam.hpp"
+#include "nmbuflowtorch/optimizer/nadam.hpp"
 #include "nmbuflowtorch/optimizer/sgd.hpp"
-#include "nmbuflowtorch/math_m.hpp"
-
 
 // -> is for pointer objects, while . is for value objects
 using namespace std;
@@ -31,7 +32,7 @@ int main(int argc, char** argv)
   // define loss
   // nmbuflowtorch::Loss* loss = new nmbuflowtorch::loss::CrossEntropy();
 
-  nmbuflowtorch::optimizer::SGD* opt = new nmbuflowtorch::optimizer::SGD(0.1);
+  nmbuflowtorch::optimizer::Adam* opt = new nmbuflowtorch::optimizer::Adam(0.1);
 
   nmbuflowtorch::Loss* loss = new nmbuflowtorch::loss::MSE();
 
@@ -56,16 +57,15 @@ int main(int argc, char** argv)
   net.add_layer(dense2);
   net.add_layer(sigmoid2);
 
-  for (int i = 0; i < 1000000; i ++) {
+  for (int i = 0; i < 1000000; i++)
+  {
     net.train_batch(X, y);
-    if (i % 10000 == 0) {
-      cout << "XOR data  - Epoch:" << i << " MSE Loss: " <<  net.train_batch(X, y) << endl;
-
+    if (i % 10000 == 0)
+    {
+      cout << "XOR data  - Epoch:" << i << " MSE Loss: " << net.train_batch(X, y) << endl;
     }
   }
 
-  //cout << net.train_batch(X, y) << endl;
-  //net.predict(X);
-
-
+  // cout << net.train_batch(X, y) << endl;
+  // net.predict(X);
 }

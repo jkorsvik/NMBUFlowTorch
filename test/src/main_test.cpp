@@ -74,8 +74,9 @@ Test(LearnsXOR, XOR)
   cout << endl;
   auto score = accuracy_score(y_true_vector, y_pred);
   EXPECT_GE(score, 0.9);
-  int main(int argc, char** argv)
-  {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-  }
+}
+int main(int argc, char** argv)
+{
+  ::testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
+}

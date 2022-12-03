@@ -12,6 +12,7 @@ namespace nmbuflowtorch::optimizer
     std::unordered_map<const float*, Vector> v_map;  // variance map to pointers
     float beta1;
     float beta2;
+
     float epsilon = 1e-8;  // epsilon for numerical stability
     int t = 0;             // time step
 

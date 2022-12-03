@@ -5,6 +5,7 @@
 
 namespace nmbuflowtorch::optimizer
 {
+  /// @brief Nadam optimizer
   class Nadam : public Optimizer
   {
    private:
@@ -12,14 +13,25 @@ namespace nmbuflowtorch::optimizer
     std::unordered_map<const float*, Vector> v_map;  // variance map to pointers
     float beta1;
     float beta2;
-    float epsilon = 1e-8;  // epsilon for numerical stability
-    int t = 0;             // time step
+    float weight_decay;
+    float momentum_decay;
+    float epsilon;  // epsilon for numerical stability
+    int t = 1;      // time step
 
    public:
-    explicit Nadam(float learning_rate = 0.001, float beta1 = 0.9, float beta2 = 0.999)
+    explicit Nadam(
+        float learning_rate = 2e-3,
+        float beta1 = 0.9,
+        float beta2 = 0.999,
+        float weight_decay = 0.0,
+        float momentum_decay = 4e-3,
+        float epsilon = 1e-8)
         : Optimizer(learning_rate),
           beta1(beta1),
-          beta2(beta2)
+          beta2(beta2),
+          weight_decay(weight_decay),
+          momentum_decay(momentum_decay),
+          epsilon(epsilon)
     {
     }
 

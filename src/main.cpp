@@ -14,7 +14,7 @@
 #include "nmbuflowtorch/math_m.hpp"
 #include "nmbuflowtorch/network.hpp"
 #include "nmbuflowtorch/optimizer.hpp"
-#include "nmbuflowtorch/optimizer/adam.hpp"
+//#include "nmbuflowtorch/optimizer/adam.hpp"
 #include "nmbuflowtorch/optimizer/nadam.hpp"
 #include "nmbuflowtorch/optimizer/sgd.hpp"
 
@@ -32,7 +32,7 @@ int main(int argc, char** argv)
   // define loss
   // nmbuflowtorch::Loss* loss = new nmbuflowtorch::loss::CrossEntropy();
 
-  nmbuflowtorch::optimizer::Adam* opt = new nmbuflowtorch::optimizer::Adam(0.1);
+  nmbuflowtorch::optimizer::Nadam* opt = new nmbuflowtorch::optimizer::Nadam(0.1);
 
   nmbuflowtorch::Loss* loss = new nmbuflowtorch::loss::MSE();
 

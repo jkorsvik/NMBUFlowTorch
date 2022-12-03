@@ -24,13 +24,13 @@ set(loss_sources
 
 set(optimizer_headers
   include/nmbuflowtorch/optimizer/sgd.hpp
-  include/nmbuflowtorch/optimizer/adam.hpp
+  #include/nmbuflowtorch/optimizer/adam.hpp
   include/nmbuflowtorch/optimizer/nadam.hpp
 )
 
 set(optimizer_sources
   src/nmbuflowtorch/optimizer/sgd.cpp
-  src/nmbuflowtorch/optimizer/adam.cpp
+  #src/nmbuflowtorch/optimizer/adam.cpp
   src/nmbuflowtorch/optimizer/nadam.cpp
 )
 

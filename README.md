@@ -131,7 +131,7 @@ cmake --build <build_directory> --target install --config <desired_config>
 
 If you have not built the project yet, the `automatic_rebuild_and_install.sh` will do fine, otherwise follow the next section:
 
->**Note**: *If you want to supress a lot of warnings when building, see the [CMakeLists.txt](CMakeLists.txt) at line 145 and 146, and uncomment the preferred.*
+> ***Note***: *If you want to supress a lot of warnings when building, see the [CMakeLists.txt](CMakeLists.txt) at line 145 and 146, and uncomment the preferred.*
 
 ## Building the project
 

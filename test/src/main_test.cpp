@@ -64,7 +64,7 @@ TEST(LearnsXOR, XOR)
   net.add_layer(dense2);
   net.add_layer(sigmoid2);
 
-  net.fit(X, y, 1000, 8, 1);
+  net.fit(X, y, 1000, 8, 0);
 
   // cout << net.train_batch(X, y) << endl;
 

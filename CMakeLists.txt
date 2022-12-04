@@ -166,6 +166,7 @@ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 find_package(Threads REQUIRED)
 find_package(OpenMP REQUIRED)
 find_package(OpenBLAS REQUIRED)
+#find_package(fast-cpp-csv-parser REQUIRED)
 
 target_link_libraries(
   ${PROJECT_NAME}
@@ -173,6 +174,7 @@ target_link_libraries(
     ${OPENMP}OpenMP::OpenMP_CXX
     ${CMAKE_THREAD_LIBS_INIT}
     ${OpenBLAS_LIB}
+    #${FAST_CPP_PARSER_LIB}::::fast-cpp-csv-parser
     
 )
 if(${PROJECT_NAME}_BUILD_EXECUTABLE AND ${PROJECT_NAME}_ENABLE_UNIT_TESTING)
@@ -182,6 +184,7 @@ if(${PROJECT_NAME}_BUILD_EXECUTABLE AND ${PROJECT_NAME}_ENABLE_UNIT_TESTING)
       ${OPENMP}OpenMP::OpenMP_CXX
       ${CMAKE_THREAD_LIBS_INIT}
       ${OpenBLAS_LIB}
+      #${FAST_CPP_PARSER_LIB}::::fast-cpp-csv-parser
   )
 endif()
 

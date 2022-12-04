@@ -6,6 +6,7 @@
 #include <ostream>
 #include <vector>
 
+#include "csv_parser/csv.hpp"
 #include "nmbuflowtorch/definitions.hpp"  // imports and renames important files
 #include "nmbuflowtorch/layer.hpp"
 #include "nmbuflowtorch/layer/dense.hpp"
@@ -17,12 +18,13 @@
 #include "nmbuflowtorch/network.hpp"
 #include "nmbuflowtorch/optimizer.hpp"
 //#include "nmbuflowtorch/optimizer/adam.hpp"
-#include "nmbuflowtorch/optimizer/nadam.hpp"
+//#include "nmbuflowtorch/optimizer/nadam.hpp"
 #include "nmbuflowtorch/optimizer/sgd.hpp"
 
 // -> is for pointer objects, while . is for value objects
 using namespace std;
-
+// CSV parser
+using namespace csv;
 int main(int argc, char** argv)
 {
   if (argc > 1 && strcmp(argv[1], "parallel") == 0)
@@ -68,7 +70,7 @@ int main(int argc, char** argv)
   // define loss
   // nmbuflowtorch::Loss* loss = new nmbuflowtorch::loss::CrossEntropy();
 
-  nmbuflowtorch::optimizer::Nadam* opt = new nmbuflowtorch::optimizer::Nadam(0.1);
+  nmbuflowtorch::optimizer::SGD* opt = new nmbuflowtorch::optimizer::SGD(0.1);
 
   nmbuflowtorch::Loss* loss = new nmbuflowtorch::loss::MSE();
 
@@ -76,14 +78,39 @@ int main(int argc, char** argv)
   net.add_optimizer(opt);
 
   // XOR eksempler
-  Matrix X = Matrix(4, 2);
-  X << 0, 0, 0, 1, 1, 0, 1, 1;
+  Matrix X = Matrix(4, input_size);
+  Matrix y = Matrix(4, n_classes);
 
-  Matrix y = Matrix(4, 1);
-  y << 0, 1, 1, 0;
+  CSVFormat format;
+  format.delimiter(',').quote('~').no_header();
+  ;  //
+
+  CSVReader reader("data/xor/Xor_X.csv", format);
+  int n_rows = 0;
+  for (CSVRow& row : reader)
+  {  // Input iterator
+    int n_cols = 0;
+    for (CSVField& field : row)
+    {
+      if (n_cols < input_size)
+      {
+        X << field.get<double>();
+      }
+      else
+      {
+        y << field.get<double>();
+      }
+      cout << field.get<double>() << " ";
+      // By default, get<>() produces a std::string.
+      // A more efficient get<string_view>() is also available, where the resulting
+      // string_view is valid as long as the parent CSVRow is alive
+      n_cols++;
+    }
+    n_rows++;
+  }
 
   // Create layers
-  nmbuflowtorch::layer::Dense* dense1 = new nmbuflowtorch::layer::Dense(input_size, 4);
+  nmbuflowtorch::layer::Dense* dense1 = new nmbuflowtorch::layer::Dense(input_size, 2);
   nmbuflowtorch::layer::Sigmoid* sigmoid1 = new nmbuflowtorch::layer::Sigmoid();
   nmbuflowtorch::layer::Dense* dense2 = new nmbuflowtorch::layer::Dense(dense1->output_dim(), n_classes);
   nmbuflowtorch::layer::Sigmoid* sigmoid2 = new nmbuflowtorch::layer::Sigmoid();
@@ -111,15 +138,15 @@ int main(int argc, char** argv)
 
   cout << "ACC : " << accuracy_score(y_true_vector, y_pred) << endl;
 
-  delete net;
-  // Cleaning up
-  // delete dense1;
-  // delete sigmoid1;
-  // delete dense2;
-  // delete sigmoid2;
-  // delete loss;
-  // delete opt;
-  // Could  also use smart pointers instead of manual memory management (RAII)
-  // shared pointers could also be used
-  // std::unique_ptr<layer::dense> dense1 = std::make_unique<layer::dense>(arguments...);
+  // de net.d;
+  //  Cleaning up
+  //  delete dense1;
+  //  delete sigmoid1;
+  //  delete dense2;
+  //  delete sigmoid2;
+  //  delete loss;
+  //  delete opt;
+  //  Could  also use smart pointers instead of manual memory management (RAII)
+  //  shared pointers could also be used
+  //  std::unique_ptr<layer::dense> dense1 = std::make_unique<layer::dense>(arguments...);
 }

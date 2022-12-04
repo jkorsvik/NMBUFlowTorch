@@ -3,7 +3,7 @@ if(${PROJECT_NAME}_ENABLE_CONAN)
   # Setup Conan requires and options here:
   #
 
-  set(${PROJECT_NAME}_CONAN_REQUIRES gtest/1.12.1 eigen/3.4.0 openblas/0.3.20)
+  set(${PROJECT_NAME}_CONAN_REQUIRES gtest/1.12.1 eigen/3.4.0 openblas/0.3.20) #fast-cpp-csv-parser/cci.20211104)
   set(${PROJECT_NAME}_CONAN_OPTIONS "")
 
   #

@@ -107,10 +107,12 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Layer.html">Layer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The base layer class for neural network models.  <a href="classnmbuflowtorch_1_1Layer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Loss.html">Loss</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Network.html">Network</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classnmbuflowtorch_1_1Network.html" title="The Network class is a class for creating and managing a neural network. It has functions for adding ...">Network</a> class is a class for creating and managing a neural network. It has functions for adding layers, losses, and optimizers to the network, as well as functions for training and predicting using the network. The summary function prints a summary of the network, including the type and output shape of each layer. The fit function trains the network on a given dataset, with options for specifying the number of epochs, batch size, and verbosity level. The predict function uses the network to make predictions on a given dataset. The get_parameters and get_derivatives functions return the serialized layer parameters and derivatives of layer parameters, respectively. The get_layer_output and get_layer_weight functions return the output and weight matrices of a specified layer.  <a href="classnmbuflowtorch_1_1Network.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Optimizer.html">Optimizer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,6 +120,7 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a6841de6f2ac014f91c37f7f2c0e9cc1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacenmbuflowtorch.html#a6841de6f2ac014f91c37f7f2c0e9cc1e">printProgress</a> (float current, float total, int verbose_level)</td></tr>
+<tr class="memdesc:a6841de6f2ac014f91c37f7f2c0e9cc1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a progress bar to the console.  <a href="namespacenmbuflowtorch.html#a6841de6f2ac014f91c37f7f2c0e9cc1e">More...</a><br /></td></tr>
 <tr class="separator:a6841de6f2ac014f91c37f7f2c0e9cc1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -161,24 +164,34 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="definitions_8hpp_source.html#l00023">23</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// int val = (int)(percentage * PERCENTAGEMULTIPLIER);</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">// int lpad = (int)(percentage * PBWIDTH);</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// int rpad = PBWIDTH - lpad;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">// printf(&quot;\r%3d%% [%.*s%*s]&quot;, val, lpad, PBSTR, rpad, &quot;&quot;);</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">float</span> percent = (<a class="code" href="definitions_8hpp.html#aa762e493cdc1d72e0c825eeaedd28d63">PERCENTAGEMULTIPLIER</a> * (current + 1)) / total;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    percent = percent &gt; <a class="code" href="definitions_8hpp.html#aa762e493cdc1d72e0c825eeaedd28d63">PERCENTAGEMULTIPLIER</a> ? <a class="code" href="definitions_8hpp.html#aa762e493cdc1d72e0c825eeaedd28d63">PERCENTAGEMULTIPLIER</a> : percent;  <span class="comment">// Prevents percentage from going over 100%</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">size_t</span> lpad = (size_t)(percent / <a class="code" href="definitions_8hpp.html#a69793e71975c25754a8236df29896e15">PBWIDTH</a>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">size_t</span> rpad = (size_t)(<a class="code" href="definitions_8hpp.html#aa762e493cdc1d72e0c825eeaedd28d63">PERCENTAGEMULTIPLIER</a> / <a class="code" href="definitions_8hpp.html#a69793e71975c25754a8236df29896e15">PBWIDTH</a> - lpad);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::wcout &lt;&lt; <span class="stringliteral">&quot;\r&quot;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;               &lt;&lt; <span class="stringliteral">&quot;[&quot;</span> &lt;&lt; std::wstring(lpad, <a class="code" href="definitions_8hpp.html#a93f03159397f25c687840129b18c972d">PBSTR</a>) &lt;&lt; std::wstring(rpad, <span class="charliteral">&#39; &#39;</span>) &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::cout &lt;&lt; percent &lt;&lt; <span class="stringliteral">&quot;%&quot;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;              &lt;&lt; <span class="stringliteral">&quot; [Batch &quot;</span> &lt;&lt; current + 1 &lt;&lt; <span class="stringliteral">&quot; of &quot;</span> &lt;&lt; total &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::cout.flush();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  }</div>
+<p>Prints a progress bar to the console. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">current</td><td>The current progress value. </td></tr>
+    <tr><td class="paramname">total</td><td>The total progress value. </td></tr>
+    <tr><td class="paramname">verbose_level</td><td>The level of verbosity. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="definitions_8hpp_source.html#l00027">27</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// int val = (int)(percentage * PERCENTAGEMULTIPLIER);</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// int lpad = (int)(percentage * PBWIDTH);</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// int rpad = PBWIDTH - lpad;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// printf(&quot;\r%3d%% [%.*s%*s]&quot;, val, lpad, PBSTR, rpad, &quot;&quot;);</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">float</span> percent = (<a class="code" href="definitions_8hpp.html#aa762e493cdc1d72e0c825eeaedd28d63">PERCENTAGEMULTIPLIER</a> * (current + 1)) / total;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    percent = percent &gt; <a class="code" href="definitions_8hpp.html#aa762e493cdc1d72e0c825eeaedd28d63">PERCENTAGEMULTIPLIER</a> ? <a class="code" href="definitions_8hpp.html#aa762e493cdc1d72e0c825eeaedd28d63">PERCENTAGEMULTIPLIER</a> : percent;  <span class="comment">// Prevents percentage from going over 100%</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">size_t</span> lpad = (size_t)(percent / <a class="code" href="definitions_8hpp.html#a69793e71975c25754a8236df29896e15">PBWIDTH</a>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">size_t</span> rpad = (size_t)(<a class="code" href="definitions_8hpp.html#aa762e493cdc1d72e0c825eeaedd28d63">PERCENTAGEMULTIPLIER</a> / <a class="code" href="definitions_8hpp.html#a69793e71975c25754a8236df29896e15">PBWIDTH</a> - lpad);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::wcout &lt;&lt; <span class="stringliteral">&quot;\r&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;               &lt;&lt; <span class="stringliteral">&quot;[&quot;</span> &lt;&lt; std::wstring(lpad, <a class="code" href="definitions_8hpp.html#a93f03159397f25c687840129b18c972d">PBSTR</a>) &lt;&lt; std::wstring(rpad, <span class="charliteral">&#39; &#39;</span>) &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    std::cout &lt;&lt; percent &lt;&lt; <span class="stringliteral">&quot;%&quot;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;              &lt;&lt; <span class="stringliteral">&quot; [Batch &quot;</span> &lt;&lt; current + 1 &lt;&lt; <span class="stringliteral">&quot; of &quot;</span> &lt;&lt; total &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    std::cout.flush();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  }</div>
 <div class="ttc" id="adefinitions_8hpp_html_a69793e71975c25754a8236df29896e15"><div class="ttname"><a href="definitions_8hpp.html#a69793e71975c25754a8236df29896e15">PBWIDTH</a></div><div class="ttdeci">#define PBWIDTH</div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00017">definitions.hpp:17</a></div></div>
 <div class="ttc" id="adefinitions_8hpp_html_a93f03159397f25c687840129b18c972d"><div class="ttname"><a href="definitions_8hpp.html#a93f03159397f25c687840129b18c972d">PBSTR</a></div><div class="ttdeci">#define PBSTR</div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00019">definitions.hpp:19</a></div></div>
 <div class="ttc" id="adefinitions_8hpp_html_aa762e493cdc1d72e0c825eeaedd28d63"><div class="ttname"><a href="definitions_8hpp.html#aa762e493cdc1d72e0c825eeaedd28d63">PERCENTAGEMULTIPLIER</a></div><div class="ttdeci">#define PERCENTAGEMULTIPLIER</div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00018">definitions.hpp:18</a></div></div>

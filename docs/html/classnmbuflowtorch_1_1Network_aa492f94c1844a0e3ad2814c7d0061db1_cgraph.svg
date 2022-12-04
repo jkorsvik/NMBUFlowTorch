@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classnmbuflowtorch_1_1Loss.html#a5747f962c29f0e1a6147c435da22c466" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classnmbuflowtorch_1_1Loss.html#a5747f962c29f0e1a6147c435da22c466" target="_top" xlink:title="Returns the value of the loss.">
 <polygon fill="none" stroke="black" points="173,-0.5 173,-30.5 291,-30.5 291,-0.5 173,-0.5"/>
 <text text-anchor="start" x="181" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch::Loss</text>
 <text text-anchor="middle" x="232" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">::output</text>

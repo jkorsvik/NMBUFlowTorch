@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="network_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="network_8hpp.html" target="_top" xlink:title="Network class representing a sequence of layers. This class implements a network consisting of a sequ...">
 <polygon fill="none" stroke="black" points="94.5,-230 94.5,-249 248.5,-249 248.5,-230 94.5,-230"/>
 <text text-anchor="middle" x="171.5" y="-237" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch/network.hpp</text>
 </a>

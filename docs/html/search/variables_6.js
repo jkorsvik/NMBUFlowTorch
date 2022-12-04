@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['units_269',['units',['../classnmbuflowtorch_1_1layer_1_1Dense.html#a65b766836a68c8d460e401b320098be2',1,'nmbuflowtorch::layer::Dense']]],
-  ['unrolldepth_270',['UNROLLDEPTH',['../network_8cpp.html#a4222106336fcc312f9364fa810b44c45',1,'network.cpp']]]
+  ['opt_303',['opt',['../classnmbuflowtorch_1_1Network.html#abf1f011e18056cc938f57aff4ece8720',1,'nmbuflowtorch::Network']]]
 ];

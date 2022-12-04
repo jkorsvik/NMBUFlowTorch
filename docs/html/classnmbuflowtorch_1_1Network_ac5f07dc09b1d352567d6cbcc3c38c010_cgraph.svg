@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Forward, backward, and update functions combined for one batch of data.">
 <polygon fill="#bfbfbf" stroke="black" points="0,-98.5 0,-128.5 137,-128.5 137,-98.5 0,-98.5"/>
 <text text-anchor="start" x="8" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch::Network</text>
 <text text-anchor="middle" x="68.5" y="-105.5" font-family="Helvetica,sans-Serif" font-size="10.00">::train_batch</text>
@@ -69,7 +69,7 @@
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="classnmbuflowtorch_1_1Loss.html#a5747f962c29f0e1a6147c435da22c466" target="_top" xlink:title=" ">
+<g id="a_node7"><a xlink:href="classnmbuflowtorch_1_1Loss.html#a5747f962c29f0e1a6147c435da22c466" target="_top" xlink:title="Returns the value of the loss.">
 <polygon fill="none" stroke="black" points="182.5,-49.5 182.5,-79.5 300.5,-79.5 300.5,-49.5 182.5,-49.5"/>
 <text text-anchor="start" x="190.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch::Loss</text>
 <text text-anchor="middle" x="241.5" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">::output</text>
@@ -101,7 +101,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classnmbuflowtorch_1_1Loss.html#a29688f70477ce9f630cb313cc7e4c365" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="classnmbuflowtorch_1_1Loss.html#a29688f70477ce9f630cb313cc7e4c365" target="_top" xlink:title="Returns the gradient with respect to the input of the loss function.">
 <polygon fill="none" stroke="black" points="355.5,-235.5 355.5,-265.5 473.5,-265.5 473.5,-235.5 355.5,-235.5"/>
 <text text-anchor="start" x="363.5" y="-253.5" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch::Loss</text>
 <text text-anchor="middle" x="414.5" y="-242.5" font-family="Helvetica,sans-Serif" font-size="10.00">::back_gradient</text>
@@ -117,7 +117,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="classnmbuflowtorch_1_1Loss.html#ab739a047ffc84f44af71832ec704cedc" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="classnmbuflowtorch_1_1Loss.html#ab739a047ffc84f44af71832ec704cedc" target="_top" xlink:title="Evaluates the loss function given the predicted and target values.">
 <polygon fill="none" stroke="black" points="355.5,-186.5 355.5,-216.5 473.5,-216.5 473.5,-186.5 355.5,-186.5"/>
 <text text-anchor="start" x="363.5" y="-204.5" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch::Loss</text>
 <text text-anchor="middle" x="414.5" y="-193.5" font-family="Helvetica,sans-Serif" font-size="10.00">::eval</text>

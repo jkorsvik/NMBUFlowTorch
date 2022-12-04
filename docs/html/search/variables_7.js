@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['v_5fmap_271',['v_map',['../classnmbuflowtorch_1_1optimizer_1_1SGD.html#a630d49e8b8ea56976858d7e21d32602c',1,'nmbuflowtorch::optimizer::SGD']]]
+  ['padding_304',['padding',['../classnmbuflowtorch_1_1layer_1_1Convolutional.html#a30d515b9d2414803e92c86a1e88659c3',1,'nmbuflowtorch::layer::Convolutional']]]
 ];

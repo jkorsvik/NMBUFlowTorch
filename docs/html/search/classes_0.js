@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['crossentropy_141',['CrossEntropy',['../classnmbuflowtorch_1_1loss_1_1CrossEntropy.html',1,'nmbuflowtorch::loss']]]
+  ['adam_161',['Adam',['../classnmbuflowtorch_1_1optimizer_1_1Adam.html',1,'nmbuflowtorch::optimizer']]]
 ];

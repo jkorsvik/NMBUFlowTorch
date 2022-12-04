@@ -1,11 +1,11 @@
 <map id="main" name="main">
 <area shape="rect" id="node1" title=" " alt="" coords="5,231,60,258"/>
-<area shape="rect" id="node2" href="$classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead" title=" " alt="" coords="108,5,291,47"/>
-<area shape="rect" id="node3" href="$classnmbuflowtorch_1_1Network.html#a7a86be4bc0c3901a48cfb70b286ec363" title=" " alt="" coords="108,71,291,112"/>
-<area shape="rect" id="node4" href="$classnmbuflowtorch_1_1Network.html#a1120a4649f5317ab85b7fd0124f91f75" title=" " alt="" coords="108,136,291,177"/>
-<area shape="rect" id="node5" href="$math__m_8hpp.html#a0e23efeb2dd144a8996c76c32ec0ac45" title=" " alt="" coords="124,202,275,229"/>
-<area shape="rect" id="node6" href="$classnmbuflowtorch_1_1layer_1_1Dense.html#aa02b200ce47da143d194d34d7ad273af" title=" " alt="" coords="111,253,287,295"/>
-<area shape="rect" id="node7" href="$classnmbuflowtorch_1_1layer_1_1Dense.html#a1b343ab594510f4ab93c9c292b5a5123" title=" " alt="" coords="119,319,280,360"/>
-<area shape="rect" id="node8" href="$classnmbuflowtorch_1_1layer_1_1Dense.html#add10aea1bd55ec3ad1cd0033b6d1945f" title=" " alt="" coords="119,384,280,425"/>
-<area shape="rect" id="node9" href="$classnmbuflowtorch_1_1layer_1_1Dense.html#af67831f9eb6d9defb29088973d07e049" title=" " alt="" coords="119,449,280,491"/>
+<area shape="rect" id="node2" href="$classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead" title="Adds a layer to the network." alt="" coords="108,5,291,47"/>
+<area shape="rect" id="node3" href="$classnmbuflowtorch_1_1Network.html#a7a86be4bc0c3901a48cfb70b286ec363" title="Adds a loss function to the network." alt="" coords="108,71,291,112"/>
+<area shape="rect" id="node4" href="$classnmbuflowtorch_1_1Network.html#a1120a4649f5317ab85b7fd0124f91f75" title="Adds an optimizer to the network." alt="" coords="108,136,291,177"/>
+<area shape="rect" id="node5" href="$math__m_8hpp.html#a0e23efeb2dd144a8996c76c32ec0ac45" title="Finds the maximum value in each column of a matrix and returns the corresponding indices." alt="" coords="124,202,275,229"/>
+<area shape="rect" id="node6" href="$classnmbuflowtorch_1_1layer_1_1Dense.html#aa02b200ce47da143d194d34d7ad273af" title="Get the type of the layer." alt="" coords="111,253,287,295"/>
+<area shape="rect" id="node7" href="$classnmbuflowtorch_1_1layer_1_1Dense.html#a1b343ab594510f4ab93c9c292b5a5123" title="Get the output dimension of the dense layer." alt="" coords="119,319,280,360"/>
+<area shape="rect" id="node8" href="$classnmbuflowtorch_1_1layer_1_1Dense.html#add10aea1bd55ec3ad1cd0033b6d1945f" title="Set the bias of the dense layer." alt="" coords="119,384,280,425"/>
+<area shape="rect" id="node9" href="$classnmbuflowtorch_1_1layer_1_1Dense.html#af67831f9eb6d9defb29088973d07e049" title="Set the weights of the dense layer." alt="" coords="119,449,280,491"/>
 </map>

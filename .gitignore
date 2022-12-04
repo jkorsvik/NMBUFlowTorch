@@ -8,6 +8,7 @@ CMakeFiles/*
 eigen3/
 install/
 build/
+docs/
 
 ### VisualStudioCode ###
 .vscode/*

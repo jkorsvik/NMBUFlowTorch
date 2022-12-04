@@ -62,7 +62,7 @@ int main(int argc, char** argv)
   }
 
   // Sammenligner med utregninger fra https://theneuralblog.com/forward-pass-backpropagation-example/
-  int input_size = 2;
+  int input_size = 128 * 128;
   int n_classes = 1;
 
   // Create network
@@ -78,8 +78,8 @@ int main(int argc, char** argv)
   net.add_optimizer(opt);
 
   // XOR eksempler
-  Matrix X = Matrix(4, input_size);
-  Matrix y = Matrix(4, n_classes);
+  Matrix X = Matrix(2, input_size);
+  Matrix y = Matrix(1, n_classes);
 
   CSVFormat format;
   format.delimiter(',').quote('~').no_header();
@@ -87,18 +87,18 @@ int main(int argc, char** argv)
 
   CSVReader reader("data/xor/Xor_X.csv", format);
   int n_rows = 0;
+  int n_cols = 0;
   for (CSVRow& row : reader)
   {  // Input iterator
-    int n_cols = 0;
     for (CSVField& field : row)
     {
       if (n_cols < input_size)
       {
-        X << field.get<double>();
+        // X << field.get<double>();
       }
       else
       {
-        y << field.get<double>();
+        // y << field.get<double>();
       }
       cout << field.get<double>() << " ";
       // By default, get<>() produces a std::string.
@@ -108,6 +108,7 @@ int main(int argc, char** argv)
     }
     n_rows++;
   }
+  cout << n_rows << n_cols << endl;
 
   // Create layers
   nmbuflowtorch::layer::Dense* dense1 = new nmbuflowtorch::layer::Dense(input_size, 2);

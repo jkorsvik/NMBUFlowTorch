@@ -8,8 +8,8 @@ echo "\n"
 
 case $installhere in  
   y|Y) echo "INSTALLING in install folder \n" && cmake .. -DCMAKE_INSTALL_PREFIX=../install && sudo cmake --build . --target install;; 
-   n|N) echo "USER INSTALL \n" && cmake .. -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_CXX_FLAGS:STRING="-fopenmp -O3" && sudo cmake --build . --target install;; 
-  #n|N) echo "USER INSTALL \n" && cmake .. -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_CXX_FLAGS:STRING="-fopenmp" && sudo cmake --build . --target install;; 
+  # n|N) echo "USER INSTALL \n" && cmake .. -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_CXX_FLAGS:STRING="-fopenmp -O3" && sudo cmake --build . --target install;; 
+  n|N) echo "USER INSTALL \n" && cmake .. -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_CXX_FLAGS:STRING="-fopenmp" && sudo cmake --build . --target install;; 
   *) echo dont know ;; 
 esac
 

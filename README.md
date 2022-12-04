@@ -1,10 +1,11 @@
+NMBUFlowTorch {#mainpage}
+=========
 [![Actions Status](https://github.com/jkorsvik/NMBUFlowTorch/workflows/MacOS/badge.svg)](https://github.com/jkorsvik/NMBUFlowTorch/actions)
 [![Actions Status](https://github.com/jkorsvik/NMBUFlowTorch/workflows/Windows/badge.svg)](https://github.com/jkorsvik/NMBUFlowTorch/actions)
 [![Actions Status](https://github.com/jkorsvik/NMBUFlowTorch/workflows/Ubuntu/badge.svg)](https://github.com/jkorsvik/NMBUFlowTorch/actions)
 [![codecov](https://codecov.io/gh/jkorsvik/NMBUFlowTorch/branch/master/graph/badge.svg)](https://codecov.io/gh/jkorsvik/NMBUFlowTorch)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/jkorsvik/NMBUFlowTorch)](https://github.com/jkorsvik/NMBUFlowTorch/releases)
 
-# NMBUFlowTorch
 
 ![NMBUFlowTorch](.misc/NMBUFlowTorch.LOGO.thin.png?raw=true "Logo")
 

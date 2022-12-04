@@ -157,9 +157,7 @@ In order to generate documentation for the project, you need to configure the bu
 to use Doxygen. This is easily done, by modifying the workflow shown above as follows:
 
 ```bash
-mkdir build/ && cd build/
-cmake .. -D<project_name>_ENABLE_DOXYGEN=1 -DCMAKE_INSTALL_PREFIX=/absolute/path/to/custom/install/directory
-cmake --build . --target doxygen-docs
+source build_auto_docs.sh
 ```
 
 > ***Note:*** *This will generate a `docs/` directory in the **project's root directory**.*

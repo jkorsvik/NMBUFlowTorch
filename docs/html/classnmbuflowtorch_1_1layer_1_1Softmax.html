@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('classnmbuflowtorch_1_1layer_1_1Softmax
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classnmbuflowtorch_1_1layer_1_1Softmax-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">nmbuflowtorch::layer::Softmax Class Reference</div>  </div>
@@ -98,14 +99,12 @@ $(document).ready(function(){initNavTree('classnmbuflowtorch_1_1layer_1_1Softmax
 <div class="dynheader">
 Inheritance diagram for nmbuflowtorch::layer::Softmax:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classnmbuflowtorch_1_1layer_1_1Softmax__inherit__graph.svg" width="175" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classnmbuflowtorch_1_1layer_1_1Softmax__inherit__graph.svg" width="175" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for nmbuflowtorch::layer::Softmax:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classnmbuflowtorch_1_1layer_1_1Softmax__coll__graph.svg" width="175" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classnmbuflowtorch_1_1layer_1_1Softmax__coll__graph.svg" width="175" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -136,6 +135,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a27dcc5b914316d4e20c0820abdcde022 inherit pub_methods_classnmbuflowtorch_1_1Layer"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Layer.html#a27dcc5b914316d4e20c0820abdcde022">get_layer_type</a> () const</td></tr>
 <tr class="separator:a27dcc5b914316d4e20c0820abdcde022 inherit pub_methods_classnmbuflowtorch_1_1Layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a3a92ec1e2a6e03c2de38a54f681d1f18"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1layer_1_1Softmax.html#a3a92ec1e2a6e03c2de38a54f681d1f18">layer_type</a> = &quot;Softmax&quot;</td></tr>
+<tr class="separator:a3a92ec1e2a6e03c2de38a54f681d1f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classnmbuflowtorch_1_1Layer"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classnmbuflowtorch_1_1Layer')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classnmbuflowtorch_1_1Layer.html">nmbuflowtorch::Layer</a></td></tr>
@@ -148,7 +152,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a0bfe8441749c682163ed7887024ec62f inherit pro_attribs_classnmbuflowtorch_1_1Layer"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Layer.html#a0bfe8441749c682163ed7887024ec62f">layer_type</a> = &quot;Virtual <a class="el" href="classnmbuflowtorch_1_1Layer.html">Layer</a>&quot;</td></tr>
 <tr class="separator:a0bfe8441749c682163ed7887024ec62f inherit pro_attribs_classnmbuflowtorch_1_1Layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="softmax_8hpp_source.html#l00008">8</a> of file <a class="el" href="softmax_8hpp_source.html">softmax.hpp</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a21d2e8ec4dfcd096dab0f867e18289b8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a21d2e8ec4dfcd096dab0f867e18289b8">&#9670;&nbsp;</a></span>backward()</h2>
 
@@ -212,6 +219,31 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="classnmbuflowtorch_1_1Layer.html#af9ec9ad43ea7f83da7632fa6606730a2">nmbuflowtorch::Layer</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a3a92ec1e2a6e03c2de38a54f681d1f18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a92ec1e2a6e03c2de38a54f681d1f18">&#9670;&nbsp;</a></span>layer_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string nmbuflowtorch::layer::Softmax::layer_type = &quot;Softmax&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="softmax_8hpp_source.html#l00011">11</a> of file <a class="el" href="softmax_8hpp_source.html">softmax.hpp</a>.</p>
 
 </div>
 </div>

@@ -98,14 +98,12 @@ $(document).ready(function(){initNavTree('classnmbuflowtorch_1_1loss_1_1CrossEnt
 <div class="dynheader">
 Inheritance diagram for nmbuflowtorch::loss::CrossEntropy:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classnmbuflowtorch_1_1loss_1_1CrossEntropy__inherit__graph.svg" width="168" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classnmbuflowtorch_1_1loss_1_1CrossEntropy__inherit__graph.svg" width="168" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for nmbuflowtorch::loss::CrossEntropy:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classnmbuflowtorch_1_1loss_1_1CrossEntropy__coll__graph.svg" width="168" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classnmbuflowtorch_1_1loss_1_1CrossEntropy__coll__graph.svg" width="168" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -128,7 +126,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a40469e1be61ffe6592726f45d8769375 inherit pro_attribs_classnmbuflowtorch_1_1Loss"><td class="memItemLeft" align="right" valign="top"><a class="el" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Loss.html#a40469e1be61ffe6592726f45d8769375">gradient_back</a></td></tr>
 <tr class="separator:a40469e1be61ffe6592726f45d8769375 inherit pro_attribs_classnmbuflowtorch_1_1Loss"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="cross__entropy_8hpp_source.html#l00008">8</a> of file <a class="el" href="cross__entropy_8hpp_source.html">cross_entropy.hpp</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac95e1023d461747c13c8a9eba678b9a0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac95e1023d461747c13c8a9eba678b9a0">&#9670;&nbsp;</a></span>eval()</h2>
 
@@ -165,11 +166,32 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classnmbuflowtorch_1_1Loss.html#ab739a047ffc84f44af71832ec704cedc">nmbuflowtorch::Loss</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="cross__entropy_8cpp_source.html#l00005">5</a> of file <a class="el" href="cross__entropy_8cpp_source.html">cross_entropy.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">int</span> n = pred.rows();</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> epsilon = 1e-8;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="comment">// Matrix ls = -(y.cwiseProduct(p.array().log().matrix()));</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment">// Matrix rs = (1 - y.array()).matrix().cwiseProduct((1 - p.array()).log().matrix());</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment">// loss</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classnmbuflowtorch_1_1Loss.html#a3288af0b68a56d1ddd0df97575ed0344">loss</a> = -((target.array().cwiseProduct((pred.array() + epsilon).log())).sum() / n);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">// gradient to backpropagate</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classnmbuflowtorch_1_1Loss.html#a40469e1be61ffe6592726f45d8769375">gradient_back</a> = -(target.array().cwiseQuotient((pred.array() + epsilon)) / n);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">// https://stats.stackexchange.com/questions/370723/how-to-calculate-the-derivative-of-crossentropy-error-function</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">// Matrix back_gradient(Matrix y, Matrix p){</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// Matrix ls = -(y.array() / p.array());</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">// Matrix rs = (1 - y.array()) / (1 - p.array());</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  };</div>
+<div class="ttc" id="aclassnmbuflowtorch_1_1Loss_html_a3288af0b68a56d1ddd0df97575ed0344"><div class="ttname"><a href="classnmbuflowtorch_1_1Loss.html#a3288af0b68a56d1ddd0df97575ed0344">nmbuflowtorch::Loss::loss</a></div><div class="ttdeci">float loss</div><div class="ttdef"><b>Definition:</b> <a href="loss_8hpp_source.html#l00011">loss.hpp:11</a></div></div>
+<div class="ttc" id="aclassnmbuflowtorch_1_1Loss_html_a40469e1be61ffe6592726f45d8769375"><div class="ttname"><a href="classnmbuflowtorch_1_1Loss.html#a40469e1be61ffe6592726f45d8769375">nmbuflowtorch::Loss::gradient_back</a></div><div class="ttdeci">Matrix gradient_back</div><div class="ttdef"><b>Definition:</b> <a href="loss_8hpp_source.html#l00013">loss.hpp:13</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/nmbuflowtorch/loss/<a class="el" href="cross__entropy_8hpp_source.html">cross_entropy.hpp</a></li>
-<li>src/nmbuflowtorch/loss/<a class="el" href="cross__entropy_8cpp.html">cross_entropy.cpp</a></li>
+<li>src/nmbuflowtorch/loss/<a class="el" href="cross__entropy_8cpp_source.html">cross_entropy.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['layer_5finput_243',['layer_input',['../classnmbuflowtorch_1_1Layer.html#a7b8931b8cb01a28228fb991966a66217',1,'nmbuflowtorch::Layer']]],
-  ['layer_5foutput_244',['layer_output',['../classnmbuflowtorch_1_1Layer.html#ace57230d9a06555e247d6c71a4e6b636',1,'nmbuflowtorch::Layer']]],
-  ['layer_5ftype_245',['layer_type',['../classnmbuflowtorch_1_1Layer.html#a0bfe8441749c682163ed7887024ec62f',1,'nmbuflowtorch::Layer']]],
-  ['learning_5frate_246',['learning_rate',['../classnmbuflowtorch_1_1Optimizer.html#aa01052a6f02fb32541a052bca7f236e6',1,'nmbuflowtorch::Optimizer']]],
-  ['loss_247',['loss',['../classnmbuflowtorch_1_1Loss.html#a3288af0b68a56d1ddd0df97575ed0344',1,'nmbuflowtorch::Loss']]]
+  ['grad_5fbias_254',['grad_bias',['../classnmbuflowtorch_1_1layer_1_1Dense.html#a25bc101092f5eab36ab65af223ad8945',1,'nmbuflowtorch::layer::Dense']]],
+  ['grad_5fweights_255',['grad_weights',['../classnmbuflowtorch_1_1layer_1_1Dense.html#a73f38f38b0d985d03fb75c54851416c2',1,'nmbuflowtorch::layer::Dense']]],
+  ['gradient_5fback_256',['gradient_back',['../classnmbuflowtorch_1_1Layer.html#ad66d736d0396765b8c80381d9fedf12c',1,'nmbuflowtorch::Layer::gradient_back()'],['../classnmbuflowtorch_1_1Loss.html#a40469e1be61ffe6592726f45d8769375',1,'nmbuflowtorch::Loss::gradient_back()']]]
 ];

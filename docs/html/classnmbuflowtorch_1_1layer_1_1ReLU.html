@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('classnmbuflowtorch_1_1layer_1_1ReLU.ht
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classnmbuflowtorch_1_1layer_1_1ReLU-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">nmbuflowtorch::layer::ReLU Class Reference</div>  </div>
@@ -98,14 +99,12 @@ $(document).ready(function(){initNavTree('classnmbuflowtorch_1_1layer_1_1ReLU.ht
 <div class="dynheader">
 Inheritance diagram for nmbuflowtorch::layer::ReLU:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classnmbuflowtorch_1_1layer_1_1ReLU__inherit__graph.svg" width="175" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classnmbuflowtorch_1_1layer_1_1ReLU__inherit__graph.svg" width="175" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for nmbuflowtorch::layer::ReLU:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classnmbuflowtorch_1_1layer_1_1ReLU__coll__graph.svg" width="175" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classnmbuflowtorch_1_1layer_1_1ReLU__coll__graph.svg" width="175" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -136,6 +135,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a27dcc5b914316d4e20c0820abdcde022 inherit pub_methods_classnmbuflowtorch_1_1Layer"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Layer.html#a27dcc5b914316d4e20c0820abdcde022">get_layer_type</a> () const</td></tr>
 <tr class="separator:a27dcc5b914316d4e20c0820abdcde022 inherit pub_methods_classnmbuflowtorch_1_1Layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a1c6c3e27160bfb8c65d9790098d4960e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1layer_1_1ReLU.html#a1c6c3e27160bfb8c65d9790098d4960e">layer_type</a> = &quot;ReLu&quot;</td></tr>
+<tr class="separator:a1c6c3e27160bfb8c65d9790098d4960e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classnmbuflowtorch_1_1Layer"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classnmbuflowtorch_1_1Layer')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classnmbuflowtorch_1_1Layer.html">nmbuflowtorch::Layer</a></td></tr>
@@ -148,7 +152,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a0bfe8441749c682163ed7887024ec62f inherit pro_attribs_classnmbuflowtorch_1_1Layer"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Layer.html#a0bfe8441749c682163ed7887024ec62f">layer_type</a> = &quot;Virtual <a class="el" href="classnmbuflowtorch_1_1Layer.html">Layer</a>&quot;</td></tr>
 <tr class="separator:a0bfe8441749c682163ed7887024ec62f inherit pro_attribs_classnmbuflowtorch_1_1Layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="relu_8hpp_source.html#l00008">8</a> of file <a class="el" href="relu_8hpp_source.html">relu.hpp</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a5a64a495f3cf25888d4187769cfb5499"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5a64a495f3cf25888d4187769cfb5499">&#9670;&nbsp;</a></span>backward()</h2>
 
@@ -185,6 +192,14 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classnmbuflowtorch_1_1Layer.html#a4ca29e7f63a80c08924e507dae466bd1">nmbuflowtorch::Layer</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="relu_8cpp_source.html#l00012">12</a> of file <a class="el" href="relu_8cpp_source.html">relu.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a> positive = (X.array() &gt; 0.0).cast&lt;float&gt;();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classnmbuflowtorch_1_1Layer.html#ad66d736d0396765b8c80381d9fedf12c">gradient_back</a> = accumulated_gradients.cwiseProduct(positive);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  }</div>
+<div class="ttc" id="aclassnmbuflowtorch_1_1Layer_html_ad66d736d0396765b8c80381d9fedf12c"><div class="ttname"><a href="classnmbuflowtorch_1_1Layer.html#ad66d736d0396765b8c80381d9fedf12c">nmbuflowtorch::Layer::gradient_back</a></div><div class="ttdeci">Matrix gradient_back</div><div class="ttdef"><b>Definition:</b> <a href="layer_8hpp_source.html#l00017">layer.hpp:17</a></div></div>
+<div class="ttc" id="adefinitions_8hpp_html_a58e8a08e999542a3fb8f965a2b79c737"><div class="ttname"><a href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a></div><div class="ttdeci">Eigen::Matrix&lt; float, Eigen::Dynamic, Eigen::Dynamic &gt; Matrix</div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00013">definitions.hpp:13</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0b0430183dedc8f22a7d1d4c9c4f456c"></a>
@@ -213,11 +228,44 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classnmbuflowtorch_1_1Layer.html#af9ec9ad43ea7f83da7632fa6606730a2">nmbuflowtorch::Layer</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="relu_8cpp_source.html#l00006">6</a> of file <a class="el" href="relu_8cpp_source.html">relu.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;      <a class="code" href="classnmbuflowtorch_1_1Layer.html#a7b8931b8cb01a28228fb991966a66217">layer_input</a> = X;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="classnmbuflowtorch_1_1Layer.html#ace57230d9a06555e247d6c71a4e6b636">layer_output</a> = X.cwiseMax(0.0);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  }</div>
+<div class="ttc" id="aclassnmbuflowtorch_1_1Layer_html_a7b8931b8cb01a28228fb991966a66217"><div class="ttname"><a href="classnmbuflowtorch_1_1Layer.html#a7b8931b8cb01a28228fb991966a66217">nmbuflowtorch::Layer::layer_input</a></div><div class="ttdeci">Matrix layer_input</div><div class="ttdef"><b>Definition:</b> <a href="layer_8hpp_source.html#l00015">layer.hpp:15</a></div></div>
+<div class="ttc" id="aclassnmbuflowtorch_1_1Layer_html_ace57230d9a06555e247d6c71a4e6b636"><div class="ttname"><a href="classnmbuflowtorch_1_1Layer.html#ace57230d9a06555e247d6c71a4e6b636">nmbuflowtorch::Layer::layer_output</a></div><div class="ttdeci">Matrix layer_output</div><div class="ttdef"><b>Definition:</b> <a href="layer_8hpp_source.html#l00016">layer.hpp:16</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a1c6c3e27160bfb8c65d9790098d4960e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c6c3e27160bfb8c65d9790098d4960e">&#9670;&nbsp;</a></span>layer_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string nmbuflowtorch::layer::ReLU::layer_type = &quot;ReLu&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="relu_8hpp_source.html#l00011">11</a> of file <a class="el" href="relu_8hpp_source.html">relu.hpp</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/nmbuflowtorch/layer/<a class="el" href="relu_8hpp_source.html">relu.hpp</a></li>
-<li>src/nmbuflowtorch/layer/<a class="el" href="relu_8cpp.html">relu.cpp</a></li>
+<li>src/nmbuflowtorch/layer/<a class="el" href="relu_8cpp_source.html">relu.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

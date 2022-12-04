@@ -151,6 +151,8 @@ struct mnist::MNIST_dataset&lt; Container, Image, Label &gt;</h3>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="mnist__reader_8hpp_source.html#l00034">34</a> of file <a class="el" href="mnist__reader_8hpp_source.html">mnist_reader.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab742c39158c61175a7be63262f4259d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab742c39158c61175a7be63262f4259d4">&#9670;&nbsp;</a></span>resize_test()</h2>
@@ -187,6 +189,16 @@ template&lt;template&lt; typename... &gt; class Container, typename Image , type
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="mnist__reader_8hpp_source.html#l00061">61</a> of file <a class="el" href="mnist__reader_8hpp_source.html">mnist_reader.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                         {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structmnist_1_1MNIST__dataset.html#a860afe7317905d6a9c6acca0ae30e78e">test_images</a>.size() &gt; new_size) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <a class="code" href="structmnist_1_1MNIST__dataset.html#a860afe7317905d6a9c6acca0ae30e78e">test_images</a>.resize(new_size);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <a class="code" href="structmnist_1_1MNIST__dataset.html#a1091194fd30f657921556e4681b64337">test_labels</a>.resize(new_size);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="ttc" id="astructmnist_1_1MNIST__dataset_html_a1091194fd30f657921556e4681b64337"><div class="ttname"><a href="structmnist_1_1MNIST__dataset.html#a1091194fd30f657921556e4681b64337">mnist::MNIST_dataset::test_labels</a></div><div class="ttdeci">Container&lt; Label &gt; test_labels</div><div class="ttdoc">The test labels.</div><div class="ttdef"><b>Definition:</b> <a href="mnist__reader_8hpp_source.html#l00038">mnist_reader.hpp:38</a></div></div>
+<div class="ttc" id="astructmnist_1_1MNIST__dataset_html_a860afe7317905d6a9c6acca0ae30e78e"><div class="ttname"><a href="structmnist_1_1MNIST__dataset.html#a860afe7317905d6a9c6acca0ae30e78e">mnist::MNIST_dataset::test_images</a></div><div class="ttdeci">Container&lt; Image &gt; test_images</div><div class="ttdoc">The test images.</div><div class="ttdef"><b>Definition:</b> <a href="mnist__reader_8hpp_source.html#l00036">mnist_reader.hpp:36</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad5e293ffcc26127d793307cd05b53e43"></a>
@@ -224,6 +236,16 @@ template&lt;template&lt; typename... &gt; class Container, typename Image , type
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="mnist__reader_8hpp_source.html#l00047">47</a> of file <a class="el" href="mnist__reader_8hpp_source.html">mnist_reader.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                             {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structmnist_1_1MNIST__dataset.html#a1f7de5199e4d5422b00a5f7059fdf7fe">training_images</a>.size() &gt; new_size) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="structmnist_1_1MNIST__dataset.html#a1f7de5199e4d5422b00a5f7059fdf7fe">training_images</a>.resize(new_size);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="structmnist_1_1MNIST__dataset.html#ad7462a2e89dfe0dd36e16e29f50acf06">training_labels</a>.resize(new_size);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="ttc" id="astructmnist_1_1MNIST__dataset_html_a1f7de5199e4d5422b00a5f7059fdf7fe"><div class="ttname"><a href="structmnist_1_1MNIST__dataset.html#a1f7de5199e4d5422b00a5f7059fdf7fe">mnist::MNIST_dataset::training_images</a></div><div class="ttdeci">Container&lt; Image &gt; training_images</div><div class="ttdoc">The training images.</div><div class="ttdef"><b>Definition:</b> <a href="mnist__reader_8hpp_source.html#l00035">mnist_reader.hpp:35</a></div></div>
+<div class="ttc" id="astructmnist_1_1MNIST__dataset_html_ad7462a2e89dfe0dd36e16e29f50acf06"><div class="ttname"><a href="structmnist_1_1MNIST__dataset.html#ad7462a2e89dfe0dd36e16e29f50acf06">mnist::MNIST_dataset::training_labels</a></div><div class="ttdeci">Container&lt; Label &gt; training_labels</div><div class="ttdoc">The training labels.</div><div class="ttdef"><b>Definition:</b> <a href="mnist__reader_8hpp_source.html#l00037">mnist_reader.hpp:37</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -243,6 +265,8 @@ template&lt;template&lt; typename... &gt; class Container, typename Image , type
 
 <p>The test images. </p>
 
+<p class="definition">Definition at line <a class="el" href="mnist__reader_8hpp_source.html#l00036">36</a> of file <a class="el" href="mnist__reader_8hpp_source.html">mnist_reader.hpp</a>.</p>
+
 </div>
 </div>
 <a id="a356e1f3b4b93881fee1177457bbf19d7"></a>
@@ -260,6 +284,8 @@ template&lt;template&lt; typename... &gt; class Container, typename Image , type
 </div><div class="memdoc">
 
 <p>The test images. </p>
+
+<p class="definition">Definition at line <a class="el" href="mnist__reader__less_8hpp_source.html#l00037">37</a> of file <a class="el" href="mnist__reader__less_8hpp_source.html">mnist_reader_less.hpp</a>.</p>
 
 </div>
 </div>
@@ -279,6 +305,8 @@ template&lt;template&lt; typename... &gt; class Container, typename Image , type
 
 <p>The test labels. </p>
 
+<p class="definition">Definition at line <a class="el" href="mnist__reader_8hpp_source.html#l00038">38</a> of file <a class="el" href="mnist__reader_8hpp_source.html">mnist_reader.hpp</a>.</p>
+
 </div>
 </div>
 <a id="a79e464df42d7f58abcf948a342cfe751"></a>
@@ -296,6 +324,8 @@ template&lt;template&lt; typename... &gt; class Container, typename Image , type
 </div><div class="memdoc">
 
 <p>The test labels. </p>
+
+<p class="definition">Definition at line <a class="el" href="mnist__reader__less_8hpp_source.html#l00039">39</a> of file <a class="el" href="mnist__reader__less_8hpp_source.html">mnist_reader_less.hpp</a>.</p>
 
 </div>
 </div>
@@ -315,6 +345,8 @@ template&lt;template&lt; typename... &gt; class Container, typename Image , type
 
 <p>The training images. </p>
 
+<p class="definition">Definition at line <a class="el" href="mnist__reader_8hpp_source.html#l00035">35</a> of file <a class="el" href="mnist__reader_8hpp_source.html">mnist_reader.hpp</a>.</p>
+
 </div>
 </div>
 <a id="a30aaff2a3cd0e08879ece7fd7110ba96"></a>
@@ -332,6 +364,8 @@ template&lt;template&lt; typename... &gt; class Container, typename Image , type
 </div><div class="memdoc">
 
 <p>The training images. </p>
+
+<p class="definition">Definition at line <a class="el" href="mnist__reader__less_8hpp_source.html#l00036">36</a> of file <a class="el" href="mnist__reader__less_8hpp_source.html">mnist_reader_less.hpp</a>.</p>
 
 </div>
 </div>
@@ -351,6 +385,8 @@ template&lt;template&lt; typename... &gt; class Container, typename Image , type
 
 <p>The training labels. </p>
 
+<p class="definition">Definition at line <a class="el" href="mnist__reader_8hpp_source.html#l00037">37</a> of file <a class="el" href="mnist__reader_8hpp_source.html">mnist_reader.hpp</a>.</p>
+
 </div>
 </div>
 <a id="a6ae699e19d22f5b0dc8189ae3922c852"></a>
@@ -368,6 +404,8 @@ template&lt;template&lt; typename... &gt; class Container, typename Image , type
 </div><div class="memdoc">
 
 <p>The training labels. </p>
+
+<p class="definition">Definition at line <a class="el" href="mnist__reader__less_8hpp_source.html#l00038">38</a> of file <a class="el" href="mnist__reader__less_8hpp_source.html">mnist_reader_less.hpp</a>.</p>
 
 </div>
 </div>

@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['network_204',['Network',['../classnmbuflowtorch_1_1Network.html#a974541dea42e030c7d1d708e14d756c2',1,'nmbuflowtorch::Network']]],
-  ['normalize_5fdataset_205',['normalize_dataset',['../namespacemnist.html#a57e77c5aa9ea4390cceec6aa6d3ee922',1,'mnist']]],
-  ['normalize_5feach_206',['normalize_each',['../namespacemnist.html#acdb2a501db8e749c8ce4d971d69fea22',1,'mnist']]]
+  ['main_211',['main',['../include_2mnist_2example_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;main.cpp'],['../main_01copy_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;main copy.cpp'],['../src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;main.cpp'],['../main__multithread_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;main_multithread.cpp'],['../main__single__thread_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;main_single_thread.cpp']]],
+  ['mean_212',['mean',['../namespacemnist.html#a2dcb2e257557345356d75a4b41df652a',1,'mnist']]],
+  ['mmdot_213',['MMdot',['../math__m_8hpp.html#a7219f41fa97c72ef5e8c629824b7a364',1,'math_m.hpp']]],
+  ['mvdot_214',['MVdot',['../math__m_8hpp.html#ae413843f2c8a8b6d4d89eef41f0b6362',1,'math_m.hpp']]]
 ];

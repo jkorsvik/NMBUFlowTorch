@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['last_5finput_199',['last_input',['../classnmbuflowtorch_1_1Layer.html#a700c7689e6ba6f73b1067f1ffbde6d8b',1,'nmbuflowtorch::Layer']]]
+  ['init_209',['init',['../classnmbuflowtorch_1_1layer_1_1Dense.html#adf7afd0545aff5206435c3e030f81319',1,'nmbuflowtorch::layer::Dense']]]
 ];

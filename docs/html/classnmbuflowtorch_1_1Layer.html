@@ -99,8 +99,7 @@ $(document).ready(function(){initNavTree('classnmbuflowtorch_1_1Layer.html','');
 <div class="dynheader">
 Inheritance diagram for nmbuflowtorch::Layer:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classnmbuflowtorch_1_1Layer__inherit__graph.svg" width="384" height="248"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classnmbuflowtorch_1_1Layer__inherit__graph.svg" width="384" height="248"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -141,7 +140,10 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a0bfe8441749c682163ed7887024ec62f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Layer.html#a0bfe8441749c682163ed7887024ec62f">layer_type</a> = &quot;Virtual <a class="el" href="classnmbuflowtorch_1_1Layer.html">Layer</a>&quot;</td></tr>
 <tr class="separator:a0bfe8441749c682163ed7887024ec62f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00012">12</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abc9026766c93ac70957866d5fe57b0dd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abc9026766c93ac70957866d5fe57b0dd">&#9670;&nbsp;</a></span>~Layer()</h2>
 
@@ -165,6 +167,10 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00022">22</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -191,6 +197,12 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00032">32</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classnmbuflowtorch_1_1Layer.html#ad66d736d0396765b8c80381d9fedf12c">gradient_back</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="ttc" id="aclassnmbuflowtorch_1_1Layer_html_ad66d736d0396765b8c80381d9fedf12c"><div class="ttname"><a href="classnmbuflowtorch_1_1Layer.html#ad66d736d0396765b8c80381d9fedf12c">nmbuflowtorch::Layer::gradient_back</a></div><div class="ttdeci">Matrix gradient_back</div><div class="ttdef"><b>Definition:</b> <a href="layer_8hpp_source.html#l00017">layer.hpp:17</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4ca29e7f63a80c08924e507dae466bd1"></a>
@@ -284,6 +296,11 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a1e6cb0e210989f896c1a4935360e0a41">nmbuflowtorch::layer::Dense</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00059">59</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <span class="keywordflow">return</span> std::vector&lt;float&gt;();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a27dcc5b914316d4e20c0820abdcde022"></a>
@@ -309,6 +326,12 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00064">64</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classnmbuflowtorch_1_1Layer.html#a0bfe8441749c682163ed7887024ec62f">layer_type</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    };</div>
+<div class="ttc" id="aclassnmbuflowtorch_1_1Layer_html_a0bfe8441749c682163ed7887024ec62f"><div class="ttname"><a href="classnmbuflowtorch_1_1Layer.html#a0bfe8441749c682163ed7887024ec62f">nmbuflowtorch::Layer::layer_type</a></div><div class="ttdeci">std::string layer_type</div><div class="ttdef"><b>Definition:</b> <a href="layer_8hpp_source.html#l00019">layer.hpp:19</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1344661da06050061121a40df61ea5df"></a>
@@ -336,6 +359,11 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a57944b3aa0795b4a99393836135fdd79">nmbuflowtorch::layer::Dense</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00051">51</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <span class="keywordflow">return</span> std::vector&lt;float&gt;();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a700c7689e6ba6f73b1067f1ffbde6d8b"></a>
@@ -361,6 +389,12 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00036">36</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classnmbuflowtorch_1_1Layer.html#a7b8931b8cb01a28228fb991966a66217">layer_input</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+<div class="ttc" id="aclassnmbuflowtorch_1_1Layer_html_a7b8931b8cb01a28228fb991966a66217"><div class="ttname"><a href="classnmbuflowtorch_1_1Layer.html#a7b8931b8cb01a28228fb991966a66217">nmbuflowtorch::Layer::layer_input</a></div><div class="ttdeci">Matrix layer_input</div><div class="ttdef"><b>Definition:</b> <a href="layer_8hpp_source.html#l00015">layer.hpp:15</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a528aa08665cdba7a9e3975c8f6f76ae9"></a>
@@ -386,6 +420,12 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00041">41</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classnmbuflowtorch_1_1Layer.html#ace57230d9a06555e247d6c71a4e6b636">layer_output</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="ttc" id="aclassnmbuflowtorch_1_1Layer_html_ace57230d9a06555e247d6c71a4e6b636"><div class="ttname"><a href="classnmbuflowtorch_1_1Layer.html#ace57230d9a06555e247d6c71a4e6b636">nmbuflowtorch::Layer::layer_output</a></div><div class="ttdeci">Matrix layer_output</div><div class="ttdef"><b>Definition:</b> <a href="layer_8hpp_source.html#l00016">layer.hpp:16</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a503a56336f186fb921751449f6e0af72"></a>
@@ -413,6 +453,11 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a1b343ab594510f4ab93c9c292b5a5123">nmbuflowtorch::layer::Dense</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00046">46</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a155be5b72869e24df8beda95585405c0"></a>
@@ -441,6 +486,10 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a302152bbf581cf6fd32e8a12f2de1888">nmbuflowtorch::layer::Dense</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00055">55</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a737922ee5257cb0bba1ff40f28e03a1e"></a>
@@ -469,6 +518,10 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classnmbuflowtorch_1_1layer_1_1Dense.html#ae34895846c97a2b4b389b0703e75c168">nmbuflowtorch::layer::Dense</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00028">28</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -492,6 +545,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00017">17</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
+
 </div>
 </div>
 <a id="a7b8931b8cb01a28228fb991966a66217"></a>
@@ -513,6 +568,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00015">15</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
 
 </div>
 </div>
@@ -536,6 +593,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00016">16</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
+
 </div>
 </div>
 <a id="a0bfe8441749c682163ed7887024ec62f"></a>
@@ -557,6 +616,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00019">19</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
 
 </div>
 </div>

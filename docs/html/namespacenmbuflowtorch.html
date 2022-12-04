@@ -161,6 +161,28 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="definitions_8hpp_source.html#l00023">23</a> of file <a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// int val = (int)(percentage * PERCENTAGEMULTIPLIER);</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">// int lpad = (int)(percentage * PBWIDTH);</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// int rpad = PBWIDTH - lpad;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">// printf(&quot;\r%3d%% [%.*s%*s]&quot;, val, lpad, PBSTR, rpad, &quot;&quot;);</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">float</span> percent = (<a class="code" href="definitions_8hpp.html#aa762e493cdc1d72e0c825eeaedd28d63">PERCENTAGEMULTIPLIER</a> * (current + 1)) / total;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    percent = percent &gt; <a class="code" href="definitions_8hpp.html#aa762e493cdc1d72e0c825eeaedd28d63">PERCENTAGEMULTIPLIER</a> ? <a class="code" href="definitions_8hpp.html#aa762e493cdc1d72e0c825eeaedd28d63">PERCENTAGEMULTIPLIER</a> : percent;  <span class="comment">// Prevents percentage from going over 100%</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">size_t</span> lpad = (size_t)(percent / <a class="code" href="definitions_8hpp.html#a69793e71975c25754a8236df29896e15">PBWIDTH</a>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">size_t</span> rpad = (size_t)(<a class="code" href="definitions_8hpp.html#aa762e493cdc1d72e0c825eeaedd28d63">PERCENTAGEMULTIPLIER</a> / <a class="code" href="definitions_8hpp.html#a69793e71975c25754a8236df29896e15">PBWIDTH</a> - lpad);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::wcout &lt;&lt; <span class="stringliteral">&quot;\r&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;               &lt;&lt; <span class="stringliteral">&quot;[&quot;</span> &lt;&lt; std::wstring(lpad, <a class="code" href="definitions_8hpp.html#a93f03159397f25c687840129b18c972d">PBSTR</a>) &lt;&lt; std::wstring(rpad, <span class="charliteral">&#39; &#39;</span>) &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::cout &lt;&lt; percent &lt;&lt; <span class="stringliteral">&quot;%&quot;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;              &lt;&lt; <span class="stringliteral">&quot; [Batch &quot;</span> &lt;&lt; current + 1 &lt;&lt; <span class="stringliteral">&quot; of &quot;</span> &lt;&lt; total &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::cout.flush();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  }</div>
+<div class="ttc" id="adefinitions_8hpp_html_a69793e71975c25754a8236df29896e15"><div class="ttname"><a href="definitions_8hpp.html#a69793e71975c25754a8236df29896e15">PBWIDTH</a></div><div class="ttdeci">#define PBWIDTH</div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00017">definitions.hpp:17</a></div></div>
+<div class="ttc" id="adefinitions_8hpp_html_a93f03159397f25c687840129b18c972d"><div class="ttname"><a href="definitions_8hpp.html#a93f03159397f25c687840129b18c972d">PBSTR</a></div><div class="ttdeci">#define PBSTR</div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00019">definitions.hpp:19</a></div></div>
+<div class="ttc" id="adefinitions_8hpp_html_aa762e493cdc1d72e0c825eeaedd28d63"><div class="ttname"><a href="definitions_8hpp.html#aa762e493cdc1d72e0c825eeaedd28d63">PERCENTAGEMULTIPLIER</a></div><div class="ttdeci">#define PERCENTAGEMULTIPLIER</div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00018">definitions.hpp:18</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

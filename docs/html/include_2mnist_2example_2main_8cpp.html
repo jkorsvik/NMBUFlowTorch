@@ -97,10 +97,11 @@ $(document).ready(function(){initNavTree('include_2mnist_2example_2main_8cpp.htm
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.cpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="include_2mnist_2example_2main_8cpp__incl.svg" width="776" height="202"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="include_2mnist_2example_2main_8cpp__incl.svg" width="776" height="202"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
-</div><table class="memberdecls">
+<p><a href="include_2mnist_2example_2main_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2mnist_2example_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
@@ -133,6 +134,28 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="include_2mnist_2example_2main_8cpp_source.html#l00011">11</a> of file <a class="el" href="include_2mnist_2example_2main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                                 {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment">// MNIST_DATA_LOCATION set by MNIST cmake config</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;MNIST data directory: &quot;</span> &lt;&lt; MNIST_DATA_LOCATION &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">// Load MNIST data</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="structmnist_1_1MNIST__dataset.html">mnist::MNIST_dataset&lt;std::vector, std::vector&lt;uint8_t&gt;</a>, uint8_t&gt; dataset =</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        mnist::read_dataset&lt;std::vector, std::vector, uint8_t, uint8_t&gt;(MNIST_DATA_LOCATION);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Nbr of training images = &quot;</span> &lt;&lt; dataset.<a class="code" href="structmnist_1_1MNIST__dataset.html#a1f7de5199e4d5422b00a5f7059fdf7fe">training_images</a>.size() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Nbr of training labels = &quot;</span> &lt;&lt; dataset.<a class="code" href="structmnist_1_1MNIST__dataset.html#ad7462a2e89dfe0dd36e16e29f50acf06">training_labels</a>.size() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Nbr of test images = &quot;</span> &lt;&lt; dataset.<a class="code" href="structmnist_1_1MNIST__dataset.html#a860afe7317905d6a9c6acca0ae30e78e">test_images</a>.size() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Nbr of test labels = &quot;</span> &lt;&lt; dataset.<a class="code" href="structmnist_1_1MNIST__dataset.html#a1091194fd30f657921556e4681b64337">test_labels</a>.size() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="ttc" id="astructmnist_1_1MNIST__dataset_html"><div class="ttname"><a href="structmnist_1_1MNIST__dataset.html">mnist::MNIST_dataset</a></div><div class="ttdoc">Represents a complete mnist dataset.</div><div class="ttdef"><b>Definition:</b> <a href="mnist__reader_8hpp_source.html#l00034">mnist_reader.hpp:34</a></div></div>
+<div class="ttc" id="astructmnist_1_1MNIST__dataset_html_a1091194fd30f657921556e4681b64337"><div class="ttname"><a href="structmnist_1_1MNIST__dataset.html#a1091194fd30f657921556e4681b64337">mnist::MNIST_dataset::test_labels</a></div><div class="ttdeci">Container&lt; Label &gt; test_labels</div><div class="ttdoc">The test labels.</div><div class="ttdef"><b>Definition:</b> <a href="mnist__reader_8hpp_source.html#l00038">mnist_reader.hpp:38</a></div></div>
+<div class="ttc" id="astructmnist_1_1MNIST__dataset_html_a1f7de5199e4d5422b00a5f7059fdf7fe"><div class="ttname"><a href="structmnist_1_1MNIST__dataset.html#a1f7de5199e4d5422b00a5f7059fdf7fe">mnist::MNIST_dataset::training_images</a></div><div class="ttdeci">Container&lt; Image &gt; training_images</div><div class="ttdoc">The training images.</div><div class="ttdef"><b>Definition:</b> <a href="mnist__reader_8hpp_source.html#l00035">mnist_reader.hpp:35</a></div></div>
+<div class="ttc" id="astructmnist_1_1MNIST__dataset_html_a860afe7317905d6a9c6acca0ae30e78e"><div class="ttname"><a href="structmnist_1_1MNIST__dataset.html#a860afe7317905d6a9c6acca0ae30e78e">mnist::MNIST_dataset::test_images</a></div><div class="ttdeci">Container&lt; Image &gt; test_images</div><div class="ttdoc">The test images.</div><div class="ttdef"><b>Definition:</b> <a href="mnist__reader_8hpp_source.html#l00036">mnist_reader.hpp:36</a></div></div>
+<div class="ttc" id="astructmnist_1_1MNIST__dataset_html_ad7462a2e89dfe0dd36e16e29f50acf06"><div class="ttname"><a href="structmnist_1_1MNIST__dataset.html#ad7462a2e89dfe0dd36e16e29f50acf06">mnist::MNIST_dataset::training_labels</a></div><div class="ttdeci">Container&lt; Label &gt; training_labels</div><div class="ttdoc">The training labels.</div><div class="ttdef"><b>Definition:</b> <a href="mnist__reader_8hpp_source.html#l00037">mnist_reader.hpp:37</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

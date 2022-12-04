@@ -1,7 +1,13 @@
 var searchData=
 [
-  ['optimizer_73',['Optimizer',['../classnmbuflowtorch_1_1Optimizer.html',1,'nmbuflowtorch::Optimizer'],['../classnmbuflowtorch_1_1Optimizer.html#a6192433decb5c8e3d14c34cf1d3ee54b',1,'nmbuflowtorch::Optimizer::Optimizer()']]],
-  ['optimizer_2ehpp_74',['optimizer.hpp',['../optimizer_8hpp.html',1,'']]],
-  ['output_75',['output',['../classnmbuflowtorch_1_1Layer.html#a528aa08665cdba7a9e3975c8f6f76ae9',1,'nmbuflowtorch::Layer::output()'],['../classnmbuflowtorch_1_1Loss.html#a5747f962c29f0e1a6147c435da22c466',1,'nmbuflowtorch::Loss::output()'],['../classnmbuflowtorch_1_1Network.html#a47b0ad164e645c60f736f60f87827900',1,'nmbuflowtorch::Network::output()']]],
-  ['output_5fdim_76',['output_dim',['../classnmbuflowtorch_1_1layer_1_1Dense.html#a1b343ab594510f4ab93c9c292b5a5123',1,'nmbuflowtorch::layer::Dense::output_dim()'],['../classnmbuflowtorch_1_1Layer.html#a503a56336f186fb921751449f6e0af72',1,'nmbuflowtorch::Layer::output_dim()']]]
+  ['layer_69',['layer',['../namespacenmbuflowtorch_1_1layer.html',1,'nmbuflowtorch']]],
+  ['loss_70',['loss',['../namespacenmbuflowtorch_1_1loss.html',1,'nmbuflowtorch']]],
+  ['network_71',['Network',['../classnmbuflowtorch_1_1Network.html#a974541dea42e030c7d1d708e14d756c2',1,'nmbuflowtorch::Network::Network()'],['../classnmbuflowtorch_1_1Network.html',1,'nmbuflowtorch::Network']]],
+  ['network_2ecpp_72',['network.cpp',['../network_8cpp.html',1,'']]],
+  ['network_2ehpp_73',['network.hpp',['../network_8hpp.html',1,'']]],
+  ['nmbuflowtorch_74',['NMBUFlowTorch',['../index.html',1,'']]],
+  ['nmbuflowtorch_75',['nmbuflowtorch',['../namespacenmbuflowtorch.html',1,'']]],
+  ['normalize_5fdataset_76',['normalize_dataset',['../namespacemnist.html#a57e77c5aa9ea4390cceec6aa6d3ee922',1,'mnist']]],
+  ['normalize_5feach_77',['normalize_each',['../namespacemnist.html#acdb2a501db8e749c8ce4d971d69fea22',1,'mnist']]],
+  ['optimizer_78',['optimizer',['../namespacenmbuflowtorch_1_1optimizer.html',1,'nmbuflowtorch']]]
 ];

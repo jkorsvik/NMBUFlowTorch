@@ -1,9 +1,18 @@
 var searchData=
 [
-  ['test_5fimages_118',['test_images',['../structmnist_1_1MNIST__dataset.html#a860afe7317905d6a9c6acca0ae30e78e',1,'mnist::MNIST_dataset::test_images()'],['../structmnist_1_1MNIST__dataset.html#a356e1f3b4b93881fee1177457bbf19d7',1,'mnist::MNIST_dataset::test_images()']]],
-  ['test_5flabels_119',['test_labels',['../structmnist_1_1MNIST__dataset.html#a1091194fd30f657921556e4681b64337',1,'mnist::MNIST_dataset::test_labels()'],['../structmnist_1_1MNIST__dataset.html#a79e464df42d7f58abcf948a342cfe751',1,'mnist::MNIST_dataset::test_labels()']]],
-  ['train_5fbatch_120',['train_batch',['../classnmbuflowtorch_1_1Network.html#ac5f07dc09b1d352567d6cbcc3c38c010',1,'nmbuflowtorch::Network']]],
-  ['train_5fone_5fepoch_121',['train_one_epoch',['../classnmbuflowtorch_1_1Network.html#ab4decd5644c172b3ade967496bf64f7b',1,'nmbuflowtorch::Network']]],
-  ['training_5fimages_122',['training_images',['../structmnist_1_1MNIST__dataset.html#a1f7de5199e4d5422b00a5f7059fdf7fe',1,'mnist::MNIST_dataset::training_images()'],['../structmnist_1_1MNIST__dataset.html#a30aaff2a3cd0e08879ece7fd7110ba96',1,'mnist::MNIST_dataset::training_images()']]],
-  ['training_5flabels_123',['training_labels',['../structmnist_1_1MNIST__dataset.html#ad7462a2e89dfe0dd36e16e29f50acf06',1,'mnist::MNIST_dataset::training_labels()'],['../structmnist_1_1MNIST__dataset.html#a6ae699e19d22f5b0dc8189ae3922c852',1,'mnist::MNIST_dataset::training_labels()']]]
+  ['set_5fbias_110',['set_bias',['../classnmbuflowtorch_1_1layer_1_1Dense.html#add10aea1bd55ec3ad1cd0033b6d1945f',1,'nmbuflowtorch::layer::Dense']]],
+  ['set_5fparameters_111',['set_parameters',['../classnmbuflowtorch_1_1Network.html#a03f733f39ba1e59018bcd8dcaca9dd9f',1,'nmbuflowtorch::Network::set_parameters()'],['../classnmbuflowtorch_1_1Layer.html#a155be5b72869e24df8beda95585405c0',1,'nmbuflowtorch::Layer::set_parameters()'],['../classnmbuflowtorch_1_1layer_1_1Dense.html#a302152bbf581cf6fd32e8a12f2de1888',1,'nmbuflowtorch::layer::Dense::set_parameters(const std::vector&lt; float &gt; &amp;param)']]],
+  ['set_5fweights_112',['set_weights',['../classnmbuflowtorch_1_1layer_1_1Dense.html#af67831f9eb6d9defb29088973d07e049',1,'nmbuflowtorch::layer::Dense']]],
+  ['sgd_113',['SGD',['../classnmbuflowtorch_1_1optimizer_1_1SGD.html',1,'nmbuflowtorch::optimizer::SGD'],['../classnmbuflowtorch_1_1optimizer_1_1SGD.html#adacdbbe868b3c5c0114bdd494197cde0',1,'nmbuflowtorch::optimizer::SGD::SGD()']]],
+  ['sgd_2ecpp_114',['sgd.cpp',['../sgd_8cpp.html',1,'']]],
+  ['sgd_2ehpp_115',['sgd.hpp',['../sgd_8hpp.html',1,'']]],
+  ['shuffle_5fdata_116',['shuffle_data',['../math__m_8hpp.html#a00222de08fb54dc0423e29cc610d1f0c',1,'math_m.hpp']]],
+  ['sigmoid_117',['Sigmoid',['../classnmbuflowtorch_1_1layer_1_1Sigmoid.html',1,'nmbuflowtorch::layer']]],
+  ['sigmoid_2ecpp_118',['sigmoid.cpp',['../sigmoid_8cpp.html',1,'']]],
+  ['sigmoid_2ehpp_119',['sigmoid.hpp',['../sigmoid_8hpp.html',1,'']]],
+  ['softmax_120',['Softmax',['../classnmbuflowtorch_1_1layer_1_1Softmax.html',1,'nmbuflowtorch::layer']]],
+  ['softmax_2ecpp_121',['softmax.cpp',['../softmax_8cpp.html',1,'']]],
+  ['softmax_2ehpp_122',['softmax.hpp',['../softmax_8hpp.html',1,'']]],
+  ['stddev_123',['stddev',['../namespacemnist.html#a711f59c10ffe748decf24c2752a2945a',1,'mnist']]],
+  ['summary_124',['summary',['../classnmbuflowtorch_1_1Network.html#a446b47f42156cf4d143a96617f1bc2b3',1,'nmbuflowtorch::Network']]]
 ];

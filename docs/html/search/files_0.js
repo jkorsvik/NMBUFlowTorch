@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['cross_5fentropy_2ecpp_158',['cross_entropy.cpp',['../cross__entropy_8cpp.html',1,'']]],
-  ['cross_5fentropy_2ehpp_159',['cross_entropy.hpp',['../cross__entropy_8hpp.html',1,'']]]
+  ['adam_2ecpp_181',['adam.cpp',['../adam_8cpp.html',1,'']]],
+  ['adam_2ehpp_182',['adam.hpp',['../adam_8hpp.html',1,'']]]
 ];

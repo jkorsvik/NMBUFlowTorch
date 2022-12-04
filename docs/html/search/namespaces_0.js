@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mnist_153',['mnist',['../namespacemnist.html',1,'']]]
+  ['mnist_176',['mnist',['../namespacemnist.html',1,'']]]
 ];

@@ -99,26 +99,34 @@ $(document).ready(function(){initNavTree('classnmbuflowtorch_1_1Optimizer.html',
 <div class="dynheader">
 Inheritance diagram for nmbuflowtorch::Optimizer:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classnmbuflowtorch_1_1Optimizer__inherit__graph.svg" width="238" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classnmbuflowtorch_1_1Optimizer__inherit__graph.svg" width="478" height="170"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a6192433decb5c8e3d14c34cf1d3ee54b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Optimizer.html#a6192433decb5c8e3d14c34cf1d3ee54b">Optimizer</a> (float <a class="el" href="classnmbuflowtorch_1_1Optimizer.html#aa01052a6f02fb32541a052bca7f236e6">learning_rate</a>=0.01)</td></tr>
+<tr class="memdesc:a6192433decb5c8e3d14c34cf1d3ee54b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classnmbuflowtorch_1_1Optimizer.html">Optimizer</a>.  <a href="classnmbuflowtorch_1_1Optimizer.html#a6192433decb5c8e3d14c34cf1d3ee54b">More...</a><br /></td></tr>
 <tr class="separator:a6192433decb5c8e3d14c34cf1d3ee54b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8d30b04df0f617e0b57d7d7ac8dae18"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Optimizer.html#ab8d30b04df0f617e0b57d7d7ac8dae18">~Optimizer</a> ()</td></tr>
+<tr class="memdesc:ab8d30b04df0f617e0b57d7d7ac8dae18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for <a class="el" href="classnmbuflowtorch_1_1Optimizer.html">Optimizer</a>.  <a href="classnmbuflowtorch_1_1Optimizer.html#ab8d30b04df0f617e0b57d7d7ac8dae18">More...</a><br /></td></tr>
 <tr class="separator:ab8d30b04df0f617e0b57d7d7ac8dae18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4951a6fee2fd54ec073ee6af7ab4f46d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Optimizer.html#a4951a6fee2fd54ec073ee6af7ab4f46d">update</a> (Vector::AlignedMapType &amp;w, Vector::ConstAlignedMapType &amp;dw)=0</td></tr>
+<tr class="memdesc:a4951a6fee2fd54ec073ee6af7ab4f46d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual function that should be implemented by derived classes. This function updates the model parameters given the gradient of the parameters.  <a href="classnmbuflowtorch_1_1Optimizer.html#a4951a6fee2fd54ec073ee6af7ab4f46d">More...</a><br /></td></tr>
 <tr class="separator:a4951a6fee2fd54ec073ee6af7ab4f46d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:aa01052a6f02fb32541a052bca7f236e6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Optimizer.html#aa01052a6f02fb32541a052bca7f236e6">learning_rate</a></td></tr>
 <tr class="separator:aa01052a6f02fb32541a052bca7f236e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affdcd71d3052a7bbed9e1c56d2efffb6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Optimizer.html#affdcd71d3052a7bbed9e1c56d2efffb6">epsilon</a> = 1e-8</td></tr>
+<tr class="separator:affdcd71d3052a7bbed9e1c56d2efffb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82b6796f746d86063e3b665690856a8b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Optimizer.html#a82b6796f746d86063e3b665690856a8b">t</a> = 0</td></tr>
+<tr class="separator:a82b6796f746d86063e3b665690856a8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="optimizer_8hpp_source.html#l00010">10</a> of file <a class="el" href="optimizer_8hpp_source.html">optimizer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimizer_8hpp_source.html#l00023">23</a> of file <a class="el" href="optimizer_8hpp_source.html">optimizer.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6192433decb5c8e3d14c34cf1d3ee54b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6192433decb5c8e3d14c34cf1d3ee54b">&#9670;&nbsp;</a></span>Optimizer()</h2>
@@ -144,11 +152,19 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="optimizer_8hpp_source.html#l00016">16</a> of file <a class="el" href="optimizer_8hpp_source.html">optimizer.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                                                   : <a class="code" href="classnmbuflowtorch_1_1Optimizer.html#aa01052a6f02fb32541a052bca7f236e6">learning_rate</a>(<a class="code" href="classnmbuflowtorch_1_1Optimizer.html#aa01052a6f02fb32541a052bca7f236e6">learning_rate</a>)</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
-<div class="ttc" id="aclassnmbuflowtorch_1_1Optimizer_html_aa01052a6f02fb32541a052bca7f236e6"><div class="ttname"><a href="classnmbuflowtorch_1_1Optimizer.html#aa01052a6f02fb32541a052bca7f236e6">nmbuflowtorch::Optimizer::learning_rate</a></div><div class="ttdeci">float learning_rate</div><div class="ttdef"><b>Definition:</b> <a href="optimizer_8hpp_source.html#l00013">optimizer.hpp:13</a></div></div>
+<p>Constructor for <a class="el" href="classnmbuflowtorch_1_1Optimizer.html">Optimizer</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">learning_rate</td><td>: Learning rate for the optimizer. Default value is 0.01 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="optimizer_8hpp_source.html#l00036">36</a> of file <a class="el" href="optimizer_8hpp_source.html">optimizer.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                                   : <a class="code" href="classnmbuflowtorch_1_1Optimizer.html#aa01052a6f02fb32541a052bca7f236e6">learning_rate</a>(<a class="code" href="classnmbuflowtorch_1_1Optimizer.html#aa01052a6f02fb32541a052bca7f236e6">learning_rate</a>)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="ttc" id="aclassnmbuflowtorch_1_1Optimizer_html_aa01052a6f02fb32541a052bca7f236e6"><div class="ttname"><a href="classnmbuflowtorch_1_1Optimizer.html#aa01052a6f02fb32541a052bca7f236e6">nmbuflowtorch::Optimizer::learning_rate</a></div><div class="ttdeci">float learning_rate</div><div class="ttdef"><b>Definition:</b> <a href="optimizer_8hpp_source.html#l00026">optimizer.hpp:26</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -175,9 +191,11 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="optimizer_8hpp_source.html#l00019">19</a> of file <a class="el" href="optimizer_8hpp_source.html">optimizer.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
+<p>Destructor for <a class="el" href="classnmbuflowtorch_1_1Optimizer.html">Optimizer</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="optimizer_8hpp_source.html#l00042">42</a> of file <a class="el" href="optimizer_8hpp_source.html">optimizer.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -216,11 +234,44 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classnmbuflowtorch_1_1optimizer_1_1SGD.html#a6e30115774205d20b328e3bdb21f1ea5">nmbuflowtorch::optimizer::SGD</a>.</p>
+<p>Virtual function that should be implemented by derived classes. This function updates the model parameters given the gradient of the parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">w</td><td>: Aligned map of the model parameters to be updated </td></tr>
+    <tr><td class="paramname">dw</td><td>: Const aligned map of the gradient of the model parameters </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classnmbuflowtorch_1_1optimizer_1_1SGD.html#a6e30115774205d20b328e3bdb21f1ea5">nmbuflowtorch::optimizer::SGD</a>, <a class="el" href="classnmbuflowtorch_1_1optimizer_1_1Nadam.html#aecb14b332dfbb52961d09b10f65b65b8">nmbuflowtorch::optimizer::Nadam</a>, and <a class="el" href="classnmbuflowtorch_1_1optimizer_1_1Adam.html#aa928e5e7da96fa3912b4699071d0d7ad">nmbuflowtorch::optimizer::Adam</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="affdcd71d3052a7bbed9e1c56d2efffb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affdcd71d3052a7bbed9e1c56d2efffb6">&#9670;&nbsp;</a></span>epsilon</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float nmbuflowtorch::Optimizer::epsilon = 1e-8</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="optimizer_8hpp_source.html#l00027">27</a> of file <a class="el" href="optimizer_8hpp_source.html">optimizer.hpp</a>.</p>
+
+</div>
+</div>
 <a id="aa01052a6f02fb32541a052bca7f236e6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa01052a6f02fb32541a052bca7f236e6">&#9670;&nbsp;</a></span>learning_rate</h2>
 
@@ -241,7 +292,31 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="optimizer_8hpp_source.html#l00013">13</a> of file <a class="el" href="optimizer_8hpp_source.html">optimizer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optimizer_8hpp_source.html#l00026">26</a> of file <a class="el" href="optimizer_8hpp_source.html">optimizer.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a82b6796f746d86063e3b665690856a8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82b6796f746d86063e3b665690856a8b">&#9670;&nbsp;</a></span>t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nmbuflowtorch::Optimizer::t = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="optimizer_8hpp_source.html#l00028">28</a> of file <a class="el" href="optimizer_8hpp_source.html">optimizer.hpp</a>.</p>
 
 </div>
 </div>

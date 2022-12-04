@@ -93,6 +93,9 @@ $(document).ready(function(){initNavTree('network_8hpp.html',''); initResizable(
 <div class="title">network.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Network class representing a sequence of layers. This class implements a network consisting of a sequence of layers. It provides functions for forward and backward propagation, training, and predictions.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;<a class="el" href="definitions_8hpp_source.html">./definitions.hpp</a>&quot;</code><br />
@@ -102,12 +105,14 @@ $(document).ready(function(){initNavTree('network_8hpp.html',''); initResizable(
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for network.hpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="network_8hpp__incl.svg" width="736" height="351"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="network_8hpp__incl.svg" width="736" height="351"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="network_8hpp__dep__incl.svg" width="967" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="network_8hpp__dep__incl.svg" width="967" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </div>
 <p><a href="network_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -115,6 +120,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Network.html">nmbuflowtorch::Network</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classnmbuflowtorch_1_1Network.html" title="The Network class is a class for creating and managing a neural network. It has functions for adding ...">Network</a> class is a class for creating and managing a neural network. It has functions for adding layers, losses, and optimizers to the network, as well as functions for training and predicting using the network. The summary function prints a summary of the network, including the type and output shape of each layer. The fit function trains the network on a given dataset, with options for specifying the number of epochs, batch size, and verbosity level. The predict function uses the network to make predictions on a given dataset. The get_parameters and get_derivatives functions return the serialized layer parameters and derivatives of layer parameters, respectively. The get_layer_output and get_layer_weight functions return the output and weight matrices of a specified layer.  <a href="classnmbuflowtorch_1_1Network.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -122,7 +128,11 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespacenmbuflowtorch"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacenmbuflowtorch.html">nmbuflowtorch</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Network class representing a sequence of layers. This class implements a network consisting of a sequence of layers. It provides functions for forward and backward propagation, training, and predictions. </p>
+
+<p class="definition">Definition in file <a class="el" href="network_8hpp_source.html">network.hpp</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

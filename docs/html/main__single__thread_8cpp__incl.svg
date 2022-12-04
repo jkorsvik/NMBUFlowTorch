@@ -234,7 +234,7 @@
 <!-- Node22 -->
 <g id="node22" class="node">
 <title>Node22</title>
-<g id="a_node22"><a xlink:href="network_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node22"><a xlink:href="network_8hpp.html" target="_top" xlink:title="Network class representing a sequence of layers. This class implements a network consisting of a sequ...">
 <polygon fill="none" stroke="black" points="905.28,-241 905.28,-260 1059.28,-260 1059.28,-241 905.28,-241"/>
 <text text-anchor="middle" x="982.28" y="-248" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch/network.hpp</text>
 </a>
@@ -380,13 +380,13 @@
 <polygon fill="midnightblue" stroke="midnightblue" points="920.78,-85.75 917.28,-75.75 913.78,-85.75 920.78,-85.75"/>
 </g>
 <!-- Node15&#45;&gt;Node6 -->
-<g id="edge21" class="edge">
+<g id="edge22" class="edge">
 <title>Node15&#45;&gt;Node6</title>
 <path fill="none" stroke="midnightblue" d="M392.9,-235.49C417.87,-226.17 450.52,-213.09 478.28,-199 589.27,-142.67 712.8,-58.87 760.73,-25.48"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="762.84,-28.28 769.03,-19.68 758.83,-22.54 762.84,-28.28"/>
 </g>
 <!-- Node15&#45;&gt;Node11 -->
-<g id="edge22" class="edge">
+<g id="edge21" class="edge">
 <title>Node15&#45;&gt;Node11</title>
 <path fill="none" stroke="midnightblue" d="M354.71,-235.29C358.82,-194.43 370.69,-76.55 375.36,-30.12"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="378.86,-30.25 376.38,-19.95 371.9,-29.54 378.86,-30.25"/>

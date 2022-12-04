@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Network class representing a sequence of layers. This class implements a network consisting of a sequ...">
 <polygon fill="#bfbfbf" stroke="black" points="117.5,-224.5 117.5,-254.5 245.5,-254.5 245.5,-224.5 117.5,-224.5"/>
 <text text-anchor="start" x="125.5" y="-242.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/nmbuflowtorch</text>
 <text text-anchor="middle" x="181.5" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">/network.hpp</text>

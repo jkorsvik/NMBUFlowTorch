@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['grad_5fbias_254',['grad_bias',['../classnmbuflowtorch_1_1layer_1_1Dense.html#a25bc101092f5eab36ab65af223ad8945',1,'nmbuflowtorch::layer::Dense']]],
-  ['grad_5fweights_255',['grad_weights',['../classnmbuflowtorch_1_1layer_1_1Dense.html#a73f38f38b0d985d03fb75c54851416c2',1,'nmbuflowtorch::layer::Dense']]],
-  ['gradient_5fback_256',['gradient_back',['../classnmbuflowtorch_1_1Layer.html#ad66d736d0396765b8c80381d9fedf12c',1,'nmbuflowtorch::Layer::gradient_back()'],['../classnmbuflowtorch_1_1Loss.html#a40469e1be61ffe6592726f45d8769375',1,'nmbuflowtorch::Loss::gradient_back()']]]
+  ['epsilon_290',['epsilon',['../classnmbuflowtorch_1_1optimizer_1_1Adam.html#a1a3e65573d64e02b7912c8aeb69ca0a2',1,'nmbuflowtorch::optimizer::Adam::epsilon()'],['../classnmbuflowtorch_1_1optimizer_1_1Nadam.html#ae0bb909c8519ccdf1dafd75346c36a7c',1,'nmbuflowtorch::optimizer::Nadam::epsilon()'],['../classnmbuflowtorch_1_1Optimizer.html#affdcd71d3052a7bbed9e1c56d2efffb6',1,'nmbuflowtorch::Optimizer::epsilon()']]]
 ];

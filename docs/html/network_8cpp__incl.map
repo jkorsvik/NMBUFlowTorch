@@ -1,6 +1,6 @@
 <map id="src/nmbuflowtorch/network.cpp" name="src/nmbuflowtorch/network.cpp">
 <area shape="rect" id="node1" title=" " alt="" coords="343,5,570,32"/>
-<area shape="rect" id="node2" href="$network_8hpp.html" title=" " alt="" coords="131,87,337,114"/>
+<area shape="rect" id="node2" href="$network_8hpp.html" title="Network class representing a sequence of layers. This class implements a network consisting of a sequ..." alt="" coords="131,87,337,114"/>
 <area shape="rect" id="node5" href="$definitions_8hpp.html" title=" " alt="" coords="273,319,400,345"/>
 <area shape="rect" id="node16" href="$math__m_8hpp.html" title=" " alt="" coords="495,80,653,121"/>
 <area shape="rect" id="node3" title=" " alt="" coords="199,169,269,196"/>

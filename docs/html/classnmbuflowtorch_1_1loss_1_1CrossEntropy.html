@@ -109,13 +109,16 @@ Collaboration diagram for nmbuflowtorch::loss::CrossEntropy:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac95e1023d461747c13c8a9eba678b9a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1loss_1_1CrossEntropy.html#ac95e1023d461747c13c8a9eba678b9a0">eval</a> (const <a class="el" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a> &amp;pred, const <a class="el" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a> &amp;target)</td></tr>
+<tr class="memdesc:ac95e1023d461747c13c8a9eba678b9a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the loss function given the predicted and target values.  <a href="classnmbuflowtorch_1_1loss_1_1CrossEntropy.html#ac95e1023d461747c13c8a9eba678b9a0">More...</a><br /></td></tr>
 <tr class="separator:ac95e1023d461747c13c8a9eba678b9a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classnmbuflowtorch_1_1Loss"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classnmbuflowtorch_1_1Loss')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classnmbuflowtorch_1_1Loss.html">nmbuflowtorch::Loss</a></td></tr>
 <tr class="memitem:adf8d33eddce108dd1b2611ee01180a77 inherit pub_methods_classnmbuflowtorch_1_1Loss"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Loss.html#adf8d33eddce108dd1b2611ee01180a77">~Loss</a> ()</td></tr>
 <tr class="separator:adf8d33eddce108dd1b2611ee01180a77 inherit pub_methods_classnmbuflowtorch_1_1Loss"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29688f70477ce9f630cb313cc7e4c365 inherit pub_methods_classnmbuflowtorch_1_1Loss"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Loss.html#a29688f70477ce9f630cb313cc7e4c365">back_gradient</a> ()</td></tr>
+<tr class="memdesc:a29688f70477ce9f630cb313cc7e4c365 inherit pub_methods_classnmbuflowtorch_1_1Loss"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the gradient with respect to the input of the loss function.  <a href="classnmbuflowtorch_1_1Loss.html#a29688f70477ce9f630cb313cc7e4c365">More...</a><br /></td></tr>
 <tr class="separator:a29688f70477ce9f630cb313cc7e4c365 inherit pub_methods_classnmbuflowtorch_1_1Loss"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5747f962c29f0e1a6147c435da22c466 inherit pub_methods_classnmbuflowtorch_1_1Loss"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Loss.html#a5747f962c29f0e1a6147c435da22c466">output</a> ()</td></tr>
+<tr class="memdesc:a5747f962c29f0e1a6147c435da22c466 inherit pub_methods_classnmbuflowtorch_1_1Loss"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the loss.  <a href="classnmbuflowtorch_1_1Loss.html#a5747f962c29f0e1a6147c435da22c466">More...</a><br /></td></tr>
 <tr class="separator:a5747f962c29f0e1a6147c435da22c466 inherit pub_methods_classnmbuflowtorch_1_1Loss"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
@@ -163,6 +166,15 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Evaluates the loss function given the predicted and target values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pred</td><td>The predicted values. </td></tr>
+    <tr><td class="paramname">target</td><td>The target values. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="classnmbuflowtorch_1_1Loss.html#ab739a047ffc84f44af71832ec704cedc">nmbuflowtorch::Loss</a>.</p>
 

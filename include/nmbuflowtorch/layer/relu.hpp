@@ -11,7 +11,13 @@ namespace nmbuflowtorch::layer
     std::string layer_type = "ReLu";
 
    public:
+    /// @brief Forward pass of the ReLU layer
+    /// @param X : Input data
     void forward(const Matrix& X);
+
+    /// @brief Backward pass of the ReLU layer
+    /// @param X : Input data
+    /// @param accumulated_gradients : Gradients accumulated from previous layers
     void backward(const Matrix& X, const Matrix& accumulated_gradients);
   };
 }  // namespace nmbuflowtorch::layer

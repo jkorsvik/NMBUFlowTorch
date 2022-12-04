@@ -1,5 +1,8 @@
 var dir_e4ffd9f759aa5053a313000a5169fe0d =
 [
+    [ "conv.hpp", "conv_8hpp.html", [
+      [ "Convolutional", "classnmbuflowtorch_1_1layer_1_1Convolutional.html", "classnmbuflowtorch_1_1layer_1_1Convolutional" ]
+    ] ],
     [ "dense.hpp", "dense_8hpp.html", [
       [ "Dense", "classnmbuflowtorch_1_1layer_1_1Dense.html", "classnmbuflowtorch_1_1layer_1_1Dense" ]
     ] ],

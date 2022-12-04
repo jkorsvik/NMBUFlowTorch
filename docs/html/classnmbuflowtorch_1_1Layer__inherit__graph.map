@@ -1,7 +1,8 @@
 <map id="nmbuflowtorch::Layer" name="nmbuflowtorch::Layer">
-<area shape="rect" id="node1" title=" " alt="" coords="5,111,169,138"/>
-<area shape="rect" id="node2" href="$classnmbuflowtorch_1_1layer_1_1Dense.html" title=" " alt="" coords="217,5,379,47"/>
-<area shape="rect" id="node3" href="$classnmbuflowtorch_1_1layer_1_1ReLU.html" title=" " alt="" coords="217,71,379,112"/>
-<area shape="rect" id="node4" href="$classnmbuflowtorch_1_1layer_1_1Sigmoid.html" title=" " alt="" coords="217,136,379,177"/>
-<area shape="rect" id="node5" href="$classnmbuflowtorch_1_1layer_1_1Softmax.html" title=" " alt="" coords="217,201,379,243"/>
+<area shape="rect" id="node1" title="The base layer class for neural network models." alt="" coords="5,143,169,170"/>
+<area shape="rect" id="node2" href="$classnmbuflowtorch_1_1layer_1_1Convolutional.html" title=" " alt="" coords="217,5,379,47"/>
+<area shape="rect" id="node3" href="$classnmbuflowtorch_1_1layer_1_1Dense.html" title=" " alt="" coords="217,71,379,112"/>
+<area shape="rect" id="node4" href="$classnmbuflowtorch_1_1layer_1_1ReLU.html" title=" " alt="" coords="217,136,379,177"/>
+<area shape="rect" id="node5" href="$classnmbuflowtorch_1_1layer_1_1Sigmoid.html" title=" " alt="" coords="217,201,379,243"/>
+<area shape="rect" id="node6" href="$classnmbuflowtorch_1_1layer_1_1Softmax.html" title="Implements the forward and backward propagation of the softmax function." alt="" coords="217,267,379,308"/>
 </map>

@@ -20,6 +20,10 @@ typedef Eigen::Array<float, 1, Eigen::Dynamic> RowVector;
 
 namespace nmbuflowtorch
 {
+  /// @brief Prints a progress bar to the console.
+  /// @param current The current progress value.
+  /// @param total The total progress value.
+  /// @param verbose_level The level of verbosity.
   inline void printProgress(float current, float total, int verbose_level)
   {
     // int val = (int)(percentage * PERCENTAGEMULTIPLIER);

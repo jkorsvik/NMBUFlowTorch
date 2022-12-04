@@ -1,5 +1,5 @@
 <map id="include/nmbuflowtorch/network.hpp" name="include/nmbuflowtorch/network.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="162,5,333,47"/>
+<area shape="rect" id="node1" title="Network class representing a sequence of layers. This class implements a network consisting of a sequ..." alt="" coords="162,5,333,47"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,95,76,121"/>
 <area shape="rect" id="node3" title=" " alt="" coords="83,319,145,345"/>
 <area shape="rect" id="node4" href="$definitions_8hpp.html" title=" " alt="" coords="312,244,439,271"/>

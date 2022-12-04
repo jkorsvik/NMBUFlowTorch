@@ -1,4 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classnmbuflowtorch_1_1Optimizer.html" title=" " alt="" coords="5,5,197,32"/>
-<area shape="rect" id="node2" href="$classnmbuflowtorch_1_1optimizer_1_1SGD.html" title=" " alt="" coords="245,5,472,32"/>
+<area shape="rect" id="node1" href="$classnmbuflowtorch_1_1Optimizer.html" title=" " alt="" coords="5,78,197,105"/>
+<area shape="rect" id="node2" href="$classnmbuflowtorch_1_1optimizer_1_1Adam.html" title=" " alt="" coords="263,5,454,47"/>
+<area shape="rect" id="node3" href="$classnmbuflowtorch_1_1optimizer_1_1Nadam.html" title="Nadam optimizer." alt="" coords="263,71,454,112"/>
+<area shape="rect" id="node4" href="$classnmbuflowtorch_1_1optimizer_1_1SGD.html" title=" " alt="" coords="245,137,472,163"/>
 </map>

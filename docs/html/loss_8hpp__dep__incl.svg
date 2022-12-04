@@ -113,7 +113,7 @@
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="network_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node10"><a xlink:href="network_8hpp.html" target="_top" xlink:title="Network class representing a sequence of layers. This class implements a network consisting of a sequ...">
 <polygon fill="none" stroke="black" points="236,-67.5 236,-97.5 364,-97.5 364,-67.5 236,-67.5"/>
 <text text-anchor="start" x="244" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/nmbuflowtorch</text>
 <text text-anchor="middle" x="300" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/network.hpp</text>

@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="math__m_8hpp.html#a00222de08fb54dc0423e29cc610d1f0c" target="_top" xlink:title="Creates a permutation matrix from a given vector of indices and shuffles both X and y accordingly.">
+<g id="a_node2"><a xlink:href="math__m_8hpp.html#a00222de08fb54dc0423e29cc610d1f0c" target="_top" xlink:title="Shuffles a dataset by creating a permutation matrix from a given vector of indices and applying it to...">
 <polygon fill="none" stroke="black" points="220,-170 220,-189 297,-189 297,-170 220,-170"/>
 <text text-anchor="middle" x="258.5" y="-177" font-family="Helvetica,sans-Serif" font-size="10.00">shuffle_data</text>
 </a>
@@ -35,7 +35,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classnmbuflowtorch_1_1Network.html#ab4decd5644c172b3ade967496bf64f7b" target="_top" xlink:title="Forward pass of the network using input X.">
+<g id="a_node3"><a xlink:href="classnmbuflowtorch_1_1Network.html#ab4decd5644c172b3ade967496bf64f7b" target="_top" xlink:title="Trains all batches in X and y for one epoch.">
 <polygon fill="none" stroke="black" points="190,-120.5 190,-150.5 327,-150.5 327,-120.5 190,-120.5"/>
 <text text-anchor="start" x="198" y="-138.5" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch::Network</text>
 <text text-anchor="middle" x="258.5" y="-127.5" font-family="Helvetica,sans-Serif" font-size="10.00">::train_one_epoch</text>
@@ -51,7 +51,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="namespacenmbuflowtorch.html#a6841de6f2ac014f91c37f7f2c0e9cc1e" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="namespacenmbuflowtorch.html#a6841de6f2ac014f91c37f7f2c0e9cc1e" target="_top" xlink:title="Prints a progress bar to the console.">
 <polygon fill="none" stroke="black" points="363,-148 363,-167 524,-167 524,-148 363,-148"/>
 <text text-anchor="middle" x="443.5" y="-155" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch::printProgress</text>
 </a>
@@ -66,7 +66,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="classnmbuflowtorch_1_1Network.html#ac5f07dc09b1d352567d6cbcc3c38c010" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="classnmbuflowtorch_1_1Network.html#ac5f07dc09b1d352567d6cbcc3c38c010" target="_top" xlink:title="Forward, backward, and update functions combined for one batch of data.">
 <polygon fill="none" stroke="black" points="375,-98.5 375,-128.5 512,-128.5 512,-98.5 375,-98.5"/>
 <text text-anchor="start" x="383" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch::Network</text>
 <text text-anchor="middle" x="443.5" y="-105.5" font-family="Helvetica,sans-Serif" font-size="10.00">::train_batch</text>
@@ -130,7 +130,7 @@
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="classnmbuflowtorch_1_1Loss.html#a5747f962c29f0e1a6147c435da22c466" target="_top" xlink:title=" ">
+<g id="a_node11"><a xlink:href="classnmbuflowtorch_1_1Loss.html#a5747f962c29f0e1a6147c435da22c466" target="_top" xlink:title="Returns the value of the loss.">
 <polygon fill="none" stroke="black" points="569.5,-49.5 569.5,-79.5 687.5,-79.5 687.5,-49.5 569.5,-49.5"/>
 <text text-anchor="start" x="577.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch::Loss</text>
 <text text-anchor="middle" x="628.5" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">::output</text>
@@ -162,7 +162,7 @@
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="classnmbuflowtorch_1_1Loss.html#a29688f70477ce9f630cb313cc7e4c365" target="_top" xlink:title=" ">
+<g id="a_node7"><a xlink:href="classnmbuflowtorch_1_1Loss.html#a29688f70477ce9f630cb313cc7e4c365" target="_top" xlink:title="Returns the gradient with respect to the input of the loss function.">
 <polygon fill="none" stroke="black" points="742.5,-235.5 742.5,-265.5 860.5,-265.5 860.5,-235.5 742.5,-235.5"/>
 <text text-anchor="start" x="750.5" y="-253.5" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch::Loss</text>
 <text text-anchor="middle" x="801.5" y="-242.5" font-family="Helvetica,sans-Serif" font-size="10.00">::back_gradient</text>
@@ -178,7 +178,7 @@
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="classnmbuflowtorch_1_1Loss.html#ab739a047ffc84f44af71832ec704cedc" target="_top" xlink:title=" ">
+<g id="a_node8"><a xlink:href="classnmbuflowtorch_1_1Loss.html#ab739a047ffc84f44af71832ec704cedc" target="_top" xlink:title="Evaluates the loss function given the predicted and target values.">
 <polygon fill="none" stroke="black" points="742.5,-186.5 742.5,-216.5 860.5,-216.5 860.5,-186.5 742.5,-186.5"/>
 <text text-anchor="start" x="750.5" y="-204.5" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch::Loss</text>
 <text text-anchor="middle" x="801.5" y="-193.5" font-family="Helvetica,sans-Serif" font-size="10.00">::eval</text>

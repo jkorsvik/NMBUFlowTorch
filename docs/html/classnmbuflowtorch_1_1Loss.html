@@ -107,10 +107,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adf8d33eddce108dd1b2611ee01180a77"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Loss.html#adf8d33eddce108dd1b2611ee01180a77">~Loss</a> ()</td></tr>
 <tr class="separator:adf8d33eddce108dd1b2611ee01180a77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab739a047ffc84f44af71832ec704cedc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Loss.html#ab739a047ffc84f44af71832ec704cedc">eval</a> (const <a class="el" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a> &amp;pred, const <a class="el" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a> &amp;target)=0</td></tr>
+<tr class="memdesc:ab739a047ffc84f44af71832ec704cedc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the loss function given the predicted and target values.  <a href="classnmbuflowtorch_1_1Loss.html#ab739a047ffc84f44af71832ec704cedc">More...</a><br /></td></tr>
 <tr class="separator:ab739a047ffc84f44af71832ec704cedc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29688f70477ce9f630cb313cc7e4c365"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Loss.html#a29688f70477ce9f630cb313cc7e4c365">back_gradient</a> ()</td></tr>
+<tr class="memdesc:a29688f70477ce9f630cb313cc7e4c365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the gradient with respect to the input of the loss function.  <a href="classnmbuflowtorch_1_1Loss.html#a29688f70477ce9f630cb313cc7e4c365">More...</a><br /></td></tr>
 <tr class="separator:a29688f70477ce9f630cb313cc7e4c365"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5747f962c29f0e1a6147c435da22c466"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Loss.html#a5747f962c29f0e1a6147c435da22c466">output</a> ()</td></tr>
+<tr class="memdesc:a5747f962c29f0e1a6147c435da22c466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the loss.  <a href="classnmbuflowtorch_1_1Loss.html#a5747f962c29f0e1a6147c435da22c466">More...</a><br /></td></tr>
 <tr class="separator:a5747f962c29f0e1a6147c435da22c466"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
@@ -177,10 +180,12 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="loss_8hpp_source.html#l00022">22</a> of file <a class="el" href="loss_8hpp_source.html">loss.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classnmbuflowtorch_1_1Loss.html#a40469e1be61ffe6592726f45d8769375">gradient_back</a>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
+<p>Returns the gradient with respect to the input of the loss function. </p>
+
+<p class="definition">Definition at line <a class="el" href="loss_8hpp_source.html#l00026">26</a> of file <a class="el" href="loss_8hpp_source.html">loss.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classnmbuflowtorch_1_1Loss.html#a40469e1be61ffe6592726f45d8769375">gradient_back</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
 <div class="ttc" id="aclassnmbuflowtorch_1_1Loss_html_a40469e1be61ffe6592726f45d8769375"><div class="ttname"><a href="classnmbuflowtorch_1_1Loss.html#a40469e1be61ffe6592726f45d8769375">nmbuflowtorch::Loss::gradient_back</a></div><div class="ttdeci">Matrix gradient_back</div><div class="ttdef"><b>Definition:</b> <a href="loss_8hpp_source.html#l00013">loss.hpp:13</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -219,6 +224,15 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Evaluates the loss function given the predicted and target values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pred</td><td>The predicted values. </td></tr>
+    <tr><td class="paramname">target</td><td>The target values. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implemented in <a class="el" href="classnmbuflowtorch_1_1loss_1_1MSE.html#a42a3b3af6723a113b2c230dacdf081f2">nmbuflowtorch::loss::MSE</a>, and <a class="el" href="classnmbuflowtorch_1_1loss_1_1CrossEntropy.html#ac95e1023d461747c13c8a9eba678b9a0">nmbuflowtorch::loss::CrossEntropy</a>.</p>
 
 </div>
@@ -246,10 +260,12 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="loss_8hpp_source.html#l00027">27</a> of file <a class="el" href="loss_8hpp_source.html">loss.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classnmbuflowtorch_1_1Loss.html#a3288af0b68a56d1ddd0df97575ed0344">loss</a>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
+<p>Returns the value of the loss. </p>
+
+<p class="definition">Definition at line <a class="el" href="loss_8hpp_source.html#l00032">32</a> of file <a class="el" href="loss_8hpp_source.html">loss.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classnmbuflowtorch_1_1Loss.html#a3288af0b68a56d1ddd0df97575ed0344">loss</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
 <div class="ttc" id="aclassnmbuflowtorch_1_1Loss_html_a3288af0b68a56d1ddd0df97575ed0344"><div class="ttname"><a href="classnmbuflowtorch_1_1Loss.html#a3288af0b68a56d1ddd0df97575ed0344">nmbuflowtorch::Loss::loss</a></div><div class="ttdeci">float loss</div><div class="ttdef"><b>Definition:</b> <a href="loss_8hpp_source.html#l00011">loss.hpp:11</a></div></div>
 </div><!-- fragment -->
 </div>

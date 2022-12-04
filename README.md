@@ -12,8 +12,9 @@ NMBUFlowTorch {#mainpage}
 A simple C++ implementation of Neural Nets, inspired by the functionality of Tensorflow and pyTorch.
 ## Docs
 The documentation with this readme is available at [Documentation](https://jkorsvik.github.io/NMBUFlowTorch/)
+## Repository
 
-
+[Repository](https://github.com/jkorsvik/NMBUFlowTorch)
 ## Features
 * like the functional API of tensorflow
 * using eigen3 library

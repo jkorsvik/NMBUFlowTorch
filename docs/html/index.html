@@ -95,15 +95,18 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <p>A simple C++ implementation of Neural Nets, inspired by the functionality of Tensorflow and pyTorch. </p>
 <h1><a class="anchor" id="autotoc_md0"></a>
 Docs</h1>
-<p>The documentation with this readme is available at <a href="https://jkorsvik.github.io/NMBUFlowTorch/">Documentation</a></p>
+<p>The documentation with this readme is available at <a href="https://jkorsvik.github.io/NMBUFlowTorch/">Documentation</a> </p>
 <h1><a class="anchor" id="autotoc_md1"></a>
+Repository</h1>
+<p><a href="https://github.com/jkorsvik/NMBUFlowTorch">Repository</a> </p>
+<h1><a class="anchor" id="autotoc_md2"></a>
 Features</h1>
 <ul>
 <li>like the functional API of tensorflow</li>
 <li>using eigen3 library</li>
 <li>more to come</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md2"></a>
+<h2><a class="anchor" id="autotoc_md3"></a>
 Build and Install Features</h2>
 <ul>
 <li>Modern <b>CMake</b> configuration and project, which, to the best of my knowledge, uses the best practices,</li>
@@ -119,10 +122,10 @@ Build and Install Features</h2>
 <li>Options to build as a header-only library or executable, not just a static or shared library.</li>
 <li><b>Ccache</b> integration, for speeding up rebuild times</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md4"></a>
 Getting Started</h1>
 <p>These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.</p>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md5"></a>
 Prerequisites</h2>
 <p>This project is meant as a template and a good starting point for learning how create larger c++ projects, compile and run them. can be change to better suit the needs of the developer(s). If you wish to use the template <em>as-is</em>, meaning using the versions recommended here, then you will need:</p>
 <ul>
@@ -135,13 +138,13 @@ Prerequisites</h2>
 <ul>
 <li><b>Different data</b> - <a href="https://github.com/wichtounet/mnist">MNIST</a> AND <a href="https://home.bawue.de/~horsch/teaching/inf205/src/image-benchmark.zip">https://home.bawue.de/~horsch/teaching/inf205/src/image-benchmark.zip</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 If using VSCode</h2>
 <p>There are few select extensions which are recommended</p><ul>
 <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack">https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack</a></li>
 <li><a href="https://marketplace.visualstudio.com/items?itemName=notskm.clang-tidy">https://marketplace.visualstudio.com/items?itemName=notskm.clang-tidy</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 Third-party libraries used</h2>
 <ul>
 <li>eigen3 : <a href="https://eigen.tuxfamily.org/index.php?title=Main_Page">https://eigen.tuxfamily.org/index.php?title=Main_Page</a></li>
@@ -149,7 +152,7 @@ Third-party libraries used</h2>
 <li>OpenBLAS : <a href="https://github.com/xianyi/OpenBLAS">https://github.com/xianyi/OpenBLAS</a></li>
 <li>csv-parser : <a href="https://github.com/vincentlaucsb/csv-parser">https://github.com/vincentlaucsb/csv-parser</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 Installing</h2>
 <p>It is fairly easy to install the project, all you need to do is clone if from <b>GitHub</b>.</p>
 <p>If you wish to clone the repository, you simply need to run:</p>
@@ -169,7 +172,7 @@ Installing</h2>
 <blockquote class="doxtable">
 <p><em><b>Note</b></em>: <em>If you want to supress a lot of warnings when building, see the <a href="CMakeLists.txt">CMakeLists.txt</a> at line 145 and 146, and uncomment the preferred.</em> </p>
 </blockquote>
-<h1><a class="anchor" id="autotoc_md8"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 Building the project</h1>
 <p>To build the project, all you need to do, <em><b>after correctly <a href="README.md#Installing">installing the project</a></b></em>, is run a similar <b>CMake</b> routine to the the one below:</p>
 <div class="fragment"><div class="line">mkdir build/ &amp;&amp; cd build/</div>
@@ -179,14 +182,14 @@ Building the project</h1>
 <p><em><b>Note:</b></em> <em>The custom <code>CMAKE_INSTALL_PREFIX</code> can be omitted if you wish to install in <a href="https://cmake.org/cmake/help/latest/module/GNUInstallDirs.html">the default install location</a>.</em> </p>
 </blockquote>
 <p>More options that you can set for the project can be found in the <a href="cmake/StandardSettings.cmake"><code>cmake/StandardSettings.cmake</code> file</a>. For certain options additional configuration may be needed in their respective <code>*.cmake</code> files (i.e. Conan needs the <code>CONAN_REQUIRES</code> and might need the <code>CONAN_OPTIONS</code> to be setup for it work correctly; the two are set in the <a href="cmake/Conan.cmake"><code>cmake/Conan.cmake</code> file</a>).</p>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
 Generating the documentation</h1>
 <p>In order to generate documentation for the project, you need to configure the build to use Doxygen. This is easily done, by modifying the workflow shown above as follows:</p>
 <div class="fragment"><div class="line">source build_auto_docs.sh</div>
 </div><!-- fragment --><blockquote class="doxtable">
 <p><em><b>Note:</b></em> <em>This will generate a <code>docs/</code> directory in the <b>project's root directory</b>.</em> </p>
 </blockquote>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 Running the tests</h1>
 <p>This project uses <a href="https://github.com/google/googletest/">Google Test</a> for unit testing. Unit testing can be disabled in the options, by setting the <code>ENABLE_UNIT_TESTING</code> (from <a href="cmake/StandardSettings.cmake">cmake/StandardSettings.cmake</a>) to be false. To run the tests, simply use CTest, from the build directory, passing the desire configuration for which to run tests for. An example of this procedure is:</p>
 <div class="fragment"><div class="line">cd build          # if not in the build directory already</div>
@@ -194,13 +197,13 @@ Running the tests</h1>
 <div class="line"> </div>
 <div class="line"># you can also run tests with the `-VV` flag for a more verbose output (i.e.</div>
 <div class="line">#GoogleTest output as well)</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md11"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md12"></a>
 Authors</h1>
 <ul>
 <li><b>Jon-Mikkel Ryen Korsvik</b> - <a href="https://github.com/jkorsvik">@jkorsvik</a></li>
 <li><b>Jørgen Navjord</b> - <a href="https://github.com/navjordj">@navjordj</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md12"></a>
+<h1><a class="anchor" id="autotoc_md13"></a>
 Inspiration Repos</h1>
 <ul>
 <li><a href="https://github.com/filipdutescu/modern-cpp-template">https://github.com/filipdutescu/modern-cpp-template</a> Used for bootstrapping a c++ project and for managing building, installing, structure, as well as testing.</li>
@@ -209,7 +212,7 @@ Inspiration Repos</h1>
 <li><a href="https://github.com/leondavi/cppSANN">https://github.com/leondavi/cppSANN</a></li>
 <li><a href="https://github.com/Black-Phoenix/CUDA-MLP">https://github.com/Black-Phoenix/CUDA-MLP</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md13"></a>
+<h1><a class="anchor" id="autotoc_md14"></a>
 License</h1>
 <p>This project is licensed under the <a href="https://unlicense.org/">Unlicense</a> - see the [LICENSE](LICENSE) file for details </p>
 </div></div><!-- PageDoc -->

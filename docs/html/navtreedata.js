@@ -26,21 +26,22 @@ var NAVTREE =
 [
   [ "NMBUFlowTorch", "index.html", [
     [ "Docs", "index.html#autotoc_md0", null ],
-    [ "Features", "index.html#autotoc_md1", [
-      [ "Build and Install Features", "index.html#autotoc_md2", null ]
+    [ "Repository", "index.html#autotoc_md1", null ],
+    [ "Features", "index.html#autotoc_md2", [
+      [ "Build and Install Features", "index.html#autotoc_md3", null ]
     ] ],
-    [ "Getting Started", "index.html#autotoc_md3", [
-      [ "Prerequisites", "index.html#autotoc_md4", null ],
-      [ "If using VSCode", "index.html#autotoc_md5", null ],
-      [ "Third-party libraries used", "index.html#autotoc_md6", null ],
-      [ "Installing", "index.html#autotoc_md7", null ]
+    [ "Getting Started", "index.html#autotoc_md4", [
+      [ "Prerequisites", "index.html#autotoc_md5", null ],
+      [ "If using VSCode", "index.html#autotoc_md6", null ],
+      [ "Third-party libraries used", "index.html#autotoc_md7", null ],
+      [ "Installing", "index.html#autotoc_md8", null ]
     ] ],
-    [ "Building the project", "index.html#autotoc_md8", null ],
-    [ "Generating the documentation", "index.html#autotoc_md9", null ],
-    [ "Running the tests", "index.html#autotoc_md10", null ],
-    [ "Authors", "index.html#autotoc_md11", null ],
-    [ "Inspiration Repos", "index.html#autotoc_md12", null ],
-    [ "License", "index.html#autotoc_md13", null ],
+    [ "Building the project", "index.html#autotoc_md9", null ],
+    [ "Generating the documentation", "index.html#autotoc_md10", null ],
+    [ "Running the tests", "index.html#autotoc_md11", null ],
+    [ "Authors", "index.html#autotoc_md12", null ],
+    [ "Inspiration Repos", "index.html#autotoc_md13", null ],
+    [ "License", "index.html#autotoc_md14", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -74,7 +75,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "adam_8cpp.html",
-"namespacenmbuflowtorch.html"
+"namespacemembers_func.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

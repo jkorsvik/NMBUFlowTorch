@@ -17,10 +17,13 @@ namespace nmbuflowtorch::optimizer
       v.setZero();
     }
 
+    t++;  // increment timestep
     // Update the parameters using Nesterov momentum and Adam optimization
     m = beta1 * m + (1 - beta1) * dw;
-    v = beta2 * v + (1 - beta2) * dw.cwiseProduct(dw);
-    Vector momentum = (1 - beta1) * (m / (1 - pow(beta1, t))) + beta1 * (v / (1 - pow(beta2, t)));
-    w = w - learning_rate * momentum;
+    v = beta2 * v + (1 - beta2) * dw.array().square();
+    Vector m_hat = m / (1 - pow(beta1, t));
+    Vector v_hat = v / (1 - pow(beta2, t));
+    // Avoid using the square root function by using the identity: x / sqrt(y) = sqrt(x) / y
+    w -= learning_rate * m.array().sqrt() / (v + epsilon);
   }
 }  // namespace nmbuflowtorch::optimizer

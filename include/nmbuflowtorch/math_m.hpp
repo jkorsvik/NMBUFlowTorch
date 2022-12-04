@@ -5,6 +5,10 @@
 
 #include "./definitions.hpp"
 
+/// @brief Calculates the dot product of a matrix and a vector.
+/// @param W The input matrix.
+/// @param x The input vector.
+/// @return A vector containing the dot product of the matrix and vector.
 inline Vector MVdot(const Matrix& W, const Vector& x)
 {
   if (W.cols() != x.rows())
@@ -14,6 +18,10 @@ inline Vector MVdot(const Matrix& W, const Vector& x)
   return (W * x.asDiagonal()).rowwise().sum();
 }
 
+/// @brief Calculates the dot product of two matrices.
+/// @param W The first input matrix.
+/// @param X The second input matrix.
+/// @return A matrix containing the dot product of the two input matrices.
 inline Matrix MMdot(const Matrix& W, const Matrix& X)
 {
   if (X.cols() != W.rows())
@@ -27,6 +35,9 @@ inline Matrix MMdot(const Matrix& W, const Matrix& X)
   return X * W;
 }
 
+/// @brief Finds the maximum value in each column of a matrix and returns the corresponding indices.
+/// @param m The input matrix.
+/// @return A vector containing the indices of the maximum value in each column of the input matrix.
 inline Vector colwise_max_index(Matrix& m)
 {
   Vector indices(m.cols());
@@ -51,12 +62,18 @@ inline Vector colwise_max_index(Matrix& m)
   return indices;
 }
 
-// Returns 0 if value is < 0.5, else 1
+/// @brief Applies a binary cutoff to a given float value.
+/// @param inp The input float value.
+/// @return 0 if the input value is less than 0.5, or 1 if the input value is greater than or equal to 0.5.
 inline int binary_cutoff(float inp)
 {
   return inp >= 0.5;
 }
 
+/// @brief Calculates the accuracy score for a given set of true and predicted labels.
+/// @param y_true The true labels.
+/// @param y_pred The predicted labels.
+/// @return The accuracy score, which is the fraction of true and predicted labels that match.
 inline float accuracy_score(std::vector<int> y_true, std::vector<int> y_pred)
 {
   if (y_true.size() != y_pred.size())
@@ -75,9 +92,10 @@ inline float accuracy_score(std::vector<int> y_true, std::vector<int> y_pred)
   return float(correct) / y_true.size();  // Cast to float to avoid integer division
 }
 
-/// @brief Creates a permutation matrix from a given vector of indices and shuffles both X and y accordingly
-/// @param X Matrix of shape (n_samples, n_features)
-/// @param y Matrix of shape (n_samples, n_outputs) normally a vector
+/// @brief Shuffles a dataset by creating a permutation matrix from a given vector of indices and applying it to the data
+/// matrices.
+/// @param X Matrix of shape (n_samples, n_features) containing the input data.
+/// @param y Matrix of shape (n_samples, n_outputs) containing the corresponding targets.
 inline void shuffle_data(Matrix& X, Matrix& y)
 {
   Eigen::PermutationMatrix<Eigen::Dynamic, Eigen::Dynamic> perm(X.rows());

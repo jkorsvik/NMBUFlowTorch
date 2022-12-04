@@ -16,7 +16,7 @@ namespace nmbuflowtorch::optimizer
     float weight_decay;
     float momentum_decay;
     float epsilon;  // epsilon for numerical stability
-    int t = 1;      // time step
+    int t = 0;      // time step
 
    public:
     explicit Nadam(

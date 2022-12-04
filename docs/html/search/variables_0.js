@@ -1,6 +1,22 @@
 var searchData=
 [
-  ['beta1_287',['beta1',['../classnmbuflowtorch_1_1optimizer_1_1Adam.html#a39ddc218365d34ee599680f42f32579b',1,'nmbuflowtorch::optimizer::Adam::beta1()'],['../classnmbuflowtorch_1_1optimizer_1_1Nadam.html#a87e19c96362085a7cf070b5b599fea02',1,'nmbuflowtorch::optimizer::Nadam::beta1()']]],
-  ['beta2_288',['beta2',['../classnmbuflowtorch_1_1optimizer_1_1Adam.html#a59a72a4fa1f8bea6e6bc211396d37d1c',1,'nmbuflowtorch::optimizer::Adam::beta2()'],['../classnmbuflowtorch_1_1optimizer_1_1Nadam.html#ad5f93092df9a69af3fc9d8345c5987f5',1,'nmbuflowtorch::optimizer::Nadam::beta2()']]],
-  ['bias_289',['bias',['../classnmbuflowtorch_1_1layer_1_1Convolutional.html#afe7f7eeea55ac80cd3941ab6bbdaa03e',1,'nmbuflowtorch::layer::Convolutional::bias()'],['../classnmbuflowtorch_1_1layer_1_1Dense.html#a15efaf0e322a1dd84112e8dd8221dae5',1,'nmbuflowtorch::layer::Dense::bias()']]]
+  ['_5fback_1023',['_back',['../classcsv_1_1internals_1_1CSVFieldList.html#ad5d0709112fe700b11b86e65224f8ffb',1,'csv::internals::CSVFieldList']]],
+  ['_5fcol_5fnames_1024',['_col_names',['../classcsv_1_1internals_1_1IBasicCSVParser.html#ac97dc15863e8fbc6494df6ea11506030',1,'csv::internals::IBasicCSVParser']]],
+  ['_5fcond_1025',['_cond',['../classcsv_1_1internals_1_1ThreadSafeDeque.html#adc4d6c72946430b0f8170b3a23b8ada3',1,'csv::internals::ThreadSafeDeque']]],
+  ['_5fcurrent_5fbuffer_5fsize_1026',['_current_buffer_size',['../classcsv_1_1internals_1_1CSVFieldList.html#ad84a3baf669ec0da3324730ff340892e',1,'csv::internals::CSVFieldList']]],
+  ['_5fdata_1027',['_data',['../structcsv_1_1internals_1_1RawCSVData.html#ac57a8403df75b762c15d8f7bc48dcb1e',1,'csv::internals::RawCSVData']]],
+  ['_5feof_1028',['_eof',['../classcsv_1_1internals_1_1IBasicCSVParser.html#af319df938703e1533f87f4f23ddbef1a',1,'csv::internals::IBasicCSVParser']]],
+  ['_5ffilename_1029',['_filename',['../classcsv_1_1internals_1_1MmapParser.html#af8c2b627d8115b6067bcec6c469c2dca',1,'csv::internals::MmapParser']]],
+  ['_5fformat_1030',['_format',['../group__csv__internal.html#ga75b574fca2302b564079032cd55cbf5b',1,'csv::CSVReader']]],
+  ['_5fis_5fwaitable_1031',['_is_waitable',['../classcsv_1_1internals_1_1ThreadSafeDeque.html#a22db3d062673e80770a83a3b846ff8ab',1,'csv::internals::ThreadSafeDeque']]],
+  ['_5flock_1032',['_lock',['../classcsv_1_1internals_1_1ThreadSafeDeque.html#aab5a6702e3c04abc75cd7df543342549',1,'csv::internals::ThreadSafeDeque']]],
+  ['_5fn_5frows_1033',['_n_rows',['../group__csv__internal.html#ga321a5025cb00e20090392844fe7a044d',1,'csv::CSVReader']]],
+  ['_5fnotify_5fsize_1034',['_notify_size',['../classcsv_1_1internals_1_1ThreadSafeDeque.html#aa62e4ab65b1680ce0e9f99603a606401',1,'csv::internals::ThreadSafeDeque']]],
+  ['_5fparse_5fflags_1035',['_parse_flags',['../classcsv_1_1internals_1_1IBasicCSVParser.html#a5ddb681ca6221267be54bd1aebffadbc',1,'csv::internals::IBasicCSVParser']]],
+  ['_5frecords_1036',['_records',['../classcsv_1_1internals_1_1IBasicCSVParser.html#a4bd035dd75cceb864cfb5a0fffdcfa7a',1,'csv::internals::IBasicCSVParser']]],
+  ['_5fsingle_5fbuffer_5fcapacity_1037',['_single_buffer_capacity',['../classcsv_1_1internals_1_1CSVFieldList.html#a0551f5dd2a7e9b34c2eba84b4997ca31',1,'csv::internals::CSVFieldList']]],
+  ['_5fsource_1038',['_source',['../classcsv_1_1internals_1_1StreamParser.html#af4508daf5d81abda89ddcac317c3754c',1,'csv::internals::StreamParser']]],
+  ['_5ftype_1039',['_type',['../classcsv_1_1CSVField.html#a2ce16ecedabc65d571491a88fd77897c',1,'csv::CSVField']]],
+  ['_5futf8_5fbom_1040',['_utf8_bom',['../classcsv_1_1internals_1_1IBasicCSVParser.html#a2f38f4138f18b3892fc6eeb36df1ad95',1,'csv::internals::IBasicCSVParser']]],
+  ['_5fws_5fflags_1041',['_ws_flags',['../classcsv_1_1internals_1_1IBasicCSVParser.html#ab3c99fe82745d3ce0be5db7d2a2e72ba',1,'csv::internals::IBasicCSVParser']]]
 ];

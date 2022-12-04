@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['layer_177',['layer',['../namespacenmbuflowtorch_1_1layer.html',1,'nmbuflowtorch']]],
-  ['loss_178',['loss',['../namespacenmbuflowtorch_1_1loss.html',1,'nmbuflowtorch']]],
-  ['nmbuflowtorch_179',['nmbuflowtorch',['../namespacenmbuflowtorch.html',1,'']]],
-  ['optimizer_180',['optimizer',['../namespacenmbuflowtorch_1_1optimizer.html',1,'nmbuflowtorch']]]
+  ['detail_732',['detail',['../namespacemio_1_1detail.html',1,'mio']]],
+  ['mio_733',['mio',['../namespacemio.html',1,'']]]
 ];

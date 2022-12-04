@@ -5,7 +5,7 @@
  -->
 <!-- Title: include/nmbuflowtorch/loss/cross_entropy.hpp Pages: 1 -->
 <svg width="685pt" height="106pt"
- viewBox="0.00 0.00 685.00 106.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ viewBox="0.00 0.00 684.50 106.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 102)">
 <title>include/nmbuflowtorch/loss/cross_entropy.hpp</title>
 <!-- Node1 -->
@@ -36,7 +36,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="src_2main_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="main_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="122.5,-6 122.5,-25 201.5,-25 201.5,-6 122.5,-6"/>
 <text text-anchor="middle" x="162" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">src/main.cpp</text>
 </a>
@@ -82,8 +82,8 @@
 <g id="node6" class="node">
 <title>Node6</title>
 <g id="a_node6"><a xlink:href="cross__entropy_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="547,-0.5 547,-30.5 677,-30.5 677,-0.5 547,-0.5"/>
-<text text-anchor="start" x="555" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/nmbuflowtorch/loss</text>
+<polygon fill="none" stroke="black" points="547.5,-0.5 547.5,-30.5 676.5,-30.5 676.5,-0.5 547.5,-0.5"/>
+<text text-anchor="start" x="555.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/nmbuflowtorch/loss</text>
 <text text-anchor="middle" x="612" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/cross_entropy.cpp</text>
 </a>
 </g>
@@ -91,7 +91,7 @@
 <!-- Node1&#45;&gt;Node6 -->
 <g id="edge5" class="edge">
 <title>Node1&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M365.22,-66.32C420.33,-55.19 494.37,-40.25 546.94,-29.63"/>
+<path fill="none" stroke="midnightblue" d="M365.26,-66.31C420.55,-55.15 494.9,-40.14 547.49,-29.52"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="364.27,-62.94 355.16,-68.35 365.66,-69.8 364.27,-62.94"/>
 </g>
 </g>

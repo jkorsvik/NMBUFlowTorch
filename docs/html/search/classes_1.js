@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['convolutional_162',['Convolutional',['../classnmbuflowtorch_1_1layer_1_1Convolutional.html',1,'nmbuflowtorch::layer']]],
-  ['crossentropy_163',['CrossEntropy',['../classnmbuflowtorch_1_1loss_1_1CrossEntropy.html',1,'nmbuflowtorch::loss']]]
+  ['basic_5fmmap_687',['basic_mmap',['../structmio_1_1basic__mmap.html',1,'mio']]],
+  ['basic_5fshared_5fmmap_688',['basic_shared_mmap',['../classmio_1_1basic__shared__mmap.html',1,'mio']]]
 ];

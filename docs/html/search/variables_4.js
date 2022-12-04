@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['layer_5finput_295',['layer_input',['../classnmbuflowtorch_1_1Layer.html#a7b8931b8cb01a28228fb991966a66217',1,'nmbuflowtorch::Layer']]],
-  ['layer_5foutput_296',['layer_output',['../classnmbuflowtorch_1_1Layer.html#ace57230d9a06555e247d6c71a4e6b636',1,'nmbuflowtorch::Layer']]],
-  ['layer_5ftype_297',['layer_type',['../classnmbuflowtorch_1_1layer_1_1Convolutional.html#a6210328dd315995b41b9777a643fc9b1',1,'nmbuflowtorch::layer::Convolutional::layer_type()'],['../classnmbuflowtorch_1_1layer_1_1Dense.html#a7f6cb5910f84f7437378899523e72c4c',1,'nmbuflowtorch::layer::Dense::layer_type()'],['../classnmbuflowtorch_1_1layer_1_1ReLU.html#a1c6c3e27160bfb8c65d9790098d4960e',1,'nmbuflowtorch::layer::ReLU::layer_type()'],['../classnmbuflowtorch_1_1layer_1_1Sigmoid.html#a34f589db1708c532ff9d51e0604a80a0',1,'nmbuflowtorch::layer::Sigmoid::layer_type()'],['../classnmbuflowtorch_1_1layer_1_1Softmax.html#a3a92ec1e2a6e03c2de38a54f681d1f18',1,'nmbuflowtorch::layer::Softmax::layer_type()'],['../classnmbuflowtorch_1_1Layer.html#a0bfe8441749c682163ed7887024ec62f',1,'nmbuflowtorch::Layer::layer_type()']]],
-  ['layers_298',['layers',['../classnmbuflowtorch_1_1Network.html#a1af9079101990e2fc41009cae41bcc38',1,'nmbuflowtorch::Network']]],
-  ['learning_5frate_299',['learning_rate',['../classnmbuflowtorch_1_1Optimizer.html#aa01052a6f02fb32541a052bca7f236e6',1,'nmbuflowtorch::Optimizer']]],
-  ['loss_300',['loss',['../classnmbuflowtorch_1_1Loss.html#a3288af0b68a56d1ddd0df97575ed0344',1,'nmbuflowtorch::Loss::loss()'],['../classnmbuflowtorch_1_1Network.html#a42c2cad578e2cc6d6dc29016aea01116',1,'nmbuflowtorch::Network::loss()']]]
+  ['epsilon_1070',['epsilon',['../classnmbuflowtorch_1_1optimizer_1_1Adam.html#a1a3e65573d64e02b7912c8aeb69ca0a2',1,'nmbuflowtorch::optimizer::Adam::epsilon()'],['../classnmbuflowtorch_1_1optimizer_1_1Nadam.html#ae0bb909c8519ccdf1dafd75346c36a7c',1,'nmbuflowtorch::optimizer::Nadam::epsilon()'],['../classnmbuflowtorch_1_1Optimizer.html#affdcd71d3052a7bbed9e1c56d2efffb6',1,'nmbuflowtorch::Optimizer::epsilon()']]],
+  ['error_5ffloat_5fto_5fint_1071',['ERROR_FLOAT_TO_INT',['../namespacecsv_1_1internals.html#a6dc40675ecb85bbb405f70a0759140e2',1,'csv::internals']]],
+  ['error_5fnan_1072',['ERROR_NAN',['../namespacecsv_1_1internals.html#a48495c1ce38601b0cf39cc4ca8b60180',1,'csv::internals']]],
+  ['error_5fneg_5fto_5funsigned_1073',['ERROR_NEG_TO_UNSIGNED',['../namespacecsv_1_1internals.html#a20814ad17572c080ccb354dfb208be35',1,'csv::internals']]],
+  ['error_5foverflow_1074',['ERROR_OVERFLOW',['../namespacecsv_1_1internals.html#a7cdc0c17199f4e3a1c2e57d66edd198f',1,'csv::internals']]]
 ];

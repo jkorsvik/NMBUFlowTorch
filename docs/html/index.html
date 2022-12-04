@@ -180,40 +180,19 @@ Generating the documentation</h1>
 </blockquote>
 <h1><a class="anchor" id="autotoc_md9"></a>
 Running the tests</h1>
-<p>By default, the template uses <a href="https://github.com/google/googletest/">Google Test</a> for unit testing. Unit testing can be disabled in the options, by setting the <code>ENABLE_UNIT_TESTING</code> (from <a href="cmake/StandardSettings.cmake">cmake/StandardSettings.cmake</a>) to be false. To run the tests, simply use CTest, from the build directory, passing the desire configuration for which to run tests for. An example of this procedure is:</p>
+<p>This project uses <a href="https://github.com/google/googletest/">Google Test</a> for unit testing. Unit testing can be disabled in the options, by setting the <code>ENABLE_UNIT_TESTING</code> (from <a href="cmake/StandardSettings.cmake">cmake/StandardSettings.cmake</a>) to be false. To run the tests, simply use CTest, from the build directory, passing the desire configuration for which to run tests for. An example of this procedure is:</p>
 <div class="fragment"><div class="line">cd build          # if not in the build directory already</div>
 <div class="line">ctest -C Release  # or `ctest -C Debug` or any other configuration you wish to test</div>
 <div class="line"> </div>
 <div class="line"># you can also run tests with the `-VV` flag for a more verbose output (i.e.</div>
 <div class="line">#GoogleTest output as well)</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md10"></a>
-End to end tests</h2>
-<p>If applicable, should be presented here.</p>
-<h2><a class="anchor" id="autotoc_md11"></a>
-Coding style tests</h2>
-<p>If applicable, should be presented here.</p>
-<h1><a class="anchor" id="autotoc_md12"></a>
-Contributing</h1>
-<h2><a class="anchor" id="autotoc_md13"></a>
-Devolopment</h2>
-<p>After finishing getting a copy of the project, with any of the methods above, create a new folder in the <code>include/</code> folder, with the name of your project. Edit <code>cmake/SourcesAndHeaders.cmake</code> to add your files.</p>
-<p>You will also need to rename the <code>cmake/ProjectConfig.cmake.in</code> file to start with the <em><b>exact name of your project</b></em>. Such as <code>cmake/MyNewProjectConfig.cmake.in</code>. You should also make the same changes in the GitHub workflows provided, notably <a href=".github/workflows/ubuntu.yml"><code>.github/workflows/ubuntu.yml</code></a>, in which you should replace the CMake option <code>-DProject_ENABLE_CODE_COVERAGE=1</code> to <code>-DMyNewProject_ENABLE_CODE_COVERAGE=1</code>.</p>
-<p>Finally, change <code>"Project"</code> from <code>CMakeLists.txt</code>, from</p>
-<div class="fragment"><div class="line">project(</div>
-<div class="line">  &quot;nmbuflowtorch&quot;</div>
-<div class="line">  VERSION 0.1.0</div>
-<div class="line">  LANGUAGES CXX</div>
-<div class="line">)</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md14"></a>
-Versioning</h1>
-<p>This project makes use of <a href="http://semver.org/">SemVer</a> for versioning. A list of existing versions can be found in the <a href="https://github.com/jkorsvik/NMBUFlowTorch/releases">project's releases</a>.</p>
-<h1><a class="anchor" id="autotoc_md15"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md10"></a>
 Authors</h1>
 <ul>
 <li><b>Jon-Mikkel Ryen Korsvik</b> - <a href="https://github.com/jkorsvik">@jkorsvik</a></li>
 <li><b>Jørgen Navjord</b> - <a href="https://github.com/navjordj">@navjordj</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md16"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 Inspiration Repos</h1>
 <ul>
 <li><a href="https://github.com/filipdutescu/modern-cpp-template">https://github.com/filipdutescu/modern-cpp-template</a> Used for bootstrapping a c++ project and for managing building, installing, structure, as well as testing.</li>
@@ -222,7 +201,7 @@ Inspiration Repos</h1>
 <li><a href="https://github.com/leondavi/cppSANN">https://github.com/leondavi/cppSANN</a></li>
 <li><a href="https://github.com/Black-Phoenix/CUDA-MLP">https://github.com/Black-Phoenix/CUDA-MLP</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md17"></a>
+<h1><a class="anchor" id="autotoc_md12"></a>
 License</h1>
 <p>This project is licensed under the <a href="https://unlicense.org/">Unlicense</a> - see the [LICENSE](LICENSE) file for details </p>
 </div></div><!-- PageDoc -->

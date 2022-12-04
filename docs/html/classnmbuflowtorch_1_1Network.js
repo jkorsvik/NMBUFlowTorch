@@ -6,6 +6,7 @@ var classnmbuflowtorch_1_1Network =
     [ "add_loss", "classnmbuflowtorch_1_1Network.html#a7a86be4bc0c3901a48cfb70b286ec363", null ],
     [ "add_optimizer", "classnmbuflowtorch_1_1Network.html#a1120a4649f5317ab85b7fd0124f91f75", null ],
     [ "backward", "classnmbuflowtorch_1_1Network.html#ad2626aa7216689fadfa4469273de8c90", null ],
+    [ "delete_net", "classnmbuflowtorch_1_1Network.html#ae404b65188cb291b22ec494bb270bec2", null ],
     [ "fit", "classnmbuflowtorch_1_1Network.html#a8cff72188a6f4b0d13c8b7474eec1ca3", null ],
     [ "forward", "classnmbuflowtorch_1_1Network.html#ae6cd135a052cc1526b34bb4144ae58b6", null ],
     [ "get_derivatives", "classnmbuflowtorch_1_1Network.html#aaa9e9954d1e8c6ad86d1d831e4b87c40", null ],

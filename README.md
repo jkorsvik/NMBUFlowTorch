@@ -166,7 +166,7 @@ source build_auto_docs.sh
 
 ## Running the tests
 
-By default, the template uses [Google Test](https://github.com/google/googletest/)
+This project uses [Google Test](https://github.com/google/googletest/)
 for unit testing. Unit testing can be disabled in the options, by setting the
 `ENABLE_UNIT_TESTING` (from
 [cmake/StandardSettings.cmake](cmake/StandardSettings.cmake)) to be false. To run
@@ -180,45 +180,6 @@ ctest -C Release  # or `ctest -C Debug` or any other configuration you wish to t
 # you can also run tests with the `-VV` flag for a more verbose output (i.e.
 #GoogleTest output as well)
 ```
-
-### End to end tests
-
-If applicable, should be presented here.
-
-### Coding style tests
-
-If applicable, should be presented here.
-
-## Contributing
-
-
-### Devolopment
-After finishing getting a copy of the project, with any of the methods above, create
-a new folder in the `include/` folder, with the name of your project.  Edit
-`cmake/SourcesAndHeaders.cmake` to add your files.
-
-You will also need to rename the `cmake/ProjectConfig.cmake.in` file to start with
-the ***exact name of your project***. Such as `cmake/MyNewProjectConfig.cmake.in`.
-You should also make the same changes in the GitHub workflows provided, notably
-[`.github/workflows/ubuntu.yml`](.github/workflows/ubuntu.yml), in which you should
-replace the CMake option `-DProject_ENABLE_CODE_COVERAGE=1` to
-`-DMyNewProject_ENABLE_CODE_COVERAGE=1`.
-
-Finally, change `"Project"` from `CMakeLists.txt`, from
-
-```cmake
-project(
-  "nmbuflowtorch"
-  VERSION 0.1.0
-  LANGUAGES CXX
-)
-```
-
-## Versioning
-
-This project makes use of [SemVer](http://semver.org/) for versioning. A list of
-existing versions can be found in the
-[project's releases](https://github.com/jkorsvik/NMBUFlowTorch/releases).
 
 ## Authors
 

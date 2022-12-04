@@ -45,8 +45,9 @@ sudo conan profile update settings.compiler.libcxx=libstdc++11 default
 sudo conan profile update env.CC=clang default
 sudo conan profile update env.CXX=clang++ default
 # Add eigen to include
-curl -O "https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.zip" && unzip -d include/ eigen-3.4.0.zip && rm eigen-3.4.0.zip
-mv $CWD/include/eigen-3.4.0 $CWD/include/eigen3
+# This is uneeded as conan fixes this for us
+#curl -O "https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.zip" && unzip -d include/ eigen-3.4.0.zip && rm eigen-3.4.0.zip
+#mv $CWD/include/eigen-3.4.0 $CWD/include/eigen3
 #sudo conan install eigen_recipe.py -g=cmake_find_package 
 
 # boost lib for
@@ -57,4 +58,5 @@ sudo apt install clang-12 --install-suggests
 
 
 # For automatic documentation generation
-# sudo apt-get install doxygen
+sudo apt-get install doxygen
+sudo apt-get install graphviz

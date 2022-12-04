@@ -1,14 +1,18 @@
+NMBUFlowTorch {#mainpage}
+=========
 [![Actions Status](https://github.com/jkorsvik/NMBUFlowTorch/workflows/MacOS/badge.svg)](https://github.com/jkorsvik/NMBUFlowTorch/actions)
 [![Actions Status](https://github.com/jkorsvik/NMBUFlowTorch/workflows/Windows/badge.svg)](https://github.com/jkorsvik/NMBUFlowTorch/actions)
 [![Actions Status](https://github.com/jkorsvik/NMBUFlowTorch/workflows/Ubuntu/badge.svg)](https://github.com/jkorsvik/NMBUFlowTorch/actions)
 [![codecov](https://codecov.io/gh/jkorsvik/NMBUFlowTorch/branch/master/graph/badge.svg)](https://codecov.io/gh/jkorsvik/NMBUFlowTorch)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/jkorsvik/NMBUFlowTorch)](https://github.com/jkorsvik/NMBUFlowTorch/releases)
 
-# NMBUFlowTorch
 
 ![NMBUFlowTorch](.misc/NMBUFlowTorch.LOGO.thin.png?raw=true "Logo")
 
 A simple C++ implementation of Neural Nets, inspired by the functionality of Tensorflow and pyTorch.
+## Docs
+Within [DOC_HTML](docs/html/index.html)
+
 
 ## Features
 * like the functional API of tensorflow
@@ -71,8 +75,7 @@ template *as-is*, meaning using the versions recommended here, then you will nee
 * **C++ Compiler** - needs to support at least the **C++17** standard, i.e. *MSVC*,
 *GCC*, *Clang*
 
-> ***Note:*** *You also need to be able to provide ***CMake*** a supported
-[generator](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html).*
+> ***Note:*** *You also need to be able to provide ***CMake*** a supported [generator](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html).*
 
 * **Different data** - [MNIST](https://github.com/wichtounet/mnist) AND https://home.bawue.de/~horsch/teaching/inf205/src/image-benchmark.zip *MSVC*,
 *GCC*, *Clang*
@@ -128,7 +131,7 @@ cmake --build <build_directory> --target install --config <desired_config>
 
 If you have not built the project yet, the `automatic_rebuild_and_install.sh` will do fine, otherwise follow the next section:
 
->**Note**: *If you want to supress a lot of warnings when building, see the [CMakeLists.txt](CMakeLists.txt) at line 145 and 146, and uncomment the preferred.*
+> ***Note***: *If you want to supress a lot of warnings when building, see the [CMakeLists.txt](CMakeLists.txt) at line 145 and 146, and uncomment the preferred.*
 
 ## Building the project
 
@@ -142,8 +145,7 @@ cmake .. -DCMAKE_INSTALL_PREFIX=/absolute/path/to/custom/install/directory
 cmake --build . --target install
 ```
 
-> ***Note:*** *The custom ``CMAKE_INSTALL_PREFIX`` can be omitted if you wish to
-install in [the default install location](https://cmake.org/cmake/help/latest/module/GNUInstallDirs.html).*
+> ***Note:*** *The custom ``CMAKE_INSTALL_PREFIX`` can be omitted if you wish to install in [the default install location](https://cmake.org/cmake/help/latest/module/GNUInstallDirs.html).*
 
 More options that you can set for the project can be found in the
 [`cmake/StandardSettings.cmake` file](cmake/StandardSettings.cmake). For certain
@@ -157,9 +159,7 @@ In order to generate documentation for the project, you need to configure the bu
 to use Doxygen. This is easily done, by modifying the workflow shown above as follows:
 
 ```bash
-mkdir build/ && cd build/
-cmake .. -D<project_name>_ENABLE_DOXYGEN=1 -DCMAKE_INSTALL_PREFIX=/absolute/path/to/custom/install/directory
-cmake --build . --target doxygen-docs
+source build_auto_docs.sh
 ```
 
 > ***Note:*** *This will generate a `docs/` directory in the **project's root directory**.*

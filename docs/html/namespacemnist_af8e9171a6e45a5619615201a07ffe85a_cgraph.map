@@ -1,0 +1,5 @@
+<map id="mnist::read_mnist_label_file_categorical" name="mnist::read_mnist_label_file_categorical">
+<area shape="rect" id="node1" title="Read a MNIST label file inside the given flat categorical container (ETL)." alt="" coords="5,5,184,47"/>
+<area shape="rect" id="node2" href="$namespacemnist.html#ae23bbb05e2acb0f4fb36edf42431cea7" title="Extract the MNIST header from the given buffer." alt="" coords="448,13,596,39"/>
+<area shape="rect" id="node3" href="$namespacemnist.html#a8061847f8ead32e07e1a343f29c03671" title="Read a MNIST file inside a raw buffer." alt="" coords="232,38,400,65"/>
+</map>

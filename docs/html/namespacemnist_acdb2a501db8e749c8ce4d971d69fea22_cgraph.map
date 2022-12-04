@@ -1,0 +1,5 @@
+<map id="mnist::normalize_each" name="mnist::normalize_each">
+<area shape="rect" id="node1" title="Normalize each sub range inside the given range." alt="" coords="5,5,176,32"/>
+<area shape="rect" id="node2" href="$namespacemnist.html#a2dcb2e257557345356d75a4b41df652a" title="Return the mean value of the elements inside the given range." alt="" coords="383,5,487,32"/>
+<area shape="rect" id="node3" href="$namespacemnist.html#a711f59c10ffe748decf24c2752a2945a" title="Return the standard deviation of the elements inside the given range." alt="" coords="224,31,335,57"/>
+</map>

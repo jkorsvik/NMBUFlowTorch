@@ -1,27 +1,5 @@
 var searchData=
 [
-  ['rawcsvdata_565',['RawCSVData',['../structcsv_1_1internals_1_1RawCSVData.html',1,'csv::internals']]],
-  ['rawcsvdataptr_566',['RawCSVDataPtr',['../namespacecsv_1_1internals.html#ac9231bd0540ec28533d9cd43cf39e7db',1,'csv::internals']]],
-  ['rawcsvfield_567',['RawCSVField',['../structcsv_1_1internals_1_1RawCSVField.html',1,'csv::internals::RawCSVField'],['../structcsv_1_1internals_1_1RawCSVField.html#aeb4d2eaa6df9862400f8df5f785fea30',1,'csv::internals::RawCSVField::RawCSVField()=default'],['../structcsv_1_1internals_1_1RawCSVField.html#a0ff902b9138a562f81ef9fdb00f563ad',1,'csv::internals::RawCSVField::RawCSVField(size_t _start, size_t _length, bool _double_quote=false)']]],
-  ['rbegin_568',['rbegin',['../structmio_1_1basic__mmap.html#a85a6e69f371c356dc1e9068b71280598',1,'mio::basic_mmap::rbegin() noexcept'],['../structmio_1_1basic__mmap.html#a8cc25fa714bf98dbe06d56d133c6830f',1,'mio::basic_mmap::rbegin() const noexcept'],['../classmio_1_1basic__shared__mmap.html#af874711ec76125b7047d2e6db384cdcf',1,'mio::basic_shared_mmap::rbegin() noexcept'],['../classmio_1_1basic__shared__mmap.html#ac25897eb797acfa3d6460f48c696e8e7',1,'mio::basic_shared_mmap::rbegin() const noexcept'],['../classcsv_1_1CSVRow.html#aea1147f98a5f7ccb56a062e5fa645bc6',1,'csv::CSVRow::rbegin()']]],
-  ['read_569',['read',['../namespacemio.html#a199ab002fa1e517f90cf1424750edf69aecae13117d6f0584c25a9da6c8f8415e',1,'mio']]],
-  ['read_5fcsv_570',['read_csv',['../group__csv__internal.html#ga5562feee47dfc60d04a139dceed609cc',1,'csv::CSVReader']]],
-  ['read_5fcsv_5fworker_571',['read_csv_worker',['../classcsv_1_1CSVReader.html#ac4df269d2cf5ab8d484f4287c79a5f12',1,'csv::CSVReader']]],
-  ['read_5frow_572',['read_row',['../classcsv_1_1CSVReader.html#a78d85187a8ab456c093d3604d064f9a5',1,'csv::CSVReader']]],
-  ['reader_573',['reader',['../classcsv_1_1CSVStat.html#aaae46f76f35b1ab873dc4b7f875ce3bd',1,'csv::CSVStat']]],
-  ['readme_2emd_574',['README.md',['../README_8md.html',1,'']]],
-  ['records_575',['records',['../group__csv__internal.html#ga1973211b44a5d84b1f16796030cddf78',1,'csv::CSVReader::records()'],['../classcsv_1_1CSVStat.html#ae882ae21d09f7f92909f0e0c3364fa83',1,'csv::CSVStat::records()']]],
-  ['reference_576',['reference',['../classcsv_1_1CSVReader_1_1iterator.html#aa6627dfb01592b8bedf67d8c2d143b17',1,'csv::CSVReader::iterator::reference()'],['../classcsv_1_1CSVRow_1_1iterator.html#a3700763ec67d2b34bbc30c9eb8743384',1,'csv::CSVRow::iterator::reference()'],['../classmio_1_1basic__shared__mmap.html#a9b4493b1cbb9f0b19c9bebed64907146',1,'mio::basic_shared_mmap::reference()'],['../structmio_1_1basic__mmap.html#a9deb225a3bd961f835829d1ed83519c2',1,'mio::basic_mmap::reference()']]],
-  ['relu_577',['ReLU',['../classnmbuflowtorch_1_1layer_1_1ReLU.html',1,'nmbuflowtorch::layer']]],
-  ['relu_2ecpp_578',['relu.cpp',['../relu_8cpp.html',1,'']]],
-  ['relu_2ehpp_579',['relu.hpp',['../relu_8hpp.html',1,'']]],
-  ['rend_580',['rend',['../structmio_1_1basic__mmap.html#a876d8245165f8386ed7dab141300347a',1,'mio::basic_mmap::rend() noexcept'],['../structmio_1_1basic__mmap.html#a423a61345cc6c41da284dd721dd2f47b',1,'mio::basic_mmap::rend() const noexcept'],['../classmio_1_1basic__shared__mmap.html#aa4f9aee04e88de5ce8117f9d94ef3c95',1,'mio::basic_shared_mmap::rend() noexcept'],['../classmio_1_1basic__shared__mmap.html#a9b7c42d33fce70a8b58070603a8fdd56',1,'mio::basic_shared_mmap::rend() const noexcept'],['../classcsv_1_1CSVRow.html#a6376d5256cd0d86a0b3e1c4aea7c55d4',1,'csv::CSVRow::rend()']]],
-  ['reset_5fdata_5fptr_581',['reset_data_ptr',['../classcsv_1_1internals_1_1IBasicCSVParser.html#ad28bf9ecd85373507964c90510f86f75',1,'csv::internals::IBasicCSVParser']]],
-  ['reverse_5fiterator_582',['reverse_iterator',['../classcsv_1_1CSVRow.html#a5563065ee9b3ecb511469259ee843e3c',1,'csv::CSVRow::reverse_iterator()'],['../classmio_1_1basic__shared__mmap.html#a7aca1eeba5af41e389952bdc6c14c76b',1,'mio::basic_shared_mmap::reverse_iterator()'],['../structmio_1_1basic__mmap.html#a43f58f6af429f33a29f483bdff0e5caa',1,'mio::basic_mmap::reverse_iterator()']]],
-  ['rolling_5fmeans_583',['rolling_means',['../classcsv_1_1CSVStat.html#a44e8c7f85ac3a93f78f032243d46066b',1,'csv::CSVStat']]],
-  ['rolling_5fvars_584',['rolling_vars',['../classcsv_1_1CSVStat.html#a6644bc033bf852690637eedf155cc817',1,'csv::CSVStat']]],
-  ['row_585',['row',['../classcsv_1_1CSVReader_1_1iterator.html#a81c8abb9e7e0adec4a1061fb898dc10b',1,'csv::CSVReader::iterator']]],
-  ['row_5flength_586',['row_length',['../classcsv_1_1CSVRow.html#af4626ed640c19d4eeb5a02a52214d70d',1,'csv::CSVRow']]],
-  ['rowcollection_587',['RowCollection',['../classcsv_1_1internals_1_1StreamParser.html#ac37b709c5ed60130535f8f17971d74de',1,'csv::internals::StreamParser::RowCollection()'],['../namespacecsv.html#a9e6e06230e2f265ba72ef25254e90f48',1,'csv::RowCollection()']]],
-  ['rowvector_588',['RowVector',['../definitions_8hpp.html#aebaa4efa55597c1a25733cdec59e5463',1,'definitions.hpp']]]
+  ['weight_5fdecay_124',['weight_decay',['../classnmbuflowtorch_1_1optimizer_1_1Nadam.html#af2e9fb701fb610f126178f240b742cb8',1,'nmbuflowtorch::optimizer::Nadam']]],
+  ['weights_125',['weights',['../classnmbuflowtorch_1_1layer_1_1Convolutional.html#a5e8d2a62e7cfcd89348b16104e78702c',1,'nmbuflowtorch::layer::Convolutional::weights()'],['../classnmbuflowtorch_1_1layer_1_1Dense.html#a3939125d2a2811441d6f76ca8d3e1229',1,'nmbuflowtorch::layer::Dense::weights()']]]
 ];

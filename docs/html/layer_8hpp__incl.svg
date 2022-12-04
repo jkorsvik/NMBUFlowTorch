@@ -45,14 +45,14 @@
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M175.11,-168.34C178.06,-153.83 183.52,-130.78 191.5,-112 195.6,-102.36 201.46,-92.3 206.68,-84.14"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="209.75,-85.85 212.36,-75.58 203.92,-81.97 209.75,-85.85"/>
+<path fill="none" stroke="midnightblue" d="M175.42,-168.37C178.67,-153.89 184.52,-130.87 192.5,-112 196.54,-102.44 202.2,-92.39 207.21,-84.22"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="210.25,-85.95 212.65,-75.63 204.34,-82.2 210.25,-85.95"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
 <g id="a_node10"><a xlink:href="optimizer_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="200.5,-112.5 200.5,-131.5 290.5,-131.5 290.5,-112.5 200.5,-112.5"/>
+<polygon fill="none" stroke="black" points="201,-112.5 201,-131.5 290,-131.5 290,-112.5 201,-112.5"/>
 <text text-anchor="middle" x="245.5" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">./optimizer.hpp</text>
 </a>
 </g>

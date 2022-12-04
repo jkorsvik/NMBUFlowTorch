@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['opt_1115',['opt',['../classnmbuflowtorch_1_1Network.html#abf1f011e18056cc938f57aff4ece8720',1,'nmbuflowtorch::Network']]],
-  ['out_1116',['out',['../classcsv_1_1DelimWriter.html#a50d9248045782d46d2a151e033635983',1,'csv::DelimWriter']]]
+  ['weight_5fdecay_252',['weight_decay',['../classnmbuflowtorch_1_1optimizer_1_1Nadam.html#af2e9fb701fb610f126178f240b742cb8',1,'nmbuflowtorch::optimizer::Nadam']]],
+  ['weights_253',['weights',['../classnmbuflowtorch_1_1layer_1_1Convolutional.html#a5e8d2a62e7cfcd89348b16104e78702c',1,'nmbuflowtorch::layer::Convolutional::weights()'],['../classnmbuflowtorch_1_1layer_1_1Dense.html#a3939125d2a2811441d6f76ca8d3e1229',1,'nmbuflowtorch::layer::Dense::weights()']]]
 ];

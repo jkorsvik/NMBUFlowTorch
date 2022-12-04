@@ -12,8 +12,8 @@
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="226.5,-291.5 226.5,-321.5 361.5,-321.5 361.5,-291.5 226.5,-291.5"/>
-<text text-anchor="start" x="234.5" y="-309.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/nmbuflowtorch/layer</text>
+<polygon fill="#bfbfbf" stroke="black" points="227,-291.5 227,-321.5 361,-321.5 361,-291.5 227,-291.5"/>
+<text text-anchor="start" x="235" y="-309.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/nmbuflowtorch/layer</text>
 <text text-anchor="middle" x="294" y="-298.5" font-family="Helvetica,sans-Serif" font-size="10.00">/dense.cpp</text>
 </a>
 </g>
@@ -22,8 +22,8 @@
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="dense_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="235,-224.5 235,-254.5 353,-254.5 353,-224.5 235,-224.5"/>
-<text text-anchor="start" x="243" y="-242.5" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch/layer</text>
+<polygon fill="none" stroke="black" points="235.5,-224.5 235.5,-254.5 352.5,-254.5 352.5,-224.5 235.5,-224.5"/>
+<text text-anchor="start" x="243.5" y="-242.5" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch/layer</text>
 <text text-anchor="middle" x="294" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">/dense.hpp</text>
 </a>
 </g>
@@ -119,7 +119,7 @@
 <g id="node12" class="node">
 <title>Node12</title>
 <g id="a_node12"><a xlink:href="optimizer_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="313,-112.5 313,-131.5 403,-131.5 403,-112.5 313,-112.5"/>
+<polygon fill="none" stroke="black" points="313.5,-112.5 313.5,-131.5 402.5,-131.5 402.5,-112.5 313.5,-112.5"/>
 <text text-anchor="middle" x="358" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">./optimizer.hpp</text>
 </a>
 </g>

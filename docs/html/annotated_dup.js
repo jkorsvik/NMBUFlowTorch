@@ -1,42 +1,5 @@
 var annotated_dup =
 [
-    [ "csv", "namespacecsv.html", [
-      [ "internals", "namespacecsv_1_1internals.html", [
-        [ "ColNames", "structcsv_1_1internals_1_1ColNames.html", "structcsv_1_1internals_1_1ColNames" ],
-        [ "RawCSVField", "structcsv_1_1internals_1_1RawCSVField.html", "structcsv_1_1internals_1_1RawCSVField" ],
-        [ "CSVFieldList", "classcsv_1_1internals_1_1CSVFieldList.html", "classcsv_1_1internals_1_1CSVFieldList" ],
-        [ "RawCSVData", "structcsv_1_1internals_1_1RawCSVData.html", "structcsv_1_1internals_1_1RawCSVData" ],
-        [ "ThreadSafeDeque", "classcsv_1_1internals_1_1ThreadSafeDeque.html", "classcsv_1_1internals_1_1ThreadSafeDeque" ],
-        [ "IBasicCSVParser", "classcsv_1_1internals_1_1IBasicCSVParser.html", "classcsv_1_1internals_1_1IBasicCSVParser" ],
-        [ "StreamParser", "classcsv_1_1internals_1_1StreamParser.html", "classcsv_1_1internals_1_1StreamParser" ],
-        [ "MmapParser", "classcsv_1_1internals_1_1MmapParser.html", "classcsv_1_1internals_1_1MmapParser" ],
-        [ "GuessScore", "structcsv_1_1internals_1_1GuessScore.html", "structcsv_1_1internals_1_1GuessScore" ]
-      ] ],
-      [ "CSVGuessResult", "structcsv_1_1CSVGuessResult.html", "structcsv_1_1CSVGuessResult" ],
-      [ "CSVFormat", "classcsv_1_1CSVFormat.html", "classcsv_1_1CSVFormat" ],
-      [ "CSVField", "classcsv_1_1CSVField.html", "classcsv_1_1CSVField" ],
-      [ "CSVRow", "classcsv_1_1CSVRow.html", "classcsv_1_1CSVRow" ],
-      [ "CSVReader", "classcsv_1_1CSVReader.html", "classcsv_1_1CSVReader" ],
-      [ "CSVStat", "classcsv_1_1CSVStat.html", "classcsv_1_1CSVStat" ],
-      [ "CSVFileInfo", "structcsv_1_1CSVFileInfo.html", "structcsv_1_1CSVFileInfo" ],
-      [ "DelimWriter", "classcsv_1_1DelimWriter.html", "classcsv_1_1DelimWriter" ]
-    ] ],
-    [ "mio", "namespacemio.html", [
-      [ "detail", "namespacemio_1_1detail.html", [
-        [ "char_type_helper", "structmio_1_1detail_1_1char__type__helper.html", "structmio_1_1detail_1_1char__type__helper" ],
-        [ "char_type", "structmio_1_1detail_1_1char__type.html", "structmio_1_1detail_1_1char__type" ],
-        [ "char_type< char * >", "structmio_1_1detail_1_1char__type_3_01char_01_5_01_4.html", "structmio_1_1detail_1_1char__type_3_01char_01_5_01_4" ],
-        [ "char_type< const char * >", "structmio_1_1detail_1_1char__type_3_01const_01char_01_5_01_4.html", "structmio_1_1detail_1_1char__type_3_01const_01char_01_5_01_4" ],
-        [ "char_type< char[N]>", "structmio_1_1detail_1_1char__type_3_01char_0fN_0e_4.html", "structmio_1_1detail_1_1char__type_3_01char_0fN_0e_4" ],
-        [ "char_type< const char[N]>", "structmio_1_1detail_1_1char__type_3_01const_01char_0fN_0e_4.html", "structmio_1_1detail_1_1char__type_3_01const_01char_0fN_0e_4" ],
-        [ "is_c_str_helper", "structmio_1_1detail_1_1is__c__str__helper.html", "structmio_1_1detail_1_1is__c__str__helper" ],
-        [ "is_c_str", "structmio_1_1detail_1_1is__c__str.html", "structmio_1_1detail_1_1is__c__str" ],
-        [ "is_c_str_or_c_wstr", "structmio_1_1detail_1_1is__c__str__or__c__wstr.html", "structmio_1_1detail_1_1is__c__str__or__c__wstr" ],
-        [ "mmap_context", "structmio_1_1detail_1_1mmap__context.html", "structmio_1_1detail_1_1mmap__context" ]
-      ] ],
-      [ "basic_mmap", "structmio_1_1basic__mmap.html", "structmio_1_1basic__mmap" ],
-      [ "basic_shared_mmap", "classmio_1_1basic__shared__mmap.html", "classmio_1_1basic__shared__mmap" ]
-    ] ],
     [ "nmbuflowtorch", "namespacenmbuflowtorch.html", [
       [ "layer", "namespacenmbuflowtorch_1_1layer.html", [
         [ "Convolutional", "classnmbuflowtorch_1_1layer_1_1Convolutional.html", "classnmbuflowtorch_1_1layer_1_1Convolutional" ],

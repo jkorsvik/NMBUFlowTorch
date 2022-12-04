@@ -1,4 +1,4 @@
 <map id="nmbuflowtorch::layer::Dense::forward" name="nmbuflowtorch::layer::Dense::forward">
-<area shape="rect" id="node1" title="Forward pass for the dense layer." alt="" coords="5,5,167,47"/>
-<area shape="rect" id="node2" href="$math__m_8hpp.html#a7219f41fa97c72ef5e8c629824b7a364" title="Calculates the dot product of two matrices." alt="" coords="215,13,281,39"/>
+<area shape="rect" id="node1" title="Forward pass for the dense layer." alt="" coords="5,5,165,47"/>
+<area shape="rect" id="node2" href="$math__m_8hpp.html#a7219f41fa97c72ef5e8c629824b7a364" title="Calculates the dot product of two matrices." alt="" coords="213,13,280,39"/>
 </map>

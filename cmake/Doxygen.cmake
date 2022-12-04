@@ -24,7 +24,7 @@ if(${PROJECT_NAME}_ENABLE_DOXYGEN)
 
     find_package(Doxygen REQUIRED)
     find_package(Doxygen OPTIONAL_COMPONENTS dot)
-    doxygen_add_docs(doxygen-docs  ${PROJECT_SOURCE_DIR}/README.md, ${PROJECT_SOURCE_DIR}/include, ${PROJECT_SOURCE_DIR}/src)
+    doxygen_add_docs(doxygen-docs  ${PROJECT_SOURCE_DIR}/README.md, ${PROJECT_SOURCE_DIR}/include/nmbuflowtorch, ${PROJECT_SOURCE_DIR}/src)
 
     verbose_message("Doxygen has been setup and documentation is now available.")
 endif()

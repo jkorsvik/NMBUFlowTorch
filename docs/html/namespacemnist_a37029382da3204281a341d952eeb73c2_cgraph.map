@@ -1,5 +1,0 @@
-<map id="mnist::read_mnist_label_file" name="mnist::read_mnist_label_file">
-<area shape="rect" id="node1" title="Read a MNIST label file inside the given container." alt="" coords="5,5,212,32"/>
-<area shape="rect" id="node2" href="$namespacemnist.html#ae23bbb05e2acb0f4fb36edf42431cea7" title="Extract the MNIST header from the given buffer." alt="" coords="476,5,624,32"/>
-<area shape="rect" id="node3" href="$namespacemnist.html#a8061847f8ead32e07e1a343f29c03671" title="Read a MNIST file inside a raw buffer." alt="" coords="260,31,428,57"/>
-</map>

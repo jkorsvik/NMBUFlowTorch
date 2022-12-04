@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['basic_5fmmap_5fsink_1150',['basic_mmap_sink',['../namespacemio.html#a7ff62a54a7ca2c4da7aa2535d5a5ae38',1,'mio']]],
-  ['basic_5fmmap_5fsource_1151',['basic_mmap_source',['../namespacemio.html#a61400dd4683520a8edd1c4ff587e122d',1,'mio']]],
-  ['basic_5fshared_5fmmap_5fsink_1152',['basic_shared_mmap_sink',['../namespacemio.html#ac9eec52abc8a19a57fe20ceb5c205c9b',1,'mio']]],
-  ['basic_5fshared_5fmmap_5fsource_1153',['basic_shared_mmap_source',['../namespacemio.html#ae698b9e7cfe71f27436c70ebb0a827c3',1,'mio']]]
+  ['matrix_254',['Matrix',['../definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737',1,'definitions.hpp']]]
 ];

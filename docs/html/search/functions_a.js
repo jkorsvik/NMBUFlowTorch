@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['json_5fescape_5fstring_894',['json_escape_string',['../namespacecsv_1_1internals.html#a99264752bea785f95b9f8a69d1c71356',1,'csv::internals']]],
-  ['json_5fextra_5fspace_895',['json_extra_space',['../namespacecsv_1_1internals.html#a1a9bf86e03b2064b3be269cbe1c232a3',1,'csv::internals']]]
+  ['nadam_209',['Nadam',['../classnmbuflowtorch_1_1optimizer_1_1Nadam.html#ab2697bbfe361041dc33d8fd9124521c9',1,'nmbuflowtorch::optimizer::Nadam']]],
+  ['network_210',['Network',['../classnmbuflowtorch_1_1Network.html#a974541dea42e030c7d1d708e14d756c2',1,'nmbuflowtorch::Network']]]
 ];

@@ -1,4 +1,0 @@
-<map id="mnist::binarize_dataset" name="mnist::binarize_dataset">
-<area shape="rect" id="node1" title="Binarize the given MNIST dataset." alt="" coords="5,5,180,32"/>
-<area shape="rect" id="node2" href="$namespacemnist.html#a2bedd0aca9c4b0b6ff22abde253c16b9" title="Binarize each sub range inside the given range." alt="" coords="228,5,385,32"/>
-</map>

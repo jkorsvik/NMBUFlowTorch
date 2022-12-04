@@ -100,8 +100,8 @@
 <g id="node7" class="node">
 <title>Node7</title>
 <g id="a_node7"><a xlink:href="classnmbuflowtorch_1_1layer_1_1Dense.html#a1b343ab594510f4ab93c9c292b5a5123" target="_top" xlink:title="Get the output dimension of the dense layer.">
-<polygon fill="none" stroke="black" points="85,-98.5 85,-128.5 206,-128.5 206,-98.5 85,-98.5"/>
-<text text-anchor="start" x="93" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch::layer</text>
+<polygon fill="none" stroke="black" points="85.5,-98.5 85.5,-128.5 205.5,-128.5 205.5,-98.5 85.5,-98.5"/>
+<text text-anchor="start" x="93.5" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch::layer</text>
 <text text-anchor="middle" x="145.5" y="-105.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Dense::output_dim</text>
 </a>
 </g>
@@ -116,8 +116,8 @@
 <g id="node8" class="node">
 <title>Node8</title>
 <g id="a_node8"><a xlink:href="classnmbuflowtorch_1_1layer_1_1Dense.html#add10aea1bd55ec3ad1cd0033b6d1945f" target="_top" xlink:title="Set the bias of the dense layer.">
-<polygon fill="none" stroke="black" points="85,-49.5 85,-79.5 206,-79.5 206,-49.5 85,-49.5"/>
-<text text-anchor="start" x="93" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch::layer</text>
+<polygon fill="none" stroke="black" points="85.5,-49.5 85.5,-79.5 205.5,-79.5 205.5,-49.5 85.5,-49.5"/>
+<text text-anchor="start" x="93.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch::layer</text>
 <text text-anchor="middle" x="145.5" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Dense::set_bias</text>
 </a>
 </g>
@@ -132,8 +132,8 @@
 <g id="node9" class="node">
 <title>Node9</title>
 <g id="a_node9"><a xlink:href="classnmbuflowtorch_1_1layer_1_1Dense.html#af67831f9eb6d9defb29088973d07e049" target="_top" xlink:title="Set the weights of the dense layer.">
-<polygon fill="none" stroke="black" points="85,-0.5 85,-30.5 206,-30.5 206,-0.5 85,-0.5"/>
-<text text-anchor="start" x="93" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch::layer</text>
+<polygon fill="none" stroke="black" points="85.5,-0.5 85.5,-30.5 205.5,-30.5 205.5,-0.5 85.5,-0.5"/>
+<text text-anchor="start" x="93.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch::layer</text>
 <text text-anchor="middle" x="145.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Dense::set_weights</text>
 </a>
 </g>

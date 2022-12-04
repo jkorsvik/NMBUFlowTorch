@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;ostream&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
-<code>#include &quot;<a class="el" href="csv_8hpp_source.html">csv_parser/csv.hpp</a>&quot;</code><br />
+<code>#include &quot;csv_parser/csv.hpp&quot;</code><br />
 <code>#include &quot;<a class="el" href="definitions_8hpp_source.html">nmbuflowtorch/definitions.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="layer_8hpp_source.html">nmbuflowtorch/layer.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="dense_8hpp_source.html">nmbuflowtorch/layer/dense.hpp</a>&quot;</code><br />
@@ -115,7 +115,8 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.cpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp__incl.svg" width="3770" height="440"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp__incl.svg" width="2060" height="440"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </div>
 <p><a href="main_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -324,16 +325,16 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <a class="code" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a> X = <a class="code" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a>(2, input_size);  <span class="comment">// is also y</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <a class="code" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a> y = <a class="code" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a>(2, 1);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <a class="code" href="classcsv_1_1CSVFormat.html">CSVFormat</a> format;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  format.<a class="code" href="classcsv_1_1CSVFormat.html#a9504d9b7629560dd25b0fa63bf665584">delimiter</a>(<span class="charliteral">&#39;,&#39;</span>).<a class="code" href="classcsv_1_1CSVFormat.html#ac4503298da54c932da9ac0914c76892f">no_header</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  CSVFormat format;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  format.delimiter(<span class="charliteral">&#39;,&#39;</span>).no_header();</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <a class="code" href="classcsv_1_1CSVReader.html">CSVReader</a> reader(<span class="stringliteral">&quot;data/autoencoder/circles_128.csv&quot;</span>, format);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  CSVReader reader(<span class="stringliteral">&quot;data/autoencoder/circles_128.csv&quot;</span>, format);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordtype">int</span> n_rows = 0;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordtype">int</span> n_cols = 0;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordflow">for</span> (<a class="code" href="classcsv_1_1CSVRow.html">CSVRow</a>&amp; row : reader)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordflow">for</span> (CSVRow&amp; row : reader)</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  {  <span class="comment">// Input iterator</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">int</span> n_cols = 0;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="classcsv_1_1CSVField.html">CSVField</a>&amp; field : row)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">for</span> (CSVField&amp; field : row)</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    {</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <span class="keywordflow">if</span> (n_cols &lt; input_size)</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      {</div>
@@ -436,12 +437,6 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <span class="comment">//   shared pointers could also be used</span></div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="comment">//   std::unique_ptr&lt;layer::dense&gt; dense1 = std::make_unique&lt;layer::dense&gt;(arguments...);</span></div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
-<div class="ttc" id="aclasscsv_1_1CSVField_html"><div class="ttname"><a href="classcsv_1_1CSVField.html">csv::CSVField</a></div><div class="ttdoc">Data type representing individual CSV values. CSVFields can be obtained by using CSVRow::operator[].</div><div class="ttdef"><b>Definition:</b> <a href="csv_8hpp_source.html#l05529">csv.hpp:5529</a></div></div>
-<div class="ttc" id="aclasscsv_1_1CSVFormat_html"><div class="ttname"><a href="classcsv_1_1CSVFormat.html">csv::CSVFormat</a></div><div class="ttdef"><b>Definition:</b> <a href="csv_8hpp_source.html#l04917">csv.hpp:4917</a></div></div>
-<div class="ttc" id="aclasscsv_1_1CSVFormat_html_a9504d9b7629560dd25b0fa63bf665584"><div class="ttname"><a href="classcsv_1_1CSVFormat.html#a9504d9b7629560dd25b0fa63bf665584">csv::CSVFormat::delimiter</a></div><div class="ttdeci">CSVFormat &amp; delimiter(char delim)</div><div class="ttdef"><b>Definition:</b> <a href="csv_8hpp_source.html#l07167">csv.hpp:7167</a></div></div>
-<div class="ttc" id="aclasscsv_1_1CSVFormat_html_ac4503298da54c932da9ac0914c76892f"><div class="ttname"><a href="classcsv_1_1CSVFormat.html#ac4503298da54c932da9ac0914c76892f">csv::CSVFormat::no_header</a></div><div class="ttdeci">CSVFormat &amp; no_header()</div><div class="ttdef"><b>Definition:</b> <a href="csv_8hpp_source.html#l04965">csv.hpp:4965</a></div></div>
-<div class="ttc" id="aclasscsv_1_1CSVReader_html"><div class="ttname"><a href="classcsv_1_1CSVReader.html">csv::CSVReader</a></div><div class="ttdoc">Main class for parsing CSVs from files and in-memory sources.</div><div class="ttdef"><b>Definition:</b> <a href="csv_8hpp_source.html#l06252">csv.hpp:6252</a></div></div>
-<div class="ttc" id="aclasscsv_1_1CSVRow_html"><div class="ttname"><a href="classcsv_1_1CSVRow.html">csv::CSVRow</a></div><div class="ttdef"><b>Definition:</b> <a href="csv_8hpp_source.html#l05682">csv.hpp:5682</a></div></div>
 <div class="ttc" id="aclassnmbuflowtorch_1_1Loss_html"><div class="ttname"><a href="classnmbuflowtorch_1_1Loss.html">nmbuflowtorch::Loss</a></div><div class="ttdef"><b>Definition:</b> <a href="loss_8hpp_source.html#l00008">loss.hpp:9</a></div></div>
 <div class="ttc" id="aclassnmbuflowtorch_1_1Network_html"><div class="ttname"><a href="classnmbuflowtorch_1_1Network.html">nmbuflowtorch::Network</a></div><div class="ttdoc">The Network class is a class for creating and managing a neural network. It has functions for adding ...</div><div class="ttdef"><b>Definition:</b> <a href="network_8hpp_source.html#l00025">network.hpp:33</a></div></div>
 <div class="ttc" id="aclassnmbuflowtorch_1_1Network_html_a1120a4649f5317ab85b7fd0124f91f75"><div class="ttname"><a href="classnmbuflowtorch_1_1Network.html#a1120a4649f5317ab85b7fd0124f91f75">nmbuflowtorch::Network::add_optimizer</a></div><div class="ttdeci">void add_optimizer(Optimizer *opt_in)</div><div class="ttdoc">Adds an optimizer to the network.</div><div class="ttdef"><b>Definition:</b> <a href="network_8hpp_source.html#l00063">network.hpp:63</a></div></div>
@@ -460,7 +455,8 @@ Functions</h2></td></tr>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.svg" width="1270" height="583"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.svg" width="1270" height="475"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>

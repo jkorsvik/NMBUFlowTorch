@@ -7,7 +7,7 @@ NMBUFlowTorch {#mainpage}
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/jkorsvik/NMBUFlowTorch)](https://github.com/jkorsvik/NMBUFlowTorch/releases)
 
 
-![NMBUFlowTorch](.misc/NMBUFlowTorch.LOGO.thin.png?raw=true "Logo")
+![NMBUFlowTorch](https://github.com/jkorsvik/NMBUFlowTorch/blob/master/.misc/NMBUFlowTorch.LOGO.thin.png?raw=true "Logo")
 
 A simple C++ implementation of Neural Nets, inspired by the functionality of Tensorflow and pyTorch.
 ## Docs
@@ -77,14 +77,20 @@ template *as-is*, meaning using the versions recommended here, then you will nee
 
 > ***Note:*** *You also need to be able to provide ***CMake*** a supported [generator](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html).*
 
-* **Different data** - [MNIST](https://github.com/wichtounet/mnist) AND https://home.bawue.de/~horsch/teaching/inf205/src/image-benchmark.zip *MSVC*,
-*GCC*, *Clang*
+* **Different data** - [MNIST](https://github.com/wichtounet/mnist) AND https://home.bawue.de/~horsch/teaching/inf205/src/image-benchmark.zip 
 
 ### If using VSCode
 
 There are few select extensions which are recommended
 * https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack
-* 
+* https://marketplace.visualstudio.com/items?itemName=notskm.clang-tidy
+
+
+### Third-party libraries used
+* eigen3 : https://eigen.tuxfamily.org/index.php?title=Main_Page
+* OpenMP : https://github.com/OpenMP
+* OpenBLAS : https://github.com/xianyi/OpenBLAS
+* csv-parser : https://github.com/vincentlaucsb/csv-parser
 
 ### Installing
 

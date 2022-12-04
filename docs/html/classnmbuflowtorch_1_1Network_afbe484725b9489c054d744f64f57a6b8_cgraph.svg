@@ -22,7 +22,7 @@
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="math__m_8hpp.html#aebe2ab42fdbc00b9e3afb06ba7d536c3" target="_top" xlink:title="Applies a binary cutoff to a given float value.">
-<polygon fill="none" stroke="black" points="201,-50 201,-69 282,-69 282,-50 201,-50"/>
+<polygon fill="none" stroke="black" points="201.5,-50 201.5,-69 281.5,-69 281.5,-50 201.5,-50"/>
 <text text-anchor="middle" x="241.5" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00">binary_cutoff</text>
 </a>
 </g>
@@ -30,8 +30,8 @@
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M137.08,-46.19C155.02,-48.5 174.06,-50.95 190.84,-53.11"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="190.61,-56.61 200.97,-54.41 191.5,-49.67 190.61,-56.61"/>
+<path fill="none" stroke="midnightblue" d="M137.08,-46.19C155.17,-48.52 174.38,-50.99 191.28,-53.17"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="191.1,-56.67 201.46,-54.48 191.99,-49.73 191.1,-56.67"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">

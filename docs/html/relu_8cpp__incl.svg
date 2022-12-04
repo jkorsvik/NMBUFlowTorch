@@ -12,8 +12,8 @@
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="105,-291.5 105,-321.5 240,-321.5 240,-291.5 105,-291.5"/>
-<text text-anchor="start" x="113" y="-309.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/nmbuflowtorch/layer</text>
+<polygon fill="#bfbfbf" stroke="black" points="105.5,-291.5 105.5,-321.5 239.5,-321.5 239.5,-291.5 105.5,-291.5"/>
+<text text-anchor="start" x="113.5" y="-309.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/nmbuflowtorch/layer</text>
 <text text-anchor="middle" x="172.5" y="-298.5" font-family="Helvetica,sans-Serif" font-size="10.00">/relu.cpp</text>
 </a>
 </g>
@@ -22,8 +22,8 @@
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="relu_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="113.5,-224.5 113.5,-254.5 231.5,-254.5 231.5,-224.5 113.5,-224.5"/>
-<text text-anchor="start" x="121.5" y="-242.5" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch/layer</text>
+<polygon fill="none" stroke="black" points="114,-224.5 114,-254.5 231,-254.5 231,-224.5 114,-224.5"/>
+<text text-anchor="start" x="122" y="-242.5" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch/layer</text>
 <text text-anchor="middle" x="172.5" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">/relu.hpp</text>
 </a>
 </g>
@@ -76,14 +76,14 @@
 <!-- Node3&#45;&gt;Node5 -->
 <g id="edge4" class="edge">
 <title>Node3&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M174.29,-168.34C177.07,-155.65 183.02,-131.39 191.5,-112 195.7,-102.4 201.57,-92.35 206.77,-84.18"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="209.84,-85.88 212.42,-75.6 204,-82.03 209.84,-85.88"/>
+<path fill="none" stroke="midnightblue" d="M174.5,-168.37C177.57,-155.7 184.01,-131.48 192.5,-112 196.65,-102.49 202.32,-92.44 207.3,-84.26"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="210.35,-85.98 212.71,-75.66 204.42,-82.26 210.35,-85.98"/>
 </g>
 <!-- Node12 -->
 <g id="node12" class="node">
 <title>Node12</title>
 <g id="a_node12"><a xlink:href="optimizer_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="200.5,-112.5 200.5,-131.5 290.5,-131.5 290.5,-112.5 200.5,-112.5"/>
+<polygon fill="none" stroke="black" points="201,-112.5 201,-131.5 290,-131.5 290,-112.5 201,-112.5"/>
 <text text-anchor="middle" x="245.5" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">./optimizer.hpp</text>
 </a>
 </g>

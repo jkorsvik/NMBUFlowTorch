@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['query_5ffile_5fsize_560',['query_file_size',['../namespacemio_1_1detail.html#a098bba98e9ca578a687cbb5d9ca1bc31',1,'mio::detail']]],
-  ['quote_561',['quote',['../classcsv_1_1CSVFormat.html#a498df6ffc395dfdb3e35a8f33884bbba',1,'csv::CSVFormat::quote(char quote)'],['../classcsv_1_1CSVFormat.html#a3d32ab937fb4cf3f9a4dfb706003d103',1,'csv::CSVFormat::quote(bool use_quote)']]],
-  ['quote_5fchar_562',['quote_char',['../classcsv_1_1CSVFormat.html#a3b158c25f4e353fd855491c50ee47b89',1,'csv::CSVFormat']]],
-  ['quote_5fescape_563',['quote_escape',['../classcsv_1_1internals_1_1IBasicCSVParser.html#a87d9d9b86045222ea5346b2572c63a53',1,'csv::internals::IBasicCSVParser']]],
-  ['quote_5fminimal_564',['quote_minimal',['../classcsv_1_1DelimWriter.html#a170b5a9e40261c16acab356a04cf6863',1,'csv::DelimWriter']]]
+  ['v_5fmap_122',['v_map',['../classnmbuflowtorch_1_1optimizer_1_1Adam.html#abfd1d3bb084ea990d9dc7cbff95032d7',1,'nmbuflowtorch::optimizer::Adam::v_map()'],['../classnmbuflowtorch_1_1optimizer_1_1Nadam.html#a73afd3d936814d801747b542ea7486db',1,'nmbuflowtorch::optimizer::Nadam::v_map()'],['../classnmbuflowtorch_1_1optimizer_1_1SGD.html#a630d49e8b8ea56976858d7e21d32602c',1,'nmbuflowtorch::optimizer::SGD::v_map()']]],
+  ['vector_123',['Vector',['../definitions_8hpp.html#ad744e38594a93c09a4f2e586b2c7371d',1,'definitions.hpp']]]
 ];

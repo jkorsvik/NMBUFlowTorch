@@ -1,6 +1,6 @@
 <map id="nmbuflowtorch::Network::predict" name="nmbuflowtorch::Network::predict">
 <area shape="rect" id="node1" title="Fit model to data provided." alt="" coords="5,27,188,69"/>
-<area shape="rect" id="node2" href="$math__m_8hpp.html#aebe2ab42fdbc00b9e3afb06ba7d536c3" title="Applies a binary cutoff to a given float value." alt="" coords="273,5,381,32"/>
+<area shape="rect" id="node2" href="$math__m_8hpp.html#aebe2ab42fdbc00b9e3afb06ba7d536c3" title="Applies a binary cutoff to a given float value." alt="" coords="274,5,381,32"/>
 <area shape="rect" id="node3" href="$classnmbuflowtorch_1_1Network.html#ae6cd135a052cc1526b34bb4144ae58b6" title=" " alt="" coords="236,57,419,98"/>
 <area shape="rect" id="node4" href="$classnmbuflowtorch_1_1Network.html#a47b0ad164e645c60f736f60f87827900" title="Returns the value from the last layer." alt="" coords="467,57,649,98"/>
 </map>

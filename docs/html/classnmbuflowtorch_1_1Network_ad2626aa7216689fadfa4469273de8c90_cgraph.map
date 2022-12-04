@@ -1,6 +1,6 @@
 <map id="nmbuflowtorch::Network::backward" name="nmbuflowtorch::Network::backward">
 <area shape="rect" id="node1" title="Using X input and y target, back propagates the loss gradient." alt="" coords="5,71,188,112"/>
-<area shape="rect" id="node2" href="$classnmbuflowtorch_1_1Loss.html#a29688f70477ce9f630cb313cc7e4c365" title="Returns the gradient with respect to the input of the loss function." alt="" coords="249,5,406,47"/>
-<area shape="rect" id="node3" href="$classnmbuflowtorch_1_1Loss.html#ab739a047ffc84f44af71832ec704cedc" title="Evaluates the loss function given the predicted and target values." alt="" coords="249,71,406,112"/>
+<area shape="rect" id="node2" href="$classnmbuflowtorch_1_1Loss.html#a29688f70477ce9f630cb313cc7e4c365" title="Returns the gradient with respect to the input of the loss function." alt="" coords="249,5,405,47"/>
+<area shape="rect" id="node3" href="$classnmbuflowtorch_1_1Loss.html#ab739a047ffc84f44af71832ec704cedc" title="Evaluates the loss function given the predicted and target values." alt="" coords="249,71,405,112"/>
 <area shape="rect" id="node4" href="$classnmbuflowtorch_1_1Network.html#a47b0ad164e645c60f736f60f87827900" title="Returns the value from the last layer." alt="" coords="236,136,419,177"/>
 </map>

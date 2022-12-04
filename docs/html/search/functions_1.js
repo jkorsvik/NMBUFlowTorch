@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['accuracy_5fscore_778',['accuracy_score',['../math__m_8hpp.html#ad98d8e1ed5bf9e38ed353f7b4e74953b',1,'math_m.hpp']]],
-  ['adam_779',['Adam',['../classnmbuflowtorch_1_1optimizer_1_1Adam.html#a0a85df26b0bbb77412562d80df4a943d',1,'nmbuflowtorch::optimizer::Adam']]],
-  ['add_5flayer_780',['add_layer',['../classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead',1,'nmbuflowtorch::Network']]],
-  ['add_5floss_781',['add_loss',['../classnmbuflowtorch_1_1Network.html#a7a86be4bc0c3901a48cfb70b286ec363',1,'nmbuflowtorch::Network']]],
-  ['add_5foptimizer_782',['add_optimizer',['../classnmbuflowtorch_1_1Network.html#a1120a4649f5317ab85b7fd0124f91f75',1,'nmbuflowtorch::Network']]],
-  ['allocate_783',['allocate',['../classcsv_1_1internals_1_1CSVFieldList.html#a355dd0023747e86aebe0c6ff06f0ef70',1,'csv::internals::CSVFieldList']]],
-  ['assert_5fno_5fchar_5foverlap_784',['assert_no_char_overlap',['../classcsv_1_1CSVFormat.html#a6c2b638db04f164d781df7b2a4840a20',1,'csv::CSVFormat']]]
+  ['back_5fgradient_185',['back_gradient',['../classnmbuflowtorch_1_1Layer.html#aa03f09ccaff284b2a5c2e8130b4a0450',1,'nmbuflowtorch::Layer::back_gradient()'],['../classnmbuflowtorch_1_1Loss.html#a29688f70477ce9f630cb313cc7e4c365',1,'nmbuflowtorch::Loss::back_gradient()']]],
+  ['backward_186',['backward',['../classnmbuflowtorch_1_1layer_1_1Convolutional.html#a635c15047368c4748a2300a0182a3a74',1,'nmbuflowtorch::layer::Convolutional::backward()'],['../classnmbuflowtorch_1_1layer_1_1Dense.html#aab25fa9257e5a717de4851d2245137f1',1,'nmbuflowtorch::layer::Dense::backward()'],['../classnmbuflowtorch_1_1layer_1_1ReLU.html#a5a64a495f3cf25888d4187769cfb5499',1,'nmbuflowtorch::layer::ReLU::backward()'],['../classnmbuflowtorch_1_1layer_1_1Sigmoid.html#abf533eb959dddc06d4ca8ae8a8b8e0b9',1,'nmbuflowtorch::layer::Sigmoid::backward()'],['../classnmbuflowtorch_1_1layer_1_1Softmax.html#a21d2e8ec4dfcd096dab0f867e18289b8',1,'nmbuflowtorch::layer::Softmax::backward()'],['../classnmbuflowtorch_1_1Layer.html#a4ca29e7f63a80c08924e507dae466bd1',1,'nmbuflowtorch::Layer::backward()'],['../classnmbuflowtorch_1_1Network.html#ad2626aa7216689fadfa4469273de8c90',1,'nmbuflowtorch::Network::backward()']]],
+  ['binary_5fcutoff_187',['binary_cutoff',['../math__m_8hpp.html#aebe2ab42fdbc00b9e3afb06ba7d536c3',1,'math_m.hpp']]],
+  ['blas_5fmmul_5fsgeem_188',['BLAS_mmul_sgeem',['../math__m_8hpp.html#aee257c387d1817c2bbad9293d8267cbf',1,'math_m.hpp']]]
 ];

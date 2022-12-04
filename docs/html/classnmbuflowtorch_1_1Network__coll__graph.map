@@ -1,5 +1,5 @@
 <map id="nmbuflowtorch::Network" name="nmbuflowtorch::Network">
-<area shape="rect" id="node1" title="The Network class is a class for creating and managing a neural network. It has functions for adding ..." alt="" coords="91,95,274,121"/>
-<area shape="rect" id="node2" href="$classnmbuflowtorch_1_1Loss.html" title=" " alt="" coords="5,5,163,32"/>
-<area shape="rect" id="node3" href="$classnmbuflowtorch_1_1Optimizer.html" title=" " alt="" coords="187,5,379,32"/>
+<area shape="rect" id="node1" title="The Network class is a class for creating and managing a neural network. It has functions for adding ..." alt="" coords="91,95,273,121"/>
+<area shape="rect" id="node2" href="$classnmbuflowtorch_1_1Loss.html" title=" " alt="" coords="5,5,161,32"/>
+<area shape="rect" id="node3" href="$classnmbuflowtorch_1_1Optimizer.html" title=" " alt="" coords="185,5,376,32"/>
 </map>

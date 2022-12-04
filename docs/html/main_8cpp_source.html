@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html',''); initResiza
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;ostream&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="csv_8hpp.html">csv_parser/csv.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;csv_parser/csv.hpp&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="definitions_8hpp.html">nmbuflowtorch/definitions.hpp</a>&quot;</span>  <span class="comment">// imports and renames important files</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="layer_8hpp.html">nmbuflowtorch/layer.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dense_8hpp.html">nmbuflowtorch/layer/dense.hpp</a>&quot;</span></div>
@@ -116,7 +116,7 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html',''); initResiza
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// -&gt; is for pointer objects, while . is for value objects</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// CSV parser</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacecsv.html">csv</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">using namespace </span>csv;</div>
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">   28</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv)</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordflow">if</span> (argc &gt; 1 &amp;&amp; strcmp(argv[1], <span class="stringliteral">&quot;parallel&quot;</span>) == 0)</div>
@@ -173,16 +173,16 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html',''); initResiza
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <a class="code" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a> X = <a class="code" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a>(2, input_size);  <span class="comment">// is also y</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <a class="code" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a> y = <a class="code" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a>(2, 1);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <a class="code" href="classcsv_1_1CSVFormat.html">CSVFormat</a> format;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  format.<a class="code" href="classcsv_1_1CSVFormat.html#a9504d9b7629560dd25b0fa63bf665584">delimiter</a>(<span class="charliteral">&#39;,&#39;</span>).<a class="code" href="classcsv_1_1CSVFormat.html#ac4503298da54c932da9ac0914c76892f">no_header</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  CSVFormat format;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  format.delimiter(<span class="charliteral">&#39;,&#39;</span>).no_header();</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <a class="code" href="classcsv_1_1CSVReader.html">CSVReader</a> reader(<span class="stringliteral">&quot;data/autoencoder/circles_128.csv&quot;</span>, format);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  CSVReader reader(<span class="stringliteral">&quot;data/autoencoder/circles_128.csv&quot;</span>, format);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordtype">int</span> n_rows = 0;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordtype">int</span> n_cols = 0;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordflow">for</span> (<a class="code" href="classcsv_1_1CSVRow.html">CSVRow</a>&amp; row : reader)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordflow">for</span> (CSVRow&amp; row : reader)</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  {  <span class="comment">// Input iterator</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">int</span> n_cols = 0;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="classcsv_1_1CSVField.html">CSVField</a>&amp; field : row)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">for</span> (CSVField&amp; field : row)</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    {</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <span class="keywordflow">if</span> (n_cols &lt; input_size)</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      {</div>
@@ -285,12 +285,6 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html',''); initResiza
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <span class="comment">//   shared pointers could also be used</span></div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="comment">//   std::unique_ptr&lt;layer::dense&gt; dense1 = std::make_unique&lt;layer::dense&gt;(arguments...);</span></div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
-<div class="ttc" id="aclasscsv_1_1CSVField_html"><div class="ttname"><a href="classcsv_1_1CSVField.html">csv::CSVField</a></div><div class="ttdoc">Data type representing individual CSV values. CSVFields can be obtained by using CSVRow::operator[].</div><div class="ttdef"><b>Definition:</b> <a href="csv_8hpp_source.html#l05529">csv.hpp:5529</a></div></div>
-<div class="ttc" id="aclasscsv_1_1CSVFormat_html"><div class="ttname"><a href="classcsv_1_1CSVFormat.html">csv::CSVFormat</a></div><div class="ttdef"><b>Definition:</b> <a href="csv_8hpp_source.html#l04917">csv.hpp:4917</a></div></div>
-<div class="ttc" id="aclasscsv_1_1CSVFormat_html_a9504d9b7629560dd25b0fa63bf665584"><div class="ttname"><a href="classcsv_1_1CSVFormat.html#a9504d9b7629560dd25b0fa63bf665584">csv::CSVFormat::delimiter</a></div><div class="ttdeci">CSVFormat &amp; delimiter(char delim)</div><div class="ttdef"><b>Definition:</b> <a href="csv_8hpp_source.html#l07167">csv.hpp:7167</a></div></div>
-<div class="ttc" id="aclasscsv_1_1CSVFormat_html_ac4503298da54c932da9ac0914c76892f"><div class="ttname"><a href="classcsv_1_1CSVFormat.html#ac4503298da54c932da9ac0914c76892f">csv::CSVFormat::no_header</a></div><div class="ttdeci">CSVFormat &amp; no_header()</div><div class="ttdef"><b>Definition:</b> <a href="csv_8hpp_source.html#l04965">csv.hpp:4965</a></div></div>
-<div class="ttc" id="aclasscsv_1_1CSVReader_html"><div class="ttname"><a href="classcsv_1_1CSVReader.html">csv::CSVReader</a></div><div class="ttdoc">Main class for parsing CSVs from files and in-memory sources.</div><div class="ttdef"><b>Definition:</b> <a href="csv_8hpp_source.html#l06252">csv.hpp:6252</a></div></div>
-<div class="ttc" id="aclasscsv_1_1CSVRow_html"><div class="ttname"><a href="classcsv_1_1CSVRow.html">csv::CSVRow</a></div><div class="ttdef"><b>Definition:</b> <a href="csv_8hpp_source.html#l05682">csv.hpp:5682</a></div></div>
 <div class="ttc" id="aclassnmbuflowtorch_1_1Loss_html"><div class="ttname"><a href="classnmbuflowtorch_1_1Loss.html">nmbuflowtorch::Loss</a></div><div class="ttdef"><b>Definition:</b> <a href="loss_8hpp_source.html#l00008">loss.hpp:9</a></div></div>
 <div class="ttc" id="aclassnmbuflowtorch_1_1Network_html"><div class="ttname"><a href="classnmbuflowtorch_1_1Network.html">nmbuflowtorch::Network</a></div><div class="ttdoc">The Network class is a class for creating and managing a neural network. It has functions for adding ...</div><div class="ttdef"><b>Definition:</b> <a href="network_8hpp_source.html#l00025">network.hpp:33</a></div></div>
 <div class="ttc" id="aclassnmbuflowtorch_1_1Network_html_a1120a4649f5317ab85b7fd0124f91f75"><div class="ttname"><a href="classnmbuflowtorch_1_1Network.html#a1120a4649f5317ab85b7fd0124f91f75">nmbuflowtorch::Network::add_optimizer</a></div><div class="ttdeci">void add_optimizer(Optimizer *opt_in)</div><div class="ttdoc">Adds an optimizer to the network.</div><div class="ttdef"><b>Definition:</b> <a href="network_8hpp_source.html#l00063">network.hpp:63</a></div></div>
@@ -306,7 +300,6 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html',''); initResiza
 <div class="ttc" id="aclassnmbuflowtorch_1_1loss_1_1MSE_html"><div class="ttname"><a href="classnmbuflowtorch_1_1loss_1_1MSE.html">nmbuflowtorch::loss::MSE</a></div><div class="ttdef"><b>Definition:</b> <a href="mse_8hpp_source.html#l00008">mse.hpp:9</a></div></div>
 <div class="ttc" id="aclassnmbuflowtorch_1_1optimizer_1_1SGD_html"><div class="ttname"><a href="classnmbuflowtorch_1_1optimizer_1_1SGD.html">nmbuflowtorch::optimizer::SGD</a></div><div class="ttdef"><b>Definition:</b> <a href="sgd_8hpp_source.html#l00008">sgd.hpp:9</a></div></div>
 <div class="ttc" id="across__entropy_8hpp_html"><div class="ttname"><a href="cross__entropy_8hpp.html">cross_entropy.hpp</a></div></div>
-<div class="ttc" id="acsv_8hpp_html"><div class="ttname"><a href="csv_8hpp.html">csv.hpp</a></div><div class="ttdoc">Defines functionality needed for basic CSV parsing.</div></div>
 <div class="ttc" id="adefinitions_8hpp_html"><div class="ttname"><a href="definitions_8hpp.html">definitions.hpp</a></div></div>
 <div class="ttc" id="adefinitions_8hpp_html_a58e8a08e999542a3fb8f965a2b79c737"><div class="ttname"><a href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a></div><div class="ttdeci">Eigen::Matrix&lt; float, Eigen::Dynamic, Eigen::Dynamic &gt; Matrix</div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00013">definitions.hpp:13</a></div></div>
 <div class="ttc" id="adense_8hpp_html"><div class="ttname"><a href="dense_8hpp.html">dense.hpp</a></div></div>
@@ -315,7 +308,6 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html',''); initResiza
 <div class="ttc" id="amain_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00028">main.cpp:28</a></div></div>
 <div class="ttc" id="amath__m_8hpp_html"><div class="ttname"><a href="math__m_8hpp.html">math_m.hpp</a></div></div>
 <div class="ttc" id="amse_8hpp_html"><div class="ttname"><a href="mse_8hpp.html">mse.hpp</a></div></div>
-<div class="ttc" id="anamespacecsv_html"><div class="ttname"><a href="namespacecsv.html">csv</a></div><div class="ttdef"><b>Definition:</b> <a href="csv_8hpp_source.html#l04852">csv.hpp:4852</a></div></div>
 <div class="ttc" id="anetwork_8hpp_html"><div class="ttname"><a href="network_8hpp.html">network.hpp</a></div><div class="ttdoc">Network class representing a sequence of layers. This class implements a network consisting of a sequ...</div></div>
 <div class="ttc" id="aoptimizer_8hpp_html"><div class="ttname"><a href="optimizer_8hpp.html">optimizer.hpp</a></div></div>
 <div class="ttc" id="asgd_8hpp_html"><div class="ttname"><a href="sgd_8hpp.html">sgd.hpp</a></div></div>

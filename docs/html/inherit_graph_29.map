@@ -1,8 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classnmbuflowtorch_1_1Layer.html" title="The base layer class for neural network models." alt="" coords="5,143,168,170"/>
-<area shape="rect" id="node2" href="$classnmbuflowtorch_1_1layer_1_1Convolutional.html" title=" " alt="" coords="216,5,376,47"/>
-<area shape="rect" id="node3" href="$classnmbuflowtorch_1_1layer_1_1Dense.html" title=" " alt="" coords="216,71,376,112"/>
-<area shape="rect" id="node4" href="$classnmbuflowtorch_1_1layer_1_1ReLU.html" title=" " alt="" coords="216,136,376,177"/>
-<area shape="rect" id="node5" href="$classnmbuflowtorch_1_1layer_1_1Sigmoid.html" title=" " alt="" coords="216,201,376,243"/>
-<area shape="rect" id="node6" href="$classnmbuflowtorch_1_1layer_1_1Softmax.html" title="Implements the forward and backward propagation of the softmax function." alt="" coords="216,267,376,308"/>
-</map>

@@ -32,24 +32,20 @@ var NAVTREE =
     [ "Getting Started", "index.html#autotoc_md3", [
       [ "Prerequisites", "index.html#autotoc_md4", null ],
       [ "If using VSCode", "index.html#autotoc_md5", null ],
-      [ "Installing", "index.html#autotoc_md6", null ]
+      [ "Third-party libraries used", "index.html#autotoc_md6", null ],
+      [ "Installing", "index.html#autotoc_md7", null ]
     ] ],
-    [ "Building the project", "index.html#autotoc_md7", null ],
-    [ "Generating the documentation", "index.html#autotoc_md8", null ],
-    [ "Running the tests", "index.html#autotoc_md9", null ],
-    [ "Authors", "index.html#autotoc_md10", null ],
-    [ "Inspiration Repos", "index.html#autotoc_md11", null ],
-    [ "License", "index.html#autotoc_md12", null ],
-    [ "Modules", "modules.html", "modules" ],
+    [ "Building the project", "index.html#autotoc_md8", null ],
+    [ "Generating the documentation", "index.html#autotoc_md9", null ],
+    [ "Running the tests", "index.html#autotoc_md10", null ],
+    [ "Authors", "index.html#autotoc_md11", null ],
+    [ "Inspiration Repos", "index.html#autotoc_md12", null ],
+    [ "License", "index.html#autotoc_md13", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
-        [ "Functions", "namespacemembers_func.html", null ],
-        [ "Variables", "namespacemembers_vars.html", null ],
-        [ "Typedefs", "namespacemembers_type.html", null ],
-        [ "Enumerations", "namespacemembers_enum.html", null ],
-        [ "Enumerator", "namespacemembers_eval.html", null ]
+        [ "Functions", "namespacemembers_func.html", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -57,21 +53,19 @@ var NAVTREE =
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", null ],
-        [ "Typedefs", "functions_type.html", null ],
-        [ "Related Functions", "functions_rela.html", null ]
+        [ "All", "functions.html", null ],
+        [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
-        [ "All", "globals.html", "globals_dup" ],
+        [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
-        [ "Macros", "globals_defs.html", "globals_defs" ]
+        [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
   ] ]
@@ -80,11 +74,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "adam_8cpp.html",
-"classcsv_1_1internals_1_1ThreadSafeDeque.html#a0acae55f48c97e471cb0bfc5fe82eddf",
-"csv_8hpp.html#a1147a88591abc46df3d36958876a4127",
-"csv_8hpp.html#ae1008171a096da2a97b1731f06ddb92b",
-"namespacecsv.html#a72e814eade630a43c387759eb61a6daa",
-"structmio_1_1detail_1_1char__type__helper.html"
+"namespacenmbuflowtorch.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

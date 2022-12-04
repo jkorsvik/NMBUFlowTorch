@@ -12,8 +12,8 @@
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="193,-235.5 193,-265.5 323,-265.5 323,-235.5 193,-235.5"/>
-<text text-anchor="start" x="201" y="-253.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/nmbuflowtorch/loss</text>
+<polygon fill="#bfbfbf" stroke="black" points="193.5,-235.5 193.5,-265.5 322.5,-265.5 322.5,-235.5 193.5,-235.5"/>
+<text text-anchor="start" x="201.5" y="-253.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/nmbuflowtorch/loss</text>
 <text text-anchor="middle" x="258" y="-242.5" font-family="Helvetica,sans-Serif" font-size="10.00">/cross_entropy.cpp</text>
 </a>
 </g>
@@ -22,8 +22,8 @@
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="cross__entropy_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="201.5,-168.5 201.5,-198.5 314.5,-198.5 314.5,-168.5 201.5,-168.5"/>
-<text text-anchor="start" x="209.5" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch/loss</text>
+<polygon fill="none" stroke="black" points="202,-168.5 202,-198.5 314,-198.5 314,-168.5 202,-168.5"/>
+<text text-anchor="start" x="210" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch/loss</text>
 <text text-anchor="middle" x="258" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">/cross_entropy.hpp</text>
 </a>
 </g>

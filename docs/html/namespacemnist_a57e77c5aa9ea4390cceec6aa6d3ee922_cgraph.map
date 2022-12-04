@@ -1,6 +1,0 @@
-<map id="mnist::normalize_dataset" name="mnist::normalize_dataset">
-<area shape="rect" id="node1" title="Normalize the given MNIST dataset to zero&#45;mean and unit variance." alt="" coords="5,5,193,32"/>
-<area shape="rect" id="node2" href="$namespacemnist.html#acdb2a501db8e749c8ce4d971d69fea22" title="Normalize each sub range inside the given range." alt="" coords="241,5,412,32"/>
-<area shape="rect" id="node3" href="$namespacemnist.html#a2dcb2e257557345356d75a4b41df652a" title="Return the mean value of the elements inside the given range." alt="" coords="619,5,723,32"/>
-<area shape="rect" id="node4" href="$namespacemnist.html#a711f59c10ffe748decf24c2752a2945a" title="Return the standard deviation of the elements inside the given range." alt="" coords="460,31,571,57"/>
-</map>

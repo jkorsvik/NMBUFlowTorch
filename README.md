@@ -75,8 +75,7 @@ template *as-is*, meaning using the versions recommended here, then you will nee
 * **C++ Compiler** - needs to support at least the **C++17** standard, i.e. *MSVC*,
 *GCC*, *Clang*
 
-> ***Note:*** *You also need to be able to provide ***CMake*** a supported
-[generator](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html).*
+> ***Note:*** *You also need to be able to provide ***CMake*** a supported [generator](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html).*
 
 * **Different data** - [MNIST](https://github.com/wichtounet/mnist) AND https://home.bawue.de/~horsch/teaching/inf205/src/image-benchmark.zip *MSVC*,
 *GCC*, *Clang*
@@ -146,8 +145,7 @@ cmake .. -DCMAKE_INSTALL_PREFIX=/absolute/path/to/custom/install/directory
 cmake --build . --target install
 ```
 
-> ***Note:*** *The custom ``CMAKE_INSTALL_PREFIX`` can be omitted if you wish to
-install in [the default install location](https://cmake.org/cmake/help/latest/module/GNUInstallDirs.html).*
+> ***Note:*** *The custom ``CMAKE_INSTALL_PREFIX`` can be omitted if you wish to install in [the default install location](https://cmake.org/cmake/help/latest/module/GNUInstallDirs.html).*
 
 More options that you can set for the project can be found in the
 [`cmake/StandardSettings.cmake` file](cmake/StandardSettings.cmake). For certain

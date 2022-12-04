@@ -130,9 +130,8 @@ Prerequisites</h2>
 <li><b>C++ Compiler</b> - needs to support at least the <b>C++17</b> standard, i.e. <em>MSVC</em>, <em>GCC</em>, <em>Clang</em></li>
 </ul>
 <blockquote class="doxtable">
-<p><em><b>Note:</b></em> *You also need to be able to provide <em><b>CMake</b></em> a supported </p>
+<p><em><b>Note:</b></em> <em>You also need to be able to provide <em><b>CMake</b></em> a supported <a href="https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html">generator</a>.</em> </p>
 </blockquote>
-<p><a href="https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html">generator</a>.*</p>
 <ul>
 <li><b>Different data</b> - <a href="https://github.com/wichtounet/mnist">MNIST</a> AND <a href="https://home.bawue.de/~horsch/teaching/inf205/src/image-benchmark.zip">https://home.bawue.de/~horsch/teaching/inf205/src/image-benchmark.zip</a> <em>MSVC</em>, <em>GCC</em>, <em>Clang</em></li>
 </ul>
@@ -167,9 +166,8 @@ Building the project</h1>
 <div class="line">cmake .. -DCMAKE_INSTALL_PREFIX=/absolute/path/to/custom/install/directory</div>
 <div class="line">cmake --build . --target install</div>
 </div><!-- fragment --><blockquote class="doxtable">
-<p><em><b>Note:</b></em> *The custom <code>CMAKE_INSTALL_PREFIX</code> can be omitted if you wish to </p>
+<p><em><b>Note:</b></em> <em>The custom <code>CMAKE_INSTALL_PREFIX</code> can be omitted if you wish to install in <a href="https://cmake.org/cmake/help/latest/module/GNUInstallDirs.html">the default install location</a>.</em> </p>
 </blockquote>
-<p>install in <a href="https://cmake.org/cmake/help/latest/module/GNUInstallDirs.html">the default install location</a>.*</p>
 <p>More options that you can set for the project can be found in the <a href="cmake/StandardSettings.cmake"><code>cmake/StandardSettings.cmake</code> file</a>. For certain options additional configuration may be needed in their respective <code>*.cmake</code> files (i.e. Conan needs the <code>CONAN_REQUIRES</code> and might need the <code>CONAN_OPTIONS</code> to be setup for it work correctly; the two are set in the <a href="cmake/Conan.cmake"><code>cmake/Conan.cmake</code> file</a>).</p>
 <h1><a class="anchor" id="autotoc_md8"></a>
 Generating the documentation</h1>

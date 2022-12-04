@@ -166,7 +166,7 @@ source build_auto_docs.sh
 
 ## Running the tests
 
-By default, the template uses [Google Test](https://github.com/google/googletest/)
+This project uses [Google Test](https://github.com/google/googletest/)
 for unit testing. Unit testing can be disabled in the options, by setting the
 `ENABLE_UNIT_TESTING` (from
 [cmake/StandardSettings.cmake](cmake/StandardSettings.cmake)) to be false. To run

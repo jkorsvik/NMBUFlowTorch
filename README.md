@@ -10,6 +10,9 @@ NMBUFlowTorch {#mainpage}
 ![NMBUFlowTorch](.misc/NMBUFlowTorch.LOGO.thin.png?raw=true "Logo")
 
 A simple C++ implementation of Neural Nets, inspired by the functionality of Tensorflow and pyTorch.
+## Docs
+Within [DOC_HTML](docs/html/index.html)
+
 
 ## Features
 * like the functional API of tensorflow

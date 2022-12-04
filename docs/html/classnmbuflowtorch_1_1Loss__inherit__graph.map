@@ -1,0 +1,5 @@
+<map id="nmbuflowtorch::Loss" name="nmbuflowtorch::Loss">
+<area shape="rect" id="node1" title=" " alt="" coords="103,5,260,32"/>
+<area shape="rect" id="node2" href="$classnmbuflowtorch_1_1loss_1_1CrossEntropy.html" title=" " alt="" coords="5,80,160,121"/>
+<area shape="rect" id="node3" href="$classnmbuflowtorch_1_1loss_1_1MSE.html" title=" " alt="" coords="185,87,375,114"/>
+</map>

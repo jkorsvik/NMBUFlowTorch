@@ -1,0 +1,5 @@
+<map id="mnist::read_mnist_image_file_flat" name="mnist::read_mnist_image_file_flat">
+<area shape="rect" id="node1" title="Read a MNIST image file inside the given flat container (ETL)" alt="" coords="5,5,193,47"/>
+<area shape="rect" id="node2" href="$namespacemnist.html#ae23bbb05e2acb0f4fb36edf42431cea7" title="Extract the MNIST header from the given buffer." alt="" coords="457,13,605,39"/>
+<area shape="rect" id="node3" href="$namespacemnist.html#a8061847f8ead32e07e1a343f29c03671" title="Read a MNIST file inside a raw buffer." alt="" coords="241,38,409,65"/>
+</map>

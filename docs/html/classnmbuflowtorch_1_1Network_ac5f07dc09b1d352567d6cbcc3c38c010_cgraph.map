@@ -1,0 +1,10 @@
+<map id="nmbuflowtorch::Network::train_batch" name="nmbuflowtorch::Network::train_batch">
+<area shape="rect" id="node1" title=" " alt="" coords="5,188,188,229"/>
+<area shape="rect" id="node2" href="$classnmbuflowtorch_1_1Network.html#ad2626aa7216689fadfa4469273de8c90" title="Using X input and y target, back propagates the loss gradient." alt="" coords="236,71,419,112"/>
+<area shape="rect" id="node5" href="$classnmbuflowtorch_1_1Network.html#a47b0ad164e645c60f736f60f87827900" title="Returns the value from the last layer." alt="" coords="467,136,649,177"/>
+<area shape="rect" id="node6" href="$classnmbuflowtorch_1_1Network.html#ae6cd135a052cc1526b34bb4144ae58b6" title=" " alt="" coords="236,188,419,229"/>
+<area shape="rect" id="node7" href="$classnmbuflowtorch_1_1Loss.html#a5747f962c29f0e1a6147c435da22c466" title=" " alt="" coords="249,253,406,295"/>
+<area shape="rect" id="node8" href="$classnmbuflowtorch_1_1Network.html#ab4dcbf1de529e005b2eb4c31b8cbd552" title=" " alt="" coords="236,319,419,360"/>
+<area shape="rect" id="node3" href="$classnmbuflowtorch_1_1Loss.html#a29688f70477ce9f630cb313cc7e4c365" title=" " alt="" coords="479,5,637,47"/>
+<area shape="rect" id="node4" href="$classnmbuflowtorch_1_1Loss.html#ab739a047ffc84f44af71832ec704cedc" title=" " alt="" coords="479,71,637,112"/>
+</map>

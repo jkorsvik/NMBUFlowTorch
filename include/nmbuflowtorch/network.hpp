@@ -42,16 +42,6 @@ namespace nmbuflowtorch
     Network() : loss(NULL){};
     ~Network()
     {
-      for (int i = 0; i < layers.size(); i++)
-      {
-        // delete value and pointers
-        delete layers[i];
-      }
-      if (loss)
-      {
-        // delete value and pointer
-        delete loss;
-      }
     }
 
     /// @brief Adds a layer to the network
@@ -144,6 +134,16 @@ namespace nmbuflowtorch
     float get_loss()
     {
       return loss->output();
+    }
+
+    void delete_net()
+    {
+      for (int i = 0; i < layers.size(); i++)
+      {
+        delete layers[i];
+      }
+      delete loss;
+      delete opt;
     }
 
     /// Get the serialized layer parameters

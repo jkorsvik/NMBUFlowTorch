@@ -41,6 +41,8 @@ set(headers
   include/nmbuflowtorch/loss.hpp
   include/nmbuflowtorch/optimizer.hpp
   include/nmbuflowtorch/network.hpp
+  include/nmbuflowtorch/autoencoder.hpp
+  include/nmbuflowtorch/xor.hpp
   #include/nmbuflowtorch/mnist.h
   #include/nmbuflowtorch/utils.h
   ${loss_headers}
@@ -51,6 +53,8 @@ set(headers
 
 set(sources
   src/nmbuflowtorch/network.cpp
+  src/nmbuflowtorch/autoencoder.cpp
+  src/nmbuflowtorch/xor.cpp
   #src/nmbuflowtorch/mnist.cc
   ${layer_sources}
   ${loss_sources}

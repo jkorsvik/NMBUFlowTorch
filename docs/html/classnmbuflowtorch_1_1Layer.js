@@ -11,7 +11,7 @@ var classnmbuflowtorch_1_1Layer =
     [ "output", "classnmbuflowtorch_1_1Layer.html#a528aa08665cdba7a9e3975c8f6f76ae9", null ],
     [ "output_dim", "classnmbuflowtorch_1_1Layer.html#a503a56336f186fb921751449f6e0af72", null ],
     [ "set_parameters", "classnmbuflowtorch_1_1Layer.html#a155be5b72869e24df8beda95585405c0", null ],
-    [ "update", "classnmbuflowtorch_1_1Layer.html#a737922ee5257cb0bba1ff40f28e03a1e", null ],
+    [ "update", "classnmbuflowtorch_1_1Layer.html#a83770ba631c3d997353ffce3be43c34b", null ],
     [ "gradient_back", "classnmbuflowtorch_1_1Layer.html#ad66d736d0396765b8c80381d9fedf12c", null ],
     [ "layer_input", "classnmbuflowtorch_1_1Layer.html#a7b8931b8cb01a28228fb991966a66217", null ],
     [ "layer_output", "classnmbuflowtorch_1_1Layer.html#ace57230d9a06555e247d6c71a4e6b636", null ],

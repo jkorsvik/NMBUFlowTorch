@@ -3,6 +3,7 @@ var dir_ba9ebe3eeb82069d811e249b2a60e7c0 =
     [ "layer", "dir_e4ffd9f759aa5053a313000a5169fe0d.html", "dir_e4ffd9f759aa5053a313000a5169fe0d" ],
     [ "loss", "dir_31fd33a5eb0a5dac5664c9d045101826.html", "dir_31fd33a5eb0a5dac5664c9d045101826" ],
     [ "optimizer", "dir_51def4e3d9476fd9c8d06aab2057fb23.html", "dir_51def4e3d9476fd9c8d06aab2057fb23" ],
+    [ "autoencoder.hpp", "autoencoder_8hpp.html", "autoencoder_8hpp" ],
     [ "definitions.hpp", "definitions_8hpp.html", "definitions_8hpp" ],
     [ "layer.hpp", "layer_8hpp.html", [
       [ "Layer", "classnmbuflowtorch_1_1Layer.html", "classnmbuflowtorch_1_1Layer" ]
@@ -16,5 +17,6 @@ var dir_ba9ebe3eeb82069d811e249b2a60e7c0 =
     ] ],
     [ "optimizer.hpp", "optimizer_8hpp.html", [
       [ "Optimizer", "classnmbuflowtorch_1_1Optimizer.html", "classnmbuflowtorch_1_1Optimizer" ]
-    ] ]
+    ] ],
+    [ "xor.hpp", "xor_8hpp.html", "xor_8hpp" ]
 ];

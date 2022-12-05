@@ -80,8 +80,8 @@ int main(int argc, char** argv)
   auto test = colwise_max_index(y);
   cout << test << endl;
   /*
-  
-  
+
+
   net.forward(X);
   auto output = net.output();
   cout << output << endl;
@@ -95,7 +95,7 @@ int main(int argc, char** argv)
 
   }
   */
- 
+
   /*
   Matrix output;
   for (int i = 0; i < 50; i++)

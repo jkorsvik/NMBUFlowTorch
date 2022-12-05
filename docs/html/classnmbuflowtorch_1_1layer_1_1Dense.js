@@ -11,7 +11,7 @@ var classnmbuflowtorch_1_1layer_1_1Dense =
     [ "set_bias", "classnmbuflowtorch_1_1layer_1_1Dense.html#add10aea1bd55ec3ad1cd0033b6d1945f", null ],
     [ "set_parameters", "classnmbuflowtorch_1_1layer_1_1Dense.html#a302152bbf581cf6fd32e8a12f2de1888", null ],
     [ "set_weights", "classnmbuflowtorch_1_1layer_1_1Dense.html#af67831f9eb6d9defb29088973d07e049", null ],
-    [ "update", "classnmbuflowtorch_1_1layer_1_1Dense.html#ae34895846c97a2b4b389b0703e75c168", null ],
+    [ "update", "classnmbuflowtorch_1_1layer_1_1Dense.html#a16adcf8ea51184f340d10fb257584b88", null ],
     [ "bias", "classnmbuflowtorch_1_1layer_1_1Dense.html#a15efaf0e322a1dd84112e8dd8221dae5", null ],
     [ "grad_bias", "classnmbuflowtorch_1_1layer_1_1Dense.html#a25bc101092f5eab36ab65af223ad8945", null ],
     [ "grad_weights", "classnmbuflowtorch_1_1layer_1_1Dense.html#a73f38f38b0d985d03fb75c54851416c2", null ],

@@ -116,9 +116,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4ca29e7f63a80c08924e507dae466bd1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Layer.html#a4ca29e7f63a80c08924e507dae466bd1">backward</a> (const <a class="el" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a> &amp;X, const <a class="el" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a> &amp;accumulated_gradients)=0</td></tr>
 <tr class="memdesc:a4ca29e7f63a80c08924e507dae466bd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backward pass of the layer.  <a href="classnmbuflowtorch_1_1Layer.html#a4ca29e7f63a80c08924e507dae466bd1">More...</a><br /></td></tr>
 <tr class="separator:a4ca29e7f63a80c08924e507dae466bd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a737922ee5257cb0bba1ff40f28e03a1e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Layer.html#a737922ee5257cb0bba1ff40f28e03a1e">update</a> (<a class="el" href="classnmbuflowtorch_1_1Optimizer.html">Optimizer</a> &amp;opt)</td></tr>
-<tr class="memdesc:a737922ee5257cb0bba1ff40f28e03a1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the layer's parameters using the given optimizer.  <a href="classnmbuflowtorch_1_1Layer.html#a737922ee5257cb0bba1ff40f28e03a1e">More...</a><br /></td></tr>
-<tr class="separator:a737922ee5257cb0bba1ff40f28e03a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83770ba631c3d997353ffce3be43c34b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Layer.html#a83770ba631c3d997353ffce3be43c34b">update</a> (<a class="el" href="classnmbuflowtorch_1_1Optimizer.html">Optimizer</a> &amp;opt, int epoch=0)</td></tr>
+<tr class="memdesc:a83770ba631c3d997353ffce3be43c34b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the layer's parameters using the given optimizer.  <a href="classnmbuflowtorch_1_1Layer.html#a83770ba631c3d997353ffce3be43c34b">More...</a><br /></td></tr>
+<tr class="separator:a83770ba631c3d997353ffce3be43c34b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa03f09ccaff284b2a5c2e8130b4a0450"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Layer.html#aa03f09ccaff284b2a5c2e8130b4a0450">back_gradient</a> ()</td></tr>
 <tr class="separator:aa03f09ccaff284b2a5c2e8130b4a0450"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a700c7689e6ba6f73b1067f1ffbde6d8b"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1Layer.html#a700c7689e6ba6f73b1067f1ffbde6d8b">last_input</a> ()</td></tr>
@@ -210,10 +210,10 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00040">40</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classnmbuflowtorch_1_1Layer.html#ad66d736d0396765b8c80381d9fedf12c">gradient_back</a>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00041">41</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classnmbuflowtorch_1_1Layer.html#ad66d736d0396765b8c80381d9fedf12c">gradient_back</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
 <div class="ttc" id="aclassnmbuflowtorch_1_1Layer_html_ad66d736d0396765b8c80381d9fedf12c"><div class="ttname"><a href="classnmbuflowtorch_1_1Layer.html#ad66d736d0396765b8c80381d9fedf12c">nmbuflowtorch::Layer::gradient_back</a></div><div class="ttdeci">Matrix gradient_back</div><div class="ttdef"><b>Definition:</b> <a href="layer_8hpp_source.html#l00017">layer.hpp:17</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -328,10 +328,10 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a1e6cb0e210989f896c1a4935360e0a41">nmbuflowtorch::layer::Dense</a>, and <a class="el" href="classnmbuflowtorch_1_1layer_1_1Convolutional.html#a254612a0e961f1194b8483cb5ec8ece6">nmbuflowtorch::layer::Convolutional</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00073">73</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <span class="keywordflow">return</span> std::vector&lt;float&gt;();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00074">74</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      <span class="keywordflow">return</span> std::vector&lt;float&gt;();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -360,10 +360,10 @@ Protected Attributes</h2></td></tr>
 
 <p>Returns the type of the layer. </p>
 
-<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00079">79</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classnmbuflowtorch_1_1Layer.html#a0bfe8441749c682163ed7887024ec62f">layer_type</a>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    };</div>
+<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00080">80</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classnmbuflowtorch_1_1Layer.html#a0bfe8441749c682163ed7887024ec62f">layer_type</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    };</div>
 <div class="ttc" id="aclassnmbuflowtorch_1_1Layer_html_a0bfe8441749c682163ed7887024ec62f"><div class="ttname"><a href="classnmbuflowtorch_1_1Layer.html#a0bfe8441749c682163ed7887024ec62f">nmbuflowtorch::Layer::layer_type</a></div><div class="ttdeci">std::string layer_type</div><div class="ttdef"><b>Definition:</b> <a href="layer_8hpp_source.html#l00019">layer.hpp:19</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -395,10 +395,10 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a57944b3aa0795b4a99393836135fdd79">nmbuflowtorch::layer::Dense</a>, and <a class="el" href="classnmbuflowtorch_1_1layer_1_1Convolutional.html#abf9bb7480fd28aa4876eaa43d9b61f56">nmbuflowtorch::layer::Convolutional</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00061">61</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="keywordflow">return</span> std::vector&lt;float&gt;();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00062">62</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      <span class="keywordflow">return</span> std::vector&lt;float&gt;();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -425,10 +425,10 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00044">44</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classnmbuflowtorch_1_1Layer.html#a7b8931b8cb01a28228fb991966a66217">layer_input</a>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00045">45</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classnmbuflowtorch_1_1Layer.html#a7b8931b8cb01a28228fb991966a66217">layer_input</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
 <div class="ttc" id="aclassnmbuflowtorch_1_1Layer_html_a7b8931b8cb01a28228fb991966a66217"><div class="ttname"><a href="classnmbuflowtorch_1_1Layer.html#a7b8931b8cb01a28228fb991966a66217">nmbuflowtorch::Layer::layer_input</a></div><div class="ttdeci">Matrix layer_input</div><div class="ttdef"><b>Definition:</b> <a href="layer_8hpp_source.html#l00015">layer.hpp:15</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -456,10 +456,10 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00049">49</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classnmbuflowtorch_1_1Layer.html#ace57230d9a06555e247d6c71a4e6b636">layer_output</a>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00050">50</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classnmbuflowtorch_1_1Layer.html#ace57230d9a06555e247d6c71a4e6b636">layer_output</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
 <div class="ttc" id="aclassnmbuflowtorch_1_1Layer_html_ace57230d9a06555e247d6c71a4e6b636"><div class="ttname"><a href="classnmbuflowtorch_1_1Layer.html#ace57230d9a06555e247d6c71a4e6b636">nmbuflowtorch::Layer::layer_output</a></div><div class="ttdeci">Matrix layer_output</div><div class="ttdef"><b>Definition:</b> <a href="layer_8hpp_source.html#l00016">layer.hpp:16</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -491,10 +491,10 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a1b343ab594510f4ab93c9c292b5a5123">nmbuflowtorch::layer::Dense</a>, and <a class="el" href="classnmbuflowtorch_1_1layer_1_1Convolutional.html#a95912f8986b0c9b995601706a57382b4">nmbuflowtorch::layer::Convolutional</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00055">55</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00056">56</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -532,14 +532,14 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a302152bbf581cf6fd32e8a12f2de1888">nmbuflowtorch::layer::Dense</a>, and <a class="el" href="classnmbuflowtorch_1_1layer_1_1Convolutional.html#ab75bda141834420364aa756b5da41f80">nmbuflowtorch::layer::Convolutional</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00068">68</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00069">69</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a737922ee5257cb0bba1ff40f28e03a1e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a737922ee5257cb0bba1ff40f28e03a1e">&#9670;&nbsp;</a></span>update()</h2>
+<a id="a83770ba631c3d997353ffce3be43c34b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83770ba631c3d997353ffce3be43c34b">&#9670;&nbsp;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -551,8 +551,18 @@ Protected Attributes</h2></td></tr>
           <td class="memname">virtual void nmbuflowtorch::Layer::update </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classnmbuflowtorch_1_1Optimizer.html">Optimizer</a> &amp;&#160;</td>
-          <td class="paramname"><em>opt</em></td><td>)</td>
+          <td class="paramname"><em>opt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>epoch</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -566,15 +576,16 @@ Protected Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">opt</td><td>The optimizer to use for updating the parameters. </td></tr>
+    <tr><td class="paramname">learning_rate</td><td>The learning rate to use for the update. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classnmbuflowtorch_1_1layer_1_1Dense.html#ae34895846c97a2b4b389b0703e75c168">nmbuflowtorch::layer::Dense</a>, and <a class="el" href="classnmbuflowtorch_1_1layer_1_1Convolutional.html#a77a6ed3751f9aafa8108a03ebfe5227d">nmbuflowtorch::layer::Convolutional</a>.</p>
+<p>Reimplemented in <a class="el" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a16adcf8ea51184f340d10fb257584b88">nmbuflowtorch::layer::Dense</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00036">36</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="layer_8hpp_source.html#l00037">37</a> of file <a class="el" href="layer_8hpp_source.html">layer.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -21,6 +21,7 @@ var classnmbuflowtorch_1_1Network =
     [ "train_batch", "classnmbuflowtorch_1_1Network.html#ac5f07dc09b1d352567d6cbcc3c38c010", null ],
     [ "train_one_epoch", "classnmbuflowtorch_1_1Network.html#ab4decd5644c172b3ade967496bf64f7b", null ],
     [ "update", "classnmbuflowtorch_1_1Network.html#ab4dcbf1de529e005b2eb4c31b8cbd552", null ],
+    [ "epoch", "classnmbuflowtorch_1_1Network.html#a0f49834d6c23e9431172566cc2381d1d", null ],
     [ "layers", "classnmbuflowtorch_1_1Network.html#a1af9079101990e2fc41009cae41bcc38", null ],
     [ "loss", "classnmbuflowtorch_1_1Network.html#a42c2cad578e2cc6d6dc29016aea01116", null ],
     [ "opt", "classnmbuflowtorch_1_1Network.html#abf1f011e18056cc938f57aff4ece8720", null ]

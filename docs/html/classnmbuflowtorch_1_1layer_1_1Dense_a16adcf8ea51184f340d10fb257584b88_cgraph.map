@@ -1,0 +1,4 @@
+<map id="nmbuflowtorch::layer::Dense::update" name="nmbuflowtorch::layer::Dense::update">
+<area shape="rect" id="node1" title="Update the weights and biases of the dense layer." alt="" coords="5,5,165,47"/>
+<area shape="rect" id="node2" href="$classnmbuflowtorch_1_1Optimizer.html#a7f381460160c346cfbfd9576699620da" title="Virtual function that should be implemented by derived classes. This function updates the model param..." alt="" coords="213,5,404,47"/>
+</map>

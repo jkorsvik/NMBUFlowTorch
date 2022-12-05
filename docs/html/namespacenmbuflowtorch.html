@@ -119,11 +119,207 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ae40c22a79b5ebb3d74043066bc87d0b7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacenmbuflowtorch.html#ae40c22a79b5ebb3d74043066bc87d0b7">autoencoder_train</a> (int argc, char **argv)</td></tr>
+<tr class="separator:ae40c22a79b5ebb3d74043066bc87d0b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6841de6f2ac014f91c37f7f2c0e9cc1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacenmbuflowtorch.html#a6841de6f2ac014f91c37f7f2c0e9cc1e">printProgress</a> (float current, float total, int verbose_level)</td></tr>
 <tr class="memdesc:a6841de6f2ac014f91c37f7f2c0e9cc1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a progress bar to the console.  <a href="namespacenmbuflowtorch.html#a6841de6f2ac014f91c37f7f2c0e9cc1e">More...</a><br /></td></tr>
 <tr class="separator:a6841de6f2ac014f91c37f7f2c0e9cc1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35b8b66024a1d5bea456dff39e80e557"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacenmbuflowtorch.html#a35b8b66024a1d5bea456dff39e80e557">xor_train</a> (int argc, char **argv)</td></tr>
+<tr class="separator:a35b8b66024a1d5bea456dff39e80e557"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ae40c22a79b5ebb3d74043066bc87d0b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae40c22a79b5ebb3d74043066bc87d0b7">&#9670;&nbsp;</a></span>autoencoder_train()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nmbuflowtorch::autoencoder_train </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="autoencoder_8cpp_source.html#l00004">4</a> of file <a class="el" href="autoencoder_8cpp_source.html">autoencoder.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  {</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="comment">// Sammenligner med utregninger fra https://theneuralblog.com/forward-pass-backpropagation-example/</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">int</span> n_epochs = 1000;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">if</span> (argc &gt; 4 &amp;&amp; strcmp(argv[3], <span class="stringliteral">&quot;--epochs&quot;</span>) == 0)</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;      n_epochs = stoi(argv[4]);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    }</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;      cout &lt;&lt; <span class="stringliteral">&quot;If you want to modify epochs:&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;      cout &lt;&lt; <span class="stringliteral">&quot;nmbuflowtorch [ parallel | not ] [ xor | autoencoder ] --epochs int&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    }</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">int</span> input_size = 128 * 128;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">int</span> output_size = input_size;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// Create network</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    Network autoencoder_net;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// define loss</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">// Loss* loss = new loss::CrossEntropy();</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    optimizer::Nadam* opt = <span class="keyword">new</span> optimizer::Nadam(0.01);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    Loss* loss = <span class="keyword">new</span> loss::MSE();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    autoencoder_net.add_loss(loss);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    autoencoder_net.add_optimizer(opt);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// XOR eksempler</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a> X = <a class="code" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a>(2, input_size);  <span class="comment">// is also y</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a> y = <a class="code" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a>(2, 1);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    CSVFormat format;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    format.delimiter(<span class="charliteral">&#39;,&#39;</span>).no_header();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    CSVReader reader(<span class="stringliteral">&quot;data/autoencoder/circles_128.csv&quot;</span>, format);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> n_rows = 0;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">int</span> n_cols = 0;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">for</span> (CSVRow&amp; row : reader)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {  <span class="comment">// Input iterator</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <span class="keywordtype">int</span> n_cols = 0;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keywordflow">for</span> (CSVField&amp; field : row)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">if</span> (n_cols &lt; input_size)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;          X(n_rows, n_cols) = stof(field.get());  <span class="comment">// stof converts string to float</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;          y(n_rows, n_cols - input_size) = stof(field.get());  <span class="comment">// stof converts string to float</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">// By default, get&lt;&gt;() produces a std::string.</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="comment">// A more efficient get&lt;string_view&gt;() is also available, where the resulting</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="comment">// string_view is valid as long as the parent CSVRow is alive</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        n_cols++;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      n_rows++;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// Create layers</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    layer::Dense* dense1 = <span class="keyword">new</span> layer::Dense(input_size, 128);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    layer::Sigmoid* sigmoid1 = <span class="keyword">new</span> layer::Sigmoid();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    layer::Dense* dense2 = <span class="keyword">new</span> layer::Dense(dense1-&gt;output_dim(), 64);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    layer::Sigmoid* sigmoid2 = <span class="keyword">new</span> layer::Sigmoid();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    layer::Dense* dense3_compressionlayer = <span class="keyword">new</span> layer::Dense(dense2-&gt;output_dim(), 32);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    layer::Sigmoid* sigmoid3_compressionlayer = <span class="keyword">new</span> layer::Sigmoid();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    layer::Dense* dense4 = <span class="keyword">new</span> layer::Dense(dense3_compressionlayer-&gt;output_dim(), 64);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    layer::Sigmoid* sigmoid4 = <span class="keyword">new</span> layer::Sigmoid();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    layer::Dense* dense5 = <span class="keyword">new</span> layer::Dense(dense4-&gt;output_dim(), 64);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    layer::Sigmoid* sigmoid5 = <span class="keyword">new</span> layer::Sigmoid();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    layer::Dense* dense6 = <span class="keyword">new</span> layer::Dense(dense5-&gt;output_dim(), 128);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    layer::Sigmoid* sigmoid6 = <span class="keyword">new</span> layer::Sigmoid();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    layer::Dense* dense7 = <span class="keyword">new</span> layer::Dense(dense6-&gt;output_dim(), output_size);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    layer::Sigmoid* sigmoid7 = <span class="keyword">new</span> layer::Sigmoid();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// layer::Dense* dense3 = new layer::Dense(dense2-&gt;output_dim(), 1);</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// layer::Sigmoid* sigmoid3 = new layer::Sigmoid();</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    autoencoder_net.add_layer(dense1);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    autoencoder_net.add_layer(sigmoid1);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    autoencoder_net.add_layer(dense2);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    autoencoder_net.add_layer(sigmoid2);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    autoencoder_net.add_layer(dense3_compressionlayer);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    autoencoder_net.add_layer(sigmoid3_compressionlayer);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    autoencoder_net.add_layer(dense4);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    autoencoder_net.add_layer(sigmoid4);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    autoencoder_net.add_layer(dense5);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    autoencoder_net.add_layer(sigmoid5);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    autoencoder_net.add_layer(dense6);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    autoencoder_net.add_layer(sigmoid6);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    autoencoder_net.add_layer(dense7);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    autoencoder_net.add_layer(sigmoid7);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    Network encoder_net;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    encoder_net.add_loss(loss);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    encoder_net.add_optimizer(opt);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    encoder_net.add_layer(dense1);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    encoder_net.add_layer(sigmoid1);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    encoder_net.add_layer(dense2);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    encoder_net.add_layer(sigmoid2);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    encoder_net.add_layer(dense3_compressionlayer);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    encoder_net.add_layer(sigmoid3_compressionlayer);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    Network decoder_net;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    decoder_net.add_layer(dense4);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    decoder_net.add_layer(sigmoid4);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    decoder_net.add_layer(dense5);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    decoder_net.add_layer(sigmoid5);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    decoder_net.add_layer(dense6);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    decoder_net.add_layer(sigmoid6);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    decoder_net.add_layer(dense7);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    decoder_net.add_layer(sigmoid7);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    autoencoder_net.fit(X, X, n_epochs, 2, 2);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">// cout &lt;&lt; autoencoder_net.train_batch(X, y) &lt;&lt; endl;</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="comment">// auto y_pred = autoencoder_net.forward(X);</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">//  for (auto x : y_pred) {</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">//    cout &lt;&lt; x &lt;&lt; endl;</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="comment">//  }</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="comment">// vector&lt;int&gt; y_true_vector(y.data(), y.data() + y.rows() * y.cols());</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="comment">// cout &lt;&lt; endl;</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    encoder_net.forward(X);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <a class="code" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a> compressed_M = encoder_net.output();</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    cout &lt;&lt; endl &lt;&lt; <span class="stringliteral">&quot;Compressed vector representation of image&quot;</span> &lt;&lt; endl &lt;&lt; compressed_M &lt;&lt; endl;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    cout &lt;&lt; endl</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;         &lt;&lt; <span class="stringliteral">&quot;Compressed size: &quot;</span> &lt;&lt; compressed_M.cols() * compressed_M.rows() * 32 / 1009 &lt;&lt; <span class="stringliteral">&quot; KB&quot;</span> &lt;&lt; endl</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;         &lt;&lt; <span class="stringliteral">&quot;Uncompressed size: &quot;</span> &lt;&lt; X.cols() * X.rows() * 32 / 1000 &lt;&lt; <span class="stringliteral">&quot; KB&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    decoder_net.forward(compressed_M);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <a class="code" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a> reconstructed_M = decoder_net.output();</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    cout &lt;&lt; endl</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;         &lt;&lt; <span class="stringliteral">&quot;Reconstructed image size: &quot;</span> &lt;&lt; reconstructed_M.cols() * reconstructed_M.rows() * 32 / 1000 &lt;&lt; <span class="stringliteral">&quot; KB&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    cout &lt;&lt; endl &lt;&lt; <span class="stringliteral">&quot;Pixel accuracy&quot;</span> &lt;&lt; endl &lt;&lt; <a class="code" href="math__m_8hpp.html#a865612d5242acd6df03de7439506403d">accuracy_score_matrix</a>(X, reconstructed_M) &lt;&lt; endl;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="comment">// DELETES ALL POINTERS IN THE NETWORK, SO DON&#39;T USE THEM AFTER THIS</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    autoencoder_net.delete_net();</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment">//  de net.d;</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="comment">//   Cleaning up</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="comment">//   delete dense1;</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="comment">//   delete sigmoid1;</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="comment">//   delete dense2;</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="comment">//   delete sigmoid2;</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="comment">//   delete loss;</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="comment">//   delete opt;</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="comment">//   Could  also use smart pointers instead of manual memory management (RAII)</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment">//   shared pointers could also be used</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="comment">//   std::unique_ptr&lt;layer::dense&gt; dense1 = std::make_unique&lt;layer::dense&gt;(arguments...);</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  }</div>
+<div class="ttc" id="adefinitions_8hpp_html_a58e8a08e999542a3fb8f965a2b79c737"><div class="ttname"><a href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a></div><div class="ttdeci">Eigen::Matrix&lt; float, Eigen::Dynamic, Eigen::Dynamic &gt; Matrix</div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00013">definitions.hpp:13</a></div></div>
+<div class="ttc" id="amath__m_8hpp_html_a865612d5242acd6df03de7439506403d"><div class="ttname"><a href="math__m_8hpp.html#a865612d5242acd6df03de7439506403d">accuracy_score_matrix</a></div><div class="ttdeci">float accuracy_score_matrix(const Matrix &amp;y_true, const Matrix &amp;y_pred)</div><div class="ttdoc">Calculates the accuracy score for a given set of true and predicted labels.</div><div class="ttdef"><b>Definition:</b> <a href="math__m_8hpp_source.html#l00098">math_m.hpp:98</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacenmbuflowtorch_ae40c22a79b5ebb3d74043066bc87d0b7_cgraph.svg" width="1423" height="523"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 <a id="a6841de6f2ac014f91c37f7f2c0e9cc1e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6841de6f2ac014f91c37f7f2c0e9cc1e">&#9670;&nbsp;</a></span>printProgress()</h2>
 
@@ -196,6 +392,127 @@ Functions</h2></td></tr>
 <div class="ttc" id="adefinitions_8hpp_html_a93f03159397f25c687840129b18c972d"><div class="ttname"><a href="definitions_8hpp.html#a93f03159397f25c687840129b18c972d">PBSTR</a></div><div class="ttdeci">#define PBSTR</div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00019">definitions.hpp:19</a></div></div>
 <div class="ttc" id="adefinitions_8hpp_html_aa762e493cdc1d72e0c825eeaedd28d63"><div class="ttname"><a href="definitions_8hpp.html#aa762e493cdc1d72e0c825eeaedd28d63">PERCENTAGEMULTIPLIER</a></div><div class="ttdeci">#define PERCENTAGEMULTIPLIER</div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00018">definitions.hpp:18</a></div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="a35b8b66024a1d5bea456dff39e80e557"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35b8b66024a1d5bea456dff39e80e557">&#9670;&nbsp;</a></span>xor_train()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nmbuflowtorch::xor_train </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="xor_8cpp_source.html#l00005">5</a> of file <a class="el" href="xor_8cpp_source.html">xor.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">int</span> n_epochs = 10000;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">if</span> (argc &gt; 4 &amp;&amp; strcmp(argv[3], <span class="stringliteral">&quot;--epochs&quot;</span>) == 0)</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;      n_epochs = stoi(argv[4]);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    }</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;      cout &lt;&lt; <span class="stringliteral">&quot;If you want to modify epochs:&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;      cout &lt;&lt; <span class="stringliteral">&quot;nmbuflowtorch [ parallel | not ] [ xor | autoencoder ] --epochs int&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    }</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">int</span> input_size = 2;   <span class="comment">// Number of columns in training data</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">int</span> output_size = 1;  <span class="comment">// Number of outputs. Set to 1 for binary problems</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// Defining Eigen matrix for storing input data</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a> xor_X = <a class="code" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a>(4, input_size);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a> xor_y = <a class="code" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a>(4, 1);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    CSVFormat format;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    format.delimiter(<span class="charliteral">&#39;,&#39;</span>).no_header();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    CSVReader reader(<span class="stringliteral">&quot;data/xor/xor.csv&quot;</span>, format);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// The label is the last value in each row in the data. the n_cols &lt; input size switch below is to make sure the last</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// value in the row gets sent to the y matrix</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">int</span> n_rows = 0;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> n_cols = 0;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">for</span> (CSVRow&amp; row : reader)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {  <span class="comment">// Input iterator</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      <span class="keywordtype">int</span> n_cols = 0;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      <span class="keywordflow">for</span> (CSVField&amp; field : row)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">if</span> (n_cols &lt; input_size)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;          xor_X(n_rows, n_cols) = stof(field.get());  <span class="comment">// stof converts string to float</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;          xor_y(n_rows, n_cols - input_size) = stof(field.get());  <span class="comment">// stof converts string to float</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        n_cols++;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      n_rows++;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// Initializing network</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    Network xor_net;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// Initializing optimizer (Stochastic gradient descent)</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    optimizer::SGD* xor_opt = <span class="keyword">new</span> optimizer::SGD(0.1);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// Initializing loss (Mean square Error)</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    Loss* xor_loss = <span class="keyword">new</span> loss::MSE();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// Adding optimizer and loss function to the network</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    xor_net.add_loss(xor_loss);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    xor_net.add_optimizer(xor_opt);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// Creating layers. Network has the dimension 2 (input) -&gt; 8 -&gt; 1</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    layer::Dense* xor_dense1 = <span class="keyword">new</span> layer::Dense(input_size, 8);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    layer::Sigmoid* xor_sigmoid1 = <span class="keyword">new</span> layer::Sigmoid();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    layer::Dense* xor_dense2 = <span class="keyword">new</span> layer::Dense(xor_dense1-&gt;output_dim(), 1);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    layer::Sigmoid* xor_sigmoid2 = <span class="keyword">new</span> layer::Sigmoid();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// Adding layers to network</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    xor_net.add_layer(xor_dense1);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    xor_net.add_layer(xor_sigmoid1);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    xor_net.add_layer(xor_dense2);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    xor_net.add_layer(xor_sigmoid2);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// Training network on xor data</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    xor_net.fit(xor_X, xor_y, n_epochs, 1, 0);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// Getting binary predictions and converting to vector</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">auto</span> xor_y_pred = xor_net.predict(xor_X);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    vector&lt;int&gt; xor_y_true_vector(xor_y.data(), xor_y.data() + xor_y.rows() * xor_y.cols());</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// Calculation accuracy</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">auto</span> xor_score = <a class="code" href="math__m_8hpp.html#a3fb70a01c7681d0fc3ce6facf9b7fdb7">accuracy_score_vec</a>(xor_y_true_vector, xor_y_pred);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;XOR accuracy score: &quot;</span> &lt;&lt; xor_score &lt;&lt; endl;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    xor_net.delete_net();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  }</div>
+<div class="ttc" id="amath__m_8hpp_html_a3fb70a01c7681d0fc3ce6facf9b7fdb7"><div class="ttname"><a href="math__m_8hpp.html#a3fb70a01c7681d0fc3ce6facf9b7fdb7">accuracy_score_vec</a></div><div class="ttdeci">float accuracy_score_vec(std::vector&lt; int &gt; y_true, std::vector&lt; int &gt; y_pred)</div><div class="ttdoc">Calculates the accuracy score for a given set of true and predicted labels.</div><div class="ttdef"><b>Definition:</b> <a href="math__m_8hpp_source.html#l00077">math_m.hpp:77</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacenmbuflowtorch_a35b8b66024a1d5bea456dff39e80e557_cgraph.svg" width="1362" height="528"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
 </div>
 </div>
 </div><!-- contents -->

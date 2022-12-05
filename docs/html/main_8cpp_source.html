@@ -90,228 +90,74 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html',''); initResiza
 <div class="title">main.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="main_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;omp.h&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iomanip&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;ostream&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;csv_parser/csv.hpp&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="definitions_8hpp.html">nmbuflowtorch/definitions.hpp</a>&quot;</span>  <span class="comment">// imports and renames important files</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="layer_8hpp.html">nmbuflowtorch/layer.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dense_8hpp.html">nmbuflowtorch/layer/dense.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="sigmoid_8hpp.html">nmbuflowtorch/layer/sigmoid.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="loss_8hpp.html">nmbuflowtorch/loss.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="cross__entropy_8hpp.html">nmbuflowtorch/loss/cross_entropy.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mse_8hpp.html">nmbuflowtorch/loss/mse.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="math__m_8hpp.html">nmbuflowtorch/math_m.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="network_8hpp.html">nmbuflowtorch/network.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="optimizer_8hpp.html">nmbuflowtorch/optimizer.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//#include &quot;nmbuflowtorch/optimizer/adam.hpp&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//#include &quot;nmbuflowtorch/optimizer/nadam.hpp&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="sgd_8hpp.html">nmbuflowtorch/optimizer/sgd.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// -&gt; is for pointer objects, while . is for value objects</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// CSV parser</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">using namespace </span>csv;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">   28</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv)</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordflow">if</span> (argc &gt; 1 &amp;&amp; strcmp(argv[1], <span class="stringliteral">&quot;parallel&quot;</span>) == 0)</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define EIGEN_USE_BLAS  </span><span class="comment">// use BLAS for matrix multiplication</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// includes to make Eigen use BLAS+LAPACK</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;complex&gt;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define EIGEN_SUPERLU_SUPPORT</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define EIGEN_USE_BLAS</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#define EIGEN_USE_LAPACKE</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define LAPACK_COMPLEX_CUSTOM</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define lapack_complex_float  std::complex&lt;float&gt;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#define lapack_complex_double std::complex&lt;double&gt;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    Eigen::initParallel();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">int</span> n_threads = omp_get_max_threads();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    omp_set_num_threads(n_threads);</div>
+<a href="main_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;cblas.h&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;omp.h&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="definitions_8hpp.html">nmbuflowtorch/definitions.hpp</a>&quot;</span>  <span class="comment">// imports and renames important files</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// Path: src/main.cpp</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="autoencoder_8hpp.html">nmbuflowtorch/autoencoder.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="xor_8hpp.html">nmbuflowtorch/xor.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">   11</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv)</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordflow">if</span> (argc &gt; 1 &amp;&amp; strcmp(argv[1], <span class="stringliteral">&quot;parallel&quot;</span>) == 0)</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define EIGEN_USE_BLAS  </span><span class="comment">// use BLAS for matrix multiplication</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// includes to make Eigen use BLAS+LAPACK</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;complex&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define EIGEN_SUPERLU_SUPPORT</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define EIGEN_USE_BLAS</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define EIGEN_USE_LAPACKE</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define LAPACK_COMPLEX_CUSTOM</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#define lapack_complex_float  std::complex&lt;float&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#define lapack_complex_double std::complex&lt;double&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    Eigen::initParallel();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">int</span> n_threads = omp_get_max_threads();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    omp_set_num_threads(n_threads);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Running parallely with max cores: &quot;</span> &lt;&lt; omp_get_max_threads() &lt;&lt; endl;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    n_threads = Eigen::nbThreads();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// OMP_NUM_THREADS = n./ my_program omp_set_num_threads(n);</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    Eigen::setNbThreads(n_threads);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">int</span> single_thread = 1;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#ifdef EIGEN_DONT_PARALLELIZE</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;something&quot;</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Running single threaded program&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// Run main program</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    omp_set_num_threads(single_thread);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    Eigen::setNbThreads(single_thread);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Running parallely with max cores: &quot;</span> &lt;&lt; omp_get_max_threads() &lt;&lt; endl;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    n_threads = Eigen::nbThreads();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// OMP_NUM_THREADS = n./ my_program omp_set_num_threads(n);</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    Eigen::setNbThreads(n_threads);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">int</span> single_thread = 1;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#ifdef EIGEN_DONT_PARALLELIZE</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;something&quot;</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Running single threaded program&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// Run main program</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    omp_set_num_threads(single_thread);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    Eigen::setNbThreads(single_thread);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="comment">// Sammenligner med utregninger fra https://theneuralblog.com/forward-pass-backpropagation-example/</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">int</span> input_size = 128 * 128;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">int</span> output_size = 1;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="comment">// Create network</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="classnmbuflowtorch_1_1Network.html">nmbuflowtorch::Network</a> autoencoder;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="comment">// define loss</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="comment">// nmbuflowtorch::Loss* loss = new nmbuflowtorch::loss::CrossEntropy();</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="classnmbuflowtorch_1_1optimizer_1_1SGD.html">nmbuflowtorch::optimizer::SGD</a>* opt = <span class="keyword">new</span> <a class="code" href="classnmbuflowtorch_1_1optimizer_1_1SGD.html">nmbuflowtorch::optimizer::SGD</a>(0.1);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="classnmbuflowtorch_1_1Loss.html">nmbuflowtorch::Loss</a>* loss = <span class="keyword">new</span> <a class="code" href="classnmbuflowtorch_1_1loss_1_1MSE.html">nmbuflowtorch::loss::MSE</a>();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  autoencoder.<a class="code" href="classnmbuflowtorch_1_1Network.html#a7a86be4bc0c3901a48cfb70b286ec363">add_loss</a>(loss);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  autoencoder.<a class="code" href="classnmbuflowtorch_1_1Network.html#a1120a4649f5317ab85b7fd0124f91f75">add_optimizer</a>(opt);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="comment">// XOR eksempler</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <a class="code" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a> X = <a class="code" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a>(2, input_size);  <span class="comment">// is also y</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <a class="code" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a> y = <a class="code" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a>(2, 1);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  CSVFormat format;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  format.delimiter(<span class="charliteral">&#39;,&#39;</span>).no_header();</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  CSVReader reader(<span class="stringliteral">&quot;data/autoencoder/circles_128.csv&quot;</span>, format);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordtype">int</span> n_rows = 0;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordtype">int</span> n_cols = 0;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordflow">for</span> (CSVRow&amp; row : reader)</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  {  <span class="comment">// Input iterator</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">int</span> n_cols = 0;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">for</span> (CSVField&amp; field : row)</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <span class="keywordflow">if</span> (n_cols &lt; input_size)</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        X(n_rows, n_cols) = stof(field.get());  <span class="comment">// stof converts string to float</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        y(n_rows, n_cols - input_size) = stof(field.get());  <span class="comment">// stof converts string to float</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      <span class="comment">// By default, get&lt;&gt;() produces a std::string.</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      <span class="comment">// A more efficient get&lt;string_view&gt;() is also available, where the resulting</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      <span class="comment">// string_view is valid as long as the parent CSVRow is alive</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      n_cols++;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    n_rows++;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  cout &lt;&lt; X &lt;&lt; endl;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="comment">// Create layers</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html">nmbuflowtorch::layer::Dense</a>* dense1 = <span class="keyword">new</span> <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html">nmbuflowtorch::layer::Dense</a>(input_size, 128);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <a class="code" href="classnmbuflowtorch_1_1layer_1_1Sigmoid.html">nmbuflowtorch::layer::Sigmoid</a>* sigmoid1 = <span class="keyword">new</span> <a class="code" href="classnmbuflowtorch_1_1layer_1_1Sigmoid.html">nmbuflowtorch::layer::Sigmoid</a>();</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html">nmbuflowtorch::layer::Dense</a>* dense2 = <span class="keyword">new</span> <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html">nmbuflowtorch::layer::Dense</a>(dense1-&gt;<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a1b343ab594510f4ab93c9c292b5a5123">output_dim</a>(), 64);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <a class="code" href="classnmbuflowtorch_1_1layer_1_1Sigmoid.html">nmbuflowtorch::layer::Sigmoid</a>* sigmoid2 = <span class="keyword">new</span> <a class="code" href="classnmbuflowtorch_1_1layer_1_1Sigmoid.html">nmbuflowtorch::layer::Sigmoid</a>();</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html">nmbuflowtorch::layer::Dense</a>* dense3_compressionlayer = <span class="keyword">new</span> <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html">nmbuflowtorch::layer::Dense</a>(dense2-&gt;<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a1b343ab594510f4ab93c9c292b5a5123">output_dim</a>(), 32);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <a class="code" href="classnmbuflowtorch_1_1layer_1_1Sigmoid.html">nmbuflowtorch::layer::Sigmoid</a>* sigmoid3_compressionlayer = <span class="keyword">new</span> <a class="code" href="classnmbuflowtorch_1_1layer_1_1Sigmoid.html">nmbuflowtorch::layer::Sigmoid</a>();</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html">nmbuflowtorch::layer::Dense</a>* dense4 = <span class="keyword">new</span> <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html">nmbuflowtorch::layer::Dense</a>(dense3_compressionlayer-&gt;<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a1b343ab594510f4ab93c9c292b5a5123">output_dim</a>(), 64);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <a class="code" href="classnmbuflowtorch_1_1layer_1_1Sigmoid.html">nmbuflowtorch::layer::Sigmoid</a>* sigmoid4 = <span class="keyword">new</span> <a class="code" href="classnmbuflowtorch_1_1layer_1_1Sigmoid.html">nmbuflowtorch::layer::Sigmoid</a>();</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html">nmbuflowtorch::layer::Dense</a>* dense5 = <span class="keyword">new</span> <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html">nmbuflowtorch::layer::Dense</a>(dense4-&gt;<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a1b343ab594510f4ab93c9c292b5a5123">output_dim</a>(), 64);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <a class="code" href="classnmbuflowtorch_1_1layer_1_1Sigmoid.html">nmbuflowtorch::layer::Sigmoid</a>* sigmoid5 = <span class="keyword">new</span> <a class="code" href="classnmbuflowtorch_1_1layer_1_1Sigmoid.html">nmbuflowtorch::layer::Sigmoid</a>();</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html">nmbuflowtorch::layer::Dense</a>* dense6 = <span class="keyword">new</span> <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html">nmbuflowtorch::layer::Dense</a>(dense5-&gt;<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a1b343ab594510f4ab93c9c292b5a5123">output_dim</a>(), 128);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <a class="code" href="classnmbuflowtorch_1_1layer_1_1Sigmoid.html">nmbuflowtorch::layer::Sigmoid</a>* sigmoid6 = <span class="keyword">new</span> <a class="code" href="classnmbuflowtorch_1_1layer_1_1Sigmoid.html">nmbuflowtorch::layer::Sigmoid</a>();</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html">nmbuflowtorch::layer::Dense</a>* dense7 = <span class="keyword">new</span> <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html">nmbuflowtorch::layer::Dense</a>(dense6-&gt;<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a1b343ab594510f4ab93c9c292b5a5123">output_dim</a>(), output_size);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <a class="code" href="classnmbuflowtorch_1_1layer_1_1Sigmoid.html">nmbuflowtorch::layer::Sigmoid</a>* sigmoid7 = <span class="keyword">new</span> <a class="code" href="classnmbuflowtorch_1_1layer_1_1Sigmoid.html">nmbuflowtorch::layer::Sigmoid</a>();</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="comment">// nmbuflowtorch::layer::Dense* dense3 = new nmbuflowtorch::layer::Dense(dense2-&gt;output_dim(), 1);</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="comment">// nmbuflowtorch::layer::Sigmoid* sigmoid3 = new nmbuflowtorch::layer::Sigmoid();</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  autoencoder.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(dense1);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  autoencoder.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(sigmoid1);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  autoencoder.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(dense2);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  autoencoder.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(sigmoid2);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  autoencoder.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(dense3_compressionlayer);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  autoencoder.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(sigmoid3_compressionlayer);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  autoencoder.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(dense4);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  autoencoder.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(sigmoid4);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  autoencoder.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(dense5);</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  autoencoder.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(sigmoid5);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  autoencoder.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(dense6);</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  autoencoder.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(sigmoid6);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  autoencoder.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(dense7);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  autoencoder.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(sigmoid7);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <a class="code" href="classnmbuflowtorch_1_1Network.html">nmbuflowtorch::Network</a> encoder_net;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  encoder_net.<a class="code" href="classnmbuflowtorch_1_1Network.html#a7a86be4bc0c3901a48cfb70b286ec363">add_loss</a>(loss);</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  encoder_net.<a class="code" href="classnmbuflowtorch_1_1Network.html#a1120a4649f5317ab85b7fd0124f91f75">add_optimizer</a>(opt);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  encoder_net.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(dense1);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  encoder_net.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(sigmoid1);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  encoder_net.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(dense2);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  encoder_net.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(sigmoid2);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  encoder_net.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(dense3_compressionlayer);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  encoder_net.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(sigmoid3_compressionlayer);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <a class="code" href="classnmbuflowtorch_1_1Network.html">nmbuflowtorch::Network</a> decoder_net;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  decoder_net.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(dense4);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  decoder_net.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(sigmoid4);</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  decoder_net.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(dense5);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  decoder_net.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(sigmoid5);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  decoder_net.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(dense6);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  decoder_net.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(sigmoid6);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  decoder_net.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(dense7);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  decoder_net.<a class="code" href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">add_layer</a>(sigmoid7);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  autoencoder.<a class="code" href="classnmbuflowtorch_1_1Network.html#a8cff72188a6f4b0d13c8b7474eec1ca3">fit</a>(X, X, 100, 2, 1);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="comment">// cout &lt;&lt; autoencoder.train_batch(X, y) &lt;&lt; endl;</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="comment">// auto y_pred = autoencoder.forward(X);</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <span class="comment">//  for (auto x : y_pred) {</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="comment">//    cout &lt;&lt; x &lt;&lt; endl;</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <span class="comment">//  }</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="comment">// vector&lt;int&gt; y_true_vector(y.data(), y.data() + y.rows() * y.cols());</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="comment">// cout &lt;&lt; endl;</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  <span class="comment">// cout &lt;&lt; &quot;ACC : &quot; &lt;&lt; accuracy_score(y_true_vector, y_pred) &lt;&lt; endl;</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  encoder_net.<a class="code" href="classnmbuflowtorch_1_1Network.html#ae6cd135a052cc1526b34bb4144ae58b6">forward</a>(X);</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  cout &lt;&lt; endl &lt;&lt; <span class="stringliteral">&quot;Compressed vector representation of image&quot;</span> &lt;&lt; endl &lt;&lt; encoder_net.<a class="code" href="classnmbuflowtorch_1_1Network.html#a47b0ad164e645c60f736f60f87827900">output</a>() &lt;&lt; endl;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  autoencoder.<a class="code" href="classnmbuflowtorch_1_1Network.html#ae404b65188cb291b22ec494bb270bec2">delete_net</a>();</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  <span class="comment">//  de net.d;</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <span class="comment">//   Cleaning up</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <span class="comment">//   delete dense1;</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <span class="comment">//   delete sigmoid1;</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <span class="comment">//   delete dense2;</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <span class="comment">//   delete sigmoid2;</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="comment">//   delete loss;</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <span class="comment">//   delete opt;</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <span class="comment">//   Could  also use smart pointers instead of manual memory management (RAII)</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <span class="comment">//   shared pointers could also be used</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="comment">//   std::unique_ptr&lt;layer::dense&gt; dense1 = std::make_unique&lt;layer::dense&gt;(arguments...);</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
-<div class="ttc" id="aclassnmbuflowtorch_1_1Loss_html"><div class="ttname"><a href="classnmbuflowtorch_1_1Loss.html">nmbuflowtorch::Loss</a></div><div class="ttdef"><b>Definition:</b> <a href="loss_8hpp_source.html#l00008">loss.hpp:9</a></div></div>
-<div class="ttc" id="aclassnmbuflowtorch_1_1Network_html"><div class="ttname"><a href="classnmbuflowtorch_1_1Network.html">nmbuflowtorch::Network</a></div><div class="ttdoc">The Network class is a class for creating and managing a neural network. It has functions for adding ...</div><div class="ttdef"><b>Definition:</b> <a href="network_8hpp_source.html#l00025">network.hpp:33</a></div></div>
-<div class="ttc" id="aclassnmbuflowtorch_1_1Network_html_a1120a4649f5317ab85b7fd0124f91f75"><div class="ttname"><a href="classnmbuflowtorch_1_1Network.html#a1120a4649f5317ab85b7fd0124f91f75">nmbuflowtorch::Network::add_optimizer</a></div><div class="ttdeci">void add_optimizer(Optimizer *opt_in)</div><div class="ttdoc">Adds an optimizer to the network.</div><div class="ttdef"><b>Definition:</b> <a href="network_8hpp_source.html#l00063">network.hpp:63</a></div></div>
-<div class="ttc" id="aclassnmbuflowtorch_1_1Network_html_a47b0ad164e645c60f736f60f87827900"><div class="ttname"><a href="classnmbuflowtorch_1_1Network.html#a47b0ad164e645c60f736f60f87827900">nmbuflowtorch::Network::output</a></div><div class="ttdeci">const Matrix &amp; output()</div><div class="ttdoc">Returns the value from the last layer.</div><div class="ttdef"><b>Definition:</b> <a href="network_8hpp_source.html#l00129">network.hpp:129</a></div></div>
-<div class="ttc" id="aclassnmbuflowtorch_1_1Network_html_a7a86be4bc0c3901a48cfb70b286ec363"><div class="ttname"><a href="classnmbuflowtorch_1_1Network.html#a7a86be4bc0c3901a48cfb70b286ec363">nmbuflowtorch::Network::add_loss</a></div><div class="ttdeci">void add_loss(Loss *loss_in)</div><div class="ttdoc">Adds a loss function to the network.</div><div class="ttdef"><b>Definition:</b> <a href="network_8hpp_source.html#l00056">network.hpp:56</a></div></div>
-<div class="ttc" id="aclassnmbuflowtorch_1_1Network_html_a8cff72188a6f4b0d13c8b7474eec1ca3"><div class="ttname"><a href="classnmbuflowtorch_1_1Network.html#a8cff72188a6f4b0d13c8b7474eec1ca3">nmbuflowtorch::Network::fit</a></div><div class="ttdeci">void fit(Matrix &amp;X, Matrix &amp;y, const int epochs, const int batch_size, const int verbose, const bool shuffle=true)</div><div class="ttdoc">Fit model to data provided.</div><div class="ttdef"><b>Definition:</b> <a href="network_8cpp_source.html#l00059">network.cpp:59</a></div></div>
-<div class="ttc" id="aclassnmbuflowtorch_1_1Network_html_aa1d574b1f7daac023f4917887dd05ead"><div class="ttname"><a href="classnmbuflowtorch_1_1Network.html#aa1d574b1f7daac023f4917887dd05ead">nmbuflowtorch::Network::add_layer</a></div><div class="ttdeci">void add_layer(Layer *layer)</div><div class="ttdoc">Adds a layer to the network.</div><div class="ttdef"><b>Definition:</b> <a href="network_8hpp_source.html#l00049">network.hpp:49</a></div></div>
-<div class="ttc" id="aclassnmbuflowtorch_1_1Network_html_ae404b65188cb291b22ec494bb270bec2"><div class="ttname"><a href="classnmbuflowtorch_1_1Network.html#ae404b65188cb291b22ec494bb270bec2">nmbuflowtorch::Network::delete_net</a></div><div class="ttdeci">void delete_net()</div><div class="ttdef"><b>Definition:</b> <a href="network_8hpp_source.html#l00139">network.hpp:139</a></div></div>
-<div class="ttc" id="aclassnmbuflowtorch_1_1Network_html_ae6cd135a052cc1526b34bb4144ae58b6"><div class="ttname"><a href="classnmbuflowtorch_1_1Network.html#ae6cd135a052cc1526b34bb4144ae58b6">nmbuflowtorch::Network::forward</a></div><div class="ttdeci">void forward(const Matrix &amp;input)</div><div class="ttdef"><b>Definition:</b> <a href="network_8cpp_source.html#l00104">network.cpp:104</a></div></div>
-<div class="ttc" id="aclassnmbuflowtorch_1_1layer_1_1Dense_html"><div class="ttname"><a href="classnmbuflowtorch_1_1layer_1_1Dense.html">nmbuflowtorch::layer::Dense</a></div><div class="ttdef"><b>Definition:</b> <a href="dense_8hpp_source.html#l00012">dense.hpp:13</a></div></div>
-<div class="ttc" id="aclassnmbuflowtorch_1_1layer_1_1Dense_html_a1b343ab594510f4ab93c9c292b5a5123"><div class="ttname"><a href="classnmbuflowtorch_1_1layer_1_1Dense.html#a1b343ab594510f4ab93c9c292b5a5123">nmbuflowtorch::layer::Dense::output_dim</a></div><div class="ttdeci">int output_dim()</div><div class="ttdoc">Get the output dimension of the dense layer.</div><div class="ttdef"><b>Definition:</b> <a href="dense_8hpp_source.html#l00051">dense.hpp:51</a></div></div>
-<div class="ttc" id="aclassnmbuflowtorch_1_1layer_1_1Sigmoid_html"><div class="ttname"><a href="classnmbuflowtorch_1_1layer_1_1Sigmoid.html">nmbuflowtorch::layer::Sigmoid</a></div><div class="ttdef"><b>Definition:</b> <a href="sigmoid_8hpp_source.html#l00008">sigmoid.hpp:9</a></div></div>
-<div class="ttc" id="aclassnmbuflowtorch_1_1loss_1_1MSE_html"><div class="ttname"><a href="classnmbuflowtorch_1_1loss_1_1MSE.html">nmbuflowtorch::loss::MSE</a></div><div class="ttdef"><b>Definition:</b> <a href="mse_8hpp_source.html#l00008">mse.hpp:9</a></div></div>
-<div class="ttc" id="aclassnmbuflowtorch_1_1optimizer_1_1SGD_html"><div class="ttname"><a href="classnmbuflowtorch_1_1optimizer_1_1SGD.html">nmbuflowtorch::optimizer::SGD</a></div><div class="ttdef"><b>Definition:</b> <a href="sgd_8hpp_source.html#l00008">sgd.hpp:9</a></div></div>
-<div class="ttc" id="across__entropy_8hpp_html"><div class="ttname"><a href="cross__entropy_8hpp.html">cross_entropy.hpp</a></div></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">if</span> (argc &gt; 2 &amp;&amp; strcmp(argv[2], <span class="stringliteral">&quot;xor&quot;</span>) == 0)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="namespacenmbuflowtorch.html#a35b8b66024a1d5bea456dff39e80e557">nmbuflowtorch::xor_train</a>(argc, argv);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (argc &gt; 2 &amp;&amp; strcmp(argv[2], <span class="stringliteral">&quot;autoencoder&quot;</span>) == 0)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="namespacenmbuflowtorch.html#ae40c22a79b5ebb3d74043066bc87d0b7">nmbuflowtorch::autoencoder_train</a>(argc, argv);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Please specify a program to run like this:&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;nmbuflowtorch [ parallel | not ] [ xor | autoencoder ]&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  cout &lt;&lt; <span class="stringliteral">&quot;PROGRAM FINISHED&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="ttc" id="aautoencoder_8hpp_html"><div class="ttname"><a href="autoencoder_8hpp.html">autoencoder.hpp</a></div></div>
 <div class="ttc" id="adefinitions_8hpp_html"><div class="ttname"><a href="definitions_8hpp.html">definitions.hpp</a></div></div>
-<div class="ttc" id="adefinitions_8hpp_html_a58e8a08e999542a3fb8f965a2b79c737"><div class="ttname"><a href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a></div><div class="ttdeci">Eigen::Matrix&lt; float, Eigen::Dynamic, Eigen::Dynamic &gt; Matrix</div><div class="ttdef"><b>Definition:</b> <a href="definitions_8hpp_source.html#l00013">definitions.hpp:13</a></div></div>
-<div class="ttc" id="adense_8hpp_html"><div class="ttname"><a href="dense_8hpp.html">dense.hpp</a></div></div>
-<div class="ttc" id="alayer_8hpp_html"><div class="ttname"><a href="layer_8hpp.html">layer.hpp</a></div></div>
-<div class="ttc" id="aloss_8hpp_html"><div class="ttname"><a href="loss_8hpp.html">loss.hpp</a></div></div>
-<div class="ttc" id="amain_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00028">main.cpp:28</a></div></div>
-<div class="ttc" id="amath__m_8hpp_html"><div class="ttname"><a href="math__m_8hpp.html">math_m.hpp</a></div></div>
-<div class="ttc" id="amse_8hpp_html"><div class="ttname"><a href="mse_8hpp.html">mse.hpp</a></div></div>
-<div class="ttc" id="anetwork_8hpp_html"><div class="ttname"><a href="network_8hpp.html">network.hpp</a></div><div class="ttdoc">Network class representing a sequence of layers. This class implements a network consisting of a sequ...</div></div>
-<div class="ttc" id="aoptimizer_8hpp_html"><div class="ttname"><a href="optimizer_8hpp.html">optimizer.hpp</a></div></div>
-<div class="ttc" id="asgd_8hpp_html"><div class="ttname"><a href="sgd_8hpp.html">sgd.hpp</a></div></div>
-<div class="ttc" id="asigmoid_8hpp_html"><div class="ttname"><a href="sigmoid_8hpp.html">sigmoid.hpp</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00011">main.cpp:11</a></div></div>
+<div class="ttc" id="anamespacenmbuflowtorch_html_a35b8b66024a1d5bea456dff39e80e557"><div class="ttname"><a href="namespacenmbuflowtorch.html#a35b8b66024a1d5bea456dff39e80e557">nmbuflowtorch::xor_train</a></div><div class="ttdeci">int xor_train(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="xor_8cpp_source.html#l00005">xor.cpp:5</a></div></div>
+<div class="ttc" id="anamespacenmbuflowtorch_html_ae40c22a79b5ebb3d74043066bc87d0b7"><div class="ttname"><a href="namespacenmbuflowtorch.html#ae40c22a79b5ebb3d74043066bc87d0b7">nmbuflowtorch::autoencoder_train</a></div><div class="ttdeci">int autoencoder_train(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="autoencoder_8cpp_source.html#l00004">autoencoder.cpp:4</a></div></div>
+<div class="ttc" id="axor_8hpp_html"><div class="ttname"><a href="xor_8hpp.html">xor.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,4 +1,4 @@
 <map id="nmbuflowtorch::optimizer::Nadam" name="nmbuflowtorch::optimizer::Nadam">
-<area shape="rect" id="node1" title="Nadam optimizer." alt="" coords="6,80,195,121"/>
+<area shape="rect" id="node1" title="Nadam optimizer inspired by https://arxiv.org/abs/1609.04747 and pytorch implementation https://pytor..." alt="" coords="6,80,195,121"/>
 <area shape="rect" id="node2" href="$classnmbuflowtorch_1_1Optimizer.html" title=" " alt="" coords="5,5,196,32"/>
 </map>

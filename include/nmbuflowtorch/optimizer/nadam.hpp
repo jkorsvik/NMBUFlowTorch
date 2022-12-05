@@ -5,7 +5,8 @@
 
 namespace nmbuflowtorch::optimizer
 {
-  /// @brief Nadam optimizer
+  /// @brief Nadam optimizer inspired by https://arxiv.org/abs/1609.04747
+  /// and pytorch implementation https://pytorch.org/docs/stable/_modules/torch/optim/nadam.html
   class Nadam : public Optimizer
   {
    private:
@@ -18,6 +19,14 @@ namespace nmbuflowtorch::optimizer
     float epsilon;  // epsilon for numerical stability
 
    public:
+    /// @brief Nadam optimizer inspired by https://arxiv.org/abs/1609.04747
+    /// and pytorch implementation https://pytorch.org/docs/stable/_modules/torch/optim/nadam.html
+    /// @param learning_rate
+    /// @param beta1
+    /// @param beta2
+    /// @param weight_decay
+    /// @param momentum_decay
+    /// @param epsilon
     explicit Nadam(
         float learning_rate = 2e-3,
         float beta1 = 0.9,

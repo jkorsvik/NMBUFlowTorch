@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['_7elayer_225',['~Layer',['../classnmbuflowtorch_1_1Layer.html#abc9026766c93ac70957866d5fe57b0dd',1,'nmbuflowtorch::Layer']]],
-  ['_7eloss_226',['~Loss',['../classnmbuflowtorch_1_1Loss.html#adf8d33eddce108dd1b2611ee01180a77',1,'nmbuflowtorch::Loss']]],
-  ['_7enetwork_227',['~Network',['../classnmbuflowtorch_1_1Network.html#a5fdb75ad7a058a1a00abc1a2bd9bd344',1,'nmbuflowtorch::Network']]],
-  ['_7eoptimizer_228',['~Optimizer',['../classnmbuflowtorch_1_1Optimizer.html#ab8d30b04df0f617e0b57d7d7ac8dae18',1,'nmbuflowtorch::Optimizer']]]
+  ['xor_5ftrain_239',['xor_train',['../namespacenmbuflowtorch.html#a35b8b66024a1d5bea456dff39e80e557',1,'nmbuflowtorch']]]
 ];

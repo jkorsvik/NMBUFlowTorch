@@ -37,159 +37,159 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="conv_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="1118,-123.5 1118,-153.5 1246,-153.5 1246,-123.5 1118,-123.5"/>
-<text text-anchor="start" x="1126" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/nmbuflowtorch</text>
-<text text-anchor="middle" x="1182" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">/layer/conv.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node5 -->
-<g id="edge4" class="edge">
-<title>Node1&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M891.43,-191.25C958.04,-179.38 1054.68,-162.17 1117.92,-150.91"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="890.65,-187.83 881.41,-193.03 891.87,-194.72 890.65,-187.83"/>
-</g>
-<!-- Node7 -->
-<g id="node7" class="node">
-<title>Node7</title>
-<g id="a_node7"><a xlink:href="dense_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="dense_8hpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="753,-123.5 753,-153.5 881,-153.5 881,-123.5 753,-123.5"/>
 <text text-anchor="start" x="761" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/nmbuflowtorch</text>
 <text text-anchor="middle" x="817" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">/layer/dense.hpp</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node7 -->
-<g id="edge6" class="edge">
-<title>Node1&#45;&gt;Node7</title>
+<!-- Node1&#45;&gt;Node5 -->
+<g id="edge4" class="edge">
+<title>Node1&#45;&gt;Node5</title>
 <path fill="none" stroke="midnightblue" d="M817,-180.11C817,-171.15 817,-161.32 817,-153.58"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="813.5,-180.4 817,-190.4 820.5,-180.4 813.5,-180.4"/>
 </g>
-<!-- Node8 -->
-<g id="node8" class="node">
-<title>Node8</title>
-<g id="a_node8"><a xlink:href="xor_8hpp.html" target="_top" xlink:title=" ">
+<!-- Node6 -->
+<g id="node6" class="node">
+<title>Node6</title>
+<g id="a_node6"><a xlink:href="xor_8hpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="334,-56.5 334,-86.5 462,-86.5 462,-56.5 334,-56.5"/>
 <text text-anchor="start" x="342" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/nmbuflowtorch</text>
 <text text-anchor="middle" x="398" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">/xor.hpp</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node8 -->
+<!-- Node1&#45;&gt;Node6 -->
 <g id="edge33" class="edge">
-<title>Node1&#45;&gt;Node8</title>
+<title>Node1&#45;&gt;Node6</title>
 <path fill="none" stroke="midnightblue" d="M742.56,-205.23C639.35,-204.61 460.21,-197.12 414,-154 395.55,-136.78 394.85,-105.02 396.25,-86.64"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="742.6,-208.73 752.61,-205.27 742.63,-201.73 742.6,-208.73"/>
 </g>
-<!-- Node10 -->
-<g id="node10" class="node">
-<title>Node10</title>
-<g id="a_node10"><a xlink:href="main_01copy_8cpp.html" target="_top" xlink:title=" ">
+<!-- Node8 -->
+<g id="node8" class="node">
+<title>Node8</title>
+<g id="a_node8"><a xlink:href="main_01copy_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="480,-62 480,-81 584,-81 584,-62 480,-62"/>
 <text text-anchor="middle" x="532" y="-69" font-family="Helvetica,sans-Serif" font-size="10.00">src/main copy.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node10 -->
+<!-- Node1&#45;&gt;Node8 -->
 <g id="edge34" class="edge">
-<title>Node1&#45;&gt;Node10</title>
+<title>Node1&#45;&gt;Node8</title>
 <path fill="none" stroke="midnightblue" d="M742.92,-199.58C698.16,-193.78 641.53,-181.19 598,-154 568.04,-135.29 545.59,-98.13 536.47,-81.23"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="742.51,-203.06 752.86,-200.78 743.35,-196.11 742.51,-203.06"/>
 </g>
-<!-- Node11 -->
-<g id="node11" class="node">
-<title>Node11</title>
-<g id="a_node11"><a xlink:href="main__multithread_8cpp.html" target="_top" xlink:title=" ">
+<!-- Node9 -->
+<g id="node9" class="node">
+<title>Node9</title>
+<g id="a_node9"><a xlink:href="main__multithread_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="754.5,-62 754.5,-81 895.5,-81 895.5,-62 754.5,-62"/>
 <text text-anchor="middle" x="825" y="-69" font-family="Helvetica,sans-Serif" font-size="10.00">src/main_multithread.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node11 -->
+<!-- Node1&#45;&gt;Node9 -->
 <g id="edge35" class="edge">
-<title>Node1&#45;&gt;Node11</title>
+<title>Node1&#45;&gt;Node9</title>
 <path fill="none" stroke="midnightblue" d="M859.26,-185.08C871.41,-177.25 883.21,-166.96 890,-154 896.4,-141.8 896.06,-135.38 890,-123 880.45,-103.49 859.33,-89.34 843.74,-81.07"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="857.21,-182.22 850.41,-190.34 860.79,-188.23 857.21,-182.22"/>
 </g>
-<!-- Node12 -->
-<g id="node12" class="node">
-<title>Node12</title>
-<g id="a_node12"><a xlink:href="main__single__thread_8cpp.html" target="_top" xlink:title=" ">
+<!-- Node10 -->
+<g id="node10" class="node">
+<title>Node10</title>
+<g id="a_node10"><a xlink:href="main__single__thread_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="914,-62 914,-81 1064,-81 1064,-62 914,-62"/>
 <text text-anchor="middle" x="989" y="-69" font-family="Helvetica,sans-Serif" font-size="10.00">src/main_single_thread.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node12 -->
+<!-- Node1&#45;&gt;Node10 -->
 <g id="edge36" class="edge">
-<title>Node1&#45;&gt;Node12</title>
+<title>Node1&#45;&gt;Node10</title>
 <path fill="none" stroke="midnightblue" d="M855.93,-185.63C872.33,-176.94 891.22,-165.91 907,-154 937.59,-130.9 968.18,-96.9 981.74,-81.13"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="853.87,-182.75 846.61,-190.47 857.1,-188.97 853.87,-182.75"/>
 </g>
-<!-- Node14 -->
-<g id="node14" class="node">
-<title>Node14</title>
-<g id="a_node14"><a xlink:href="relu_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="1327,-123.5 1327,-153.5 1455,-153.5 1455,-123.5 1327,-123.5"/>
-<text text-anchor="start" x="1335" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/nmbuflowtorch</text>
-<text text-anchor="middle" x="1391" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">/layer/relu.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node14 -->
-<g id="edge15" class="edge">
-<title>Node1&#45;&gt;Node14</title>
-<path fill="none" stroke="midnightblue" d="M891.17,-196.1C1004.68,-183.25 1219.58,-158.91 1326.8,-146.77"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="890.72,-192.63 881.17,-197.23 891.5,-199.59 890.72,-192.63"/>
-</g>
-<!-- Node16 -->
-<g id="node16" class="node">
-<title>Node16</title>
-<g id="a_node16"><a xlink:href="sigmoid_8hpp.html" target="_top" xlink:title=" ">
+<!-- Node12 -->
+<g id="node12" class="node">
+<title>Node12</title>
+<g id="a_node12"><a xlink:href="sigmoid_8hpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="607,-123.5 607,-153.5 735,-153.5 735,-123.5 607,-123.5"/>
 <text text-anchor="start" x="615" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/nmbuflowtorch</text>
 <text text-anchor="middle" x="671" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">/layer/sigmoid.hpp</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node16 -->
-<g id="edge17" class="edge">
-<title>Node1&#45;&gt;Node16</title>
+<!-- Node1&#45;&gt;Node12 -->
+<g id="edge13" class="edge">
+<title>Node1&#45;&gt;Node12</title>
 <path fill="none" stroke="midnightblue" d="M776.05,-186.27C752.8,-175.92 724.13,-163.15 702.62,-153.58"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="774.76,-189.53 785.32,-190.4 777.61,-183.13 774.76,-189.53"/>
 </g>
-<!-- Node18 -->
-<g id="node18" class="node">
-<title>Node18</title>
-<g id="a_node18"><a xlink:href="softmax_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="1508,-123.5 1508,-153.5 1636,-153.5 1636,-123.5 1508,-123.5"/>
-<text text-anchor="start" x="1516" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/nmbuflowtorch</text>
-<text text-anchor="middle" x="1572" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">/layer/softmax.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node18 -->
-<g id="edge24" class="edge">
-<title>Node1&#45;&gt;Node18</title>
-<path fill="none" stroke="midnightblue" d="M891.61,-200.03C1012.16,-192.5 1257.15,-175.94 1464,-154 1478.2,-152.49 1493.42,-150.61 1507.82,-148.71"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="891.15,-196.55 881.39,-200.66 891.59,-203.54 891.15,-196.55"/>
-</g>
-<!-- Node20 -->
-<g id="node20" class="node">
-<title>Node20</title>
-<g id="a_node20"><a xlink:href="network_8hpp.html" target="_top" xlink:title="Network class representing a sequence of layers. This class implements a network consisting of a sequ...">
+<!-- Node14 -->
+<g id="node14" class="node">
+<title>Node14</title>
+<g id="a_node14"><a xlink:href="network_8hpp.html" target="_top" xlink:title="Network class representing a sequence of layers. This class implements a network consisting of a sequ...">
 <polygon fill="none" stroke="black" points="423,-123.5 423,-153.5 551,-153.5 551,-123.5 423,-123.5"/>
 <text text-anchor="start" x="431" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/nmbuflowtorch</text>
 <text text-anchor="middle" x="487" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">/network.hpp</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node20 -->
-<g id="edge26" class="edge">
-<title>Node1&#45;&gt;Node20</title>
+<!-- Node1&#45;&gt;Node14 -->
+<g id="edge20" class="edge">
+<title>Node1&#45;&gt;Node14</title>
 <path fill="none" stroke="midnightblue" d="M742.84,-189.89C685.19,-178.54 606.05,-162.95 551.12,-152.13"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="742.49,-193.39 752.98,-191.89 743.85,-186.52 742.49,-193.39"/>
+</g>
+<!-- Node16 -->
+<g id="node16" class="node">
+<title>Node16</title>
+<g id="a_node16"><a xlink:href="conv_8hpp.html" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="1118,-123.5 1118,-153.5 1246,-153.5 1246,-123.5 1118,-123.5"/>
+<text text-anchor="start" x="1126" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/nmbuflowtorch</text>
+<text text-anchor="middle" x="1182" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">/layer/conv.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node16 -->
+<g id="edge27" class="edge">
+<title>Node1&#45;&gt;Node16</title>
+<path fill="none" stroke="midnightblue" d="M891.43,-191.25C958.04,-179.38 1054.68,-162.17 1117.92,-150.91"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="890.65,-187.83 881.41,-193.03 891.87,-194.72 890.65,-187.83"/>
+</g>
+<!-- Node18 -->
+<g id="node18" class="node">
+<title>Node18</title>
+<g id="a_node18"><a xlink:href="relu_8hpp.html" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="1327,-123.5 1327,-153.5 1455,-153.5 1455,-123.5 1327,-123.5"/>
+<text text-anchor="start" x="1335" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/nmbuflowtorch</text>
+<text text-anchor="middle" x="1391" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">/layer/relu.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node18 -->
+<g id="edge29" class="edge">
+<title>Node1&#45;&gt;Node18</title>
+<path fill="none" stroke="midnightblue" d="M891.17,-196.1C1004.68,-183.25 1219.58,-158.91 1326.8,-146.77"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="890.72,-192.63 881.17,-197.23 891.5,-199.59 890.72,-192.63"/>
+</g>
+<!-- Node20 -->
+<g id="node20" class="node">
+<title>Node20</title>
+<g id="a_node20"><a xlink:href="softmax_8hpp.html" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="1508,-123.5 1508,-153.5 1636,-153.5 1636,-123.5 1508,-123.5"/>
+<text text-anchor="start" x="1516" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/nmbuflowtorch</text>
+<text text-anchor="middle" x="1572" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">/layer/softmax.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node20 -->
+<g id="edge31" class="edge">
+<title>Node1&#45;&gt;Node20</title>
+<path fill="none" stroke="midnightblue" d="M891.61,-200.03C1012.16,-192.5 1257.15,-175.94 1464,-154 1478.2,-152.49 1493.42,-150.61 1507.82,-148.71"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="891.15,-196.55 881.39,-200.66 891.59,-203.54 891.15,-196.55"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
@@ -221,211 +221,211 @@
 <path fill="none" stroke="midnightblue" d="M227.06,-49.89C214.54,-39.54 200.04,-27.56 190.48,-19.66"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="225,-52.73 234.94,-56.4 229.46,-47.33 225,-52.73"/>
 </g>
-<!-- Node6 -->
-<g id="node6" class="node">
-<title>Node6</title>
-<g id="a_node6"><a xlink:href="conv_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="1234,-56.5 1234,-86.5 1368,-86.5 1368,-56.5 1234,-56.5"/>
-<text text-anchor="start" x="1242" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/nmbuflowtorch/layer</text>
-<text text-anchor="middle" x="1301" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">/conv.cpp</text>
-</a>
-</g>
-</g>
-<!-- Node5&#45;&gt;Node6 -->
+<!-- Node5&#45;&gt;Node2 -->
 <g id="edge5" class="edge">
-<title>Node5&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M1216.65,-118.57C1235.37,-108.35 1258.09,-95.94 1275.23,-86.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1214.92,-115.53 1207.82,-123.4 1218.28,-121.67 1214.92,-115.53"/>
-</g>
-<!-- Node7&#45;&gt;Node2 -->
-<g id="edge7" class="edge">
-<title>Node7&#45;&gt;Node2</title>
+<title>Node5&#45;&gt;Node2</title>
 <path fill="none" stroke="midnightblue" d="M742.88,-122.95C557.18,-97.32 506.8,-112.79 325,-87 322.06,-86.58 319.05,-86.12 316.03,-85.63"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="742.59,-126.44 752.97,-124.37 743.56,-119.51 742.59,-126.44"/>
 </g>
-<!-- Node7&#45;&gt;Node8 -->
-<g id="edge8" class="edge">
-<title>Node7&#45;&gt;Node8</title>
+<!-- Node5&#45;&gt;Node6 -->
+<g id="edge6" class="edge">
+<title>Node5&#45;&gt;Node6</title>
 <path fill="none" stroke="midnightblue" d="M742.89,-122.89C621.53,-103.26 588.57,-106.41 471,-87 468.07,-86.52 465.07,-86 462.05,-85.47"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="742.51,-126.37 752.95,-124.53 743.65,-119.46 742.51,-126.37"/>
 </g>
-<!-- Node7&#45;&gt;Node10 -->
-<g id="edge11" class="edge">
-<title>Node7&#45;&gt;Node10</title>
+<!-- Node5&#45;&gt;Node8 -->
+<g id="edge9" class="edge">
+<title>Node5&#45;&gt;Node8</title>
 <path fill="none" stroke="midnightblue" d="M743.73,-121.21C699.95,-111.42 643.26,-98.64 593,-87 584.73,-85.08 575.83,-82.99 567.47,-81"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="743.19,-124.67 753.71,-123.44 744.72,-117.84 743.19,-124.67"/>
 </g>
-<!-- Node7&#45;&gt;Node11 -->
-<g id="edge12" class="edge">
-<title>Node7&#45;&gt;Node11</title>
+<!-- Node5&#45;&gt;Node9 -->
+<g id="edge10" class="edge">
+<title>Node5&#45;&gt;Node9</title>
 <path fill="none" stroke="midnightblue" d="M819.98,-113.25C821.37,-102.02 822.92,-89.38 823.93,-81.19"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="816.48,-113.04 818.74,-123.4 823.43,-113.9 816.48,-113.04"/>
 </g>
-<!-- Node7&#45;&gt;Node12 -->
-<g id="edge13" class="edge">
-<title>Node7&#45;&gt;Node12</title>
+<!-- Node5&#45;&gt;Node10 -->
+<g id="edge11" class="edge">
+<title>Node5&#45;&gt;Node10</title>
 <path fill="none" stroke="midnightblue" d="M863.88,-119.78C897.23,-107.18 940.55,-90.81 966.49,-81.01"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="862.44,-116.59 854.32,-123.4 864.91,-123.13 862.44,-116.59"/>
 </g>
-<!-- Node13 -->
-<g id="node13" class="node">
-<title>Node13</title>
-<g id="a_node13"><a xlink:href="dense_8cpp.html" target="_top" xlink:title=" ">
+<!-- Node11 -->
+<g id="node11" class="node">
+<title>Node11</title>
+<g id="a_node11"><a xlink:href="dense_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="1082,-56.5 1082,-86.5 1216,-86.5 1216,-56.5 1082,-56.5"/>
 <text text-anchor="start" x="1090" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/nmbuflowtorch/layer</text>
 <text text-anchor="middle" x="1149" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">/dense.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node7&#45;&gt;Node13 -->
-<g id="edge14" class="edge">
-<title>Node7&#45;&gt;Node13</title>
+<!-- Node5&#45;&gt;Node11 -->
+<g id="edge12" class="edge">
+<title>Node5&#45;&gt;Node11</title>
 <path fill="none" stroke="midnightblue" d="M891.06,-123C948.16,-111.82 1026.45,-96.49 1081.76,-85.66"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="890.15,-119.61 881.01,-124.97 891.5,-126.48 890.15,-119.61"/>
 </g>
-<!-- Node8&#45;&gt;Node3 -->
-<g id="edge9" class="edge">
-<title>Node8&#45;&gt;Node3</title>
+<!-- Node6&#45;&gt;Node3 -->
+<g id="edge7" class="edge">
+<title>Node6&#45;&gt;Node3</title>
 <path fill="none" stroke="midnightblue" d="M375.17,-49.6C363.93,-39.32 351.01,-27.48 342.46,-19.66"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="372.86,-52.23 382.6,-56.4 377.58,-47.07 372.86,-52.23"/>
 </g>
-<!-- Node9 -->
-<g id="node9" class="node">
-<title>Node9</title>
-<g id="a_node9"><a xlink:href="xor_8cpp.html" target="_top" xlink:title=" ">
+<!-- Node7 -->
+<g id="node7" class="node">
+<title>Node7</title>
+<g id="a_node7"><a xlink:href="xor_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="391,-0.5 391,-19.5 535,-19.5 535,-0.5 391,-0.5"/>
 <text text-anchor="middle" x="463" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/nmbuflowtorch/xor.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node8&#45;&gt;Node9 -->
-<g id="edge10" class="edge">
-<title>Node8&#45;&gt;Node9</title>
+<!-- Node6&#45;&gt;Node7 -->
+<g id="edge8" class="edge">
+<title>Node6&#45;&gt;Node7</title>
 <path fill="none" stroke="midnightblue" d="M420.83,-49.6C432.07,-39.32 444.99,-27.48 453.54,-19.66"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="418.42,-47.07 413.4,-56.4 423.14,-52.23 418.42,-47.07"/>
 </g>
-<!-- Node15 -->
-<g id="node15" class="node">
-<title>Node15</title>
-<g id="a_node15"><a xlink:href="relu_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="1386,-56.5 1386,-86.5 1520,-86.5 1520,-56.5 1386,-56.5"/>
-<text text-anchor="start" x="1394" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/nmbuflowtorch/layer</text>
-<text text-anchor="middle" x="1453" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">/relu.cpp</text>
-</a>
-</g>
-</g>
-<!-- Node14&#45;&gt;Node15 -->
-<g id="edge16" class="edge">
-<title>Node14&#45;&gt;Node15</title>
-<path fill="none" stroke="midnightblue" d="M1411.48,-116.02C1420.72,-106.34 1431.37,-95.17 1439.57,-86.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1408.82,-113.74 1404.45,-123.4 1413.89,-118.58 1408.82,-113.74"/>
-</g>
-<!-- Node16&#45;&gt;Node2 -->
-<g id="edge18" class="edge">
-<title>Node16&#45;&gt;Node2</title>
+<!-- Node12&#45;&gt;Node2 -->
+<g id="edge14" class="edge">
+<title>Node12&#45;&gt;Node2</title>
 <path fill="none" stroke="midnightblue" d="M596.68,-127.77C526.5,-118.32 418.37,-103.08 325,-87 322.07,-86.5 319.08,-85.97 316.06,-85.42"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="596.38,-131.26 606.76,-129.12 597.31,-124.33 596.38,-131.26"/>
 </g>
-<!-- Node16&#45;&gt;Node8 -->
-<g id="edge19" class="edge">
-<title>Node16&#45;&gt;Node8</title>
+<!-- Node12&#45;&gt;Node6 -->
+<g id="edge15" class="edge">
+<title>Node12&#45;&gt;Node6</title>
 <path fill="none" stroke="midnightblue" d="M602.2,-121.12C557.53,-110.48 499.9,-96.76 457.27,-86.61"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="601.56,-124.56 612.1,-123.48 603.18,-117.75 601.56,-124.56"/>
 </g>
-<!-- Node16&#45;&gt;Node10 -->
-<g id="edge20" class="edge">
-<title>Node16&#45;&gt;Node10</title>
+<!-- Node12&#45;&gt;Node8 -->
+<g id="edge16" class="edge">
+<title>Node12&#45;&gt;Node8</title>
 <path fill="none" stroke="midnightblue" d="M631.72,-119.13C604.97,-106.62 570.79,-90.64 550.19,-81.01"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="630.3,-122.33 640.84,-123.4 633.26,-115.99 630.3,-122.33"/>
 </g>
-<!-- Node16&#45;&gt;Node11 -->
-<g id="edge21" class="edge">
-<title>Node16&#45;&gt;Node11</title>
+<!-- Node12&#45;&gt;Node9 -->
+<g id="edge17" class="edge">
+<title>Node12&#45;&gt;Node9</title>
 <path fill="none" stroke="midnightblue" d="M713.74,-119.46C743.5,-106.9 781.82,-90.72 804.84,-81.01"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="712.27,-116.28 704.42,-123.4 714.99,-122.73 712.27,-116.28"/>
 </g>
-<!-- Node16&#45;&gt;Node12 -->
-<g id="edge22" class="edge">
-<title>Node16&#45;&gt;Node12</title>
+<!-- Node12&#45;&gt;Node10 -->
+<g id="edge18" class="edge">
+<title>Node12&#45;&gt;Node10</title>
 <path fill="none" stroke="midnightblue" d="M745.21,-122.33C808,-109.5 895.74,-91.56 947.04,-81.08"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="744.45,-118.91 735.35,-124.35 745.85,-125.77 744.45,-118.91"/>
 </g>
-<!-- Node17 -->
-<g id="node17" class="node">
-<title>Node17</title>
-<g id="a_node17"><a xlink:href="sigmoid_8cpp.html" target="_top" xlink:title=" ">
+<!-- Node13 -->
+<g id="node13" class="node">
+<title>Node13</title>
+<g id="a_node13"><a xlink:href="sigmoid_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="602,-56.5 602,-86.5 736,-86.5 736,-56.5 602,-56.5"/>
 <text text-anchor="start" x="610" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/nmbuflowtorch/layer</text>
 <text text-anchor="middle" x="669" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">/sigmoid.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node16&#45;&gt;Node17 -->
-<g id="edge23" class="edge">
-<title>Node16&#45;&gt;Node17</title>
+<!-- Node12&#45;&gt;Node13 -->
+<g id="edge19" class="edge">
+<title>Node12&#45;&gt;Node13</title>
 <path fill="none" stroke="midnightblue" d="M670.25,-113.11C669.97,-104.15 669.67,-94.32 669.43,-86.58"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="666.76,-113.51 670.57,-123.4 673.76,-113.29 666.76,-113.51"/>
+</g>
+<!-- Node14&#45;&gt;Node2 -->
+<g id="edge21" class="edge">
+<title>Node14&#45;&gt;Node2</title>
+<path fill="none" stroke="midnightblue" d="M426.32,-120.71C388.07,-110.14 339.26,-96.63 303.02,-86.61"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="425.73,-124.18 436.3,-123.48 427.59,-117.44 425.73,-124.18"/>
+</g>
+<!-- Node14&#45;&gt;Node6 -->
+<g id="edge22" class="edge">
+<title>Node14&#45;&gt;Node6</title>
+<path fill="none" stroke="midnightblue" d="M459.55,-117.45C445.86,-107.45 429.63,-95.6 417.27,-86.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="457.55,-120.32 467.69,-123.4 461.68,-114.67 457.55,-120.32"/>
+</g>
+<!-- Node14&#45;&gt;Node8 -->
+<g id="edge23" class="edge">
+<title>Node14&#45;&gt;Node8</title>
+<path fill="none" stroke="midnightblue" d="M502.59,-114.97C510.65,-103.33 520.02,-89.8 525.98,-81.19"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="499.58,-113.18 496.76,-123.4 505.33,-117.17 499.58,-113.18"/>
+</g>
+<!-- Node14&#45;&gt;Node9 -->
+<g id="edge24" class="edge">
+<title>Node14&#45;&gt;Node9</title>
+<path fill="none" stroke="midnightblue" d="M561.47,-123.18C628.62,-110.27 725.11,-91.71 780.79,-81"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="560.53,-119.8 551.37,-125.12 561.85,-126.67 560.53,-119.8"/>
+</g>
+<!-- Node14&#45;&gt;Node10 -->
+<g id="edge25" class="edge">
+<title>Node14&#45;&gt;Node10</title>
+<path fill="none" stroke="midnightblue" d="M561.42,-127.64C573.64,-126.07 586.17,-124.47 598,-123 733.89,-106.13 768.46,-106.52 904,-87 916.15,-85.25 929.24,-83.13 941.42,-81.06"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="560.72,-124.21 551.25,-128.96 561.62,-131.15 560.72,-124.21"/>
+</g>
+<!-- Node15 -->
+<g id="node15" class="node">
+<title>Node15</title>
+<g id="a_node15"><a xlink:href="network_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="0,-62 0,-81 170,-81 170,-62 0,-62"/>
+<text text-anchor="middle" x="85" y="-69" font-family="Helvetica,sans-Serif" font-size="10.00">src/nmbuflowtorch/network.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node14&#45;&gt;Node15 -->
+<g id="edge26" class="edge">
+<title>Node14&#45;&gt;Node15</title>
+<path fill="none" stroke="midnightblue" d="M412.87,-125.51C333.04,-112.61 208.05,-92.4 137.69,-81.02"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="412.43,-128.99 422.86,-127.13 413.54,-122.08 412.43,-128.99"/>
+</g>
+<!-- Node17 -->
+<g id="node17" class="node">
+<title>Node17</title>
+<g id="a_node17"><a xlink:href="conv_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="1234,-56.5 1234,-86.5 1368,-86.5 1368,-56.5 1234,-56.5"/>
+<text text-anchor="start" x="1242" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/nmbuflowtorch/layer</text>
+<text text-anchor="middle" x="1301" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">/conv.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node16&#45;&gt;Node17 -->
+<g id="edge28" class="edge">
+<title>Node16&#45;&gt;Node17</title>
+<path fill="none" stroke="midnightblue" d="M1216.65,-118.57C1235.37,-108.35 1258.09,-95.94 1275.23,-86.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1214.92,-115.53 1207.82,-123.4 1218.28,-121.67 1214.92,-115.53"/>
 </g>
 <!-- Node19 -->
 <g id="node19" class="node">
 <title>Node19</title>
-<g id="a_node19"><a xlink:href="softmax_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node19"><a xlink:href="relu_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="1386,-56.5 1386,-86.5 1520,-86.5 1520,-56.5 1386,-56.5"/>
+<text text-anchor="start" x="1394" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/nmbuflowtorch/layer</text>
+<text text-anchor="middle" x="1453" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">/relu.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node18&#45;&gt;Node19 -->
+<g id="edge30" class="edge">
+<title>Node18&#45;&gt;Node19</title>
+<path fill="none" stroke="midnightblue" d="M1411.48,-116.02C1420.72,-106.34 1431.37,-95.17 1439.57,-86.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1408.82,-113.74 1404.45,-123.4 1413.89,-118.58 1408.82,-113.74"/>
+</g>
+<!-- Node21 -->
+<g id="node21" class="node">
+<title>Node21</title>
+<g id="a_node21"><a xlink:href="softmax_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="1538,-56.5 1538,-86.5 1672,-86.5 1672,-56.5 1538,-56.5"/>
 <text text-anchor="start" x="1546" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/nmbuflowtorch/layer</text>
 <text text-anchor="middle" x="1605" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">/softmax.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node18&#45;&gt;Node19 -->
-<g id="edge25" class="edge">
-<title>Node18&#45;&gt;Node19</title>
-<path fill="none" stroke="midnightblue" d="M1583.79,-114.28C1588.49,-105.02 1593.75,-94.66 1597.85,-86.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1580.57,-112.89 1579.16,-123.4 1586.81,-116.06 1580.57,-112.89"/>
-</g>
-<!-- Node20&#45;&gt;Node2 -->
-<g id="edge27" class="edge">
-<title>Node20&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M426.32,-120.71C388.07,-110.14 339.26,-96.63 303.02,-86.61"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="425.73,-124.18 436.3,-123.48 427.59,-117.44 425.73,-124.18"/>
-</g>
-<!-- Node20&#45;&gt;Node8 -->
-<g id="edge28" class="edge">
-<title>Node20&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M459.55,-117.45C445.86,-107.45 429.63,-95.6 417.27,-86.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="457.55,-120.32 467.69,-123.4 461.68,-114.67 457.55,-120.32"/>
-</g>
-<!-- Node20&#45;&gt;Node10 -->
-<g id="edge29" class="edge">
-<title>Node20&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M502.59,-114.97C510.65,-103.33 520.02,-89.8 525.98,-81.19"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="499.58,-113.18 496.76,-123.4 505.33,-117.17 499.58,-113.18"/>
-</g>
-<!-- Node20&#45;&gt;Node11 -->
-<g id="edge30" class="edge">
-<title>Node20&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M561.47,-123.18C628.62,-110.27 725.11,-91.71 780.79,-81"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="560.53,-119.8 551.37,-125.12 561.85,-126.67 560.53,-119.8"/>
-</g>
-<!-- Node20&#45;&gt;Node12 -->
-<g id="edge31" class="edge">
-<title>Node20&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M561.42,-127.64C573.64,-126.07 586.17,-124.47 598,-123 733.89,-106.13 768.46,-106.52 904,-87 916.15,-85.25 929.24,-83.13 941.42,-81.06"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="560.72,-124.21 551.25,-128.96 561.62,-131.15 560.72,-124.21"/>
-</g>
-<!-- Node21 -->
-<g id="node21" class="node">
-<title>Node21</title>
-<g id="a_node21"><a xlink:href="network_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="0,-62 0,-81 170,-81 170,-62 0,-62"/>
-<text text-anchor="middle" x="85" y="-69" font-family="Helvetica,sans-Serif" font-size="10.00">src/nmbuflowtorch/network.cpp</text>
-</a>
-</g>
-</g>
 <!-- Node20&#45;&gt;Node21 -->
 <g id="edge32" class="edge">
 <title>Node20&#45;&gt;Node21</title>
-<path fill="none" stroke="midnightblue" d="M412.87,-125.51C333.04,-112.61 208.05,-92.4 137.69,-81.02"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="412.43,-128.99 422.86,-127.13 413.54,-122.08 412.43,-128.99"/>
+<path fill="none" stroke="midnightblue" d="M1583.79,-114.28C1588.49,-105.02 1593.75,-94.66 1597.85,-86.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1580.57,-112.89 1579.16,-123.4 1586.81,-116.06 1580.57,-112.89"/>
 </g>
 </g>
 </svg>

@@ -12,10 +12,10 @@ var hierarchy =
       [ "nmbuflowtorch::loss::MSE", "classnmbuflowtorch_1_1loss_1_1MSE.html", null ]
     ] ],
     [ "nmbuflowtorch::Network", "classnmbuflowtorch_1_1Network.html", null ],
+    [ "Optimizer", "classOptimizer.html", null ],
     [ "nmbuflowtorch::Optimizer", "classnmbuflowtorch_1_1Optimizer.html", [
       [ "nmbuflowtorch::optimizer::Adam", "classnmbuflowtorch_1_1optimizer_1_1Adam.html", null ],
       [ "nmbuflowtorch::optimizer::Nadam", "classnmbuflowtorch_1_1optimizer_1_1Nadam.html", null ],
       [ "nmbuflowtorch::optimizer::SGD", "classnmbuflowtorch_1_1optimizer_1_1SGD.html", null ]
-    ] ],
-    [ "Optimizer", "classOptimizer.html", null ]
+    ] ]
 ];

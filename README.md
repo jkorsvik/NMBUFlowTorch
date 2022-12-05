@@ -187,6 +187,12 @@ ctest -C Release  # or `ctest -C Debug` or any other configuration you wish to t
 # you can also run tests with the `-VV` flag for a more verbose output (i.e.
 #GoogleTest output as well)
 ```
+## Running the main program
+
+after installing run the following in the project directory:
+´´´sh
+nmbluflowtorch [parallel | not ] [xor | autoencoder] [--epochs int]​
+´´´
 
 ## Authors
 

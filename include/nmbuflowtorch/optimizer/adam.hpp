@@ -14,7 +14,6 @@ namespace nmbuflowtorch::optimizer
     float beta2;
 
     float epsilon = 1e-8;  // epsilon for numerical stability
-    int t = 0;             // time step
 
    public:
     explicit Adam(float learning_rate = 0.001, float beta1 = 0.9, float beta2 = 0.999)
@@ -24,7 +23,7 @@ namespace nmbuflowtorch::optimizer
     {
     }
 
-    virtual void update(Vector::AlignedMapType& w, Vector::ConstAlignedMapType& dw);
+    virtual void update(Vector::AlignedMapType& w, Vector::ConstAlignedMapType& dw, int epoch);
   };
 }  // namespace nmbuflowtorch::optimizer
 #endif  // NMBUFLOWTORCH_OPTIMIZER_ADAM_H_

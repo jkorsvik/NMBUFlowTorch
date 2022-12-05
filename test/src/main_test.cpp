@@ -75,7 +75,7 @@ TEST(LearnsXOR, XOR)
 
   vector<int> y_true_vector(y.data(), y.data() + y.rows() * y.cols());
   cout << endl;
-  auto score = accuracy_score(y_true_vector, y_pred);
+  auto score = accuracy_score_vec(y_true_vector, y_pred);
   EXPECT_GE(score, 0.9);
 }
 int main(int argc, char** argv)

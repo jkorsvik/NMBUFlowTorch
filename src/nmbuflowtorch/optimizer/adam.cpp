@@ -2,7 +2,7 @@
 
 namespace nmbuflowtorch::optimizer
 {
-  void Adam::update(Vector::AlignedMapType& w, Vector::ConstAlignedMapType& dw)
+  void Adam::update(Vector::AlignedMapType& w, Vector::ConstAlignedMapType& dw, int epoch)
   {
     Vector& m = m_map[dw.data()];
     Vector& v = v_map[dw.data()];

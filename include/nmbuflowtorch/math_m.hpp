@@ -74,7 +74,7 @@ inline int binary_cutoff(float inp)
 /// @param y_true The true labels.
 /// @param y_pred The predicted labels.
 /// @return The accuracy score, which is the fraction of true and predicted labels that match.
-inline float accuracy_score(std::vector<int> y_true, std::vector<int> y_pred)
+inline float accuracy_score_vec(std::vector<int> y_true, std::vector<int> y_pred)
 {
   if (y_true.size() != y_pred.size())
   {
@@ -90,6 +90,31 @@ inline float accuracy_score(std::vector<int> y_true, std::vector<int> y_pred)
   }
 
   return float(correct) / y_true.size();  // Cast to float to avoid integer division
+}
+
+/// @brief Calculates the accuracy score for a given set of true and predicted labels.
+/// @param y_true : The true labels.
+/// @param y_pred : The predicted labels.
+inline float accuracy_score_matrix(const Matrix& y_true, const Matrix& y_pred)
+{
+  if (y_true.rows() != y_pred.rows() || y_true.cols() != y_pred.cols())
+  {
+    throw std::runtime_error("Y_true and y_pred are not the same size");
+  }
+  auto binary_y_pred = y_pred.unaryExpr(&binary_cutoff);
+  int correct = 0;
+  for (int i = 0; i < y_true.rows(); i++)
+  {
+    for (int j = 0; j < y_true.cols(); j++)
+    {
+      if (y_true(i, j) == binary_y_pred(i, j))
+      {
+        correct++;
+      }
+    }
+  }
+
+  return float(correct) / (y_true.rows() * y_true.cols());  // Cast to float to avoid integer division
 }
 
 /// @brief Shuffles a dataset by creating a permutation matrix from a given vector of indices and applying it to the data

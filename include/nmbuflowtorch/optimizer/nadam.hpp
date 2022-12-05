@@ -9,14 +9,13 @@ namespace nmbuflowtorch::optimizer
   class Nadam : public Optimizer
   {
    private:
-    std::unordered_map<const float*, Vector> m_map;  // mean map to pointers
-    std::unordered_map<const float*, Vector> v_map;  // variance map to pointers
+    std::unordered_map<const float*, Vector> m_map;  // moment map to pointers
+    std::unordered_map<const float*, Vector> v_map;  // velocity map to pointers
     float beta1;
     float beta2;
     float weight_decay;
     float momentum_decay;
     float epsilon;  // epsilon for numerical stability
-    int t = 0;      // time step
 
    public:
     explicit Nadam(
@@ -35,7 +34,7 @@ namespace nmbuflowtorch::optimizer
     {
     }
 
-    virtual void update(Vector::AlignedMapType& w, Vector::ConstAlignedMapType& dw);
+    virtual void update(Vector::AlignedMapType& w, Vector::ConstAlignedMapType& dw, int epoch = 0);
   };
 }  // namespace nmbuflowtorch::optimizer
 #endif  // NMBUFLOWTORCH_OPTIMIZER_NADAM_H_

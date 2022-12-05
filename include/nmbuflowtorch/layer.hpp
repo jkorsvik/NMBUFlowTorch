@@ -33,7 +33,8 @@ namespace nmbuflowtorch
 
     /// @brief Updates the layer's parameters using the given optimizer.
     /// @param opt The optimizer to use for updating the parameters.
-    virtual void update(Optimizer& opt)
+    /// @param learning_rate The learning rate to use for the update.
+    virtual void update(Optimizer& opt, int epoch = 0)
     {
     }
 

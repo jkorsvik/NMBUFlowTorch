@@ -18,7 +18,7 @@
 #include "nmbuflowtorch/network.hpp"
 #include "nmbuflowtorch/optimizer.hpp"
 //#include "nmbuflowtorch/optimizer/adam.hpp"
-//#include "nmbuflowtorch/optimizer/nadam.hpp"
+#include "nmbuflowtorch/optimizer/nadam.hpp"
 #include "nmbuflowtorch/optimizer/sgd.hpp"
 
 // -> is for pointer objects, while . is for value objects
@@ -63,14 +63,14 @@ int main(int argc, char** argv)
 
   // Sammenligner med utregninger fra https://theneuralblog.com/forward-pass-backpropagation-example/
   int input_size = 128 * 128;
-  int output_size = 1;
+  int output_size = input_size;
 
   // Create network
   nmbuflowtorch::Network autoencoder;
   // define loss
   // nmbuflowtorch::Loss* loss = new nmbuflowtorch::loss::CrossEntropy();
 
-  nmbuflowtorch::optimizer::SGD* opt = new nmbuflowtorch::optimizer::SGD(0.1);
+  nmbuflowtorch::optimizer::Nadam* opt = new nmbuflowtorch::optimizer::Nadam(0.01);
 
   nmbuflowtorch::Loss* loss = new nmbuflowtorch::loss::MSE();
 
@@ -108,8 +108,6 @@ int main(int argc, char** argv)
     }
     n_rows++;
   }
-
-  cout << X << endl;
 
   // Create layers
   nmbuflowtorch::layer::Dense* dense1 = new nmbuflowtorch::layer::Dense(input_size, 128);
@@ -164,7 +162,7 @@ int main(int argc, char** argv)
   decoder_net.add_layer(dense7);
   decoder_net.add_layer(sigmoid7);
 
-  autoencoder.fit(X, X, 100, 2, 1);
+  autoencoder.fit(X, X, 1000, 2, 2);
 
   // cout << autoencoder.train_batch(X, y) << endl;
 
@@ -175,11 +173,22 @@ int main(int argc, char** argv)
 
   // vector<int> y_true_vector(y.data(), y.data() + y.rows() * y.cols());
   // cout << endl;
-
-  // cout << "ACC : " << accuracy_score(y_true_vector, y_pred) << endl;
   encoder_net.forward(X);
-  cout << endl << "Compressed vector representation of image" << endl << encoder_net.output() << endl;
+  Matrix compressed_M = encoder_net.output();
 
+  cout << endl << "Compressed vector representation of image" << endl << compressed_M << endl;
+  cout << endl
+       << "Compressed size: " << compressed_M.cols() * compressed_M.rows() * 32 << " KB" << endl
+       << "Uncompressed size: " << X.cols() * X.rows() * 32 << " KB" << endl;
+
+  decoder_net.forward(compressed_M);
+  Matrix reconstructed_M = decoder_net.output();
+
+  cout << endl << "Reconstructed image size: " << reconstructed_M.cols() * reconstructed_M.rows() * 32 << " KB" << endl;
+
+  cout << endl << "Pixel accuracy" << endl << accuracy_score_matrix(X, reconstructed_M) << endl;
+
+  // DELETES ALL POINTERS IN THE NETWORK, SO DON'T USE THEM AFTER THIS
   autoencoder.delete_net();
   //  de net.d;
   //   Cleaning up

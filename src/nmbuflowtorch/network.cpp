@@ -29,11 +29,12 @@ namespace nmbuflowtorch
   {
     int n_datapoints = X.rows();
     int n_features = X.cols();
+    int n_output_size = y.cols();
     int n_batches = (int)(ceil(float(n_datapoints) / float(batch_size)));
 
     float loss = 0.;
 
-    if (verbose > 0)
+    if (verbose > 1)
     {
       std::cout << "Processing " << n_batches << " Batches of size " << batch_size << " ..." << std::endl;
       printProgress(0.0, n_batches, verbose);
@@ -43,20 +44,22 @@ namespace nmbuflowtorch
     {
       int batch_id = start_idx / batch_size;
       Matrix batch_X = X.block(start_idx, 0, std::min(batch_size, n_datapoints - start_idx), n_features);
-      Matrix batch_y = y.block(start_idx, 0, std::min(batch_size, n_datapoints - start_idx), 1);
+      Matrix batch_y = y.block(start_idx, 0, std::min(batch_size, n_datapoints - start_idx), n_output_size);
       loss = this->train_batch(batch_X, batch_y);
 
-      if (verbose > 0)
+      if (verbose > 1)
       {
         printProgress(batch_id, n_batches, verbose);
         std::cout << " Loss " << loss;
       }
       // sleep(0.01);
     }
+
+    epoch++;  // Increment epoch counter to use as timesteps in opt
     return loss;
   };
 
-   void Network::fit(Matrix& X, Matrix& y, const int epochs, const int batch_size, const int verbose, const bool shuffle)
+  void Network::fit(Matrix& X, Matrix& y, const int epochs, const int batch_size, const int verbose, const bool shuffle)
   {
     float loss = 0.;
     // TODO: figure out if to copy x and y or not for shuffling, to keep X and y as const
@@ -73,10 +76,18 @@ namespace nmbuflowtorch
       {
         shuffle_data(X, y);
       }
-      if (verbose > 0)
+      if (verbose > 1)
       {
         std::cout << std::endl << "Epoch: " << epoch << " Loss: " << loss << std::endl;
       }
+      if (verbose > 0 && verbose < 2)
+      {
+        if (epoch % 100 == 0)
+        {
+          std::cout << std::endl << "Epoch: " << epoch << " Loss: " << loss << std::endl;
+        }
+      }
+
       loss = this->train_one_epoch(X, y, batch_size, verbose);
     }
   };
@@ -150,7 +161,7 @@ namespace nmbuflowtorch
 #pragma unroll(UNROLLDEPTH)
     for (int i = 0; i < layers.size(); i++)
     {
-      layers[i]->update(opt);
+      layers[i]->update(opt, epoch);
     }
   }
 

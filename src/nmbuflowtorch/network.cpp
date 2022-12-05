@@ -3,6 +3,8 @@
 #include "nmbuflowtorch/definitions.hpp"
 #include "nmbuflowtorch/math_m.hpp"
 
+// Hello, this code looks very nice. I would like to buy your project for 8 beers.
+
 // Used for pragma unroll which unroll loops when compiling
 // performance improvement
 const int UNROLLDEPTH = 10;

@@ -35,6 +35,7 @@ namespace nmbuflowtorch
     std::vector<Layer*> layers;  // layer pointers
     Loss* loss;                  // loss pointer
     Optimizer* opt;
+    int epoch = 0;
 
     // make public?
 

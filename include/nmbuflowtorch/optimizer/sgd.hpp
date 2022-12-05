@@ -14,7 +14,7 @@ namespace nmbuflowtorch::optimizer
     {
     }
 
-    virtual void update(Vector::AlignedMapType& w, Vector::ConstAlignedMapType& dw);
+    virtual void update(Vector::AlignedMapType& w, Vector::ConstAlignedMapType& dw, int epoch = 0);
   };
 }  // namespace nmbuflowtorch::optimizer
 #endif  // NMBUFLOWTORCH_OPTIMIZER_SGD_H_

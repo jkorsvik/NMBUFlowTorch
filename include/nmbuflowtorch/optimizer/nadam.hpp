@@ -5,20 +5,28 @@
 
 namespace nmbuflowtorch::optimizer
 {
-  /// @brief Nadam optimizer
+  /// @brief Nadam optimizer inspired by https://arxiv.org/abs/1609.04747
+  /// and pytorch implementation https://pytorch.org/docs/stable/_modules/torch/optim/nadam.html
   class Nadam : public Optimizer
   {
    private:
-    std::unordered_map<const float*, Vector> m_map;  // mean map to pointers
-    std::unordered_map<const float*, Vector> v_map;  // variance map to pointers
+    std::unordered_map<const float*, Vector> m_map;  // moment map to pointers
+    std::unordered_map<const float*, Vector> v_map;  // velocity map to pointers
     float beta1;
     float beta2;
     float weight_decay;
     float momentum_decay;
     float epsilon;  // epsilon for numerical stability
-    int t = 0;      // time step
 
    public:
+    /// @brief Nadam optimizer inspired by https://arxiv.org/abs/1609.04747
+    /// and pytorch implementation https://pytorch.org/docs/stable/_modules/torch/optim/nadam.html
+    /// @param learning_rate
+    /// @param beta1
+    /// @param beta2
+    /// @param weight_decay
+    /// @param momentum_decay
+    /// @param epsilon
     explicit Nadam(
         float learning_rate = 2e-3,
         float beta1 = 0.9,
@@ -35,7 +43,7 @@ namespace nmbuflowtorch::optimizer
     {
     }
 
-    virtual void update(Vector::AlignedMapType& w, Vector::ConstAlignedMapType& dw);
+    virtual void update(Vector::AlignedMapType& w, Vector::ConstAlignedMapType& dw, int epoch = 0);
   };
 }  // namespace nmbuflowtorch::optimizer
 #endif  // NMBUFLOWTORCH_OPTIMIZER_NADAM_H_

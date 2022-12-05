@@ -121,9 +121,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aab25fa9257e5a717de4851d2245137f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1layer_1_1Dense.html#aab25fa9257e5a717de4851d2245137f1">backward</a> (const <a class="el" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a> &amp;X, const <a class="el" href="definitions_8hpp.html#a58e8a08e999542a3fb8f965a2b79c737">Matrix</a> &amp;accumulated_gradients)</td></tr>
 <tr class="memdesc:aab25fa9257e5a717de4851d2245137f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backward pass for the dense layer.  <a href="classnmbuflowtorch_1_1layer_1_1Dense.html#aab25fa9257e5a717de4851d2245137f1">More...</a><br /></td></tr>
 <tr class="separator:aab25fa9257e5a717de4851d2245137f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae34895846c97a2b4b389b0703e75c168"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1layer_1_1Dense.html#ae34895846c97a2b4b389b0703e75c168">update</a> (<a class="el" href="classnmbuflowtorch_1_1Optimizer.html">Optimizer</a> &amp;opt) override</td></tr>
-<tr class="memdesc:ae34895846c97a2b4b389b0703e75c168"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the weights and biases of the dense layer.  <a href="classnmbuflowtorch_1_1layer_1_1Dense.html#ae34895846c97a2b4b389b0703e75c168">More...</a><br /></td></tr>
-<tr class="separator:ae34895846c97a2b4b389b0703e75c168"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16adcf8ea51184f340d10fb257584b88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a16adcf8ea51184f340d10fb257584b88">update</a> (<a class="el" href="classnmbuflowtorch_1_1Optimizer.html">Optimizer</a> &amp;opt, int epoch) override</td></tr>
+<tr class="memdesc:a16adcf8ea51184f340d10fb257584b88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the weights and biases of the dense layer.  <a href="classnmbuflowtorch_1_1layer_1_1Dense.html#a16adcf8ea51184f340d10fb257584b88">More...</a><br /></td></tr>
+<tr class="separator:a16adcf8ea51184f340d10fb257584b88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b343ab594510f4ab93c9c292b5a5123"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a1b343ab594510f4ab93c9c292b5a5123">output_dim</a> ()</td></tr>
 <tr class="memdesc:a1b343ab594510f4ab93c9c292b5a5123"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the output dimension of the dense layer.  <a href="classnmbuflowtorch_1_1layer_1_1Dense.html#a1b343ab594510f4ab93c9c292b5a5123">More...</a><br /></td></tr>
 <tr class="separator:a1b343ab594510f4ab93c9c292b5a5123"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -302,18 +302,18 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="classnmbuflowtorch_1_1Layer.html#a4ca29e7f63a80c08924e507dae466bd1">nmbuflowtorch::Layer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="dense_8cpp_source.html#l00029">29</a> of file <a class="el" href="dense_8cpp_source.html">dense.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a73f38f38b0d985d03fb75c54851416c2">grad_weights</a> = <a class="code" href="classnmbuflowtorch_1_1Layer.html#a7b8931b8cb01a28228fb991966a66217">layer_input</a>.transpose() * accumulated_gradients;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a25bc101092f5eab36ab65af223ad8945">grad_bias</a> = accumulated_gradients.colwise().sum();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// accumulated_gradients = accumulated_gradients * weights.transpose();</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classnmbuflowtorch_1_1Layer.html#ad66d736d0396765b8c80381d9fedf12c">gradient_back</a>.resize(<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a1cd39710901dac1cc528c2432abdba57">input_shape</a>, <a class="code" href="classnmbuflowtorch_1_1Layer.html#a7b8931b8cb01a28228fb991966a66217">layer_input</a>.cols());</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classnmbuflowtorch_1_1Layer.html#ad66d736d0396765b8c80381d9fedf12c">gradient_back</a> = accumulated_gradients * <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a3939125d2a2811441d6f76ca8d3e1229">weights</a>.transpose();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">//gradient_back = weights * accumulated_gradients.transpose();</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  }</div>
+<p class="definition">Definition at line <a class="el" href="dense_8cpp_source.html#l00028">28</a> of file <a class="el" href="dense_8cpp_source.html">dense.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a73f38f38b0d985d03fb75c54851416c2">grad_weights</a> = <a class="code" href="classnmbuflowtorch_1_1Layer.html#a7b8931b8cb01a28228fb991966a66217">layer_input</a>.transpose() * accumulated_gradients;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a25bc101092f5eab36ab65af223ad8945">grad_bias</a> = accumulated_gradients.colwise().sum();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// accumulated_gradients = accumulated_gradients * weights.transpose();</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classnmbuflowtorch_1_1Layer.html#ad66d736d0396765b8c80381d9fedf12c">gradient_back</a>.resize(<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a1cd39710901dac1cc528c2432abdba57">input_shape</a>, <a class="code" href="classnmbuflowtorch_1_1Layer.html#a7b8931b8cb01a28228fb991966a66217">layer_input</a>.cols());</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classnmbuflowtorch_1_1Layer.html#ad66d736d0396765b8c80381d9fedf12c">gradient_back</a> = accumulated_gradients * <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a3939125d2a2811441d6f76ca8d3e1229">weights</a>.transpose();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// gradient_back = weights * accumulated_gradients.transpose();</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  }</div>
 <div class="ttc" id="aclassnmbuflowtorch_1_1Layer_html_a7b8931b8cb01a28228fb991966a66217"><div class="ttname"><a href="classnmbuflowtorch_1_1Layer.html#a7b8931b8cb01a28228fb991966a66217">nmbuflowtorch::Layer::layer_input</a></div><div class="ttdeci">Matrix layer_input</div><div class="ttdef"><b>Definition:</b> <a href="layer_8hpp_source.html#l00015">layer.hpp:15</a></div></div>
 <div class="ttc" id="aclassnmbuflowtorch_1_1Layer_html_ad66d736d0396765b8c80381d9fedf12c"><div class="ttname"><a href="classnmbuflowtorch_1_1Layer.html#ad66d736d0396765b8c80381d9fedf12c">nmbuflowtorch::Layer::gradient_back</a></div><div class="ttdeci">Matrix gradient_back</div><div class="ttdef"><b>Definition:</b> <a href="layer_8hpp_source.html#l00017">layer.hpp:17</a></div></div>
 <div class="ttc" id="aclassnmbuflowtorch_1_1layer_1_1Dense_html_a25bc101092f5eab36ab65af223ad8945"><div class="ttname"><a href="classnmbuflowtorch_1_1layer_1_1Dense.html#a25bc101092f5eab36ab65af223ad8945">nmbuflowtorch::layer::Dense::grad_bias</a></div><div class="ttdeci">Vector grad_bias</div><div class="ttdef"><b>Definition:</b> <a href="dense_8hpp_source.html#l00021">dense.hpp:21</a></div></div>
@@ -358,13 +358,12 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="dense_8cpp_source.html#l00019">19</a> of file <a class="el" href="dense_8cpp_source.html">dense.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classnmbuflowtorch_1_1Layer.html#a7b8931b8cb01a28228fb991966a66217">layer_input</a> = X;                   <span class="comment">// Holder på input til backward passet</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classnmbuflowtorch_1_1Layer.html#ace57230d9a06555e247d6c71a4e6b636">layer_output</a> = <a class="code" href="math__m_8hpp.html#a7219f41fa97c72ef5e8c629824b7a364">MMdot</a>(<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a3939125d2a2811441d6f76ca8d3e1229">weights</a>, X);  <span class="comment">// TODO: Plusse på bias WX + B</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classnmbuflowtorch_1_1Layer.html#ace57230d9a06555e247d6c71a4e6b636">layer_output</a>.rowwise() += <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a15efaf0e322a1dd84112e8dd8221dae5">bias</a>.transpose();    <span class="comment">// Eigen::Matrix3Xf::Ones(1,)</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classnmbuflowtorch_1_1Layer.html#a7b8931b8cb01a28228fb991966a66217">layer_input</a> = X;                             <span class="comment">// Holder på input til backward passet</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classnmbuflowtorch_1_1Layer.html#ace57230d9a06555e247d6c71a4e6b636">layer_output</a> = <a class="code" href="math__m_8hpp.html#a7219f41fa97c72ef5e8c629824b7a364">MMdot</a>(<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a3939125d2a2811441d6f76ca8d3e1229">weights</a>, X);            <span class="comment">// TODO: Plusse på bias WX + B</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classnmbuflowtorch_1_1Layer.html#ace57230d9a06555e247d6c71a4e6b636">layer_output</a>.rowwise() += <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a15efaf0e322a1dd84112e8dd8221dae5">bias</a>.transpose();  <span class="comment">// Eigen::Matrix3Xf::Ones(1,)</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">// mtx += Eigen::Matrix3Xf::Ones(3,4);</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// mtx += Eigen::Matrix3Xf::Ones(3,4);</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  }</div>
 <div class="ttc" id="aclassnmbuflowtorch_1_1Layer_html_ace57230d9a06555e247d6c71a4e6b636"><div class="ttname"><a href="classnmbuflowtorch_1_1Layer.html#ace57230d9a06555e247d6c71a4e6b636">nmbuflowtorch::Layer::layer_output</a></div><div class="ttdeci">Matrix layer_output</div><div class="ttdef"><b>Definition:</b> <a href="layer_8hpp_source.html#l00016">layer.hpp:16</a></div></div>
 <div class="ttc" id="aclassnmbuflowtorch_1_1layer_1_1Dense_html_a15efaf0e322a1dd84112e8dd8221dae5"><div class="ttname"><a href="classnmbuflowtorch_1_1layer_1_1Dense.html#a15efaf0e322a1dd84112e8dd8221dae5">nmbuflowtorch::layer::Dense::bias</a></div><div class="ttdeci">Vector bias</div><div class="ttdef"><b>Definition:</b> <a href="dense_8hpp_source.html#l00019">dense.hpp:19</a></div></div>
 <div class="ttc" id="amath__m_8hpp_html_a7219f41fa97c72ef5e8c629824b7a364"><div class="ttname"><a href="math__m_8hpp.html#a7219f41fa97c72ef5e8c629824b7a364">MMdot</a></div><div class="ttdeci">Matrix MMdot(const Matrix &amp;W, const Matrix &amp;X)</div><div class="ttdoc">Calculates the dot product of two matrices.</div><div class="ttdef"><b>Definition:</b> <a href="math__m_8hpp_source.html#l00025">math_m.hpp:25</a></div></div>
@@ -408,14 +407,14 @@ vector of derivates, LAST element is bias </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classnmbuflowtorch_1_1Layer.html#aa0c5e2d2d79cfecde2d2e5377a891d61">nmbuflowtorch::Layer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="dense_8cpp_source.html#l00076">76</a> of file <a class="el" href="dense_8cpp_source.html">dense.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    std::vector&lt;float&gt; res(<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a73f38f38b0d985d03fb75c54851416c2">grad_weights</a>.size() + <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a25bc101092f5eab36ab65af223ad8945">grad_bias</a>.size());</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// Copy the data of weights and bias to a long vector</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    std::copy(<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a73f38f38b0d985d03fb75c54851416c2">grad_weights</a>.data(), <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a73f38f38b0d985d03fb75c54851416c2">grad_weights</a>.data() + <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a73f38f38b0d985d03fb75c54851416c2">grad_weights</a>.size(), res.begin());</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    std::copy(<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a25bc101092f5eab36ab65af223ad8945">grad_bias</a>.data(), <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a25bc101092f5eab36ab65af223ad8945">grad_bias</a>.data() + <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a25bc101092f5eab36ab65af223ad8945">grad_bias</a>.size(), res.begin() + <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a73f38f38b0d985d03fb75c54851416c2">grad_weights</a>.size());</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> res;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  }</div>
+<p class="definition">Definition at line <a class="el" href="dense_8cpp_source.html#l00075">75</a> of file <a class="el" href="dense_8cpp_source.html">dense.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    std::vector&lt;float&gt; res(<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a73f38f38b0d985d03fb75c54851416c2">grad_weights</a>.size() + <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a25bc101092f5eab36ab65af223ad8945">grad_bias</a>.size());</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// Copy the data of weights and bias to a long vector</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    std::copy(<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a73f38f38b0d985d03fb75c54851416c2">grad_weights</a>.data(), <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a73f38f38b0d985d03fb75c54851416c2">grad_weights</a>.data() + <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a73f38f38b0d985d03fb75c54851416c2">grad_weights</a>.size(), res.begin());</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    std::copy(<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a25bc101092f5eab36ab65af223ad8945">grad_bias</a>.data(), <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a25bc101092f5eab36ab65af223ad8945">grad_bias</a>.data() + <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a25bc101092f5eab36ab65af223ad8945">grad_bias</a>.size(), res.begin() + <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a73f38f38b0d985d03fb75c54851416c2">grad_weights</a>.size());</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -484,14 +483,14 @@ vector of parameters, LAST element is bias </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classnmbuflowtorch_1_1Layer.html#a1344661da06050061121a40df61ea5df">nmbuflowtorch::Layer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="dense_8cpp_source.html#l00058">58</a> of file <a class="el" href="dense_8cpp_source.html">dense.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    std::vector&lt;float&gt; res(<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a3939125d2a2811441d6f76ca8d3e1229">weights</a>.size() + <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a15efaf0e322a1dd84112e8dd8221dae5">bias</a>.size());</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// Copy the data of weights and bias to a long vector</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    std::copy(<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a3939125d2a2811441d6f76ca8d3e1229">weights</a>.data(), <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a3939125d2a2811441d6f76ca8d3e1229">weights</a>.data() + <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a3939125d2a2811441d6f76ca8d3e1229">weights</a>.size(), res.begin());</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    std::copy(<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a15efaf0e322a1dd84112e8dd8221dae5">bias</a>.data(), <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a15efaf0e322a1dd84112e8dd8221dae5">bias</a>.data() + <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a15efaf0e322a1dd84112e8dd8221dae5">bias</a>.size(), res.begin() + <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a3939125d2a2811441d6f76ca8d3e1229">weights</a>.size());</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> res;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  }</div>
+<p class="definition">Definition at line <a class="el" href="dense_8cpp_source.html#l00057">57</a> of file <a class="el" href="dense_8cpp_source.html">dense.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    std::vector&lt;float&gt; res(<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a3939125d2a2811441d6f76ca8d3e1229">weights</a>.size() + <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a15efaf0e322a1dd84112e8dd8221dae5">bias</a>.size());</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// Copy the data of weights and bias to a long vector</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    std::copy(<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a3939125d2a2811441d6f76ca8d3e1229">weights</a>.data(), <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a3939125d2a2811441d6f76ca8d3e1229">weights</a>.data() + <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a3939125d2a2811441d6f76ca8d3e1229">weights</a>.size(), res.begin());</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    std::copy(<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a15efaf0e322a1dd84112e8dd8221dae5">bias</a>.data(), <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a15efaf0e322a1dd84112e8dd8221dae5">bias</a>.data() + <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a15efaf0e322a1dd84112e8dd8221dae5">bias</a>.size(), res.begin() + <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a3939125d2a2811441d6f76ca8d3e1229">weights</a>.size());</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -641,13 +640,13 @@ vector of parameters, LAST element is bias </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classnmbuflowtorch_1_1Layer.html#a155be5b72869e24df8beda95585405c0">nmbuflowtorch::Layer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="dense_8cpp_source.html#l00067">67</a> of file <a class="el" href="dense_8cpp_source.html">dense.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(param.size()) != <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a73f38f38b0d985d03fb75c54851416c2">grad_weights</a>.size() + <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a15efaf0e322a1dd84112e8dd8221dae5">bias</a>.size())</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Parameter size does not match&quot;</span>);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    std::copy(param.begin(), param.begin() + <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a3939125d2a2811441d6f76ca8d3e1229">weights</a>.size(), <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a3939125d2a2811441d6f76ca8d3e1229">weights</a>.data());</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    std::copy(param.begin() + <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a15efaf0e322a1dd84112e8dd8221dae5">bias</a>.size(), param.end(), <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a15efaf0e322a1dd84112e8dd8221dae5">bias</a>.data());</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  }</div>
+<p class="definition">Definition at line <a class="el" href="dense_8cpp_source.html#l00066">66</a> of file <a class="el" href="dense_8cpp_source.html">dense.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(param.size()) != <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a73f38f38b0d985d03fb75c54851416c2">grad_weights</a>.size() + <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a15efaf0e322a1dd84112e8dd8221dae5">bias</a>.size())</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Parameter size does not match&quot;</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    std::copy(param.begin(), param.begin() + <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a3939125d2a2811441d6f76ca8d3e1229">weights</a>.size(), <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a3939125d2a2811441d6f76ca8d3e1229">weights</a>.data());</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    std::copy(param.begin() + <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a15efaf0e322a1dd84112e8dd8221dae5">bias</a>.size(), param.end(), <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a15efaf0e322a1dd84112e8dd8221dae5">bias</a>.data());</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -691,8 +690,8 @@ vector of parameters, LAST element is bias </dd></dl>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ae34895846c97a2b4b389b0703e75c168"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae34895846c97a2b4b389b0703e75c168">&#9670;&nbsp;</a></span>update()</h2>
+<a id="a16adcf8ea51184f340d10fb257584b88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16adcf8ea51184f340d10fb257584b88">&#9670;&nbsp;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -704,8 +703,18 @@ vector of parameters, LAST element is bias </dd></dl>
           <td class="memname">void nmbuflowtorch::layer::Dense::update </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classnmbuflowtorch_1_1Optimizer.html">Optimizer</a> &amp;&#160;</td>
-          <td class="paramname"><em>opt</em></td><td>)</td>
+          <td class="paramname"><em>opt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>epoch</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -723,25 +732,25 @@ vector of parameters, LAST element is bias </dd></dl>
   </dd>
 </dl>
 
-<p>Reimplemented from <a class="el" href="classnmbuflowtorch_1_1Layer.html#a737922ee5257cb0bba1ff40f28e03a1e">nmbuflowtorch::Layer</a>.</p>
+<p>Reimplemented from <a class="el" href="classnmbuflowtorch_1_1Layer.html#a83770ba631c3d997353ffce3be43c34b">nmbuflowtorch::Layer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="dense_8cpp_source.html#l00042">42</a> of file <a class="el" href="dense_8cpp_source.html">dense.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    Vector::AlignedMapType weights_vec(<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a3939125d2a2811441d6f76ca8d3e1229">weights</a>.data(), <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a3939125d2a2811441d6f76ca8d3e1229">weights</a>.size());</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    Vector::AlignedMapType bias_vec(<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a15efaf0e322a1dd84112e8dd8221dae5">bias</a>.data(), <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a15efaf0e322a1dd84112e8dd8221dae5">bias</a>.size());</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    Vector::ConstAlignedMapType grad_weights_vec(<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a73f38f38b0d985d03fb75c54851416c2">grad_weights</a>.data(), <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a73f38f38b0d985d03fb75c54851416c2">grad_weights</a>.size());</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    Vector::ConstAlignedMapType grad_bias_vec(<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a25bc101092f5eab36ab65af223ad8945">grad_bias</a>.data(), <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a25bc101092f5eab36ab65af223ad8945">grad_bias</a>.size());</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    opt.update(weights_vec, grad_weights_vec);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    opt.update(bias_vec, grad_bias_vec);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// opt.update(weights, grad_weights);</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// opt.update(bias, grad_bias);</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  }</div>
+<p class="definition">Definition at line <a class="el" href="dense_8cpp_source.html#l00041">41</a> of file <a class="el" href="dense_8cpp_source.html">dense.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    Vector::AlignedMapType weights_vec(<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a3939125d2a2811441d6f76ca8d3e1229">weights</a>.data(), <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a3939125d2a2811441d6f76ca8d3e1229">weights</a>.size());</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    Vector::AlignedMapType bias_vec(<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a15efaf0e322a1dd84112e8dd8221dae5">bias</a>.data(), <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a15efaf0e322a1dd84112e8dd8221dae5">bias</a>.size());</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    Vector::ConstAlignedMapType grad_weights_vec(<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a73f38f38b0d985d03fb75c54851416c2">grad_weights</a>.data(), <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a73f38f38b0d985d03fb75c54851416c2">grad_weights</a>.size());</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    Vector::ConstAlignedMapType grad_bias_vec(<a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a25bc101092f5eab36ab65af223ad8945">grad_bias</a>.data(), <a class="code" href="classnmbuflowtorch_1_1layer_1_1Dense.html#a25bc101092f5eab36ab65af223ad8945">grad_bias</a>.size());</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    opt.update(weights_vec, grad_weights_vec, epoch);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    opt.update(bias_vec, grad_bias_vec, epoch);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// opt.update(weights, grad_weights);</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// opt.update(bias, grad_bias);</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classnmbuflowtorch_1_1layer_1_1Dense_ae34895846c97a2b4b389b0703e75c168_cgraph.svg" width="410" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classnmbuflowtorch_1_1layer_1_1Dense_a16adcf8ea51184f340d10fb257584b88_cgraph.svg" width="410" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 

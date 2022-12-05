@@ -9,7 +9,10 @@
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "${workspaceFolder}/build/bin/nmbuflowtorch",
-			"args": [],
+			"args": [
+				"parallel",
+				"autoencoder"
+			],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",
 			"environment": [],

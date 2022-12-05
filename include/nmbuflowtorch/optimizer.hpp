@@ -47,7 +47,7 @@ namespace nmbuflowtorch
     /// This function updates the model parameters given the gradient of the parameters.
     ///@param w : Aligned map of the model parameters to be updated
     ///@param dw : Const aligned map of the gradient of the model parameters
-    virtual void update(Vector::AlignedMapType& w, Vector::ConstAlignedMapType& dw) = 0;
+    virtual void update(Vector::AlignedMapType& w, Vector::ConstAlignedMapType& dw, int epoch = 0) = 0;
   };
 };      // namespace nmbuflowtorch
 #endif  // NMBUFLOWTORCH_OPTIMIZER_H_

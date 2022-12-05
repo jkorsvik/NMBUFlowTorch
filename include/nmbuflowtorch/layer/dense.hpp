@@ -44,7 +44,7 @@ namespace nmbuflowtorch::layer
 
     /// @brief Update the weights and biases of the dense layer
     /// @param opt: Optimizer used to update the parameters
-    void update(Optimizer& opt) override;
+    void update(Optimizer& opt, int epoch) override;
 
     /// @brief Get the output dimension of the dense layer
     /// @return Output dimension of the dense layer

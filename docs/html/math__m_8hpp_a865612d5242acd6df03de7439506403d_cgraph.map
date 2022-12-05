@@ -1,0 +1,4 @@
+<map id="accuracy_score_matrix" name="accuracy_score_matrix">
+<area shape="rect" id="node1" title="Calculates the accuracy score for a given set of true and predicted labels." alt="" coords="5,5,177,32"/>
+<area shape="rect" id="node2" href="$math__m_8hpp.html#aebe2ab42fdbc00b9e3afb06ba7d536c3" title="Applies a binary cutoff to a given float value." alt="" coords="225,5,332,32"/>
+</map>

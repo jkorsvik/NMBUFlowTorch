@@ -18,10 +18,9 @@ namespace nmbuflowtorch::layer
 
   void Dense::forward(const Matrix& X)
   {
-    layer_input = X;                   // Holder på input til backward passet
-    layer_output = MMdot(weights, X);  // TODO: Plusse på bias WX + B
-    layer_output.rowwise() += bias.transpose();    // Eigen::Matrix3Xf::Ones(1,)
-
+    layer_input = X;                             // Holder på input til backward passet
+    layer_output = MMdot(weights, X);            // TODO: Plusse på bias WX + B
+    layer_output.rowwise() += bias.transpose();  // Eigen::Matrix3Xf::Ones(1,)
 
     // mtx += Eigen::Matrix3Xf::Ones(3,4);
   }
@@ -36,18 +35,18 @@ namespace nmbuflowtorch::layer
     gradient_back.resize(input_shape, layer_input.cols());
     gradient_back = accumulated_gradients * weights.transpose();
 
-    //gradient_back = weights * accumulated_gradients.transpose();
+    // gradient_back = weights * accumulated_gradients.transpose();
   }
 
-  void Dense::update(Optimizer& opt)
+  void Dense::update(Optimizer& opt, int epoch)
   {
     Vector::AlignedMapType weights_vec(weights.data(), weights.size());
     Vector::AlignedMapType bias_vec(bias.data(), bias.size());
     Vector::ConstAlignedMapType grad_weights_vec(grad_weights.data(), grad_weights.size());
     Vector::ConstAlignedMapType grad_bias_vec(grad_bias.data(), grad_bias.size());
 
-    opt.update(weights_vec, grad_weights_vec);
-    opt.update(bias_vec, grad_bias_vec);
+    opt.update(weights_vec, grad_weights_vec, epoch);
+    opt.update(bias_vec, grad_bias_vec, epoch);
 
     // opt.update(weights, grad_weights);
     // opt.update(bias, grad_bias);

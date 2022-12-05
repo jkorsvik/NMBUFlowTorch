@@ -2,7 +2,7 @@
 
 namespace nmbuflowtorch::optimizer
 {
-  void SGD::update(Vector::AlignedMapType& w, Vector::ConstAlignedMapType& dw)
+  void SGD::update(Vector::AlignedMapType& w, Vector::ConstAlignedMapType& dw, int epoch)
   {
     Vector& v = v_map[dw.data()];
     v = dw;

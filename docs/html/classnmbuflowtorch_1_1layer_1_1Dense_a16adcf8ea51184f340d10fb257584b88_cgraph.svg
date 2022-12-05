@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classnmbuflowtorch_1_1Optimizer.html#a4951a6fee2fd54ec073ee6af7ab4f46d" target="_top" xlink:title="Virtual function that should be implemented by derived classes. This function updates the model param...">
+<g id="a_node2"><a xlink:href="classnmbuflowtorch_1_1Optimizer.html#a7f381460160c346cfbfd9576699620da" target="_top" xlink:title="Virtual function that should be implemented by derived classes. This function updates the model param...">
 <polygon fill="none" stroke="black" points="156,-0.5 156,-30.5 299,-30.5 299,-0.5 156,-0.5"/>
 <text text-anchor="start" x="164" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">nmbuflowtorch::Optimizer</text>
 <text text-anchor="middle" x="227.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">::update</text>

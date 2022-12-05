@@ -194,6 +194,14 @@ after installing run the following in the project directory:
 nmbluflowtorch [parallel | not ] [xor | autoencoder] [--epochs int]​
 ```
 
+example:
+
+The following will executethe xor program with parallelization for 100 epochs
+
+```bash
+nmbluflowtorch parallel xor --epochs 100
+```
+
 ## Authors
 
 * **Jon-Mikkel Ryen Korsvik** - [@jkorsvik](https://github.com/jkorsvik)

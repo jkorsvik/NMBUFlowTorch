@@ -190,9 +190,9 @@ ctest -C Release  # or `ctest -C Debug` or any other configuration you wish to t
 ## Running the main program
 
 after installing run the following in the project directory:
-´´´sh
+```bash
 nmbluflowtorch [parallel | not ] [xor | autoencoder] [--epochs int]​
-´´´
+```
 
 ## Authors
 

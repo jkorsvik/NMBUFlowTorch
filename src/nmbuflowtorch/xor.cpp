@@ -74,7 +74,7 @@ namespace nmbuflowtorch
     xor_net.add_layer(xor_sigmoid2);
 
     // Training network on xor data
-    xor_net.fit(xor_X, xor_y, n_epochs, 1, 0);
+    xor_net.fit(xor_X, xor_y, n_epochs, 1, 1);
 
     // Getting binary predictions and converting to vector
     auto xor_y_pred = xor_net.predict(xor_X);
